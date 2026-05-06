@@ -428,7 +428,8 @@ function SearchResultsContent({ query }: { query: string }) {
             {validResults.map(([dataType, data]) => {
               const docs = data.result.response?.docs || [];
               const numFound = data.result.response?.numFound || 0;
-
+              const docsTyped = docs as Record<string, unknown>[];
+              const link = generateLink(dataType, docsTyped, numFound, query);
               if (numFound === 0) return null;
 
               return (
@@ -439,9 +440,11 @@ function SearchResultsContent({ query }: { query: string }) {
                   <CardHeader className="flex flex-row items-center justify-between border-b p-6">
                     <div className="flex items-center gap-2">
                       {getDataTypeIcon(dataType)}
-                      <CardTitle className="text-xl font-semibold capitalize">
-                        {labelsByType[dataType]}
-                      </CardTitle>
+                      <a href={link} className="hover:underline">
+                        <CardTitle className="text-xl font-semibold capitalize">
+                          {labelsByType[dataType]}
+                        </CardTitle>
+                      </a>
                     </div>
                     <Badge className="bg-secondary h-8 max-w-fit min-w-8 font-semibold text-white">
                       {numFound}
@@ -450,9 +453,25 @@ function SearchResultsContent({ query }: { query: string }) {
                   <CardContent className="divide-y">
                     {docs.map((docUnknown, index) => {
                       const doc = docUnknown as Record<string, unknown>;
-                      return (
-                        <div key={String(doc.id ?? index)} className="py-6">
+                      const itemLink = generateItemLink(dataType, doc);
+
+                      const content = (
+                        <div className="py-6">
                           {getFormattedContent(doc, dataType)}
+                        </div>
+                      );
+
+                      return itemLink ? (
+                        <a
+                          key={String(doc.id ?? index)}
+                          href={itemLink}
+                          className="block hover:bg-muted/50 transition-colors"
+                        >
+                          {content}
+                        </a>
+                      ) : (
+                        <div key={String(doc.id ?? index)}>
+                          {content}
                         </div>
                       );
                     })}
@@ -465,6 +484,126 @@ function SearchResultsContent({ query }: { query: string }) {
       )}
     </div>
   );
+}
+
+function generateLink(
+  type: string,
+  docs: Record<string, unknown>[],
+  total: number,
+  query: string
+) {
+  const q = processQuery(query); // 👈 same as dojo's state.search
+
+  switch (type) {
+    case "genome":
+      return total === 1
+        ? `/view/Genome/${docs[0].genome_id}#view_tab=overview`
+        : `/view/GenomeList/?${q}#view_tab=genomes`;
+
+    case "strain":
+      return `/view/StrainList/?${q}`;
+
+    case "genome_feature":
+      return total === 1
+        ? `/view/Feature/${docs[0].feature_id}#view_tab=overview`
+        : `/view/FeatureList/?${q}#view_tab=features&defaultSort=-score`;
+
+    case "protein_feature":
+      return `/view/DomainsAndMotifsList/?${q}`;
+
+    case "epitope":
+      return `/view/EpitopeList/?${q}`;
+
+    case "protein_structure":
+      return `/view/ProteinStructureList/?${q}`;
+
+    case "pathway":
+      return `/view/PathwayList/?${q}`;
+
+    case "subsystem":
+      return `/view/SubsystemList/?${q}`;
+
+    case "surveillance":
+      return `/view/SurveillanceList/?${q}`;
+
+    case "serology":
+      return `/view/SerologyList/?${q}`;
+
+    case "taxonomy":
+      return total === 1
+        ? `/view/Taxonomy/${docs[0].taxon_id}#view_tab=overview`
+        : `/view/TaxonList/?${q}#view_tab=taxons`;
+
+    case "sp_gene":
+      return total === 1
+        ? `/view/Feature/${docs[0].feature_id}#view_tab=overview`
+        : `/view/SpecialtyGeneList/?${q}#view_tab=specialtyGenes`;
+
+    case "experiment":
+      return total === 1
+        ? `/view/ExperimentComparison/${docs[0].eid}#view_tab=overview`
+        : `/view/ExperimentList/?${q}#view_tab=experiments`;
+
+    case "antibiotics":
+      return total === 1
+        ? `/view/Antibiotic/${docs[0].eid}`
+        : `/view/AntibioticList/?${q}`;
+
+    case "genome_sequence":
+      return total === 1
+        ? `/view/Sequence/${docs[0].feature_id}#view_tab=overview`
+        : `/view/SequenceList/?${q}`;
+
+    default:
+      return "#";
+  }
+}
+
+function generateItemLink(
+  type: string,
+  doc: Record<string, unknown>
+): string {
+  switch (type) {
+    case "genome":
+      return `/view/Genome/${doc.genome_id}`;
+
+    case "genome_feature":
+      return `/view/Feature/${doc.feature_id}`;
+
+    case "taxonomy":
+      return `/view/Taxonomy/${doc.taxon_id}`;
+
+    case "experiment":
+      return `/view/ExperimentComparison/${doc.exp_id}`;
+
+    case "genome_sequence":
+      return `/view/Genome/${doc.genome_id}`;
+
+    case "surveillance":
+      return `/view/Surveillance/${doc.sample_identifier}`;
+
+    case "serology":
+      return `/view/Serology/${doc.sample_identifier}`;
+
+    case "protein_structure":
+      return `/view/ProteinStructure#accession=${doc.pdb_id}`;
+
+    case "sp_gene":
+      return `/view/Feature/${doc.feature_id}`;
+
+    case "antibiotics":
+      return `/view/Antibiotic/?eq(antibiotic_name,"${doc.antibiotic_name}")`;
+
+    // Types that DON’T have individual links in Dojo
+    case "protein_feature":
+    case "epitope":
+    case "pathway":
+    case "subsystem":
+      return "";
+
+    default:
+      return "";
+  }
 }
 
 interface SearchResultsProps {
