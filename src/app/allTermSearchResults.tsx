@@ -396,14 +396,15 @@ function SearchResultsContent({ query }: { query: string }) {
   }, [query]);
 
   // Filter out empty results and sort by numFound
-  const validResults = Object.entries(searchResults)
-    .filter(([_, data]) => data?.result?.response?.numFound > 0)
-    .sort(
-      ([_, a], [__, b]) =>
-        (b?.result?.response?.numFound || 0) -
-        (a?.result?.response?.numFound || 0),
-    );
+  const validResults = searchTypes
+    .map((type) => {
+      const data = searchResults[type];
+      const numFound = data?.result?.response?.numFound || 0;
 
+      return numFound > 0 ? [type, data] as const : null;
+    })
+    .filter(Boolean) as [string, BVBRCAPIResponse][];
+    
   // Add this before the return statement
 
   return (
