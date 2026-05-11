@@ -22,7 +22,7 @@ type TableRow = {
 };
 
 export default function ReferenceGenomePanel({ taxonId }: Props) {
-  const [view, setView] = useState<"chart" | "table">("chart");
+  const [view, setView] = useState<"chart" | "table">("table");
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [tableData, setTableData] = useState<TableRow[]>([]);
   const [loading, setLoading] = useState(true);
