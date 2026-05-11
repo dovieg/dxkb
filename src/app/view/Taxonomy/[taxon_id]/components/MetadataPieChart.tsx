@@ -50,8 +50,8 @@ export default function MetadataPieChart({
               data={data}
               dataKey="value"
               nameKey="label"
-              outerRadius={90}
-              innerRadius={50}
+              outerRadius={80}
+              innerRadius={40}
               paddingAngle={2}
               onClick={(entry) => {
                 if (onSliceClick) onSliceClick(entry);

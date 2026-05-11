@@ -77,16 +77,12 @@ export default function GenomeMetadataSummary({
       setLoading(true);
       setDebugInfo("Starting fetch...");
 
-      console.log("Starting fetch for taxonId:", taxonId);
-      console.log("BVBR_API:", BVBR_API);
-
       const query =
       `eq(taxon_lineage_ids,${taxonId})` +
       `&facet((field,host_group),(field,isolation_country),(field,collection_year),(mincount,1))` +
       `&limit(1)&json(nl,map)`;
       
       const fullUrl = `${BVBR_API}/genome/?${query}`;
-      console.log("Fetching URL:", fullUrl);
       setDebugInfo(`Fetching: ${fullUrl}`);
       
       const res = await fetch(fullUrl, {
@@ -96,7 +92,6 @@ export default function GenomeMetadataSummary({
           },
       });
       
-      console.log("Response status:", res.status, res.ok);
       setDebugInfo(`Response status: ${res.status}`);
 
       if (!res.ok) {
@@ -107,11 +102,9 @@ export default function GenomeMetadataSummary({
       }
 
       const json = await res.json();
-      console.log("API Response:", json);
       setDebugInfo(`Got response with ${json?.response?.numFound || 0} results`);
       
       const facets = json?.facet_counts?.facet_fields;
-      console.log("Facets data:", facets);
 
       if (!facets) {
         console.warn("No facets found in response");
@@ -132,7 +125,6 @@ export default function GenomeMetadataSummary({
         ),
       };
       
-      console.log("Transformed data:", transformed);
       setDebugInfo("Data transformed successfully");
 
       setData(transformed);
@@ -148,7 +140,6 @@ export default function GenomeMetadataSummary({
   }
 
   useEffect(() => {
-    console.log("useEffect triggered with taxonId:", taxonId);
     setDebugInfo(`useEffect triggered with taxonId: ${taxonId}`);
     
     if (!taxonId) {
