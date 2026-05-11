@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import TaxonomySummary from "./components/TaxonomySummary";
+import GenomeMetadataSummary from "./components/GenomeMetadataSummary";
 
 const API_BASE = process.env.NEXT_PUBLIC_DATA_API;
 
@@ -153,9 +154,7 @@ export default async function TaxonomyPage({ params }: PageProps) {
               Genomes by Metadata
             </h2>
 
-            <p className="mt-4 text-muted-foreground">
-              Coming soon...
-            </p>
+            <GenomeMetadataSummary taxonId={taxonomy.taxon_id} />
           </div>
         </div>
 
