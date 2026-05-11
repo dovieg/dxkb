@@ -138,9 +138,9 @@ export default async function TaxonomyPage({ params }: PageProps) {
       </div>
 
       {/* Overview Content */}
-      <div className="grid gap-6 xl:grid-cols-3">
-        {/* Left column */}
-        <div className="xl:col-span-1">
+      <div className="grid gap-6 xl:grid-cols-12">
+          {/* Left column */}
+        <div className="xl:col-span-3">
           <TaxonomySummary
             taxonomy={taxonomy}
             summary={summary}
@@ -148,7 +148,7 @@ export default async function TaxonomyPage({ params }: PageProps) {
         </div>
 
         {/* Middle column */}
-        <div className="xl:col-span-1">
+        <div className="xl:col-span-6">
           <div className="rounded-lg border bg-card p-6 shadow-sm">
             <h2 className="text-xl font-semibold">
               Genomes by Metadata
@@ -159,7 +159,7 @@ export default async function TaxonomyPage({ params }: PageProps) {
         </div>
 
         {/* Right column */}
-        <div className="xl:col-span-1">
+        <div className="xl:col-span-3">
           <div className="rounded-lg border bg-card p-6 shadow-sm">
             <h2 className="text-xl font-semibold">
               Reference / Representative Genomes

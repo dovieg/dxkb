@@ -178,8 +178,8 @@ export default function GenomeMetadataSummary({
   }
 
   return (
-    <div className="space-y-4">
-      <MetadataPieChart title="Host" data={data.host_group} />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <MetadataPieChart title="Host" data={data.host_group} />
 
       <MetadataPieChart
         title="Isolation Country"

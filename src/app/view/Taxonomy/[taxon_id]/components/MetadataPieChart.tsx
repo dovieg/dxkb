@@ -66,7 +66,7 @@ export default function MetadataPieChart({
             </Pie>
 
             <Tooltip />
-            <Legend />
+            <Legend className="mt-3" />
           </PieChart>
         </ResponsiveContainer>
       </div>
