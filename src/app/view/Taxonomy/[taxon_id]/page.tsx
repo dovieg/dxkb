@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import TaxonomySummary from "./components/TaxonomySummary";
 
@@ -77,63 +75,40 @@ function TaxonomyBreadcrumbs({ taxonomy }: { taxonomy: Taxonomy }) {
   );
 }
 
-export default function TaxonomyPage({ params }: PageProps) {
-  const [taxonomy, setTaxonomy] = useState<Taxonomy | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export default async function TaxonomyPage({ params }: PageProps) {
+  const resolvedParams = await params;
 
-  useEffect(() => {
-    async function fetchTaxonomy() {
-      try {
-        setLoading(true);
-
-        const resolvedParams = await params;
-
-        const response = await fetch(
-          `${API_BASE}/taxonomy/${resolvedParams.taxon_id}`,
-          {
-            headers: {
-              accept: "application/json",
-            },
-            cache: "no-store",
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch taxonomy");
-        }
-
-        const data = await response.json();
-
-        setTaxonomy(data);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load taxonomy");
-      } finally {
-        setLoading(false);
-      }
+  const response = await fetch(
+    `${API_BASE}/taxonomy/${resolvedParams.taxon_id}`,
+    {
+      headers: {
+        accept: "application/json",
+      },
+      cache: "no-store",
     }
+  );
 
-    fetchTaxonomy();
-  }, [params]);
-
-  if (loading) {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        Loading taxonomy...
-      </div>
-    );
+  if (!response.ok) {
+    throw new Error("Failed to fetch taxonomy");
   }
 
-  if (error || !taxonomy) {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="rounded-lg border border-red-300 bg-red-50 p-4 text-red-700">
-          {error || "Taxonomy not found"}
-        </div>
-      </div>
-    );
+  const taxonomy: Taxonomy = await response.json();
+
+    const summaryResponse = await fetch(
+    `${API_BASE}/data/summary_by_taxon/${resolvedParams.taxon_id}`,
+    {
+      headers: {
+        accept: "application/json",
+      },
+      cache: "no-store",
+    }
+  );
+
+  if (!summaryResponse.ok) {
+    throw new Error("Failed to fetch taxonomy summary");
   }
+
+  const summary = await summaryResponse.json();
 
   return (
     <div className="container mx-auto space-y-6 px-4 py-8">
@@ -165,7 +140,10 @@ export default function TaxonomyPage({ params }: PageProps) {
       <div className="grid gap-6 xl:grid-cols-3">
         {/* Left column */}
         <div className="xl:col-span-1">
-          <TaxonomySummary taxonomy={taxonomy} />
+          <TaxonomySummary
+            taxonomy={taxonomy}
+            summary={summary}
+          />
         </div>
 
         {/* Middle column */}

@@ -1,14 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const DataAPI = process.env.NEXT_PUBLIC_DATA_API;
-
 interface Taxonomy {
-  taxon_id: string;
+  taxon_id: number;
   taxon_name: string;
-  taxon_rank: string;
+  taxon_rank?: string;
 }
 
 interface TaxonomySummaryData {
@@ -24,35 +19,10 @@ interface TaxonomySummaryData {
 
 type Props = {
   taxonomy: Taxonomy;
+  summary: TaxonomySummaryData;
 };
 
-export default function TaxonomySummary({ taxonomy }: Props) {
-  const [summary, setSummary] = useState<TaxonomySummaryData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchSummary() {
-      try {
-        const res = await fetch(
-        `${DataAPI}data/summary_by_taxon/${taxonomy.taxon_id}`,
-        {
-            headers: {
-            accept: "application/json",
-            },
-            cache: "no-store",
-        }
-        );
-        const data = await res.json();
-        setSummary(data);
-      } catch (err) {
-        console.error("Failed to fetch taxonomy summary:", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchSummary();
-  }, [taxonomy.taxon_id]);
+export default function TaxonomySummary({ taxonomy, summary }: Props) {
 
   const rows = [
     ["Taxon ID", taxonomy.taxon_id],
@@ -66,7 +36,15 @@ export default function TaxonomySummary({ taxonomy }: Props) {
     ["Protein Coding Genes (CDS)", summary?.CDS],
     ["Mature Peptides", summary?.mat_peptide],
     ["3D Protein Structures (PDB)", summary?.PDB],
-  ];
+  ].filter(([, value]) => {
+    // always keep text fields
+    if (typeof value === "string") {
+      return value.trim() !== "";
+    }
+
+    // hide null/undefined/0
+    return value != null && value !== 0;
+  });
 
   return (
     <Card>
@@ -75,22 +53,18 @@ export default function TaxonomySummary({ taxonomy }: Props) {
       </CardHeader>
 
       <CardContent>
-        {loading ? (
-          <p>Loading summary...</p>
-        ) : (
-          <table className="w-full text-sm">
-            <tbody>
-              {rows.map(([label, value]) => (
-                <tr key={label} className="border-b">
-                  <td className="py-2 font-medium">{label}</td>
-                  <td className="py-2 text-right">
-                    {value ?? "-"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
+        <table className="w-full text-sm">
+          <tbody>
+            {rows.map(([label, value]) => (
+              <tr key={label} className="border-b">
+                <td className="py-2 font-medium">{label}</td>
+                <td className="py-2 text-right">
+                  {value ?? "-"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </CardContent>
     </Card>
   );
