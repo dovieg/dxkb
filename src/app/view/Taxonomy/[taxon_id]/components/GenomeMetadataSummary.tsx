@@ -61,9 +61,16 @@ export default function GenomeMetadataSummary({
     string,
     ChartData[]
   > | null>(null);
+  
+  const [view, setView] = useState<"chart" | "table">("chart");
 
   const [loading, setLoading] = useState(true);
   const [debugInfo, setDebugInfo] = useState<string>("");
+  const categoryLabelMap: Record<string, string> = {
+    host_group: "Host",
+    isolation_country: "Isolation Country",
+    collection_year: "Collection Year",
+  };
 
   async function fetchFacets() {
     try {
@@ -177,19 +184,84 @@ export default function GenomeMetadataSummary({
     );
   }
 
+  function groupFacetData(data: Record<string, ChartData[]>) {
+    return Object.entries(data).map(([category, values]) => ({
+      category,
+      values,
+    }));
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <MetadataPieChart title="Host" data={data.host_group} />
+    <div>
+      {/* toggle */}
+      <div className="flex justify-end mb-2 gap-2">
+        <button
+          onClick={() => setView("chart")}
+          className={`px-2 py-1 text-sm border rounded ${
+            view === "chart" ? "bg-gray-200" : ""
+          }`}
+          title="Chart view"
+        >
+          📊
+        </button>
 
-      <MetadataPieChart
-        title="Isolation Country"
-        data={data.isolation_country}
-      />
+        <button
+          onClick={() => setView("table")}
+          className={`px-2 py-1 text-sm border rounded ${
+            view === "table" ? "bg-gray-200" : ""
+          }`}
+          title="Table view"
+        >
+          📋
+        </button>
+      </div>
 
-      <MetadataPieChart
-        title="Collection Year"
-        data={data.collection_year}
-      />
+      {/* CHART VIEW */}
+      {view === "chart" ? (
+        <div className="grid grid-cols-2 gap-4">
+          <MetadataPieChart title="Host" data={data.host_group} />
+
+          <MetadataPieChart
+            title="Isolation Country"
+            data={data.isolation_country}
+          />
+
+          <MetadataPieChart
+            title="Collection Year"
+            data={data.collection_year}
+          />
+        </div>
+      ) : (
+        /* TABLE VIEW */
+      <div className="rounded-lg border bg-card overflow-hidden">
+        <table className="w-full text-sm">
+          <tbody>
+            {groupFacetData(data).map((group, idx) => (
+              <tr
+                key={group.category}
+                className={idx % 2 === 0 ? "bg-muted/70" : ""}              >
+                {/* CATEGORY CELL (left) */}
+                <td className="align-top p-3 font-semibold w-1/3 border-r">
+                  {categoryLabelMap[group.category] ?? group.category}
+                </td>
+
+                {/* VALUES CELL (right) */}
+                <td className="p-3">
+                  <div className="space-y-1">
+                    {group.values.map((v, i) => (
+                      <div key={i} className="leading-snug">
+                        {v.label} <span className="text-gray-500">({v.value})</span>
+                      </div>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      )}
     </div>
   );
+
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import TaxonomySummary from "./components/TaxonomySummary";
 import GenomeMetadataSummary from "./components/GenomeMetadataSummary";
+import ReferencePanel from "./components/ReferencePanel";
 
 const API_BASE = process.env.NEXT_PUBLIC_DATA_API;
 
@@ -162,12 +163,10 @@ export default async function TaxonomyPage({ params }: PageProps) {
         <div className="xl:col-span-3">
           <div className="rounded-lg border bg-card p-6 shadow-sm">
             <h2 className="text-xl font-semibold">
-              Reference / Representative Genomes
+              Reference / Representative Genomes  
             </h2>
 
-            <p className="mt-4 text-muted-foreground">
-              Coming soon...
-            </p>
+            <ReferencePanel taxonomy={taxonomy} />
           </div>
         </div>
       </div>

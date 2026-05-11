@@ -58,9 +58,20 @@ export default function TaxonomySummary({ taxonomy, summary }: Props) {
             {rows.map(([label, value]) => (
               <tr key={label} className="border-b">
                 <td className="py-2 font-medium">{label}</td>
-                <td className="py-2 text-right">
-                  {value ?? "-"}
-                </td>
+                  <td className="py-2 text-right">
+                    {label === "Taxon ID" ? (
+                      <a
+                        href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${value}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      value ?? "-"
+                    )}
+                  </td>
               </tr>
             ))}
           </tbody>
