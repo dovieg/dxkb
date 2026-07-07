@@ -58,6 +58,9 @@ const searchTypes: SearchTypesMap = {
   taxonomy: {
     taxonomy: "Taxa",
   },
+  interaction: {
+    ppi: "Interactions",
+  },
 };
 
 interface TabsRendererProps {
@@ -208,20 +211,15 @@ function TabsRenderer({
 
 const searchTypeMenuItems = [
   { key: "overview",          label: "Overview",           icon: <Blocks className="size-4" /> },
-  { key: "phylogeny",         label: "Phylogeny",          icon: <Network className="size-4" /> },
   { key: "taxonomy",          label: "Taxa",               icon: <Binary className="size-4" /> },
   { key: "genome",            label: "Genomes",            icon: <Dna className="size-4" /> },
   { key: "genome_amr",        label: "AMR Phenotypes",     icon: <ShieldCheck className="size-4" /> },
   { key: "genome_sequence",   label: "Sequences",          icon: <Database className="size-4" /> },
   { key: "genome_feature",    label: "Features",           icon: <ListTree className="size-4" /> },
-  { key: "protein",           label: "Proteins",           icon: <Atom className="size-4" /> },
   { key: "protein_structure", label: "Protein Structures", icon: <Waypoints className="size-4" /> },
-  { key: "sp_gene",           label: "Specialty Genes",    icon: <Microscope className="size-4" /> },
   { key: "protein_feature",   label: "Domains and Motifs", icon: <Puzzle className="size-4" /> },
   { key: "epitope",           label: "Epitopes",           icon: <Activity className="size-4" /> },
   { key: "strain",            label: "Strains",            icon: <Share2 className="size-4" /> },
-  { key: "pathway",           label: "Pathways",           icon: <Route className="size-4" /> },
-  { key: "subsystem",         label: "Subsystems",         icon: <Layers className="size-4" /> },
   { key: "surveillance",      label: "Surveillance",       icon: <Eye className="size-4" /> },
   { key: "serology",          label: "Serology",           icon: <Globe className="size-4" /> },
   { key: "experiment",        label: "Experiments",        icon: <FlaskConical className="size-4" /> },

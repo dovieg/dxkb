@@ -66,6 +66,7 @@ export default function GlobalSearch () {
             "experiment",
             "genome_sequence",
             "genome_amr", 
+            "interaction",
           ].includes(searchtype)
         ) {
           return <TypeSearch q={query} searchtype={searchtype} />;
