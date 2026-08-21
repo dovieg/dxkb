@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Installing the BV-BRC Command Line Interface | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the BV-BRC Command-line Interface" href="cli_getting_started.html" />
+    <link rel="prev" title="Command Line Interface" href="index.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Installing the BV-BRC Command Line Interface | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing the BV-BRC Command Line Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-on-macos">Installation on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-on-debian-ubuntu-mint-linux">Installation on Debian / Ubuntu / Mint Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-on-windows">Installation on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cli_getting_started.html">Using the BV-BRC Command-line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_services.html">Using BV-BRC Services from the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_common_tasks.html">Common Tasks With P3 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_clustering.html">Looking for Hypothetical Proteins in Clusters of Related Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_signature_clusters.html">Computing Signature Clusters: an Application of the Command-Line Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command_list/index.html">BV-BRC Command Line Program Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#rast-tutorials">RAST Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Command Line Interface</a> &raquo;</li>
+        
+      <li>Installing the BV-BRC Command Line Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cli_tutorial/cli_installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="installing-the-bv-brc-command-line-interface">
+<span id="cli-installation"></span><h1>Installing the BV-BRC Command Line Interface<a class="headerlink" href="#installing-the-bv-brc-command-line-interface" title="Permalink to this headline">¶</a></h1>
+<p>The BV-BRC project supports the BV-BRC command line on the following systems:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Apple computers running macOS version 10.11 (El Capitan) or newer.</p></li>
+<li><p>PCs running Ubuntu Linux version 14 or newer.</p></li>
+<li><p>PCs running Debian Linux or other Linux distributions derived from Debian (e.g. Mint).</p></li>
+<li><p>PCs running Windows 7 or newer.</p></li>
+<li><p>Windows 10 with Windows Subsystem for Linux and the Ubuntu distribution therein.</p></li>
+</ul>
+</div></blockquote>
+<p>Distribution packages for the releases may be found at the <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-CLI/releases">BV-BRC github release site</a>.</p>
+<p>The installation details differ between the major operating systems. We will discuss each in turn.</p>
+<section id="installation-on-macos">
+<h2>Installation on macOS<a class="headerlink" href="#installation-on-macos" title="Permalink to this headline">¶</a></h2>
+<p>The macOS version of the BV-BRC command line interface is distributed
+as a disk image file. We recommend downloading the most recent version
+listed at  the <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-CLI/releases">BV-BRC github release site</a>.</p>
+<p>Download the release disk image file by clicking on the link named BV-BRC-&lt;version&gt;.dmg. Your
+browser will begin the download and save the file to your downloads
+directory.</p>
+<p>If you are using Safari, the download may be found by clicking on the
+download status icon near the top right of window, or by going to the
+View menu and clicking “Show Downloads.</p>
+<p><img alt="safari_download_image" src="../_images/safari_download_image.png" /></p>
+<p>If you are using Google Chrome, the downloaded file will appear in an icon
+at the bottom of the Chrome window:</p>
+<p><img alt="chrome_download_image" src="../_images/chrome_download_image.png" /></p>
+<p>If you are using Firefox, you will first be prompted to download the
+binary file:</p>
+<p><img alt="firefox_download_image" src="../_images/firefox_download_image.png" /></p>
+<p>Select “Save File”. The file download status will appear in the top right of
+the window; click on the download icon to view the status and to open
+the downloaded document:</p>
+<p><img alt="firefox_download_image_2" src="../_images/firefox_download_image_2.png" /></p>
+<p>When the download is complete (depending on your internet speed it may
+take several minutes since the disk image is 200 megabytes
+in size), open the image by clicking on the downloaded file
+<code class="docutils literal notranslate"><span class="pre">BV-BRC-1.040.dmg</span></code>.</p>
+<p>The disk image will open and the following window will appear:</p>
+<p><img alt="mac_disk_image" src="../_images/mac_disk_image.png" /></p>
+<p>To install the distribution, drag the BV-BRC icon onto the
+Applications icon. This will copy the BV-BRC distribution into the
+Applications folder on your computer.</p>
+<p><img alt="mac_install_copy_dialog" src="../_images/mac_install_copy_dialog.png" /></p>
+<p>If you already an installation
+of the BV-BRC toolkit on your computer you will see the following
+dialog:</p>
+<p><img alt="mac_overwrite_installation" src="../_images/mac_overwrite_installation.png" /></p>
+<p>Select “Replace” to replace your existing installation with the
+new one.</p>
+<p>Bring up a Finder window showing the Applications folder. You can do
+this by clicking the desktop background to bring Finder to the front,
+and selecting the Go menu and choosing Applications.</p>
+<p>To start BV-BRC the first time, you will need to start it in a way
+that is a little clumsy. This is due to the security mechanisms in
+macOS that protect users from unguarded downloads of applications from
+the Internet.</p>
+<p>You will know you need to do this if you doubleclick the BV-BRC icon
+and see this dialog:</p>
+<p><img alt="mac_unidentified_developer" src="../_images/mac_unidentified_developer.png" /></p>
+<p>If you see this, instead of doubleclicking the BV-BRC icon,
+right-click it and select Open:</p>
+<p><img alt="mac_right_click_open" src="../_images/mac_right_click_open.png" /></p>
+<p>If your user account has administrative privileges you will be
+prompted to allow the application to open. Click “Open” to allow the
+application to proceed:</p>
+<p><img alt="mac_unidentified_developer_admin" src="../_images/mac_unidentified_developer_admin.png" /></p>
+<p>If your user account does not have administrative privileges, you will
+be prompted for an administrative account username and password:</p>
+<p><img alt="mac_unidentified_developer_override" src="../_images/mac_unidentified_developer_override.png" /></p>
+<p>The BV-BRC icon will bounce in the dock, possibly for several seconds
+the first time, and then a Terminal window will open with the command
+line interface prompt:</p>
+<p><img alt="mac_cli_window" src="../_images/mac_cli_window.png" /></p>
+</section>
+<section id="installation-on-debian-ubuntu-mint-linux">
+<h2>Installation on Debian / Ubuntu / Mint Linux<a class="headerlink" href="#installation-on-debian-ubuntu-mint-linux" title="Permalink to this headline">¶</a></h2>
+<p>The version of the BV-BRC command line interface packaged for Debian
+Linu and its derivative distributions (Ubuntu, Mint, etc) is provided
+as a Debian <code class="docutils literal notranslate"><span class="pre">.deb</span></code> distribution file. The release is named
+<code class="docutils literal notranslate"><span class="pre">bvbrc-cli-&lt;version&gt;.deb</span></code> and may be found on the
+<a class="reference external" href="https://github.com/BV-BRC/BV-BRC-CLI/releases">BV-BRC github release site</a>.</p>
+<p>There are several options for installation. The simplest is to
+download the installer using a command line tool, and install with
+<code class="docutils literal notranslate"><span class="pre">dpkg</span></code>. This method requires a followup call to <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> to
+resolve dependencies (here, we are installing version 1.024):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">BV</span><span class="o">-</span><span class="n">BRC</span><span class="o">/</span><span class="n">BV</span><span class="o">-</span><span class="n">BRC</span><span class="o">-</span><span class="n">CLI</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="mf">1.040</span><span class="o">/</span><span class="n">bvbrc</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="mf">1.040</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">bvbrc</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="mf">1.040</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">sudo</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">f</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>It may be simpler to install using the <code class="docutils literal notranslate"><span class="pre">gdebi</span></code> tool as it handles
+dependency management itself. Ubuntu does not have <code class="docutils literal notranslate"><span class="pre">gdebi</span></code> installed
+by default so you will need to install it first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gdebi</span><span class="o">-</span><span class="n">core</span>
+</pre></div>
+</div>
+<p>Then to install with gdebi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">gdebi</span> <span class="n">bvbrc</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="mf">1.040</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
+</div>
+<p>When the install has completed, the BV-BRC command line tools will be
+available for you to use. They are installed in the system binary
+directory <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code> which is accessible in your default
+environment.</p>
+<p>If you see an error like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo gdebi bvbrc--cli-1.040.deb
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Reading state information... Done
+This package is uninstallable
+Dependency is not satisfiable: libanyevent-perl
+</pre></div>
+</div>
+<p>there are a couple possibilities. First, on Ubuntu the BV-BRC package
+requires the Universe repository to be enabled. This can be done in the user interface.
+Open software center. Click on ‘edit’ and then ‘software
+sources’ to open the software sources window. Once that is open, check
+the box that says, “Community-maintained free and open-source software
+(universe).”</p>
+<p>This can also be done with the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">universe</span>
+</pre></div>
+</div>
+<p>If the Universe repository was already in place, your package cache may be out of date. This may
+be updated using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+</pre></div>
+</div>
+</section>
+<section id="installation-on-windows">
+<h2>Installation on Windows<a class="headerlink" href="#installation-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>The Windows version of the BV-BRC command line interface is distributed
+as a Windows installation package. The release is named
+<code class="docutils literal notranslate"><span class="pre">bv-brc-win64-&lt;version&gt;.exe</span></code> and may be found on <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-CLI/releases">BV-BRC github release site</a>.</p>
+<p>Download the BV-BRC installer file by clicking on the link named <code class="docutils literal notranslate"><span class="pre">bv-brc-win64-&lt;version&gt;.exe</span></code>. Your
+browser will begin the download and save the file to your downloads
+directory.</p>
+<p>Start the installer by doubleclicking the downloaded file. This will
+start the installation process. You should be able to take the
+defaults for all of the options.</p>
+<p>When the installation has completed, you may start a BV-BRC command
+line window by going to the Start Menu, select All Programs, and then
+BV-BRC.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cli_getting_started.html" class="btn btn-neutral float-right" title="Using the BV-BRC Command-line Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Command Line Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

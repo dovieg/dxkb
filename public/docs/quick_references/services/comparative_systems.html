@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Comparative Systems Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Protein Structure Prediction Service" href="predict_structure_service.html" />
+    <link rel="prev" title="Proteome Comparison Service" href="proteome_comparison_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Comparative Systems Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="msa_snp_variation_service.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metacats.html">Metadata-driven Comparative Analysis Tool (meta-CATS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proteome_comparison_service.html">Proteome Comparison Service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Comparative Systems Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict_structure_service.html">Protein Structure Prediction Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict_structure_cli.html">PredictStructure CLI Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict_structure_api.html">PredictStructure API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Comparative Systems Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/comparative_systems.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="comparative-systems-service">
+<h1>Comparative Systems Service<a class="headerlink" href="#comparative-systems-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: February 22, 2024</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Comparative Systems Service combines together functionality from three different tools and data from the legacy PATRIC system: the <strong>Protein Family Sorter</strong>, <strong>Pathway Comparison Tool</strong>, and <strong>Subsystems Data</strong>. and also includes subsystems (1,2), a set of functional roles that together implement a specific biological process or structural complex and can also be generalized as pathways. Up to 500 genomes can be compared. All three tools use the two protein families, PATtyFams (3), that are assigned in the BV-BRC annotation process known as RASTtk (4). The global families, known as PGFams, can be used for cross genus comparisons. The local families, PLFams, are for intra-genus comparisons. Pathway maps are represented using KEGG (5).</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bv-brc.org/app/ComparativeSystems">Comparative Systems Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/comparative_systems/comparative_systems.html"><span class="doc std std-doc">Comparative Systems Service Tutorial</span></a></p></li>
+<li><p><a class="reference internal" href="../other/pathway_comparison_tool.html"><span class="doc std std-doc">Pathway Comparison Tool Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../other/protein_family_sorter.html"><span class="doc std std-doc">Protein Family Sorter Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../other/subsystems_data.html"><span class="doc std std-doc">Subystems Data Quick Reference Guide</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-comparative-systems-service">
+<h2>Using the Comparative Systems Service<a class="headerlink" href="#using-the-comparative-systems-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Comparative Systems</strong> submenu option under the <strong>Services</strong> main menu (Genomics category) opens the Comparative Systems input form (shown below). <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="Comparative Systems Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Comparative Systems Input Form" src="../../_images/input_form.png" /></p>
+</section>
+<section id="select-genome">
+<h2>Select Genome<a class="headerlink" href="#select-genome" title="Permalink to this headline">¶</a></h2>
+<p>The service can accept selected genomes and genome groups. To include any genome (reference, representative, other public, or private genomes), click on the filter icon in the text box in the “Select Genome” box to narrow the selection and deselect the categories that are not of interest. Typing in the text box will display a list of matching genomes. Clicking on the genome name selects it, and clicking on the arrow icon in the top right of the box adds it to the “Selected Genomes” list. Multiple genomes can be added. This service uses genomes that are annotated within the BV-BRC resource (they can be private or public genomes).  You can annotate your contig files using the Annotation (https://www.bv-brc.org/app/Annotation), Comprehensive Genomic Analysis (https://www.bv-brc.org/app/ComprehensiveGenomeAnalysis) or Metagenomic Binning (https://www.bv-brc.org/app/MetagenomicBinning) services.</p>
+</section>
+<section id="select-genome-group">
+<h2>Select Genome Group<a class="headerlink" href="#select-genome-group" title="Permalink to this headline">¶</a></h2>
+<p>To include a genome group in the analysis, click on the down arrow in the text box in the “Select Genome Group” box. This will display a list of all the genome groups, with the most recently created appearing at the top of the list. Selecting a group and clicking on the arrow icon in the top right of the box adds it to the “Selected Genomes” list. Multiple genome groups can be added.</p>
+</section>
+<section id="selected-genomes">
+<h2>Selected Genomes<a class="headerlink" href="#selected-genomes" title="Permalink to this headline">¶</a></h2>
+<p>This box displays the list of all of the genomes and/or genome groups selected to be included in the analysis.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><strong>Output Folder:</strong> The workspace folder where results will be placed.</p>
+<p><strong>Output Name:</strong> The name users specify for the completed job.</p>
+</section>
+<section id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Reset</strong> - clears the form and resets all default values</p></li>
+<li><p><strong>Submit</strong> - Submits the analysis service job. This button is only enabled after all required fields and settings in the form are completed.</p></li>
+</ul>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Comparative Systems Output Files" src="../../_images/result_page.png" /></p>
+<p>The Comparative Systems Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include the following, where [output_name] is replaced with the Output Name entered on the input form:</p>
+<ul class="simple">
+<li><p><strong>[output_name]_pathways.tsv</strong> - Tab-separated-value (TSV) format file containing all the pathways and genes found across all the genomes in the selection.</p></li>
+<li><p><strong>[output_name]_pathways_tables.json</strong> - Javascript Object Notation (JSON) format file of the pathways and genes found across the genomes in the selection. Files of this type are used by the system for structured data handling.</p></li>
+<li><p><strong>[output_name]_proteinfams_tables.json</strong> - JSON-format file containing all of the protein families found across all the genomes in the selection.</p></li>
+<li><p><strong>[output_name]_subsystems.tsv</strong> - TSV-format file containing all of the subsystems found across all the genomes in the selection.</p></li>
+<li><p><strong>[output_name]_subsystems_tables.json.</strong> - JSON-format file containing all of the subsystems found across all the genomes in the selection.</p></li>
+</ul>
+<p>The output from the Comparative Systems Service can be accessed and analyzed from three different BV-BRC tools: the <strong>Pathway Comparison Tool</strong>, <strong>Protein Family Sorter</strong>, and <strong>Subsystems Data</strong>. Each of these can be accessed by clicking the corresponding icon in the upper right corner of the results page.</p>
+<p><img alt="Comparative Systems Results" src="../../_images/result_page_icons.png" /></p>
+<hr>
+</section>
+<section id="pathway-comparison-tool">
+<h2>Pathway Comparison Tool<a class="headerlink" href="#pathway-comparison-tool" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Pathways Icon" src="../../_images/pathways_icon1.png" /></p>
+<p>Clicking the <strong>Pathways</strong> icon opens the The Pathway Comparison Tool, which allows researchers to identify a set of metabolic pathways based on taxonomy, EC number, pathway ID, pathway name and/or specific annotation type. Refer to the <strong><a class="reference internal" href="../other/pathway_comparison_tool.html"><span class="doc std std-doc">Pathway Comparison Tool Quick Reference Guide</span></a></strong> for details on how to use this tool.</p>
+<p><img alt="Pathway Comparison Results Page" src="../../_images/pathways_result.png" /></p>
+<hr>
+</section>
+<section id="protein-family-sorter">
+<h2>Protein Family Sorter<a class="headerlink" href="#protein-family-sorter" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Families Icon" src="../../_images/families_icon.png" /></p>
+<p>Clicking the <strong>Families</strong> icon opens the the Protein Family Sorter, which allows users to select a set of genomes of interest  and examine distribution of protein families across the genomes. Refer to the <strong><a class="reference internal" href="../other/protein_family_sorter.html"><span class="doc std std-doc">Protein Family Sorter Quick Reference Guide</span></a></strong> for details on how to use this tool.</p>
+<p><img alt="Protein Families Results Page" src="../../_images/families_result.png" /></p>
+<hr>
+</section>
+<section id="subsystems-data">
+<h2>Subsystems Data<a class="headerlink" href="#subsystems-data" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Subsystems Icon" src="../../_images/subsystems_icon1.png" /></p>
+<p>Clicking the <strong>Subsystems</strong> icon opens the Subsystems Data page which includes a distribution pie chart that summarizes the functionality and genes across all genomes selected and additional information.  Refer to the <strong><a class="reference internal" href="../other/subsystems_data.html"><span class="doc std std-doc">Subystems Data Quick Reference Guide</span></a></strong> for details on how to use these data.</p>
+<p><img alt="Subsystems Results Page" src="../../_images/subsystems_result.png" /></p>
+<hr>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Overbeek, R. et al. The subsystems approach to genome annotation and its use in the project to annotate 1000 genomes. Nucleic acids research 33, 5691-5702 (2005).</p></li>
+<li><p>Overbeek, R. et al. The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). 42, D206-D214 (2013).</p></li>
+<li><p>Davis, J. J. et al. PATtyFams: Protein families for the microbial genomes in the PATRIC database. 7, 118 (2016).</p></li>
+<li><p>Brettin, T. et al. RASTtk: a modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Scientific reports 5, 8365 (2015).</p></li>
+<li><p>Kanehisa, M., Furumichi, M., Sato, Y., Kawashima, M. &amp; Ishiguro-Watanabe, M. KEGG for taxonomy-based analysis of pathways and genomes. Nucleic Acids Research (2022).</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="predict_structure_service.html" class="btn btn-neutral float-right" title="Protein Structure Prediction Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="proteome_comparison_service.html" class="btn btn-neutral float-left" title="Proteome Comparison Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Genome Assembly Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Genome Annotation Service" href="../genome_annotation/genome_annotation.html" />
+    <link rel="prev" title="Tutorials" href="../index.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Genome Assembly Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Genome Assembly Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#files-accepted-by-bv-brc-assembly-service">Files accepted by BV-BRC Assembly Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-folder-to-hold-the-assembly-job-and-related-data">Creating a folder to hold the assembly job and related data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-assembly-service-app">Locating the Assembly Service App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-parameters">Setting Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-the-assembly-job">Submitting the Assembly Job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-and-interpreting-the-assembly-job-results">Viewing and Interpreting the Assembly Job Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_annotation/genome_annotation.html">Genome Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primer_design/primer_design.html">Primer Design Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similar_genome_finder/similar_genome_finder.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_alignment/genome_alignment.html">Genome Alignment Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variation_analysis/variation_analysis.html">Variation - SNP Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Genome Assembly Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genome_assembly/assembly.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="genome-assembly-service">
+<h1>Genome Assembly Service<a class="headerlink" href="#genome-assembly-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 16 November 2024</em></p>
+<p>A genome assembly is the sequence produced after chromosomes from the organism have been fragmented, those fragments have been sequenced, and the resulting sequences have been put back together. This is currently needed as DNA sequencing technology cannot read whole genomes in one go, but rather can read small pieces of between 20 and 30,000 bases, depending on the technology used. Typically, the short fragments, called reads, result from shotgun (random) sequencing of genomic DNA.</p>
+<p>De novo sequence assemblers are a type of program that assembles short nucleotide sequences into longer ones without the use of a reference genome. These are commonly used in bioinformatic studies to assemble genomes or transcriptomes.</p>
+<p>Different assemblers are designed for different type of read technologies. Second generation sequencing technologies like Illumina (called “short-read” technologies) produce short reads on the order of 50-200 base pairs and have low error rates of around 0.5-2%, with the errors chiefly being substitution errors. Third generation technologies like PacBio and fourth generation technologies like Oxford Nanopore (called “long-read” technologies) provide read lengths in the thousands or tens of thousands but have much higher error rates of around 10-20%, with errors being chiefly insertions and deletions. These differences necessitate different algorithms for assembly from short and long read technologies.</p>
+<p>What follows is a tutorial showing how to submit reads of various types for assembly and selecting parameters for the assembly algorithm.  Note that reads from different sequencing platforms of the same organism can be submitted in one job. If PacBio and Illumina reads are available, both would be combined to generate the best assembly. This is called a hybrid assembly.</p>
+<p>The BV-BRC Genome Assembly service uses a number of open source, third-part bioinformatics programs that are depicted below.</p>
+<p><img alt="Figure Assembly_pipeline_v4" src="../../_images/Assembly_pipeline_v4.png" /></p>
+<section id="files-accepted-by-bv-brc-assembly-service">
+<h2>Files accepted by BV-BRC Assembly Service<a class="headerlink" href="#files-accepted-by-bv-brc-assembly-service" title="Permalink to this headline">¶</a></h2>
+<p>The assembly service accepts read files in either fastq, fasta, fastq.gz, or fasta.gz format.</p>
+<p><strong>FASTQ</strong> is a text-based format for storing both a nucleotide sequence and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character.  A FASTQ file normally uses four lines per sequence:</p>
+<ul class="simple">
+<li><p>Line 1 begins with a ‘&#64;’ character and is followed by a sequence identifier and an optional description (like a FASTA title line).</p></li>
+<li><p>Line 2 is the raw sequence letters.</p></li>
+<li><p>Line 3 begins with a ‘+’ character and is optionally followed by the same sequence identifier (and any description) again.</p></li>
+<li><p>Line 4 encodes the quality values for the sequence in Line 2 and must contain the same number of symbols as letters in the sequence.</p></li>
+</ul>
+<p><img alt="Figure 1" src="../../_images/Picture127.png" /></p>
+<p><strong>FASTA</strong> is a text-based format for representing either nucleotide sequences or amino acid (protein) sequences using single-letter codes. The format allows for sequence names and comments to precede the sequences. A <strong>FASTA read file</strong> has two parts:</p>
+<ul class="simple">
+<li><p>Line 1 begins with a ‘&gt;’.  Everything from the beginning ‘&gt;’ to the first whitespace is considered the sequence identifier. Everything after that is considered the sequence description (this can be metadata, machine serial number, read orientation, etc.), all in a single line.</p></li>
+<li><p>Line 2 has the sequence, which can span multiple lines depending on the length.</p></li>
+</ul>
+<p><img alt="Figure 2" src="../../_images/Picture220.png" /></p>
+<p>What follows below is a tutorial showing how to submit reads of various types for assembly and selecting parameters for the assembly algorithm.  Note that reads from different sequencing platforms of the same organism can be submitted in one job.  If long and short reads are available for the same isolate, both could be combined to generate the best assembly using Unicycler, Canu or Flye.</p>
+</section>
+<section id="creating-a-folder-to-hold-the-assembly-job-and-related-data">
+<h2>Creating a folder to hold the assembly job and related data<a class="headerlink" href="#creating-a-folder-to-hold-the-assembly-job-and-related-data" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>It is always good practice to create a folder to keep the results from a particular experiment or project in order.  To create a new folder, go to the <strong>Workspaces</strong> tab and click on <strong>home</strong>.
+<img alt="Figure 3" src="../../_images/Picture319.png" /></p></li>
+<li><p>This will open the home directory on your workspace.  To create a new folder, click on the <strong>Add Folder</strong> icon at the top right of the table.
+<img alt="Figure 4" src="../../_images/Picture419.png" /></p></li>
+<li><p>This will open a pop-up window.  Note that the <strong>Create Folder</strong> button is greyed out.  Type the desired name in the text box.
+<img alt="Figure 5" src="../../_images/Picture517.png" /></p></li>
+<li><p>Once the name is entered, the <strong>Create Folder</strong> icon will turn blue.  To create the folder, click on that button.
+<img alt="Figure 6" src="../../_images/Picture617.png" /></p></li>
+<li><p>The pop-up window will disappear.  At the button left of the page you will see a temporal message indicating that the folder was successfully created.</p></li>
+</ol>
+<p><img alt="Figure 7" src="../../_images/Picture717.png" /></p>
+</section>
+<section id="locating-the-assembly-service-app">
+<h2>Locating the Assembly Service App<a class="headerlink" href="#locating-the-assembly-service-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the <strong>Tools &amp; Services</strong> tab and click on it.
+<img alt="Figure 8" src="../../_images/Picture815.png" /></p></li>
+<li><p>In the drop-down box, underneath <strong>Genomics</strong>, click on <strong>Genome Assembly (B)</strong>.
+<img alt="Figure 9" src="../../_images/Picture915.png" /></p></li>
+<li><p>This will open up the Assembly landing page where researchers can submit single or paired read files, a combination of the two, and/or an SRA run accession number to the service.
+<img alt="Figure 10" src="../../_images/Picture1012.png" /></p></li>
+</ol>
+<section id="uploading-paired-end-reads">
+<h3>Uploading paired end reads<a class="headerlink" href="#uploading-paired-end-reads" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>To upload a fastq file that contains paired reads, locate the box called <strong>Paired read library</strong>.
+<img alt="Figure 11" src="../../_images/Picture1111.png" /></p></li>
+<li><p>The reads must be located in the workspace. To initiate the upload, first click on the <strong>Folder</strong> icon.
+<img alt="Figure 12" src="../../_images/Picture128.png" /></p></li>
+<li><p>This opens up a window where the files for upload can be selected. Click on the icon with the <strong>Arrow</strong> pointing up.
+<img alt="Figure 13" src="../../_images/Picture135.png" /></p></li>
+<li><p>This opens a new window where the file you want to upload can be selected. Click on the <strong>Select File</strong> in the blue bar.
+<img alt="Figure 14" src="../../_images/Picture147.png" /></p></li>
+<li><p>This will open a window that allows you to choose files that are stored on your computer. Select the file where you stored the fastq file on your computer and click <strong>Open</strong>.<br />
+<img alt="Figure 15" src="../../_images/Picture157.png" /></p></li>
+<li><p>Once selected, it will autofill the name of the file. Click on the <strong>Start Upload</strong> button.
+<img alt="Figure 16" src="../../_images/Picture167.png" /></p></li>
+<li><p>This will auto-fill the name of the document into the text box.<br />
+<img alt="Figure 17" src="../../_images/Picture177.png" /></p></li>
+<li><p>Pay attention to the <strong>Upload Monitor</strong> in the lower right corner of the BV-BRC page. It will show the progress of the upload. Do not submit the job until the upload is 100% complete.</p></li>
+</ol>
+<p><img alt="Figure 18" src="../../_images/Picture187.png" /></p>
+<ol class="simple">
+<li><p>Repeat to upload the second pair of reads.</p></li>
+</ol>
+<p><img alt="Figure 19" src="../../_images/Picture197.png" /></p>
+<ol class="simple">
+<li><p>To finish the upload, click on the icon of an <strong>Arrow within a circle</strong>. This will move your file into the <strong>Selected libraries</strong> box. You can submit more than one set of paired reads if appropriate.</p></li>
+</ol>
+<p><img alt="Figure 20" src="../../_images/Picture207.png" /></p>
+</section>
+<section id="uploading-single-reads">
+<h3>Uploading single reads<a class="headerlink" href="#uploading-single-reads" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>To upload a fastq file that contains single reads, locate the text box called <strong>Single read library</strong>. If the reads have previously been uploaded, click the down arrow next to the text box below <strong>Read File</strong>.
+<img alt="Figure 21" src="../../_images/Picture2111.png" /></p></li>
+<li><p>This opens up a drop-down box that shows the all the reads that have been previously uploaded into the workspace. Click on the name of the reads of interest.</p></li>
+</ol>
+<p><img alt="Figure 22" src="../../_images/Picture226.png" /></p>
+<ol class="simple">
+<li><p>This will auto-fill the name of the file into the text box.
+<img alt="Figure 23" src="../../_images/Picture236.png" /></p></li>
+<li><p>To finish the upload, click on the icon of an <strong>Arrow within a circle</strong>. This will move the file into the <strong>Selected libraries</strong> box. You can submit more than one set of long reads if appropriate.  You can submit both short and long reads to generate a hybrid assembly.</p></li>
+</ol>
+<p><img alt="Figure 24" src="../../_images/Picture245.png" /></p>
+</section>
+<section id="submitting-reads-that-are-present-at-the-sequence-read-archive-sra">
+<h3>Submitting reads that are present at the Sequence Read Archive (SRA)<a class="headerlink" href="#submitting-reads-that-are-present-at-the-sequence-read-archive-sra" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>BV-BRC also supports analysis of existing datasets from SRA. To submit this type of data, locate the <strong>Run Accession number</strong> that you will find at SRA and copy it.</p></li>
+</ol>
+<p><img alt="Figure 25" src="../../_images/Picture255.png" /></p>
+<ol class="simple">
+<li><p>Paste the copied accession number in the text box underneath <strong>SRA Run Accession</strong>, then click on the icon of an <strong>Arrow within a circle</strong>.  This will move the file into the <strong>Selected libraries</strong> box. You can submit more than one SRA run number if appropriate.</p></li>
+</ol>
+<p><img alt="Figure 26" src="../../_images/Picture266.png" /></p>
+</section>
+</section>
+<section id="setting-parameters">
+<h2>Setting Parameters<a class="headerlink" href="#setting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The assembly strategy for the reads must be selected.  Clicking on the down arrow that follows the text box under <strong>Assembly Strategy</strong> will open a drop-down box that shows all the strategies that BV-BRC offers.  A description of each strategy is listed below. Clicking on one of the strategies will autofill the text box with that selection:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Unicycler</strong> [1] is an assembly pipeline that can assemble Illumina-only read sets where it functions as a SPAdes-optimizer. It can also be used to assembly long read sets (PacBio or Nanopore), as long as short reads are included.  This is a hybrid assembly.  Unicycler builds an initial assembly graph from short reads using the <em>de novo</em> assembler and then uses a novel semi-global aligner to align long reads to it. The latest version of Unicycler is available here (https://github.com/rrwick/Unicycler).</p></li>
+<li><p><strong>SPAdes</strong> [2] is an assembler that is designed to assemble small genomes, such as those from bacteria, and uses a multi-sized De Bruijn graph to guide assembly. The latest version of the SPAdes toolkit is available here (http://cab.spbu.ru/software/spades/).</p></li>
+<li><p><strong>Canu</strong>[3] is a long-read assembler which works on both third and fourth generation reads. It is a successor of the old Celera Assembler that is specifically designed for noisy single-molecule sequences. It supports nanopore and PacBio sequences. If long- and short-reads are included, it can generate a hybrid assembly  The algorithm for Canu is available here (https://github.com/marbl/canu).</p></li>
+<li><p><strong>The metaSPAdes</strong> [4] software combines new algorithmic ideas with proven solutions from the SPAdes toolkit to address various challenges of metagenomic assembly.  <strong>metaSPAdes</strong> will only run on paired Illumina reads.The latest version of the SPAdes toolkit that includes metaSPAdes is available here (http://cab.spbu.ru/software/spades/).</p></li>
+<li><p>The <strong>plasmidSPAdes</strong> [5] algorithm and software tool for assembling plasmids from whole genome sequencing data and benchmark its performance on a diverse set of bacterial genomes. Plasmids are stably maintained extra-chromosomal genetic elements that replicate independently from the host cell’s chromosomes. <strong>plasmidSPAdes</strong> will only run on Illumina reads.
+The latest version of the SPAdes toolkit that includes plasmidSPAdes is available here (http://cab.spbu.ru/software/spades/).</p></li>
+<li><p><strong>Single-cell SPAdes</strong> [2] is a new assembler for both single-cell and standard (multicell) assembly, and it improves on the recently released E+V−SC assembler (specialized for single-cell data). The latest version of the SPAdes toolkit that includes the assembly algorithm for reads from single cell is available here (http://cab.spbu.ru/software/spades/).</p></li>
+<li><p><strong>Flye</strong> [6] is a long-read assembler.  Kolmogorov et al. say that “Flye initially generates disjointigs that represent concatenations of multiple disjoint genomic segments, concatenates all error-prone disjointigs into a single string (in an arbitrary order), constructs an accurate assembly graph from the resulting concatenate, uses reads to untangle this graph, and resolves bridged repeats (which are bridged by some reads in the repeat graph). Afterwards, it uses the repeat graph to resolve unbridged repeats (which are not bridged by any reads) using small differences between repeat copies and then outputs accurate contigs formed by paths in this graph.” [6] The algorithm is available here (http://github.com/fenderglass/Flye).</p></li>
+<li><p>Selecting <strong>Auto</strong> will use Flye if only long reads are submitted. If long and short reads, as or short reads alone are submitted, <strong>Unicycler</strong> is selected.
+<img alt="Figure 27" src="../../_images/Picture275.png" /></p></li>
+</ul>
+<ol class="simple">
+<li><p>An output folder must be selected for the assembly job.  Typing the name of the folder in the text box underneath the words <strong>Output Folder</strong> will show a drop-down box that shows close hits to the name, and clicking on the arrow at the end of the box will open a drop-down box that shows the most recently created folders.  To find a previously created folder, or to create a new one, click on the <strong>Folder</strong> icon at the end of the text box.  This will open a pop-up window that shows all the previously created folders.
+<img alt="Figure 28" src="../../_images/Picture286.png" /></p></li>
+<li><p>Click on the desired folder, and then click the <strong>OK</strong> button in the lower right corner of the window.
+<img alt="Figure 29" src="../../_images/Picture296.png" /></p></li>
+<li><p>A name for the job must be included prior to submitting the job.  Enter the name in the text box underneath the words <strong>Output Name</strong>.
+<img alt="Figure 30" src="../../_images/Picture305.png" /></p></li>
+<li><p>The BV-BRC assembly service also has options to trim the reads using TrimGalore[7]. The assembly pipeline also has an option for nomalizing the reads.  It uses BBNorm to normalize coverage by down-sampling reads over high-depth areas of a genome, to result in a flat coverage distribution (http://sourceforge.net/projects/bbmap/). Assembly errors can be improved (or “polished) using Racon[8] and/or Pilon[9].  The servicealso provides the ability to change the minimum contig length and coverage.  Adjusting these parameters can be accomplished by clicking on the down arrow next to the word <strong>Advanced</strong> in the <strong>Parameters</strong> box.</p></li>
+</ol>
+<p>Polishing requires some explanation.  If there is a position in an assembly where the reads disagree, it indicates that the assembly is wrong.  Pilon and Racon will look at the locations of the discrepancies, and, if the majority and quality indicate, they will correct the call of the base pair. Polishing the long reads reuires Minimap2[10] to map the reads to the assembly, and then Racon is used to correct the assembly.  Polishing short reads first uses Bowtie 2[11], which generates a SAM file.  SAMtools [12] creates a BAM file from the SAM file, as this is a requirement of Pilon prior to read correction.</p>
+<p>Once the assembly has been corrected (polished) with the reads, it is still possible to do another iteration to further improve the assembly, but each one takes time. BV-BRC allows for 0 to 4 racon or pilon iterations, with the default being 2 iterations.</p>
+<p><img alt="Figure 31" src="../../_images/Picture3110.png" /></p>
+</section>
+<section id="submitting-the-assembly-job">
+<h2>Submitting the Assembly Job<a class="headerlink" href="#submitting-the-assembly-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Once reads are in the Selected libraries and all the parameters have been selected, the <strong>Assemble</strong> button at the bottom of the page will turn blue.  The assembly will be submitted once this button is clicked.
+<img alt="Figure 32" src="../../_images/Picture324.png" /></p></li>
+<li><p>A message will appear at the bottom of the page, indicating that the submitted job has entered the BV-BRC queue.
+<img alt="Figure 33" src="../../_images/Picture334.png" /></p></li>
+</ol>
+<section id="monitoring-progress-on-the-jobs-page">
+<h3>Monitoring progress on the Jobs page<a class="headerlink" href="#monitoring-progress-on-the-jobs-page" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Clicking on the <strong>Jobs</strong> box at the bottom right of any BV-BRC page/
+<img alt="Figure 34" src="../../_images/Picture344.png" /></p></li>
+<li><p>This will open the Jobs Landing page where the status of submitted jobs is displayed.
+<img alt="Figure 35" src="../../_images/Picture354.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="viewing-and-interpreting-the-assembly-job-results">
+<h2>Viewing and Interpreting the Assembly Job Results<a class="headerlink" href="#viewing-and-interpreting-the-assembly-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>On the jobs page, click on the row that has the assembly of interest. This will populate the vertical green bar on the right with possible downstream steps, which include viewing the results of the job, or reporting an issue that was experienced (like a job failure).  Click on the <strong>View</strong> icon.
+<img alt="Figure 36" src="../../_images/Picture364.png" /></p></li>
+<li><p>This will rewrite the page to show the information about the assembly job, and all of the files that are produced when the pipeline runs.<br />
+<img alt="Figure 37" src="../../_images/Picture373.png" /></p></li>
+<li><p>The information about the job submission can be seen in the table at the top of the results page.  To see all the parameters that were selected when the job was submitted, click on the <strong>Parameters</strong> row.
+<img alt="Figure 38" src="../../_images/Picture384.png" /></p></li>
+<li><p>This will show the information on what was selected when the job was originally submitted.
+<img alt="Figure 39" src="../../_images/Picture394.png" /></p></li>
+</ol>
+<section id="genome-assembly-report">
+<h3>Genome Assembly Report<a class="headerlink" href="#genome-assembly-report" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>The Genome Assembly report contains valuable information about the assembly, including the number of contigs. Clicking on the row that contains the number of contigs, depth and coverage.  <strong>AssemblyReport.html</strong> will highlight it in blue and populate the action bar with possible downstream steps.  Click on the <strong>View</strong> icon.
+<img alt="Figure 40" src="../../_images/Picture404.png" /></p></li>
+<li><p>This will open the report, which opens with a graph of the assembly called a Bioinformatics Application for Navigating De novo Assembly Graphs Easily, or <strong>Bandage plot</strong>[13], a tool for visualizing assembly graphs with connections.<br />
+<img alt="Figure 41" src="../../_images/Picture4110.png" /></p></li>
+<li><p>Scrolling down in the report will show more information, including the assembly algorithms.  These details will be important to include in any publication using these data.
+<img alt="Figure 42" src="../../_images/Picture424.png" /></p></li>
+<li><p>Scrolling down will reveal a <strong>Quast report</strong> [14], which is also included in the Genome Assembly report. Quast is a quality assessment tool for evaluating and comparing genome assemblies, and shows statistics of the contigs generated in the assembly.<br />
+<img alt="Figure 43" src="../../_images/Picture434.png" /></p></li>
+<li><p>The end of the Assembly Report gives information about the read files and summarizes the tools their versions used in generating the assembly.  These details are important to include if you publish this data.
+<img alt="Figure 44" src="../../_images/Picture444.png" /></p></li>
+</ol>
+</section>
+<section id="contig-file">
+<h3>Contig file<a class="headerlink" href="#contig-file" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>The whole point of the assembly service is the generation of a contig file from the submitted reads.  The contig file can be used in downstream services.  Note that the file, which can be clicked on from the Jobs page, has the type matched as “contigs” in the information panel beyond the green bar.  The contig file can be used as is in BV-BRC or downloaded for use in other resources or pipelines.
+<img alt="Figure 45" src="../../_images/Picture454.png" /></p></li>
+<li><p>Once the contig file is downloaded, it can be opened for viewing in a text file on the computer.
+<img alt="Figure 46" src="../../_images/Picture464.png" /></p></li>
+<li><p>Opening the contigs file will show the contigs, each of which begin with a “&gt;” and includes the length, coverage and normalized coverage statistics on the first row. Coverage means the average number of original reads that align to each position of the contig. The normalized coverage has a mean of 1.0 and helps identify contigs of unusually high or low coverage.  When both long and short reads are combined in a “hybrid assembly”, separate coverage statistics are provided for the two read categories. The sequence for the contig starts on the second row.
+<img alt="Figure 47" src="../../_images/Picture474.png" /></p></li>
+</ol>
+</section>
+<section id="other-assembly-job-report-files">
+<h3>Other Assembly job report files<a class="headerlink" href="#other-assembly-job-report-files" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>There are additional files that are generated by the assembly pipeline, and these can be viewed by clicking on the <strong>details</strong> folder.  This will rewrite the page to show additional files.
+<img alt="Figure 48" src="../../_images/Picture484.png" /></p></li>
+<li><p>The <strong>“Graphical Fragment Assembly” (GFA)</strong> is an emerging format for the representation of sequence assembly graphs, which can be adopted by both de Bruijn graph- and string graph-based assemblers.  This file can be viewed or downloaded, but it is not meant to be human readable.  It is used to generate the assembly plot graph (see below).  Clicking on the <strong>View</strong> icon will rewrite the page to show this file.
+<img alt="Figure 49" src="../../_images/Picture494.png" /></p></li>
+<li><p><strong>Assembly Graph Plot</strong> - A graph of the assembly is provided as part of the standard output.  Bandage (a Bioinformatics Application for Navigating De novo Assembly Graphs Easily)[10], a tool for visualizing assembly graphs with connections is used.  To see the Bandage plot, click on the row that has the <strong>plot.svg</strong> file and then click on the <strong>View</strong> icon in the vertical green bar.  The page that opens the Bandage plot, which visualizes both nodes and edges. This llustrates the complexity of the assembly that is missing from the simple linear contigs.  Areas that show crosses in the Bandage plot usually show regions where there are multiple solutions in the assembly, like areas with repeat regions.  Repeat regions are often longer than a short read length, so hybrid assemblies will often resolve these difficult areas.</p></li>
+</ol>
+<p><img alt="Figure 50" src="../../_images/Picture504.png" /></p>
+<ol class="simple">
+<li><p>The assembly also generates a standard output file that the pipeline produces while running.  Clicking on the row that ends in <strong>stdout.txt</strong> and then the view icon will open this file.
+<img alt="Figure 51" src="../../_images/Picture518.png" /></p></li>
+<li><p>While the Quast[14] report is included in the Genome Assembly report, a separate, downloadable format is provided as an html.  When the <strong>quast_report.html</strong> is downloaded and opened, details on the assembly including the <strong>Cumulative length</strong> per contig is provided. The cumulative length plot shows the number of bases in the first x contigs, as x varies from zero to the number of contigs.
+<img alt="Figure 52" src="../../_images/Picture524.png" /></p></li>
+<li><p>Clicking on <strong>Nx</strong> shows the percentage of bases on each of the contigs.
+<img alt="Figure 53" src="../../_images/Picture534.png" /></p></li>
+<li><p>Clicking on <strong>GC content</strong> shows the total number of G and C nucleotides in the assembly, divided by the total length of the assembly.
+<img alt="Figure 54" src="../../_images/Picture544.png" /></p></li>
+<li><p>This Quast report is also available as a text file.  To view this, click on the line that has the <strong>quast_report.txt</strong> and then on the <strong>View</strong> icon in the vertical green bar. This will open the text format of the that report.
+<img alt="Figure 55" src="../../_images/Picture554.png" /></p></li>
+<li><p>A <strong>JSON</strong> file is a file that stores simple data structures and objects in JavaScript Object Notation (JSON) format, which is a standard data interchange format. It is primarily used for transmitting data between a web application and a server.  While it is not recommended for viewing (it is a computer-readable file), the file is both downloadable and viewable.
+<img alt="Figure 56" src="../../_images/Picture564.png" /></p></li>
+<li><p>The assembly pipeline also generates a file of all the contigs that did not meet the thresholds that were set when the job was submitted (<strong>contigs_below_length_coverage_threshold.fasta</strong>). This file can be downloaded and then opened as a text file.  It can be used in other programs (like BLAST) to see if the data is valuable.
+<img alt="Figure 57" src="../../_images/Picture573.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Wick, R.R., et al., Unicycler: resolving bacterial genome assemblies from short and long sequencing reads. PLoS computational biology, 2017. 13(6): p. e1005595.</p></li>
+<li><p>Bankevich, A., et al., SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing. Journal of computational biology, 2012. 19(5): p. 455-477.</p></li>
+<li><p>Koren, S., et al., Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation. Genome research, 2017. 27(5): p. 722-736.</p></li>
+<li><p>Nurk, S., et al., metaSPAdes: a new versatile metagenomic assembler. Genome research, 2017. 27(5): p. 824-834.</p></li>
+<li><p>Antipov, D., et al., plasmidSPAdes: assembling plasmids from whole genome sequencing data. bioRxiv, 2016: p. 048942.</p></li>
+<li><p>Kolmogorov, M., et al., Assembly of long, error-prone reads using repeat graphs. Nature biotechnology, 2019. 37(5): p. 540-546.</p></li>
+<li><p>Krueger, F., Trim Galore: a wrapper tool around Cutadapt and FastQC to consistently apply quality and adapter trimming to FastQ files, with some extra functionality for MspI-digested RRBS-type (Reduced Representation Bisufite-Seq) libraries. URL http://www. bioinformatics. babraham. ac. uk/projects/trim_galore/.(Date of access: 28/04/2016), 2012.</p></li>
+<li><p>Vaser, R., et al., Fast and accurate de novo genome assembly from long uncorrected reads. Genome research, 2017. 27(5): p. 737-746.</p></li>
+<li><p>Walker, B.J., et al., Pilon: an integrated tool for comprehensive microbial variant detection and genome assembly improvement. PloS one, 2014. 9(11): p. e112963.</p></li>
+<li><p>Li, H.,  Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics, 2018 34(18): 3094-3100</p></li>
+<li><p>Langmead, B. and Salzberg, SL. Fast gapped-read alignment with Bowtie 2. Nat Methods, 2012 9(4):357-359.</p></li>
+<li><p>Danecek P., et al. Twelve years of SAMtools and BCFtools. Gigascience, 2021 10(2):giab008. doi: 10.1093/gigascience/giab008.</p></li>
+<li><p>Wick, R.R., et al., Bandage: interactive visualization of de novo genome assemblies. Bioinformatics, 2015. 31(20): p. 3350-3352.</p></li>
+<li><p>Gurevich, A., et al., QUAST: quality assessment tool for genome assemblies. Bioinformatics, 2013. 29(8): p. 1072-1075.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genome_annotation/genome_annotation.html" class="btn btn-neutral float-right" title="Genome Annotation Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

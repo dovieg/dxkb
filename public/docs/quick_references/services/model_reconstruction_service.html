@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Model Reconstruction Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Model Reconstruction Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Model Reconstruction Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/model_reconstruction_service.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="model-reconstruction-service">
+<h1>Model Reconstruction Service<a class="headerlink" href="#model-reconstruction-service" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The bacterial Model Reconstruction Service integrates and augments technologies for genome annotation, construction of gene-protein-reaction (GPR) associations, generation of biomass reactions, reaction network assembly, thermodynamic analysis of reaction reversibility, and model optimization, to generate draft genome-scale metabolic models. The service is capable of generating functioning draft metabolic models of an organism starting from an assembled genome sequence. Additional information is available in <a class="reference external" href="https://www.nature.com/nbt/journal/v28/n9/full/nbt.1672.html">High-throughput generation, optimization and analysis of genome-scale metabolic models</a>.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/Reconstruct">Model Reconstruction Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/metabolic_model_reconstruction/metabolic_model_reconstruction.html"><span class="doc std std-doc">Metabolic Model Reconstruction Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-model-reconstruction-service">
+<h2>Using the Model Reconstruction Service<a class="headerlink" href="#using-the-model-reconstruction-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Model Reconstruction</strong> submenu option under the <strong>Services</strong> main menu (Metabolomics category) opens the Reconstruct Metabolic Model input form (<em>shown below</em>). <em>Note: You must be logged into BV-BRC to use this service.</em> The Model Reconstruction service is also available via the BV-BRC Command Line Interface (CLI).</p>
+<p><img alt="Model Reconstruction Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Model Reconstruction Input Form" src="../../_images/model_reconstruction_input_form.png" /></p>
+</section>
+<section id="select-a-genome">
+<h2>Select a Genome<a class="headerlink" href="#select-a-genome" title="Permalink to this headline">¶</a></h2>
+<p>Select a public genome or a genome from workspace</p>
+<section id="genome">
+<h3>Genome<a class="headerlink" href="#genome" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note:</strong> click the filter icon to the left of the genome input box to help in finding your genomes</p>
+</section>
+</section>
+<section id="optional-parameters">
+<h2>Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h2>
+<section id="media">
+<h3>Media<a class="headerlink" href="#media" title="Permalink to this headline">¶</a></h3>
+<p>Selection for a predefined media formulation from a dropdown list for this model to be gapfilled and simulated for flux-balance analysis (FBA), e.g., GMM – Glucose Minimal Media, NMS- Nitrate Mineral Salts Medium, LB - Luria-Bertani Medium.</p>
+</section>
+<section id="output-folder">
+<h3>Output Folder<a class="headerlink" href="#output-folder" title="Permalink to this headline">¶</a></h3>
+<p>The workspace folder where results will be placed.</p>
+</section>
+<section id="output-name">
+<h3>Output Name<a class="headerlink" href="#output-name" title="Permalink to this headline">¶</a></h3>
+<p>Name used to uniquely identify results.</p>
+</section>
+</section>
+<section id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<p><strong>Reset:</strong> Resets the input form to default values</p>
+<p><strong>Reconstruct:</strong> Launches the model reconstruction job.</p>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Metabolic Reconstruction Service Results Page" src="../../_images/model_reconstruction_service_results_page.png" /></p>
+<p>The Metabolic Reconstruction Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include</p>
+<ul class="simple">
+<li><p><strong>gf.0.gftbl</strong> - a Gapfill reactions table containing the list of the reations added to the model by the gapfilling algorithm during reconstruction.</p></li>
+<li><p><strong>gf.0.fbatbl</strong> - a FBA flux distribution for the gapfilling simulation.</p></li>
+<li><p><strong><em>model_name</em>.sbml</strong> - the model in Systems Biology Markup Language (SBML) format.</p></li>
+<li><p><strong><em>model_name</em>.rxntbl</strong> - list of all the reactions in the model.</p></li>
+<li><p><strong><em>model_name</em>.cpdtbl</strong> - list of all the reactions in the model.</p></li>
+<li><p><strong>fba.0.futbl</strong> - FBA flux for all model reactions.</p></li>
+<li><p><strong>fba.0.essentials</strong> - List of genes in the model characterized as essential by the FBA simulation in the specified media.</p></li>
+</ul>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one of the output files by clicking it, a set of options becomes available in the vertical green Action Bar on the right side of the table, listed below. For the Model Reconstruction Service, the only options in the Action Bar are the following:</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide:</strong> Link to the corresponding Quick Reference Guide.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected item.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Buttons</span></a> Quick Reference Guide.</p>
+</section>
+<section id="modelseed-model-viewer">
+<h3>ModelSEED Model Viewer<a class="headerlink" href="#modelseed-model-viewer" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Model Reconstruction Service View Icon" src="../../_images/model_reconstruction_view_icon.png" /></p>
+<p>Clicking on the View icon at the upper right portion of the job result page will open a login screen for the ModelSEED. BV-BRC or RAST credentials can be used for login.</p>
+<p><img alt="ModelSEED Login" src="../../_images/modelseed_login.png" /></p>
+<p>After login, the ModelSEED Model Viewer will be displayed, consisting of multiple tabs for Reactioons, Compounds, Genes, Compartments of the model, and the weighted components of the Biomass. Each column in the table is sortable by clicking the column header. Information about the model is searchable by using the search bar at the top left corner of the table.</p>
+<p><img alt="ModelSEED Model Viewer" src="../../_images/modelseed_model_viewer.png" /></p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Orth, J.D., I. Thiele, and B.O. Palsson, What is flux balance analysis? Nat Biotechnol. <strong>28</strong>(3): p. 245-8.</p></li>
+<li><p>Henry, C.S., et al., High-throughput generation, optimization and analysis of genome-scale metabolic models. Nat Biotechnol, 2010. <strong>28</strong>(9): p. 977-82.</p></li>
+<li><p>Overbeek, R., et al., The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). Nucleic Acids Res, 2014. <strong>42</strong>(Database issue): p. D206-14.</p></li>
+<li><p>Orth, J.D. and B.O. Palsson, Systematizing the generation of missing metabolic knowledge. Biotechnol Bioeng. <strong>107</strong>(3): p. 403-12.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

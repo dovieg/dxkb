@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Sequence Submission Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HA Subtype Numbering Conversion Service" href="../ha_numbering/ha_numbering.html" />
+    <link rel="prev" title="SARS-Cov-2 Wastewater Analysis Service" href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Sequence Submission Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#viral-services">Viral Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.html">SARS-CoV-2 Genome Assembly and Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html">SARS-Cov-2 Wastewater Analysis Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sequence Submission Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-sequence-submission-service">Locating the Sequence Submission Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-sequence-submission-parameters">Specifying Sequence Submission Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-a-job-for-sequence-submission">Submitting a job for Sequence Submission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checking-the-status-of-the-job">Checking the status of the job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-sequence-submission-results">Viewing the Sequence Submission results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notifying-the-bv-brc-team-for-the-submission">Notifying the BV-BRC team for the Submission</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ha_numbering/ha_numbering.html">HA Subtype Numbering Conversion Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subspecies_classification/subspecies_classification.html">Subspecies Classification Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viral_assembly/assembly.html">Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Sequence Submission Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/sequence_submission/sequence_submission.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="sequence-submission-service">
+<h1>Sequence Submission Service<a class="headerlink" href="#sequence-submission-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 1/14/2023</em></p>
+<p>The Sequence Submission service allows user to validate and submit virus sequences to NCBI Genbank. User-provided metadata and FASTA sequences are validated against the Genbank data submission standards to identify any sequence errors before submission. Sequences are also annotated using the VIGOR4 and FLAN annotation tools for internal use by users. The Sequence Submission service provides a validation report that should be reviewed by the user before submitting the sequences to the Genbank.</p>
+<p>Note: Current pipeline only supports Influenza A, B, or C virus family.</p>
+<section id="locating-the-sequence-submission-service">
+<h2>Locating the Sequence Submission Service<a class="headerlink" href="#locating-the-sequence-submission-service" title="Permalink to this headline">¶</a></h2>
+<p>1. At the top of any BV-BRC page, find the Tools &amp; Services tab and click on it.</p>
+<p><img alt="Figure 1" src="../../_images/fig1.png" /></p>
+<p>2. In the drop-down box, underneath Genomics, click on Sequence Submission.</p>
+<p><img alt="Figure 2" src="../../_images/fig2.png" /></p>
+<p>3. This will open the Sequence Submission landing page for entering submitter information, sequence data or FASTA file, and a metadata file.</p>
+<p><img alt="Figure 3" src="../../_images/fig3c.png" /></p>
+</section>
+<section id="specifying-sequence-submission-parameters">
+<h2>Specifying Sequence Submission Parameters<a class="headerlink" href="#specifying-sequence-submission-parameters" title="Permalink to this headline">¶</a></h2>
+<p>1. Provide submitter information. All fields marked with asterisks are required.</p>
+<p><img alt="Figure 4" src="../../_images/fig4.png" /></p>
+<ul class="simple">
+<li><p><strong>First Name:</strong> The first name of the submitter (Required)</p></li>
+<li><p><strong>Last Name:</strong> The last name of the submitter (Required)</p></li>
+<li><p><strong>Email:</strong> The email id of the submitter (Required)</p></li>
+<li><p><strong>Phone Number:</strong> The phone number of the submitter</p></li>
+<li><p><strong>Institution/Affiliation:</strong> The institution/affiliation information of the submitter (Required)</p></li>
+<li><p><strong>Consortium:</strong> The consortium information of the submitter</p></li>
+<li><p><strong>Street:</strong> The street information for the institution/affiliation of the submitter</p></li>
+<li><p><strong>Postal Code:</strong> The postal code for the institution/affiliation of the submitter</p></li>
+<li><p><strong>City:</strong> The city for the institution/affiliation of the submitter</p></li>
+<li><p><strong>State:</strong> The state for the institution/affiliation of the submitter</p></li>
+<li><p><strong>Country:</strong> The country information of the submitter (Required)</p></li>
+</ul>
+<p>2. Select the desired input files/sequences in FASTA format. FASTA definition line must begin with a carat (“&gt;”), followed by a unique sample identifier (Unique_Sample_Identifier) and a unique sequence identifier (Unique_Sequence_Identifier) separated by a pipe (“|”).
+Example defline: “&gt;Unique_Sample_Identifier: yourSampleID| Unique_Sequence_Identifier: yourSampleID-segmentNumber”</p>
+<p>There are two ways to select input sequences for analysis:</p>
+<ul class="simple">
+<li><p>Use the Enter Sequence option to paste one or more protein sequence in FASTA format.</p></li>
+</ul>
+<p><img alt="Figure 5" src="../../_images/fig5.png" /></p>
+<ul class="simple">
+<li><p>Select FASTA File: This option allows selection of custom sequence(s) file in a FASTA format. Also, you can select FASTA files which are already uploaded in the workspace [2a] or upload your own [2b].</p></li>
+</ul>
+<p><img alt="Figure 6" src="../../_images/fig6.png" /></p>
+<p><img alt="Figure 7" src="../../_images/fig7.png" /></p>
+<p>3. Provide a metadata file in CSV format. The metadata template, field definitions, data types and formats are available [here](https://www.bv-brc.org/workspace/mkuscuog&#64;bvbrc/BV-BRC Templates/).</p>
+<p>4. To specify output parameters, select an output folder in their workbench or create one if an appropriate folder is not available (red arrow). You will also be prompted to specify an “Output Name” (red box) for the job result, before the job can be submitted.</p>
+<p><img alt="Figure 8" src="../../_images/fig8.png" /></p>
+</section>
+<section id="submitting-a-job-for-sequence-submission">
+<h2>Submitting a job for Sequence Submission<a class="headerlink" href="#submitting-a-job-for-sequence-submission" title="Permalink to this headline">¶</a></h2>
+<p>After the parameters and input file selections have been made, the “Annotate and Validate Sequence(s)” button will become available.</p>
+<p><img alt="Figure 9" src="../../_images/fig9.png" /></p>
+<p>After clicking the button, a message will appear below the box to indicate that the job is now in the queue.</p>
+<p><img alt="Figure 10" src="../../_images/fig10.png" /></p>
+<p>If there is a problem with the An error message will appear below the box to indicate that the validation has failed. The details of the validation error(s) can be accessed by [1] by either downloading the error report [2a] or viewing on the browser [2b].</p>
+<p><img alt="Figure 11" src="../../_images/fig11.png" /></p>
+</section>
+<section id="checking-the-status-of-the-job">
+<h2>Checking the status of the job<a class="headerlink" href="#checking-the-status-of-the-job" title="Permalink to this headline">¶</a></h2>
+<p>1. Click on the Jobs indicator at the bottom of the BV-BRC page.</p>
+<p><img alt="Figure 12" src="../../_images/fig12.png" /></p>
+<p>2.	This will open the Jobs Status page which displays the status of the job. The status of all the service jobs that have been submitted to BV-BRC are also available.</p>
+<p>3.	Once the job is completed, you can select the job by clicking on it and click the “View” button on the right-hand bar to see the results.</p>
+<p><img alt="Figure 13" src="../../_images/fig13.png" /></p>
+<p>4.	The results page will consist of a header describing the job and a list of output files.</p>
+<p><img alt="Figure 14" src="../../_images/fig14.png" /></p>
+<p>5. The Sequence Submission Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include the following:</p>
+<ul class="simple">
+<li><p><strong>input.fasta</strong> - The fasta file that was submitted</p></li>
+<li><p><strong>metadata.csv</strong> - A comma-separated file containing the metadata about the fasta</p></li>
+<li><p><strong>Sequence_Validation_Report.csv</strong> - A comma separated value file of validation results for all the sequences allowing users to review segment, serotype, status and messages determined by VIGOR4 and FLAN for each sequence identifier</p></li>
+<li><p><strong>submission.xml</strong> – an xml file for identifying the submission</p></li>
+<li><p><strong>submission.zip</strong> – a compressed file that includes all the required submission files</p></li>
+<li><p><strong>submit.ready</strong> - a submission ready flag for GenBank</p></li>
+<li><p><strong>.aln</strong> - alignment of predicted protein(s) to reference, and reference protein to genome</p></li>
+<li><p><strong>.cds</strong> - fasta file of predicted CDSs</p></li>
+<li><p><strong>.gff3</strong> - lists all the features of the genome in General Feature Format (GFF3 is the most recent version of GFF)</p></li>
+<li><p><strong>.pep</strong> - a fasta file of predicted proteins</p></li>
+<li><p><strong>.rpt</strong> - a summary file of program results</p></li>
+<li><p><strong>.tbl</strong> - predicted features in GenBank tbl format</p></li>
+<li><p><strong>.report</strong> – a report file generated by FLAN</p></li>
+</ul>
+</section>
+<section id="viewing-the-sequence-submission-results">
+<h2>Viewing the Sequence Submission results<a class="headerlink" href="#viewing-the-sequence-submission-results" title="Permalink to this headline">¶</a></h2>
+<p>After selecting the files, you can choose to either download (red box below) or view (red arrow) the results by selecting the appropriate button (Download or View respectively) on the green vertical Action Bar on the right-hand side of the page.</p>
+<p><img alt="Figure 15" src="../../_images/fig15.png" /></p>
+<ul class="simple">
+<li><p>Selecting view button for “Sequence_Validation_Report.csv” file, comma-separated summary of validation results for all the sequences to be reviewed by the user before submitting the sequences to the GenBank. The columns contain information regarding:</p>
+<ul>
+<li><p><strong>Unique_Sequence_Identifier</strong> – Query identifier</p></li>
+<li><p><strong>Segment</strong> – Segment result using VIGOR4 and FLAN annotation tools. Annotation tool is specified if the result from tools is different.</p></li>
+<li><p><strong>Serotype</strong> – Segment result using VIGOR4 and FLAN annotation tools. Annotation tool is specified if the result from tools is different.</p></li>
+<li><p><strong>Status</strong> – VALID if there is no WARNING or ERROR.</p></li>
+<li><p><strong>Messages</strong> – Any ERROR or WARNING messages generated by FLAN annotation tool.</p></li>
+</ul>
+</li>
+<li><p>You can sort results by increasing or decreasing values by clicking on the desired column as shown below (red arrow) , and further filter results by selecting appropriate keywords and the desired column to search from the dropdown menu pictured below (red box).</p></li>
+</ul>
+<p><img alt="Figure 16" src="../../_images/fig16.png" /></p>
+</section>
+<section id="notifying-the-bv-brc-team-for-the-submission">
+<h2>Notifying the BV-BRC team for the Submission<a class="headerlink" href="#notifying-the-bv-brc-team-for-the-submission" title="Permalink to this headline">¶</a></h2>
+<p><strong>Submit Sequence</strong> - On the right-hand side of header in the results page there is a “Submit Sequence” (red box) button which notifies the BV-BRC team that the submission is ready for GenBank submission.</p>
+<p><img alt="Figure 17" src="../../_images/fig17.png" /></p>
+<p>A BV-BRC team member will reach out to you via email once the GenBank submission is completed.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ha_numbering/ha_numbering.html" class="btn btn-neutral float-right" title="HA Subtype Numbering Conversion Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html" class="btn btn-neutral float-left" title="SARS-Cov-2 Wastewater Analysis Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

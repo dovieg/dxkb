@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>RASTtk: Getting Started With The Default Pipeline | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RASTtk, The Incremental Commands" href="rasttk_incremental_commands.html" />
+    <link rel="prev" title="submit-patric-genbank" href="command_list/submit-patric-genbank.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>RASTtk: Getting Started With The Default Pipeline | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#rast-tutorials">RAST Tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RASTtk: Getting Started With The Default Pipeline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-default-rasttk-pipeline">The Default RASTtk Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-concept-of-the-genome-typed-object">The Concept of the <em>Genome Typed Object</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rasttk_incremental_commands.html">RASTtk, The Incremental Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Command Line Interface</a> &raquo;</li>
+        
+      <li>RASTtk: Getting Started With The Default Pipeline</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cli_tutorial/rasttk_getting_started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rasttk-getting-started-with-the-default-pipeline">
+<span id="rasttk-getting-started"></span><h1>RASTtk: Getting Started With The Default Pipeline<a class="headerlink" href="#rasttk-getting-started-with-the-default-pipeline" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://rast.nmpdr.org/rast.cgi">RAST</a> is a web-based environment that
+allows users to upload a genome, annotate the genome, edit the
+annotations and compare the genome with other sequenced genomes in the
+SEED database. Since the initial publication of <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/18261238">The RAST Server: rapid
+annotations using subsystems
+technology</a> in 2008, over
+150,000 requests for genome annotations have been processed, at a
+current rate of 1,200 jobs per week.</p>
+<p>As demand for ever more accurate annotations and the number of
+newly-sequenced genomes increases, there is a growing demand for “the
+next generation” of the RAST technology (RASTtk). This new version of
+the architecture makes it possible to construct custom pipelines,
+integrate new bioinformatic tools, and make the developed pipelines
+easily accessible by a large user community.</p>
+<p>In essence, RASTtk is an updated version of the RAST pipline which users
+can modify and customize, but it is not intended to replace the RAST web
+environment.</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>In order to run the RASTtk tools, you will need to install the BV-BRC
+command line utilities package. This is available for the macOS and Ubuntu or Debian
+Linux <a class="reference external" href="https://github.com/TheSEED/RASTtk-Distribution/releases/">here</a>.</p>
+<p>If you want to step through the tutorial, you can download the <em>E. coli</em>
+K-12 contig in fasta format from BV-BRC using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="n">genome</span><span class="o">-</span><span class="n">fasta</span> <span class="o">--</span><span class="n">contig</span> <span class="mf">511145.12</span> <span class="o">&gt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">contig</span>
+</pre></div>
+</div>
+<p>511145.12 is the BV-BRC genome identifier for E. coli K-12.
+The <code class="docutils literal notranslate"><span class="pre">p3-genome-fasta</span></code> command returns the DNA data for the contigs
+of the given genome.</p>
+</section>
+<section id="the-default-rasttk-pipeline">
+<h2>The Default RASTtk Pipeline<a class="headerlink" href="#the-default-rasttk-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The RASTtk environment is designed so that users can compose annotation
+pipelines, and then run those pipelines to annotate genomes. There is a
+rich and growing body of annotation tools that we have either built or
+imported from other groups, and these offer a framework for
+incrementally constructing annotations.</p>
+<p>In some cases users would rather execute a minimal set of commands
+representing the currently recommended annotation pipeline. This
+pipeline is composed of three easy scripts that:</p>
+<ol class="arabic simple">
+<li><p>Format the contigs file</p></li>
+<li><p>Annotate the genome</p></li>
+<li><p>Export the genome</p></li>
+</ol>
+</section>
+<section id="the-concept-of-the-genome-typed-object">
+<h2>The Concept of the <em>Genome Typed Object</em><a class="headerlink" href="#the-concept-of-the-genome-typed-object" title="Permalink to this headline">¶</a></h2>
+<p>All of the individual commands available in the RASTtk pipeline add data
+to a special file type called a genome typed object (GTO). A GTO is a
+JSON file that is compatible with KBase. Annotations are incrementally
+appended to this file until it is ready for export. By creating the GTO
+and adding annotation data to it, it is possible to export the data in
+multiple file formats without having to reannotate the genome.</p>
+<p>To create a GTO from scratch we will use the <code class="docutils literal notranslate"><span class="pre">rast-create-genome</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">genome</span>
+
+<span class="n">options</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">o</span> <span class="o">--</span><span class="n">output</span>            <span class="n">file</span> <span class="n">to</span> <span class="n">which</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">written</span>
+    <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="n">help</span>              <span class="nb">print</span> <span class="n">usage</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+       <span class="o">--</span><span class="n">url</span>               <span class="n">URL</span> <span class="k">for</span> <span class="n">the</span> <span class="n">genome</span> <span class="n">annotation</span> <span class="n">service</span>
+       <span class="o">--</span><span class="n">genome</span><span class="o">-</span><span class="nb">id</span>         <span class="n">Genome</span> <span class="n">identifier</span>
+       <span class="o">--</span><span class="n">scientific</span><span class="o">-</span><span class="n">name</span>   <span class="n">Scientific</span> <span class="n">name</span> <span class="p">(</span><span class="n">Genus</span> <span class="n">species</span> <span class="n">strain</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">genome</span>
+       <span class="o">--</span><span class="n">domain</span>            <span class="n">Domain</span> <span class="p">(</span><span class="n">Bacteria</span><span class="o">/</span><span class="n">Archaea</span><span class="o">/</span><span class="n">Virus</span><span class="o">/</span><span class="n">Eukaryota</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">genome</span>
+       <span class="o">--</span><span class="n">genetic</span><span class="o">-</span><span class="n">code</span>      <span class="n">Genetic</span> <span class="n">code</span> <span class="k">for</span> <span class="n">the</span> <span class="n">genome</span> <span class="p">(</span><span class="n">usually</span> <span class="mi">11</span> <span class="k">for</span> <span class="n">most</span> <span class="n">organisms</span> <span class="ow">or</span> <span class="mi">4</span> <span class="n">Mycoplasmas</span> <span class="n">etc</span><span class="o">.</span><span class="p">)</span>
+       <span class="o">--</span><span class="n">source</span>            <span class="n">Source</span> <span class="p">(</span><span class="n">external</span> <span class="n">database</span><span class="p">)</span> <span class="n">name</span> <span class="k">for</span> <span class="n">this</span> <span class="n">genome</span>
+       <span class="o">--</span><span class="n">source</span><span class="o">-</span><span class="nb">id</span>         <span class="n">Identifier</span> <span class="k">for</span> <span class="n">this</span> <span class="n">genome</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">source</span> <span class="p">(</span><span class="n">external</span> <span class="n">source</span><span class="p">)</span>
+       <span class="o">--</span><span class="n">contigs</span>           <span class="n">Fasta</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">DNA</span> <span class="n">contig</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>We will use this command to create a GTO for the <em>E. coli</em> contig that
+we downloaded previously by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">genome</span> <span class="o">--</span><span class="n">scientific</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;Escherichia coli K-12&quot;</span> <span class="o">--</span><span class="n">genetic</span><span class="o">-</span><span class="n">code</span> <span class="mi">11</span> <span class="o">--</span><span class="n">domain</span> <span class="n">Bacteria</span> <span class="o">--</span><span class="n">contigs</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">contig</span> <span class="o">&gt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gto</span>
+</pre></div>
+</div>
+<p>Some processes in the pipeline require that you declare the scientific
+name, domain and genetic code, so these are required fields.</p>
+<p>To run the default RASTtk pipeline tool, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">process</span><span class="o">-</span><span class="n">genome</span> <span class="o">&lt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gto</span> <span class="o">&gt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gto2</span>
+</pre></div>
+</div>
+<p>Here, “E_coli.gto2” is a second genome typed object with all of the
+RAST annotation data.</p>
+<p>This is the RASTtk Default Pipeline:</p>
+<ol class="arabic simple">
+<li><p>Calls rRNAs with a custom BLAST-based tool</p></li>
+<li><p>Calls tRNAs with tRNAscan</p></li>
+<li><p>Calls large repeat regions</p></li>
+<li><p>Calls seleno proteins</p></li>
+<li><p>Calls pyrrolysyl proteins</p></li>
+<li><p>Finds Streptococcus repeat regions (only if the genus is Streptococcus)</p></li>
+<li><p>Calls CRISPRs</p></li>
+<li><p>Calls the protein-encoding genes with Prodigal and Glimmer3</p></li>
+<li><p>Annotates protein-encoding genes with k-mers (version 2),</p></li>
+<li><p>Annotates remaining hypothetical proteins with k-mers (version 1),</p></li>
+<li><p>Attempts to annotate remaining hypothetical proteins by blasting against close relatives (if possible)</p></li>
+<li><p>Performs a basic gene overlap removal</p></li>
+</ol>
+<p>To export the genome in a desired format we will use the <code class="docutils literal notranslate"><span class="pre">rast-export-genome</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">export</span><span class="o">-</span><span class="n">genome</span>
+
+    <span class="n">options</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">i</span> <span class="o">--</span><span class="nb">input</span>           <span class="n">file</span> <span class="kn">from</span><span class="w"> </span><span class="nn">which</span> <span class="n">the</span> <span class="nb">input</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">read</span>
+    <span class="o">-</span><span class="n">o</span> <span class="o">--</span><span class="n">output</span>          <span class="n">file</span> <span class="n">to</span> <span class="n">which</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">written</span>
+    <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="n">help</span>            <span class="nb">print</span> <span class="n">usage</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+    <span class="o">--</span><span class="n">url</span>                <span class="n">URL</span> <span class="k">for</span> <span class="n">the</span> <span class="n">genome</span> <span class="n">annotation</span> <span class="n">service</span>
+    <span class="o">--</span><span class="n">feature</span><span class="o">-</span><span class="nb">type</span>       <span class="n">Include</span> <span class="n">this</span> <span class="n">feature</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span> <span class="n">If</span> <span class="n">no</span>
+                         <span class="n">feature</span><span class="o">-</span><span class="n">types</span> <span class="n">specified</span><span class="p">,</span> <span class="n">include</span> <span class="nb">all</span> <span class="n">feature</span>
+                         <span class="n">types</span>
+
+    <span class="n">Supported</span> <span class="n">formats</span><span class="p">:</span>
+      <span class="n">genbank</span>         <span class="n">Genbank</span> <span class="nb">format</span>
+      <span class="n">genbank_merged</span>  <span class="n">Genbank</span> <span class="nb">format</span> <span class="k">as</span> <span class="n">single</span> <span class="n">merged</span> <span class="n">locus</span><span class="p">,</span> <span class="n">suitable</span> <span class="k">for</span> <span class="n">Artemis</span>
+      <span class="n">feature_data</span>    <span class="n">Tabular</span> <span class="n">form</span> <span class="n">of</span> <span class="n">feature</span> <span class="n">data</span>
+      <span class="n">protein_fasta</span>   <span class="n">Protein</span> <span class="n">translations</span> <span class="ow">in</span> <span class="n">fasta</span> <span class="nb">format</span>
+      <span class="n">contig_fasta</span>    <span class="n">Contig</span> <span class="n">DNA</span> <span class="ow">in</span> <span class="n">fasta</span> <span class="nb">format</span>
+      <span class="n">feature_dna</span>     <span class="n">Feature</span> <span class="n">DNA</span> <span class="n">sequences</span> <span class="ow">in</span> <span class="n">fasta</span> <span class="nb">format</span>
+      <span class="n">gff</span>             <span class="n">GFF</span> <span class="nb">format</span>
+      <span class="n">embl</span>            <span class="n">EMBL</span> <span class="nb">format</span>
+</pre></div>
+</div>
+<p>To illustrate how <code class="docutils literal notranslate"><span class="pre">rast-export-genome</span></code> is used, we will export our
+genome in genbank format. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">export</span><span class="o">-</span><span class="n">genome</span> <span class="n">genbank</span> <span class="o">&lt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gto2</span> <span class="o">&gt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gbk</span>
+</pre></div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">--feature-type</span></code> option, it is possible to filter the output.
+For instance if we wanted a fasta file of RNA sequences we would type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rast</span><span class="o">-</span><span class="n">export</span><span class="o">-</span><span class="n">genome</span> <span class="n">feature_dna</span> <span class="o">--</span><span class="n">feature</span><span class="o">-</span><span class="nb">type</span> <span class="n">rna</span> <span class="o">&lt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">gto2</span> <span class="o">&gt;</span> <span class="n">E_coli</span><span class="o">.</span><span class="n">rna</span><span class="o">.</span><span class="n">fasta</span>
+</pre></div>
+</div>
+<p>Other feature types include “CDS”, “repeat”, “crispr_array”,
+“crispr_repeat”, and “crispr_spacer”. We anticipate that the number of
+features will continue to grow as we add new functionality.</p>
+<p>That’s it! Three basic commands – <code class="docutils literal notranslate"><span class="pre">rast-create-genome</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rast-process-genome</span></code> and <code class="docutils literal notranslate"><span class="pre">rast-export-genome</span></code> –give you the RASTtk
+default pathway. However, this is only a subset of the available RASTtk
+functions. We have designed RASTtk so that it is modular and users can
+build custom annotation pipelines. In order to tap into this capability
+and to learn about individual steps please read the tutorial <a class="reference internal" href="rasttk_incremental_commands.html#rasttk-incremental-commands"><span class="std std-ref">RASTtk, The Incremental Commands</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rasttk_incremental_commands.html" class="btn btn-neutral float-right" title="RASTtk, The Incremental Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="command_list/submit-patric-genbank.html" class="btn btn-neutral float-left" title="submit-patric-genbank" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

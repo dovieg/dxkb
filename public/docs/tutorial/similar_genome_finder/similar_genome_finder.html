@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Similar Genome Finder Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Genome Alignment Service" href="../genome_alignment/genome_alignment.html" />
+    <link rel="prev" title="Primer Design Service" href="../primer_design/primer_design.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Similar Genome Finder Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../genome_assembly/assembly.html">Genome Assembly Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_annotation/genome_annotation.html">Genome Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primer_design/primer_design.html">Primer Design Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Similar Genome Finder Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-a-genome-that-is-not-in-bv-brc">Loading a genome that is not in BV-BRC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-the-job">Submitting the job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job-results">Job Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submit-a-new-job">Submit a new job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_alignment/genome_alignment.html">Genome Alignment Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variation_analysis/variation_analysis.html">Variation - SNP Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Similar Genome Finder Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/similar_genome_finder/similar_genome_finder.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="similar-genome-finder-service">
+<h1>Similar Genome Finder Service<a class="headerlink" href="#similar-genome-finder-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 05 August 2024</em></p>
+<p>When a researcher has a new genome sequence, one of the first things they want to identify is the closest relatives of their genome. BV-BRC[1] provides a new service that allows researchers to do this using Mash/MinHash[2]. Mash reduces large sequences and sequence-sets to small, representative sketches, from which global mutation distances can be rapidly estimated. The MinHash dimensionality-reduction technique to include a pairwise mutation distance and P value significance test, enabling the efficient clustering and search of massive sequence collections.</p>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the Services tab. Click on Similar Genome Finder.
+<img alt="Figure Service_tab" src="../../_images/Service_tab_SGF.png" /></p></li>
+<li><p>This will open up the Similar Genome Finder landing page.
+<img alt="Figure Landing_page" src="../../_images/Landing_page1.png" /></p></li>
+<li><p><strong>Filter to Locate Genomes of Interest.</strong>  Click on the <strong>Filter</strong> icon that is at the left side of the text box under <strong>Search By Genome Name Or Genome ID</strong>.  This will open a box that allows a researcher to search across all of the <strong>Public Genomes</strong> available in BV-BRC or across the <strong>Private Genomes</strong> that they have annotated and are stored in their private workspace. The search can be further refined to search to a <strong>Genome Type</strong> which includes <strong>Bacteria</strong>, <strong>Viruses</strong> or <strong>Eukaryotes</strong>. To select private genomes, click on the checkbox in front of <strong>My Genomes</strong> underneath <strong>Private Genomes</strong>.
+<img alt="Figure Select_Genome" src="../../_images/Select_Genome.png" /></p></li>
+<li><p>Click the down arrow at the right of the text box under <strong>Search By Genome Name Or Genome ID</strong>. This will open a drop-down box that shows all of the researcher’s private genomes, which have a <strong>Lock</strong> icon in front of them.  To select a specific genome, scroll down and find the genome of interest, and then click on it.
+<img alt="Figure 5" src="../../_images/Picture536.png" /></p></li>
+<li><p>This will autofill the name of the genome in the text box.
+<img alt="Figure 6" src="../../_images/Picture628.png" /></p></li>
+<li><p>Alternatively, it is not necessary to use the filters for different types of public genomes, or the private genomes.  Entering the name, or the genome ID in the text box will open a drop-down box that shows possible matches.  Note that reference genomes are denoted with a <strong>[Ref]</strong> in front of the name.  Representative genomes would have a <strong>[Rep]</strong> and private genomes have the lockbox icon seen above.  All of the other public genomes have no indicator in front of the name.  Clicking on the genome of interest will autofill the box as seen above.
+<img alt="Figure 7" src="../../_images/Picture726.png" /></p></li>
+</ol>
+<section id="loading-a-genome-that-is-not-in-bv-brc">
+<h2>Loading a genome that is not in BV-BRC<a class="headerlink" href="#loading-a-genome-that-is-not-in-bv-brc" title="Permalink to this headline">¶</a></h2>
+<p>1.	The Similar Genome Finder tool is one of the few places in BV-BRC, outside of the Assembly and Annotation pipelines, where genomes that have not been annotated in BV-BRC can be explored. To do this, click on the folder icon that is at the end of the text box underneath <strong>Or Upload FASTA/FASTQ</strong>.
+<img alt="Figure 8" src="../../_images/Picture826.png" /></p>
+<p>2.	This will open a pop-up window that has a direct link to the workspace.  To upload a new file, click on the <strong>Upload</strong> icon at the top right of that window.</p>
+<p><img alt="Figure 9" src="../../_images/Picture924.png" /></p>
+<p>3.	This will open a new pop-up window.  Note that it is pre-selected for <strong>Contigs</strong>, but if reads are desired, the type will need to be changed.  To interface with your computer, click on the Select File button.
+<img alt="Figure 10" src="../../_images/Picture1022.png" /></p>
+<p>4.	An interface with your computer will open.  Note that fasta files will be highlighted if Contigs were selected.   If read files were selected, fastq files would be highlighted.  Click on the desired file, and then click on the <strong>Open</strong> button at the lower right of the window.
+<img alt="Figure 11" src="../../_images/Picture1119.png" /></p>
+<p>5.	This will go back to the pop-up window where the name of the selected file is listed below the words <strong>File Selected</strong>.  Click on the <strong>Start Upload</strong> button at the lower right.</p>
+<p><img alt="Figure 12" src="../../_images/Picture1217.png" /></p>
+<p>6.	The progress of the upload can be seen on the upload monitor at the lower right of the page.  Contig files generally load quickly.  Read files, which are often quite large, can take more time.</p>
+<p><img alt="Figure 13" src="../../_images/Picture1314.png" /></p>
+<p>7.	Once the upload is complete the name of the file will appear below the words <strong>Or Upload FASTA/FASTQ</strong>.
+<img alt="Figure 14" src="../../_images/Picture1414.png" /></p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>1.	Researchers can adjust the number of hits that they want to see.  You can select 1, 10, 50, 100 or 500 hits to be returned by clicking on the down arrow next to the <strong>Max Hits</strong> box.
+<img alt="Figure Max_hits" src="../../_images/Max_hits.png" /></p>
+<p>2.	Since MinHash distances are probabilistic estimates, it is important to consider the probability of seeing a given distance by chance.  Mash provides p-values with distance estimations. Lower p-values correspond to more confident distance estimations and will often be rounded down to 0 due to floating point limits. If p-values are high (above, say, 0.01), the 𝑘-mer size is probably too small for the size of the genomes being compared.  You can select the <strong>P-Value</strong> threshold by clicking on the down arrow that follows the text box.
+<img alt="Figure P_value" src="../../_images/P_value.png" /></p>
+<p>3. Mash reduces large sequences and sequence-sets to small, representative sketches, from which global mutation distances can be rapidly estimated. The Mash distance approximates the mutation rate.  You can select the distance by clicking on the down arrow that follows the text box under <strong>Distance</strong>. Smaller numbers indicate a closer relationship. Additional information on how distance is calculated for Mash is available here: https://mash.readthedocs.io/en/latest/distances.html.
+<img alt="Figure Distance" src="../../_images/Distance.png" /></p>
+<p>4.	Searches can be narrowed by <strong>Organism Type</strong>, selecting between <strong>Bacterial and archaeal genomes</strong>, <strong>Viral genomes</strong>, or both. The <strong>Scope</strong> can also be selected with filters for <strong>All public genomes</strong> or the <strong>Reference and representative genomes</strong>. The NCBI reference and representative genome dataset (https://www.ncbi.nlm.nih.gov/refseq/about/prokaryotes/) is used for the reference set.
+<img alt="Figure Organism_Scope" src="../../_images/Organism_Scope.png" /></p>
+</section>
+<section id="submitting-the-job">
+<h2>Submitting the job<a class="headerlink" href="#submitting-the-job" title="Permalink to this headline">¶</a></h2>
+<p>1.	Once the parameters of interest have been selected, click the <strong>Search</strong> button at the bottom of the page.
+<img alt="Figure Submit" src="../../_images/Submit1.png" /></p>
+</section>
+<section id="job-results">
+<h2>Job Results<a class="headerlink" href="#job-results" title="Permalink to this headline">¶</a></h2>
+<p>1.	The tool will return the top hits to the selected genome.  The page will include a reference to the data that was submitted for analysis, as well as the table.  The entire table can be downloaded by clicking on the <strong>Download</strong> icon at the top upper right of the table.
+<img alt="Figure Result_table" src="../../_images/Result_table.png" /></p>
+<p>2.	The table also includes the metadata for the genomes, which includes the country of isolation, any host that the genome was isolated from, the year the strain was collected, and the data that it was completed.  Also included are the <strong>Distance</strong> and <strong>P values</strong>, and the number of <strong>K-mer Counts</strong> (number out of 1000 total) that the genome shared with the submitted genome.
+<img alt="Figure Metadata" src="../../_images/Metadata.png" /></p>
+<p>3.	To see information on an individual genome, click on the check box preceding it in the first column.  This will populate the box to the right of the vertical green bar with the information that BV-BRC has on that particular genome.
+<img alt="Figure Select_one" src="../../_images/Select_one.png" /></p>
+<p>4.	The genomes can also be grouped together, and this group can be used in other BV-BRC tools like the Phylogenetic Tree service, the Protein Family Sorter, or the Proteome Comparison service.  Click on the check boxes for the desired genomes, and then click on the <strong>Group</strong> icon in the vertical green bar.
+<img alt="Figure Group" src="../../_images/Group.png" /></p>
+<p>5.	This will open a pop-up box.  To create a new group, click on the down arrow at the end of the text box that has the words Existing Group.  Click on New Group, and then name it in the text box under Group Name.  Once this has been completed, click on the <strong>Add</strong> button at the bottom right of the box. This will successfully create a new group, which will be available in the workspace, and also when a tool using genome groups is launched.
+<img alt="Figure 24" src="../../_images/Picture249.png" /></p>
+</section>
+<section id="submit-a-new-job">
+<h2>Submit a new job<a class="headerlink" href="#submit-a-new-job" title="Permalink to this headline">¶</a></h2>
+<p>1.	A new job can be submitted by clicking on the <strong>Edit form and resubmit</strong> button above the table.  This will reload the page, showing the previously submitted data. New data can be uploaded, and the parameters can also be adjusted.<br />
+<img alt="Figure Resubmit" src="../../_images/Resubmit.png" /></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Olson, R.D., et al., Introducing the Bacterial and Viral Bioinformatics Resource Center (BV-BRC): a resource combining PATRIC, IRD and ViPR. Nucleic acids research, 2023. 51(D1): p. D678-D689.</p></li>
+<li><p>Ondov, B.D., et al., Mash: fast genome and metagenome distance estimation using MinHash. Genome biology, 2016. 17(1): p. 1-14.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genome_alignment/genome_alignment.html" class="btn btn-neutral float-right" title="Genome Alignment Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../primer_design/primer_design.html" class="btn btn-neutral float-left" title="Primer Design Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

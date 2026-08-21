@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Primer Design Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Similar Genome Finder Service" href="../similar_genome_finder/similar_genome_finder.html" />
+    <link rel="prev" title="BLAST Service" href="../blast/blast.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Primer Design Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../genome_assembly/assembly.html">Genome Assembly Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_annotation/genome_annotation.html">Genome Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Primer Design Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-service">Locating the service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-sequence-options">Input sequence options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-parameters-for-primer-design">Specifying parameters for primer design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checking-the-status-of-the-annotation-job">Checking the status of the annotation job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../similar_genome_finder/similar_genome_finder.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_alignment/genome_alignment.html">Genome Alignment Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variation_analysis/variation_analysis.html">Variation - SNP Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Primer Design Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/primer_design/primer_design.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="primer-design-service">
+<h1>Primer Design Service<a class="headerlink" href="#primer-design-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 1/24/2022</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Primer Design Service in the Bacterial and Viral Bioinformatics Resource Center uses the Primer3 tool [1-4] to provide users with the ability to design primers from a given input sequence under a variety of temperature, size, and concentration constraints. Primer3 can be used to design primers for several uses including, PCR primers (PCR = “Polymerase Chain Reaction”), hybridization probes and sequencing primers.</p>
+<p><strong>Keywords:</strong> Primers, probes, oligo, oligomers, virus, bacteria, phage.</p>
+<section id="see-also">
+<h3>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/PrimerDesign">Primer Design Service</a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/primer_design_service.html"><span class="doc std std-doc">Primer Design Service Quick Reference Guide</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="locating-the-service">
+<h2>Locating the service<a class="headerlink" href="#locating-the-service" title="Permalink to this headline">¶</a></h2>
+<p>1. At the top of any BV-BRC page, find the <strong>SERVICES</strong> tab and then click on <strong>Primer Design</strong>.</p>
+<p><img alt="Figure 0" src="../../_images/Picture02.png" /></p>
+<p>2. This will open up the Primer Design landing page.</p>
+<p><img alt="Figure 1" src="../../_images/Picture140.png" /></p>
+</section>
+<section id="input-sequence-options">
+<h2>Input sequence options<a class="headerlink" href="#input-sequence-options" title="Permalink to this headline">¶</a></h2>
+<p>Users have the option to input files either through pasting in a relevant nucleic acid sequence or using a fasta file from their workspace. These methods are described below</p>
+<p>1. If users are pasting in their own sequence, they will need to select the <strong>“Paste Sequence”</strong> option and provide an appropriate sequence identifier, as shown below (red box).</p>
+<p><img alt="Figure 2" src="../../_images/Picture229.png" /></p>
+<p>2. Alternatively, if users would like to choose a file from their workspace, they can select the <strong>“Workspace FASTA”</strong> option, and either type in the name of their file or browse for it by expanding the list of available workspace files (red arrow below).</p>
+<p><img alt="Figure 3" src="../../_images/Picture326.png" /></p>
+<p>If users would like to upload a file to their workspace, they can select the <strong>“Workspace FASTA”</strong> option, and click on the file folder icon to select their file for upload (red arrow below). For more information on how to upload files, please see the <a class="reference internal" href="../../quick_references/workspaces/data_upload.html"><span class="doc std std-doc">Uploading Data</span></a> documentation.</p>
+<p><img alt="Figure 4" src="../../_images/Picture427.png" /></p>
+</section>
+<section id="specifying-parameters-for-primer-design">
+<h2>Specifying parameters for primer design<a class="headerlink" href="#specifying-parameters-for-primer-design" title="Permalink to this headline">¶</a></h2>
+<p>1. Once the appropriate target sequence for primer design has been uploaded, users will need to define specific regions where they wish to design primers. Selections can either be denoted by highlighting the desired regions and clicking the appropriate buttons (red box), or by manually typing in a list of coordinates in the appropriate boxes below.</p>
+<p><img alt="Figure 5" src="../../_images/Picture526.png" /></p>
+<p>2.	If you would like to design a hybridization probe to detect the PCR product after amplification (real-time PCR applications) you may select the “PICK INTERNAL OLIGO” option as shown above.</p>
+<ul class="simple">
+<li><p><strong>Excluded Regions:</strong> Values should be one or a space-separated list of start, length pairs. Primers will not overlap these regions. These values will be denoted with “&lt; &gt;” symbols.</p></li>
+<li><p><strong>Targets:</strong> Values should be one or a space-separated list of start, length pairs. Primers will flank one or more regions. These values will be denoted with “[ ]” symbols.</p></li>
+<li><p><strong>Included Regions:</strong> Values should be a single start, length pair. Primers will be picked within this range. These values will be denoted with “{ }” symbols.</p></li>
+<li><p><strong>Primer Overlap Positions:</strong> Values should be space separated lists of positions. The forward OR reverse primer will overlap one of these positions. These values will be denoted with “-” symbol.</p></li>
+</ul>
+<p>3.	After specifying an appropriate Output Folder by clicking on the folder icon (red arrow), users will be prompted to name their output file (red box).</p>
+<p><img alt="Figure 6" src="../../_images/Picture620.png" /></p>
+<p>4.	If users would like to further specify primer characteristics such as melting temperature, GC content or other settings, they may do so by selecting “Advanced Options” (red arrow). If no specific settings are selected, default parameters will be used, as shown below.</p>
+<p><img alt="Figure 7" src="../../_images/Picture720.png" /></p>
+<ul class="simple">
+<li><p><strong>Number to Return:</strong> number of primers/primer pairs to return.</p></li>
+<li><p><strong>Product Size Ranges:</strong> desired product size range.</p></li>
+<li><p><strong>Primer Size:</strong> desired primer length.</p></li>
+<li><p><strong>Primer TM:</strong> melting temperature (Celsius) for a primer oligo.</p></li>
+<li><p><strong>Primer GC%:</strong> percentage of Gs (guanines) and Cs (cytosine) desired in primers.</p></li>
+<li><p><strong>Concentration of Monovalent Cations:</strong> The millimolar (mM) concentration of monovalent salt cations (usually KCl) in the PCR. Primer3 uses this argument to calculate oligo and primer melting temperatures.</p></li>
+<li><p><strong>Concentration of Divalent Cations:</strong> The millimolar concentration of divalent salt cations (usually MgCl^(2+)) in the PCR</p></li>
+<li><p><strong>Annealing Oligo Concentration:</strong> A value to use as nanomolar (nM) concentration of each annealing oligo over the course the PCR.</p></li>
+<li><p><strong>Concentration of DNTPs:</strong> The millimolar concentration of the sum of all deoxyribonucleotide triphosphates.</p></li>
+</ul>
+<p><em>More details on primer3 settings can be found on the <a class="reference external" href="https://primer3.org/manual.html#PRIMER_DNA_CONC">Primer3 Manual page [5]</a>.</em></p>
+<p>5.	Start the primer design job by clicking on the Submit button (Red arrow).</p>
+<p><img alt="Figure 8" src="../../_images/Picture819.png" /></p>
+<p>6.	A message will appear below the box to indicate that the job is now in the queue.</p>
+<p><img alt="Figure 9" src="../../_images/Picture919.png" /></p>
+</section>
+<section id="checking-the-status-of-the-annotation-job">
+<h2>Checking the status of the annotation job<a class="headerlink" href="#checking-the-status-of-the-annotation-job" title="Permalink to this headline">¶</a></h2>
+<p>1.	Click on the Jobs indicator at the bottom of the BV-BRC page.</p>
+<p><img alt="Figure 10" src="../../_images/Picture1016.png" /></p>
+<p>2.	This will open the Jobs Status page where researchers can see the status of their annotation job. The statuses of all the service jobs that have been submitted to BV-BRC are also available.</p>
+<p>3.	Once the job is completed, you can select the job by clicking on it, then click the “View” button on the right-hand bar to see the results.</p>
+<p><img alt="Figure 11" src="../../_images/Picture1115.png" /></p>
+<p>4.	The results page will consist of a header describing the job and a list of output files, as shown below.</p>
+<p><img alt="Figure 12" src="../../_images/Picture1213.png" /></p>
+<p>5.	The Primer Design Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include:</p>
+<ul class="simple">
+<li><p><strong>Primer3_input.txt</strong> – a text file specifying the input sequences and the parameters used to specify the primer properties. If none are specified, default parameters will be used/listed.</p></li>
+<li><p><strong>Primer3_output.txt</strong> – a text file containing a list of primers and probe (if selected) candidates designed, as well as their corresponding properties.</p></li>
+<li><p><strong>primers.fasta file</strong> – a file containing a list of candidate primers and probes designed. Can be opened as a text or fasta file.</p></li>
+<li><p><strong>table.html</strong> – a HyperText Markup Language file displaying a table of output primer pairs and probes, as well as their properties, statistics, and location in the input sequence (see below).</p></li>
+</ul>
+<p>6. After selecting the primer report (html file), users can view the specific details of primer pair statistics in a table as shown below. Users can also select a specific primer pair to view where in their sequence their primer set falls.</p>
+<p><img alt="Figure 13" src="../../_images/Picture1310.png" /></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Rozen S, Skaletsky H (2000) Primer3 on the WWW for general users and for biologist programmers. Methods Mol Biol 132(3):365–386</p></li>
+<li><p>Untergasser A, Nijveen H, Rao X, Bisseling T, Geurts R, Leunissen JA (2007) Primer3Plus, an enhanced web interface to Primer3. Nucleic Acids Res 35(Web Server issue):71–74</p></li>
+<li><p>You FM, Huo N, Gu YQ, Luo MC, Ma Y, Hane D, Lazo GR, Dvorak J, Anderson OD (2008) BatchPrimer3: a high throughput web application for PCR and sequencing primer design. BMC Bioinformatics 9:253</p></li>
+<li><p>https://github.com/primer3-org</p></li>
+<li><p>https://primer3.org/manual.html#PRIMER_DNA_CONC</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../similar_genome_finder/similar_genome_finder.html" class="btn btn-neutral float-right" title="Similar Genome Finder Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../blast/blast.html" class="btn btn-neutral float-left" title="BLAST Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Computing Signature Clusters: an Application of the Command-Line Tools | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BV-BRC Command Line Program Reference" href="command_list/index.html" />
+    <link rel="prev" title="Looking for Hypothetical Proteins in Clusters of Related Features" href="cli_clustering.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Computing Signature Clusters: an Application of the Command-Line Tools | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cli_installation.html">Installing the BV-BRC Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_getting_started.html">Using the BV-BRC Command-line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_services.html">Using BV-BRC Services from the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_common_tasks.html">Common Tasks With P3 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_clustering.html">Looking for Hypothetical Proteins in Clusters of Related Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Computing Signature Clusters: an Application of the Command-Line Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction-what-is-a-signature-cluster">Introduction: What is a Signature Cluster?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-compute-signature-clusters">How to Compute Signature Clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="command_list/index.html">BV-BRC Command Line Program Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#rast-tutorials">RAST Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Command Line Interface</a> &raquo;</li>
+        
+      <li>Computing Signature Clusters: an Application of the Command-Line Tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cli_tutorial/cli_signature_clusters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="computing-signature-clusters-an-application-of-the-command-line-tools">
+<span id="cli-signature-clusters"></span><h1>Computing Signature Clusters: an Application of the Command-Line Tools<a class="headerlink" href="#computing-signature-clusters-an-application-of-the-command-line-tools" title="Permalink to this headline">¶</a></h1>
+<section id="introduction-what-is-a-signature-cluster">
+<h2>Introduction: What is a Signature Cluster?<a class="headerlink" href="#introduction-what-is-a-signature-cluster" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, we show how to use a tool that we have created to help
+you locate clusters of genes that distinguish genomes from two
+designated sets of genomes. For example, suppose that you have a set of
+genomes from a given species and a second set from different species in
+the same genus. In this case, we might look for chromosomal clusters
+that occur in most genomes from the specific species, but almost never
+occur in genomes from a different species in the same genus. This is
+just one of a growing set of tools you can use to access BV-BRC data,
+but we think of it as extremely interesting.</p>
+<p>So, the general operation we are implementing might be described as
+follows:</p>
+<ol class="arabic simple">
+<li><p>Define a set of closely-related genomes (usually a set of genomes
+from a single species). Call this set <strong>GS1</strong>.</p></li>
+<li><p>Define a second set of genomes which will be used for comparison and
+call it <strong>GS2</strong>. Typically this would be a set establishing a
+“context”. The usual contents of <strong>GS2</strong> would be genomes from the
+same genus, but different species.</p></li>
+<li><p>Then define the notion of <em>signature family</em> as a protein family in
+which all members (or almost all members) occur in all genomes in
+<strong>GS1</strong>, but none (or very few) genomes in <strong>GS2</strong>.</p></li>
+<li><p>Finally, define a <em>signature cluster</em> as a set of instances of
+signature families that occur close to one another on the contigs of
+a genome in <strong>GS1</strong>. Since a signature cluster contains only
+signature families, by definition it can occur in <strong>GS1</strong>, but only
+very seldom in <strong>GS2</strong>.</p></li>
+</ol>
+<p>We will argue that the signature clusters are very effective for
+locating chromosomal clusters that are very local phylogentically and
+correspond to molecular machines that are quite different from those
+that include the core cellular machinery. They are things like</p>
+<ul class="simple">
+<li><p>virulence factors,</p></li>
+<li><p>antibiotic fabrication mechanisms,</p></li>
+<li><p>prophages,</p></li>
+<li><p>special transportation cassets,</p></li>
+<li><p>and so forth.</p></li>
+</ul>
+</section>
+<section id="how-to-compute-signature-clusters">
+<h2>How to Compute Signature Clusters<a class="headerlink" href="#how-to-compute-signature-clusters" title="Permalink to this headline">¶</a></h2>
+<p>In this short tutorial we will compute signature clusters for
+<em>Streptococcus pyogenes</em>. The actual computation can be done for any
+genus and species for which you have enough genomes (say, 20 within the
+species and 20 from different species within the same genus).</p>
+<section id="step-1-defining-gs1-and-gs2">
+<h3>Step 1: Defining GS1 and GS2<a class="headerlink" href="#step-1-defining-gs1-and-gs2" title="Permalink to this headline">¶</a></h3>
+<p>The following three commands create three tables encoding genome sets.
+Note that each row in each table contains two fields– a genome id and a
+genome name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">genomes</span> <span class="o">--</span><span class="n">attr</span> <span class="n">genome_name</span> <span class="o">--</span><span class="n">eq</span> <span class="n">genome_name</span><span class="p">,</span><span class="n">Streptococcus</span> <span class="o">&gt;</span><span class="nb">all</span><span class="o">.</span><span class="n">strep</span><span class="o">.</span><span class="n">genomes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">genome</span><span class="o">.</span><span class="n">genome_id</span>    <span class="n">genome</span><span class="o">.</span><span class="n">genome_name</span>
+<span class="mf">1313.7014</span>   <span class="n">Streptococcus</span> <span class="n">pneumoniae</span> <span class="n">P310839</span><span class="o">-</span><span class="mi">218</span>
+<span class="mf">208435.3</span>    <span class="n">Streptococcus</span> <span class="n">agalactiae</span> <span class="mi">2603</span><span class="n">V</span><span class="o">/</span><span class="n">R</span>
+<span class="mf">171101.6</span>    <span class="n">Streptococcus</span> <span class="n">pneumoniae</span> <span class="n">R6</span>
+<span class="mf">160490.10</span>   <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">M1</span> <span class="n">GAS</span>
+<span class="mf">568814.3</span>    <span class="n">Streptococcus</span> <span class="n">suis</span> <span class="n">BM407</span>
+<span class="mf">862971.3</span>    <span class="n">Streptococcus</span> <span class="n">anginosus</span> <span class="n">C238</span>
+<span class="mf">888833.3</span>    <span class="n">Streptococcus</span> <span class="n">australis</span> <span class="n">ATCC</span> <span class="mi">700641</span>
+<span class="mf">864569.5</span>    <span class="n">Streptococcus</span> <span class="n">bovis</span> <span class="n">ATCC</span> <span class="mi">700338</span>
+<span class="mf">482234.3</span>    <span class="n">Streptococcus</span> <span class="n">canis</span> <span class="n">FSL</span> <span class="n">Z3</span><span class="o">-</span><span class="mi">227</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="n">match</span> <span class="o">--</span><span class="n">col</span> <span class="mi">2</span> <span class="n">pyogenes</span> <span class="o">&lt;</span><span class="nb">all</span><span class="o">.</span><span class="n">strep</span><span class="o">.</span><span class="n">genomes</span> <span class="o">&gt;</span><span class="n">pyogenes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">genome</span><span class="o">.</span><span class="n">genome_id</span>    <span class="n">genome</span><span class="o">.</span><span class="n">genome_name</span>
+<span class="mf">160490.10</span>   <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">M1</span> <span class="n">GAS</span>
+<span class="mf">1314.192</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">strain</span> <span class="n">NGAS322</span>
+<span class="mf">798300.3</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">MGAS15252</span>
+<span class="mf">864568.3</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">ATCC</span> <span class="mi">10782</span>
+<span class="mf">1314.198</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">strain</span> <span class="n">NGAS743</span>
+<span class="mf">1314.197</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">strain</span> <span class="n">NGAS596</span>
+<span class="mf">1314.196</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">strain</span> <span class="n">NGAS327</span>
+<span class="mf">1314.168</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">strain</span> <span class="mi">19615</span>
+<span class="mf">301451.4</span>    <span class="n">Streptococcus</span> <span class="n">pyogenes</span> <span class="n">serotype</span> <span class="n">M18</span> <span class="n">strain</span> <span class="n">CPost</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="n">match</span> <span class="o">--</span><span class="n">col</span> <span class="mi">2</span> <span class="n">pyogenes</span> <span class="o">--</span><span class="n">reverse</span> <span class="o">&lt;</span><span class="nb">all</span><span class="o">.</span><span class="n">strep</span><span class="o">.</span><span class="n">genomes</span> <span class="o">&gt;</span><span class="ow">not</span><span class="o">.</span><span class="n">pyogenes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">genome</span><span class="o">.</span><span class="n">genome_id</span>    <span class="n">genome</span><span class="o">.</span><span class="n">genome_name</span>
+<span class="mf">1313.7014</span>   <span class="n">Streptococcus</span> <span class="n">pneumoniae</span> <span class="n">P310839</span><span class="o">-</span><span class="mi">218</span>
+<span class="mf">208435.3</span>    <span class="n">Streptococcus</span> <span class="n">agalactiae</span> <span class="mi">2603</span><span class="n">V</span><span class="o">/</span><span class="n">R</span>
+<span class="mf">171101.6</span>    <span class="n">Streptococcus</span> <span class="n">pneumoniae</span> <span class="n">R6</span>
+<span class="mf">568814.3</span>    <span class="n">Streptococcus</span> <span class="n">suis</span> <span class="n">BM407</span>
+<span class="mf">862971.3</span>    <span class="n">Streptococcus</span> <span class="n">anginosus</span> <span class="n">C238</span>
+<span class="mf">888833.3</span>    <span class="n">Streptococcus</span> <span class="n">australis</span> <span class="n">ATCC</span> <span class="mi">700641</span>
+<span class="mf">864569.5</span>    <span class="n">Streptococcus</span> <span class="n">bovis</span> <span class="n">ATCC</span> <span class="mi">700338</span>
+<span class="mf">482234.3</span>    <span class="n">Streptococcus</span> <span class="n">canis</span> <span class="n">FSL</span> <span class="n">Z3</span><span class="o">-</span><span class="mi">227</span>
+<span class="mf">862969.3</span>    <span class="n">Streptococcus</span> <span class="n">constellatus</span> <span class="n">subsp</span><span class="o">.</span> <span class="n">pharyngis</span> <span class="n">C1050</span>
+</pre></div>
+</div>
+<p>The first command looks at all of the BV-BRC genomes, keeps only those
+which have ‘Streptococcus’ within the <em>genome_name</em> field, and writes
+out one line for each extracted <em>Streptococcus</em> genome. This is actually
+a fairly complex incantation, so we urge you to try to construct the
+corresponding command for a different species (say, <em>Staphylococcus</em>).</p>
+<p>Then the <em>p3-match</em> commands create a list of <em>Streptococcus pyogenes</em>
+genomes and a set of <em>Streptococcus</em> genomes that are not from the
+<em>pyogenes</em> species.</p>
+<p>Once you have constructed your genome sets, verify that they include
+what appear to be a reasonable collection of genomes.</p>
+</section>
+<section id="computing-signature-clusters">
+<h3>Computing Signature Clusters<a class="headerlink" href="#computing-signature-clusters" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have <strong>GS1</strong> and <strong>GS2</strong> defined, we can compute the
+signature clusters using something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="n">related</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">clusters</span> <span class="o">--</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="n">gs1</span> <span class="n">pyogenes</span> <span class="o">--</span><span class="n">gs2</span> <span class="ow">not</span><span class="o">.</span><span class="n">pyogenes</span> <span class="o">--</span><span class="n">sz1</span> <span class="mi">20</span> <span class="o">--</span><span class="n">sz2</span> <span class="mi">20</span> <span class="o">--</span><span class="nb">min</span> <span class="mf">0.8</span> <span class="o">--</span><span class="nb">max</span> <span class="mf">0.1</span> <span class="o">--</span><span class="n">iterations</span> <span class="mi">2</span> <span class="o">--</span><span class="n">output</span> <span class="n">Strep</span>
+</pre></div>
+</div>
+<p>Let us briefly discuss the process being requested:</p>
+<ol class="arabic simple">
+<li><p>First, we take 20 random genomes from <strong>GS1</strong> and 20 from <strong>GS2</strong>
+(these sizes are specified by <strong>sz1</strong> and <strong>sz2</strong>) Then, we compute
+the protein families that occur in at least 80% of the genomes in
+<strong>GS1</strong>, but no more than 10% of the genomes in <strong>GS2</strong> (the
+thresholds are specified by the <strong>min</strong> and <strong>max</strong> arguments). These
+are the <em>signature families</em> that we will use to search for
+<em>signature clusters</em>.</p></li>
+<li><p>Then we compute the desired signature clusters, based on the randomly
+selected genome sets.</p></li>
+<li><p>We save the clusters computed; this is called a single <em>iteration</em>.
+We redo the selection of random genomes, computation of signature
+families, and computation of signature clusters (added to a growing
+set), until we have completed the requested number of iterations (in
+our example, we specified “2”).</p></li>
+</ol>
+<p>Thus, we build up a collection of signature clusters recorded in the
+designated output directory. If you look in the file
+<em>related.signature.clusters</em> in this directory, you will see something
+like the following, showing the family pairs found and how many times
+each pair occurs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PGF_00091842</span>    <span class="n">PGF_02991161</span>    <span class="mi">106</span>
+<span class="n">PGF_03507811</span>    <span class="n">PGF_03520364</span>    <span class="mi">75</span>
+<span class="n">PGF_00422632</span>    <span class="n">PGF_03520364</span>    <span class="mi">75</span>
+<span class="n">PGF_00018136</span>    <span class="n">PGF_00059826</span>    <span class="mi">59</span>
+<span class="n">PGF_00059826</span>    <span class="n">PGF_03510607</span>    <span class="mi">57</span>
+<span class="n">PGF_00061508</span>    <span class="n">PGF_03507845</span>    <span class="mi">55</span>
+<span class="n">PGF_00031781</span>    <span class="n">PGF_03498768</span>    <span class="mi">52</span>
+<span class="n">PGF_03507845</span>    <span class="n">PGF_03520364</span>    <span class="mi">50</span>
+<span class="n">PGF_00413443</span>    <span class="n">PGF_02239557</span>    <span class="mi">48</span>
+<span class="n">PGF_00423533</span>    <span class="n">PGF_03512306</span>    <span class="mi">46</span>
+<span class="n">PGF_03504450</span>    <span class="n">PGF_03507868</span>    <span class="mi">45</span>
+<span class="n">PGF_00006421</span>    <span class="n">PGF_00341140</span>    <span class="mi">44</span>
+<span class="n">PGF_00795056</span>    <span class="n">PGF_03499087</span>    <span class="mi">43</span>
+<span class="n">PGF_00011284</span>    <span class="n">PGF_00011285</span>    <span class="mi">41</span>
+<span class="n">PGF_00053076</span>    <span class="n">PGF_00221701</span>    <span class="mi">41</span>
+</pre></div>
+</div>
+<p>In the next section, we will show how to put these results in a more
+useful form.</p>
+</section>
+<section id="looking-at-the-results">
+<h3>Looking at the Results<a class="headerlink" href="#looking-at-the-results" title="Permalink to this headline">¶</a></h3>
+<p>To look at the computed signature clusters, use something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="nb">format</span><span class="o">-</span><span class="n">results</span> <span class="o">-</span><span class="n">d</span> <span class="n">Strep</span> <span class="o">|</span> <span class="n">p3</span><span class="o">-</span><span class="n">aggregates</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">html</span> <span class="o">&gt;</span><span class="n">clusters</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>The results will look something like this:</p>
+<p><img alt="image0" src="../_images/pic1.png" /></p>
+<p>If you click on the feature ID, you will be taken to the Patric Feature
+Page for that feature:</p>
+<p><img alt="image1" src="../_images/pic3.png" /></p>
+<p>If you click the circled C on a feature, you will see a “Compare
+Regions” screen centered on that feature, like this:</p>
+<p><img alt="image2" src="../_images/pic2.png" /></p>
+<p>If you click on a family id, you will be taken to a Patric Family Page:</p>
+<p><img alt="image3" src="../_images/pic4.png" /></p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We have implemented a tool that, given two sets of genomes, will compute
+the signature clusters that occur (or tend to occur) in genomes from one
+set but not in genomes from the other. The sets of genomes are taken
+from the current release of the BV-BRC database.</p>
+<p>We have illustrated one intended use: finding the signature clusters
+that distinguish a species from other species within a phylogenetic
+context (the genus).</p>
+<p>There are others that you might try. For example, if you wanted to find
+which EC numbers occur in clusters of signature families for
+<em>Streptococcus pneumonia</em>, but not in <em>Streptococcus pyogenes</em>, you
+should be able to locate these (as well as those that occur in
+<em>S.pyogenes</em>, but not in <em>S.pneumo</em>).</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="command_list/index.html" class="btn btn-neutral float-right" title="BV-BRC Command Line Program Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cli_clustering.html" class="btn btn-neutral float-left" title="Looking for Hypothetical Proteins in Clusters of Related Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

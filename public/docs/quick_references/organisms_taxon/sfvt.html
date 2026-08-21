@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Sequence Feature Variant Types | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Genome Overview" href="../organisms_genome/overview.html" />
+    <link rel="prev" title="Serology Data" href="serology_data.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Sequence Feature Variant Types | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../organisms_menu.html#taxon-level-data">Taxon-Level Data</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Taxonomic Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="phylogeny.html">Phylogeny</a></li>
+<li class="toctree-l4"><a class="reference internal" href="taxonomy.html">Taxonomy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="strains.html">Strains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="strains.html#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genomes.html">Genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amr_phenotypes.html">AMR Phenotypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proteins.html">Proteins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="protein_structures.html">Protein Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="specialty_genes.html">Speciality Genes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domains_and_motifs.html">Domains and Motifs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="epitopes.html">Epitopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways.html">Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subsystems_tab.html">Subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="experiments.html">Experiments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interactions.html">Interactions, Taxon/Genome-Level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surveillance_data.html">Surveillance Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serology_data.html">Serology Data</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Sequence Feature Variant Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#genome-strain-level-data">Genome/Strain-Level Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#gene-protein-level-data">Gene/Protein-Level Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../organisms_menu.html">Organisms and Data Types</a> &raquo;</li>
+        
+      <li>Sequence Feature Variant Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/organisms_taxon/sfvt.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="sequence-feature-variant-types">
+<h1>Sequence Feature Variant Types<a class="headerlink" href="#sequence-feature-variant-types" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Sequence Feature Variant Types Tab provides a comprehensive understanding of a pathogen is essential for analyzing genotype-phenotype associations. Understanding how changes in a pathogen’s genomic sequence may be reflected in its functional characteristics is crucial for understanding pathogenesis. Traditionally, the relationship between genotype and phenotype is assessed by phylogenetic analysis of whole genome sequences or statistical tests of association between single residue variations and specific phenotypic characteristics. However, these approaches have limitations, such as not providing direct information about the specific region contributing to the phenotypic effect.
+The Sequence Feature Variant Types (SFVT) approach addresses these limitations. SFVT defines distinct sequence features (SFs) of constellations of amino acid positions based on functional and structural characteristics. SFVTs capture the extent of sequence variations observed within these combinations and are used for statistically analyzing genotype-phenotype associations.</p>
+</section>
+<section id="sequence-feature-description">
+<h2>Sequence Feature Description<a class="headerlink" href="#sequence-feature-description" title="Permalink to this headline">¶</a></h2>
+<p>A Sequence Feature (SF) is a specific region of a protein with some characteristic of interest, such as:</p>
+<ul class="simple">
+<li><p>Structural properties (e.g., alpha helix, beta sheet)</p></li>
+<li><p>Functional properties (e.g., nuclear localization signal, enzyme active sites)</p></li>
+<li><p>Positions where sequence alterations have functional effects (e.g., changes in virulence)</p></li>
+<li><p>Immune epitopes</p></li>
+</ul>
+<p>SFs can be continuous or discontinuous stretches of amino acids and can overlap. They are annotated with additional information, including a descriptive name, the protein in which it occurs, start and end positions, total length, category (structural, functional, sequence alteration, or immune epitope), virus strain, known associated phenotypes, evidence codes, and the publication or resource where it was described.</p>
+</section>
+<section id="workflow-for-defining-a-sequence-feature">
+<h2>Workflow for Defining a Sequence Feature<a class="headerlink" href="#workflow-for-defining-a-sequence-feature" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Identify reference sequence</p></li>
+<li><p>Develop coordinate system</p></li>
+<li><p>Map positions</p></li>
+<li><p>Obtain metadata including:</p></li>
+<li><p>Virus Information (type, subtype, strain, segment-protein)</p></li>
+<li><p>SF Information (name, strain-specific position, sequence in the source strain, category, comments)</p></li>
+<li><p>Reference (public domain databases like PubMed, UniProt, PDB)</p></li>
+</ul>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genome_annotations.html"><span class="doc std std-doc">Genome Annotations</span></a></p></li>
+<li><p><a class="reference internal" href="../organisms_gene/overview.html"><span class="doc std std-doc">Genome Page Overview</span></a></p></li>
+<li><p><a class="reference internal" href="../other/msa_viewer.html"><span class="doc std std-doc">Multiple Sequence Alignment Viewer</span></a></p></li>
+<li><p><a class="reference internal" href="../searches_menu.html"><span class="doc std std-doc">Advanced Searches</span></a></p></li>
+</ul>
+</section>
+<section id="accessing-the-sfvt-table">
+<h2>Accessing the SFVT Table<a class="headerlink" href="#accessing-the-sfvt-table" title="Permalink to this headline">¶</a></h2>
+<p>Clicking the Sequence Feature Variant Types (SFVT) Tab in a Taxon View displays the SFVT Table (shown below), listing all the SFVT data corresponding to the set of genomes in the selected taxon level.</p>
+<p><img alt="Sequence Feature Variant Type Table" src="../../_images/seqfeatvartype_tab.png" /></p>
+<section id="sequence-feature-variant-types-sfvt-table-tools">
+<h3>Sequence Feature Variant Types (SFVT) Table Tools<a class="headerlink" href="#sequence-feature-variant-types-sfvt-table-tools" title="Permalink to this headline">¶</a></h3>
+<p>Within this table you may do the following:</p>
+<ul class="simple">
+<li><p><strong>Download</strong> the entire contents of the table in text, CSV, or Excel format by clicking the Download button above the table on the left side.</p></li>
+<li><p><strong>Rearrange and narrow</strong> the list of sequences in the table via sorting (using column headers), keywords (using the Keyword box), and filtering (using the Filters tool).</p></li>
+</ul>
+</section>
+<section id="filter-tool">
+<h3>Filter Tool<a class="headerlink" href="#filter-tool" title="Permalink to this headline">¶</a></h3>
+<p>As with all tables, the Filters tool is available to narrow the display of the items in the table, shown below:</p>
+<p><img alt="Filter Panel" src="../../_images/seqfeatvartype_filter_panel.png" /></p>
+<p>Clicking on the Filters button at the top right of the table opens the Filter Panel above the table, displaying column names from the table and values for those columns with counts of occurrence.  Clicking on the filter values narrows the list displayed in the table to those matching the chosen filter values.  Clicking the Hide button closes the Filter Panel. More details are available in the <span class="xref myst">Filter Tool</span> Quick Reference Guide.</p>
+<p>One filter specific to the Sequence Feature Variant Types is the evidence code. The options for evidence code include EXP for experimental evidence, IEA for inferred electronic annotation and ISS for inferred from sequence or structural similarity.</p>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one or more of the features by clicking the checkbox beside the Genome Name in the table, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected items (rows).</p></li>
+<li><p><strong>Guide:</strong>  The way to come back to this guide.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>Variant Types</strong> takes you to the variant type when you click on one specific row.</p></li>
+</ul>
+</section>
+<section id="accessing-the-variant-type-table">
+<h3>Accessing the Variant Type Table<a class="headerlink" href="#accessing-the-variant-type-table" title="Permalink to this headline">¶</a></h3>
+<p>From the Sequence Feature Variant Type Tab, you can click on a specific variant type to view the amino acid changes for that specific sequence feature. You can see where to click in the below image. Any single variant type tab can be viewed and further analyzed.</p>
+<p><img alt="Variant Type Direct" src="../../_images/variant_type.png" /></p>
+<p>This leads to the variant type table, which shows the amino acid changes within each variant type, as seen below. This table shows all of the variant types in descending order and is unique for each variant type. The specific amino acids are shown, including differences for each row. The number of specific amino acid shifts from the most common variant are listed in the last column- labeled total variation. Clicking on the value in the protein count table will take you to the feature group, which includes all of the sequences with that specific variant.
+<img alt="Variant Type Table" src="../../_images/variant_type_table.png" /></p>
+</section>
+<section id="additional-information">
+<h3>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h3>
+<p>Sequence Feature Variant Types can be accessed and searched for using the <a class="reference internal" href="../searches_menu.html"><span class="doc std std-doc">Advanced Searches</span></a>. One of the advanced searches is <span class="xref myst">Sequence Feature Variant Types Advanced Search</span> which you can utilize to find sequence features or sequence feature variant types based on amino acids, and their variant expression.  The Advanced Search is the best way to search for specific variants.
+More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Buttons</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../organisms_genome/overview.html" class="btn btn-neutral float-right" title="Genome Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="serology_data.html" class="btn btn-neutral float-left" title="Serology Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

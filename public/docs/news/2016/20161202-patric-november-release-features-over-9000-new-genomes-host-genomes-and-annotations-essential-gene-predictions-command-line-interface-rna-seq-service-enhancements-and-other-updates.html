@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>PATRIC November Release features over 9000 New Genomes, Host Genomes and Annotations, Essential Gene Predictions, Command Line Interface, RNA-Seq Service Enhancements and Other Updates. | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>PATRIC November Release features over 9000 New Genomes, Host Genomes and Annotations, Essential Gene Predictions, Command Line Interface, RNA-Seq Service Enhancements and Other Updates. | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>PATRIC November Release features over 9000 New Genomes, Host Genomes and Annotations, Essential Gene Predictions, Command Line Interface, RNA-Seq Service Enhancements and Other Updates.</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/PATRIC3/p3_docs/blob/master/docroot/news/2016/20161202-patric-november-release-features-over-9000-new-genomes-host-genomes-and-annotations-essential-gene-predictions-command-line-interface-rna-seq-service-enhancements-and-other-updates.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="patric-november-release-features-over-9000-new-genomes-host-genomes-and-annotations-essential-gene-predictions-command-line-interface-rna-seq-service-enhancements-and-other-updates">
+<h1>PATRIC November Release features over 9000 New Genomes, Host Genomes and Annotations, Essential Gene Predictions, Command Line Interface, RNA-Seq Service Enhancements and Other Updates.<a class="headerlink" href="#patric-november-release-features-over-9000-new-genomes-host-genomes-and-annotations-essential-gene-predictions-command-line-interface-rna-seq-service-enhancements-and-other-updates" title="Permalink to this headline">¶</a></h1>
+<p class="feed-meta">Published on <em class="feed-date">2016-12-02 00:00:00</em></p>
+<p><strong>New Genomes</strong></p>
+<p>In this release, PATRIC has added 9,136 new genomes, bringing the total
+number of genomes in PATRIC to over 89,000. Total 174 genomes, which
+were of low quality or obsolete, were deleted from PATRIC. In addition,
+names of 1,633 genomes were revised to include strain names to make them
+more informative. The full list of available bacterial genomes can be
+accessed from the <a class="reference external" href="https://www.patricbrc.org/view/Taxonomy/2#view_tab=genomes">Genomes Tab for all
+bacteria</a>.
+on the old Production site and  <a class="reference external" href="https://www.patricbrc.org/view/Taxonomy/2#view_tab=genomes">Genomes tab for all
+bacteria</a>
+on the Beta website.</p>
+<p><strong>Protein Family and Annotation Updates</strong></p>
+<p>This release features complete functional re-annotation of all public
+genomes in PATRIC.  The functional re-annotation of the genomes is
+carried out to propagate recent annotation changes made by PATRIC
+curators and to incorporate latest knowledge from the literature. During
+re-annotation process, the structural annotations (i.e. genomic
+features, gene locations, and their sequences) remain unchanged.
+However, all protein-coding genes (CDS) are run again through the latest
+annotation pipeline to reassign their functions. Changes in function may
+also lead to corresponding changes in the pathway assignments. The
+PATRIC genus-specific (PLFams) and cross-genera (PGFams) families have
+also been updated to reflect recent changes in the protein annotations.
+The protein family identifiers were preserved when the composition of
+the new families were mostly the same as that of old families.</p>
+<p><strong>Host Genomes and Annotations</strong></p>
+<p>PATRIC now has a set of representative host genomes in PATRIC, with
+annotations.  These include <em>Homo sapiens</em> (human), <em>Mus musculus</em>
+(mouse), <em>Macaca mulatta</em> (Rhesus macaque monkey), Rattus norvegicus
+(rat), <em>Sus scrofa</em> (pig), <em>Mustela putorius furo</em> (ferret), <em>Danio
+rerio</em> (zebrafish), <em>Gallus gallus</em> (chicken), <em>Drosophila melanogaster</em>
+(fruit fly), and <em>Caenorhabditis elegans</em> (roundworm). These genomes are
+available in PATRIC as <a class="reference external" href="https://www.patricbrc.org/view/Taxonomy/2759#view_tab=genomes">an option in the Organisms
+menu</a> on
+the Beta website.</p>
+<p><strong>AMR Gene Annotations</strong></p>
+<p>With this release, PATRIC provides additional AMR gene annotations,
+which are propagated from set of high quality AMR genes manually curated
+by the PATRIC Team. These curated AMR genes correspond to 25 AMR
+subsystems, covering 227 unique AMR functional roles. Additional
+information is available
+<a class="reference external" href="https://docs.patricbrc.org/news/2016/20160331-patric-antimicrobial-resistance-amr-gene-curation.html">here</a>.
+The curated AMR gene functions have been consistently projected to more
+than 1.6M genes from &gt;71,000 public bacterial genomes currently
+available in PATRIC. Projected AMR gene annotations are available under
+the <a class="reference external" href="https://www.patricbrc.org/view/SpecialtyGeneList/?keyword(*)#view_tab=specialtyGenes&amp;filter=and(or(eq(property,%22Antibiotic%20Resistance%22)),eq(source,%22PATRIC%22))">Specialty Genes Tab on the website, with filters
+Property=Antibiotic Resistance and
+Source=PATRIC</a> on
+the Beta website.</p>
+<p><strong>AMR Classifier Enhancements:</strong></p>
+<p>PATRIC has increased the set of AdaBoost-based machine learning AMR
+classifiers that are currently available in the PATRIC Genome Annotation
+Service by using new genomes and associated AMR resistance data. The
+preexisting set of classifiers have also been updated. This is an
+ongoing enhancement process as we bring in additional genomes into
+PATRIC that have AMR resistance data.  The PATRIC Genome Annotation
+Service is available as <a class="reference external" href="https://www.patricbrc.org/app/Annotation">an option in the Services
+menu</a>.</p>
+<p><strong>Essential Gene Predictions</strong></p>
+<p>PATRIC now provides predicted of essential genes for 7923 Reference and
+Representative genomes. These essential genes were predicted using
+flux-balance analysis (FBA) wherein a genome-scale metabolic model is
+used to predict the growth conditions for an organism by simulating the
+simultaneous production of all the small molecule building blocks of
+biomass (e.g. amino acids, cofactors, nucleotides) from compounds
+available in the growth media (e.g. sugar, vitamins, amino acids).
+Additional information about this process is available from
+<a class="reference external" href="http://www.nature.com/nbt/journal/v28/n3/abs/nbt.1614.html">http://www.nature.com/nbt/journal/v28/n3/abs/nbt.1614.html</a>. The
+essential gene predictions are available at PATRIC under <a class="reference external" href="https://www.patricbrc.org/view/SpecialtyGeneList/?keyword(*)#view_tab=specialtyGenes&amp;filter=and(eq(property,%22Essential%20Gene%22),or(eq(source,%22PATRIC%22)))">the Specialty
+Genes Tab on the website, with filters Property=Essential Gene and
+Source=PATRIC</a> on
+the Beta website.</p>
+<p><strong>Command Line and Application Programming Interfaces (CLI and API)</strong></p>
+<p>The initial version of the PATRIC CLI/API is now available.  It allows
+users to programmatically batch upload data to their PATRIC workspace,
+invoke services (e.g., Assembly, Annotation), and download the results.
+The CLI/API can be downloaded as a dmg from
+<a class="reference external" href="https://github.com/PATRIC3/PATRIC-distribution/releases">https://github.com/PATRIC3/PATRIC-distribution/releases</a>.</p>
+<p><strong>RNA-Seq Analysis Service Enhancements:</strong></p>
+<p>The PATRIC RNA-Seq Service is now enhanced to support RNA-Seq data using
+the host genomes that we currently have in PATRIC (human, mouse, monkey,
+rat, pig, ferret, zebrafish, chicken, fruit fly, and roundworm). The
+PATRIC RNA-Seq Analysis Service is available as <a class="reference external" href="https://www.patricbrc.org/app/Rnaseq">an option in the
+Services menu</a>.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

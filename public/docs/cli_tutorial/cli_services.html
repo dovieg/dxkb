@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Using BV-BRC Services from the Command Line | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common Tasks With P3 Scripts" href="cli_common_tasks.html" />
+    <link rel="prev" title="Using the BV-BRC Command-line Interface" href="cli_getting_started.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Using BV-BRC Services from the Command Line | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cli_installation.html">Installing the BV-BRC Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_getting_started.html">Using the BV-BRC Command-line Interface</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using BV-BRC Services from the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_common_tasks.html">Common Tasks With P3 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_clustering.html">Looking for Hypothetical Proteins in Clusters of Related Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_signature_clusters.html">Computing Signature Clusters: an Application of the Command-Line Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command_list/index.html">BV-BRC Command Line Program Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#rast-tutorials">RAST Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Command Line Interface</a> &raquo;</li>
+        
+      <li>Using BV-BRC Services from the Command Line</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cli_tutorial/cli_services.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="using-bv-brc-services-from-the-command-line">
+<span id="cli-services"></span><h1>Using BV-BRC Services from the Command Line<a class="headerlink" href="#using-bv-brc-services-from-the-command-line" title="Permalink to this headline">¶</a></h1>
+<p>Each of computational services offered at the BV-BRC web site is also
+available to BV-BRC command line users. We provide this access to
+enable the efficient processing of batches of data and to enable
+integration with existing data processing pipelines.</p>
+<p>Most service-based data analyses in BV-BRC follow a similar pattern. A
+BV-BRC user either uploads his data to the BV-BRC workspace or chooses
+data already in the BV-BRC workspace from a previous upload or as the
+output of an earlier analysis run. He then chooses an analysis to
+perform, and constructs a description of the input parameters to the
+analysis. He submits a request to BV-BRC to perform the analysis and
+awaits the run to complete. When the run is complete, the user may
+either view the results on the BV-BRC website or download the output
+data to his computer for further processing and reporting.</p>
+<p>When one uses the BV-BRC website for analyzing data using the BV-BRC
+services, all interactions for uploading and downloading data,
+choosing parameters, and running the service take place using
+interactive web forms on the BV-BRC website.</p>
+<p>When we move to the command line, each interaction with the BV-BRC
+website is replaced with the invocation of a command line tool. We
+will work through an example to make these concepts clear.</p>
+<p>One of the commonly used services at BV-BRC is the genome assembly
+service. This service takes as input one or more sequence read
+libraries and given on a set of parameters creates an assembled
+genome.</p>
+<p>In this example, let us assume we have the following two paired-end
+read libraries, one single-end read library, and a reference
+assembly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reads_A_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">reads_A_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">reads_B_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">reads_B_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">reads_C</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">ref</span><span class="o">.</span><span class="n">fa</span>
+</pre></div>
+</div>
+<p>We’ll also assume that these files are all residing on a computer that
+has the BV-BRC command line tools installed and that we have set up
+our command line environment (see <a class="reference internal" href="cli_getting_started.html#cli-getting-started"><span class="std std-ref">Using the BV-BRC Command-line Interface</span></a> for more
+information).</p>
+<p>To use the command line services we need to be logged in to BV-BRC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-login PatricUser
+You are logged in as PatricUser
+</pre></div>
+</div>
+<p>Since the read files are large, we will copy them to our BV-BRC
+workspace before we submit the assembly job. The <code class="docutils literal notranslate"><span class="pre">p3-cp</span></code> command
+will copy data from our local machine to a folder in the
+workspace. The <code class="docutils literal notranslate"><span class="pre">ws:</span></code> notation is used to specify that the target
+path is in the BV-BRC workspace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls *.fastq *.fa
+reads_A_1.fastq reads_A_2.fastq reads_B_1.fastq reads_B_2.fastq  reads_C.fastq ref.fa
+$ p3-mkdir /PatricUser@patricbrc.org/home/AssemblyJob
+$ p3-cp *.fastq *.fa ws:/PatricUser@patricbrc.org/home/AssemblyJob
+Copying reads_A_1.fastq (XXX bytes)
+Copy completed in 30 seconds
+Copying reads_A_2.fastq (XXX bytes)
+Copy completed in 30 seconds
+Copying reads_B_1.fastq (XXX bytes)
+Copy completed in 30 seconds
+Copying reads_B_2.fastq (XXX bytes)
+Copy completed in 30 seconds
+Copying reads_C.fastq (XXX bytes)
+Copy completed in 30 seconds
+Copying ref.fa (XXX bytes)
+Copy completed in 30 seconds
+$ p3-ls /PatricUser@patricbrc.org/home/AssemblyJob
+</pre></div>
+</div>
+<p>We will later see an example where the data copy operation is
+performed by the service submission script.</p>
+<p>Now that we have uploaded our input data we may submit our assembly
+job. The BV-BRC service submission scripts are all named starting with
+<code class="docutils literal notranslate"><span class="pre">p3-submit</span></code>; the assembly service is thus named
+<code class="docutils literal notranslate"><span class="pre">p3-submit-genome-assembly</span></code>. We can use the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option to
+determine the available options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-submit-genome-assembly --help
+p3-submit-assembly [-h] output-path output-name
+    --recipe                 Assembly recipe
+   --reference-assembly STR      Reference set of assembled DNA contigs
+   --paired-end-lib P1 P2
+   --single-end-lib LIB
+   --workspace-path-prefix STR   Prefix for workspace pathnames
+                     as given to library parameters
+</pre></div>
+</div>
+<p>We may now submit our assembly job. We will use the
+<code class="docutils literal notranslate"><span class="pre">--workspace-path-prefix</span></code> parameter to shorten the library names
+that we are passing to the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-submit-genome-assembly --recipe auto \
+    --workspace-path-prefix &#39;/PatricUser@patricbrc.org/home/AssemblyJob&#39; \
+    --paired-end-lib ws:reads_A_1.fastq ws:reads_A_2.fastq  \
+    --paired-end-lib ws:reads_B_1.fastq ws:reads_B_2.fastq  \
+    --single-end-lib ws:reads_C.fastq \
+    --reference-assembly ws:ref.fa \
+    &#39;/PatricUser@patricbrc.org/home/AssemblyRuns&#39; \
+    job-ABC-auto
+Job submitted: ace5ad73-db90-49d4-b854-8ab7290abb77
+Output will be written to /PatricUser@patricbrc.org/home/AssemblyRuns/.job-ABC-auto
+</pre></div>
+</div>
+<p>Once the job is submitted we may use the <code class="docutils literal notranslate"><span class="pre">p3-job-status</span></code> command to
+determine if the job is queued, running, or completed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-job-status ace5ad73-db90-49d4-b854-8ab7290abb77
+ace5ad73-db90-49d4-b854-8ab7290abb77: complete
+</pre></div>
+</div>
+<p>When the job is complete, we can browse the output of the job. The
+output files for the job are written to the workspace in a directory
+that is named as the output name for the job prefixed with a period:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-ls &#39;/PatricUser@patricbrc.org/home/AssemblyRuns/.jobABC-auto&#39;
+</pre></div>
+</div>
+<p>A general-purpose script, <code class="docutils literal notranslate"><span class="pre">appserv-start-app</span></code> can be used to submit a job to any
+BV-BRC service.  In order to do this, you need to specify the service ID, a JSON file
+containing the parameters, and the path to a BV-BRC workspace (usually your home workspace).</p>
+<p>We will show an example of how to do this for the Metagenome Binning Service (see
+<a class="reference internal" href="../tutorial/metagenomic_binning/metagenomic_binning.html"><span class="doc">Metagenomic Binning Service</span></a> service).</p>
+<p>You can see a copy of the parameter json on the job results page.  Below, we show
+the top of a job results page.  Click on the <strong>Parameters</strong> bar to expand it and see
+the JSON string for the parameters.</p>
+<img alt="../_images/parameters_page.png" src="../_images/parameters_page.png" />
+<p>The JSON string from the above job is shown below.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;contigs&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;srr_ids&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;output_file&quot;</span><span class="p">:</span> <span class="s2">&quot;Seminar.Reads.4.19&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;skip_indexing&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;output_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/parrello@patricbrc.org/home/Experiments&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;genome_group&quot;</span><span class="p">:</span> <span class="s2">&quot;Seminar.Reads.4.19&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;paired_end_libs&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;/rastuser25@patricbrc.org/Binning.Webinar/SRS014683_extract.1.fq&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;/rastuser25@patricbrc.org/Binning.Webinar/SRS014683_extract.2.fq&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here the input is a pair of paired-end read files.  If contigs were being submitted, <code class="docutils literal notranslate"><span class="pre">paired_end_libs</span></code> would be <code class="docutils literal notranslate"><span class="pre">null</span></code>
+and the contig file name would be specified as a string in the <code class="docutils literal notranslate"><span class="pre">contigs</span></code> member.</p>
+<p>This job is being run by <code class="docutils literal notranslate"><span class="pre">parrello&#64;patricbrc.org</span></code>, so the home workspace is <code class="docutils literal notranslate"><span class="pre">parrello&#64;patricbrc.org/home/</span></code>.
+If we put the above JSON in a file named <code class="docutils literal notranslate"><span class="pre">params.json</span></code>, the submit command would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">appserv</span><span class="o">-</span><span class="n">start</span><span class="o">-</span><span class="n">app</span> <span class="n">MetagenomeBinning</span> <span class="n">params</span><span class="o">.</span><span class="n">json</span> <span class="s2">&quot;parrello@patricbrc.org/home/&quot;</span>
+</pre></div>
+</div>
+<p>The script will respond with a job identifier, and the job will appear in your running-jobs list.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cli_common_tasks.html" class="btn btn-neutral float-right" title="Common Tasks With P3 Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cli_getting_started.html" class="btn btn-neutral float-left" title="Using the BV-BRC Command-line Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

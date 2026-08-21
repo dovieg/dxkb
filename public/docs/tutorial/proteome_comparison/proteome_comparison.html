@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Proteome Comparison Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Comparative Systems Service" href="../comparative_systems/comparative_systems.html" />
+    <link rel="prev" title="Metadata-driven Comparative Analysis Tool (Meta-CATS)" href="../metacats/metacats.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Proteome Comparison Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../msa_snp_variation/msa_snp_variation.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metacats/metacats.html">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Proteome Comparison Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-folder-to-hold-the-proteome-comparison-job-and-related-data">Creating a folder to hold the Proteome Comparison job and related data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-proteome-comparison-app">Locating the Proteome Comparison App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-parameters">Setting Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-a-reference">Selecting a Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-comparison-data">Selecting Comparison Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-proteome-comparison-job">Submitting Proteome Comparison job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-progress-on-the-jobs-page">Monitoring progress on the Jobs page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-proteome-comparison-job-results">Viewing the Proteome Comparison job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../comparative_systems/comparative_systems.html">Comparative Systems Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docking/docking.html">Small Molecule Ligand Docking Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure.html">Protein Structure Prediction Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure_recipes.html">Protein Structure Prediction — Recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Proteome Comparison Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/proteome_comparison/proteome_comparison.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="proteome-comparison-service">
+<h1>Proteome Comparison Service<a class="headerlink" href="#proteome-comparison-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 11/1/2021</em></p>
+<p>The BV-BRC’s Proteome Comparison service can be used to readily identify insertions and deletions in up to nine target genomes that are compared with one reference, which can be a researcher’s private genome in BV-BRC, a genome that has been annotated outside, any of the publicly available genomes in BV-BRC, or a set of proteins that have been saved as a Feature Group in BV-BRC.</p>
+<p>The Proteome Comparison service is based on the original Sequence-based Comparison tool that was part of RAST[1]. This tool colors each gene based on protein similarity using BLASTP[2] and marks each gene as either unique, a unidirectional best hit or a bidirectional best hit when compared to the reference genome. The output includes a whole-genome schematic that is colored based on BLAST. A table that details all the results can be downloaded for further analysis, as can a scalable vector graphic (svg) diagram of the results that is publication quality.</p>
+<section id="creating-a-folder-to-hold-the-proteome-comparison-job-and-related-data">
+<h2>Creating a folder to hold the Proteome Comparison job and related data<a class="headerlink" href="#creating-a-folder-to-hold-the-proteome-comparison-job-and-related-data" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to the <a class="reference internal" href="../genome_assembly/assembly.html"><span class="doc std std-doc">Genome Assembly Service tutorial</span></a> for instructions on creating a folder in the workspace.</p>
+</section>
+<section id="locating-the-proteome-comparison-app">
+<h2>Locating the Proteome Comparison App<a class="headerlink" href="#locating-the-proteome-comparison-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the Services tab and click on Proteome Comparison.
+<img alt="Figure 1" src="../../_images/Picture150.png" /></p></li>
+<li><p>This will open up the Proteome Comparison landing page.
+<img alt="Figure 2" src="../../_images/Picture230.png" /></p></li>
+</ol>
+</section>
+<section id="setting-parameters">
+<h2>Setting Parameters<a class="headerlink" href="#setting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The default parameters for BLASTP in the Proteome Comparison tool are a minimum coverage of 30%, a minimum identity of 10% and a BLAST E-value of 1e-5.  To see the parameters that can be adjusted, click on the down arrow that follows <strong>Advanced Parameters (Optional)</strong>.  This will open a pop-up window where the coverage, identity and E-value can be adjusted.
+<img alt="Figure 3" src="../../_images/Picture327.png" /></p></li>
+<li><p>A folder must be selected for the job. To see recently created folders, click on the arrow at the end of the text box underneath <strong>Output Folder</strong>. This will open a drop-down box that shows the folders that you have created, starting with the most recent and continuing in that order.
+<img alt="Figure 4" src="../../_images/Picture428.png" /></p></li>
+<li><p>Links to instructions on creating a new folder are available at the top of this tutorial, but if a folder has already been created, entering the name in the text box will filter the drop-down box to show the possible folders that match that input.
+<img alt="Figure 5" src="../../_images/Picture527.png" /></p></li>
+<li><p>Clicking on the <strong>Folder</strong> icon at the end of the text box will open a pop-up window that shows all the files in the workspace, which can be selected.
+<img alt="Figure 6" src="../../_images/Picture624.png" /></p></li>
+<li><p>Provide a distinctive name for the proteome comparison in the text box underneath the words <strong>Output Name</strong>.
+<img alt="Figure 7" src="../../_images/Picture723.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-a-reference">
+<h2>Selecting a Reference<a class="headerlink" href="#selecting-a-reference" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The Proteome Comparison tools allows researchers to select genomes or a specific feature group that contains a set of proteins to serve as a reference that other genomes will be BLASTed against.  The search can be narrowed by clicking on the filter icon at the beginning of the text box.  This will show checkboxes that can narrow the search to reference, representative, all public, or private genomes (My Genomes).
+<img alt="Figure 8" src="../../_images/Picture820.png" /></p></li>
+<li><p>If the name or genome ID is known, typing that in the text box will filter results in the drop-down box to show the possible genomes that match the input. Clicking on the row that contains the correct genome will fill the box underneath <strong>Select A Genome</strong>.
+<img alt="Figure 9" src="../../_images/Picture920.png" /></p></li>
+<li><p>The reference data can be a fasta file with protein sequences.  If that file has not been uploaded into the BV-BRC workspace, they will need to be uploaded.  Click on the folder icon that follows the text box underneath <strong>Or A FASTA File</strong> will open a pop-up window that shows the workspace.  Navigate to the destination folder for the file, and when located, click on the row that contains it.
+<img alt="Figure 10" src="../../_images/Picture1017.png" /></p></li>
+<li><p>This will show the contents of the selected folder.  To upload a fasta file to this location, click on the upload icon in the upper right corner.  This will open yet another pop-up window that handles the upload of files.  Note that the type of file is <strong>Feature Protein FASTA</strong>. Click on the blue <strong>Select File</strong> bar in the middle of the page.  This will open a dialog box with your computer.  Fasta documents will be in bold text and available for upload.
+<img alt="Figure 11" src="../../_images/Picture1116.png" /></p></li>
+<li><p>Click on the row with the desired file and then click on the <strong>Open</strong> button at the lower right. This will initiate the upload process into the workspace location, and the dialog box with your computer will close.  The name of the desired file will appear in the pop-up window. Click on the <strong>Start Upload</strong> button in the lower right.  When the upload has completed, the name of the file will appear in the text box below <strong>Or A FASTA File</strong>.
+<img alt="Figure 12" src="../../_images/Picture1214.png" /></p></li>
+<li><p>Feature groups can also be used as reference data.  To see recently created groups, click on the down arrow at the end of the text box underneath <strong>Or A Feature Group</strong>. This will open a drop-down box that shows the most recently created groups.  Clicking on that group will autofill the text box with the name of the group.<br />
+<img alt="Figure 13" src="../../_images/Picture1311.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-comparison-data">
+<h2>Selecting Comparison Data<a class="headerlink" href="#selecting-comparison-data" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Up to nine files can be compared to a reference genome in the bidirectional BLAST analysis.  Genomes can be added individually.  Finding a genome of interest is the same as discussed earlier for reference genomes (enter name or genome ID, use drop-down, go to workspace).  Entering the name of a particular genome in the text box underneath <strong>Select Genome</strong> will open the drop-down box below where the name can be clicked.  This will fill the text box with the name of the selected genome.  Click on the + icon at the end of the text box. This will move the genome into the <strong>Selected Genome Table</strong>.
+<img alt="Figure 14" src="../../_images/Picture1411.png" /></p></li>
+<li><p>The comparison data can be a fasta file with protein sequences.  If the file is in the BV-BRC workspace, click on the folder icon at the end of the text box underneath <strong>And/Or Select Protein FASTA File</strong>.  This will open a dialog box where the file can be uploaded or located in the workspace. Once selected, the name will appear in the text box. Click on the + icon at the end of the text box. This will move the genome into the <strong>Selected Genome Table</strong>.
+<img alt="Figure 15" src="../../_images/Picture1511.png" /></p></li>
+<li><p>Feature groups can also be used as comparison data.  To see recently created groups, click on the down arrow at the end of the text box underneath <strong>And/Or Select Feature Group</strong>. This will open a drop-down box that shows the most recently created groups.  Clicking on that group will autofill the text box with the name of the group.  Click on the + icon at the end of the text box. This will move the genome into the <strong>Selected Genome Table</strong>.
+<img alt="Figure 16" src="../../_images/Picture1611.png" /></p></li>
+<li><p>Genome groups can also be used as comparison data.  To see recently created groups, click on the down arrow at the end of the text box underneath <strong>And/Or Select Genome Group</strong>. This will open a drop-down box that shows the most recently created groups.  Clicking on that group will autofill the text box with the name of the group.  Click on the + icon at the end of the text box. This will move the genome into the <strong>Selected Genome Table</strong>.
+<img alt="Figure 17" src="../../_images/Picture1710.png" /></p></li>
+</ol>
+</section>
+<section id="submitting-proteome-comparison-job">
+<h2>Submitting Proteome Comparison job<a class="headerlink" href="#submitting-proteome-comparison-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Once the parameters, the reference and comparison data have been selected, the <strong>Submit</strong> button at the bottom of the page will turn blue.  Clicking on it will submit the job.
+<img alt="Figure 18" src="../../_images/Picture1810.png" /></p></li>
+<li><p>A message will appear that confirms that the job has been submitted.
+<img alt="Figure 19" src="../../_images/Picture1911.png" /></p></li>
+</ol>
+</section>
+<section id="monitoring-progress-on-the-jobs-page">
+<h2>Monitoring progress on the Jobs page<a class="headerlink" href="#monitoring-progress-on-the-jobs-page" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the Jobs box at the bottom right of any BV-BRC page.
+<img alt="Figure 20" src="../../_images/Picture2010.png" /></p></li>
+<li><p>This will open the Jobs Landing page where the status of submitted jobs is displayed.
+<img alt="Figure 21" src="../../_images/Picture2114.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-the-proteome-comparison-job-results">
+<h2>Viewing the Proteome Comparison job results<a class="headerlink" href="#viewing-the-proteome-comparison-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To view a particular job, click on a row to select it. Once selected, the downstream processes available for the selection appear in the vertical green bar.  Clicking on the <strong>View</strong> icon will open the Proteome Comparison job summary.
+<img alt="Figure 22" src="../../_images/Picture2210.png" /></p></li>
+<li><p>This will rewrite the page to show the information about the Proteome Comparison job, and all of the files that are produced when the pipeline runs.<br />
+<img alt="Figure 23" src="../../_images/Picture238.png" /></p></li>
+<li><p>The information about the job submission can be seen in the table at the top of the results page.  To see all the parameters that were selected when the job was submitted, click on the <strong>Parameters</strong> row.<br />
+<img alt="Figure 24" src="../../_images/Picture247.png" /></p></li>
+<li><p>This will show the information on what was selected when the job was originally submitted.
+<img alt="Figure 25" src="../../_images/Picture257.png" /></p></li>
+<li><p>One of the best ways to view the Proteome Comparison job is to click on the <strong>View</strong> icon at the upper right of the job landing page.
+<img alt="Figure 26" src="../../_images/Picture267.png" /></p></li>
+<li><p>This will rewrite the page to show the plot of the bi-directional BLAST hits, the order of the data in the image, and a legend that shows the strength of the BLAST hits (blue is strongest, red is weakest). The entire image can be viewed by scrolling down.  The circular diagram is generated by Circos[3],
+<img alt="Figure 27" src="../../_images/Picture276.png" /></p></li>
+<li><p>To download either the image or the underlying data, click on the <strong>Download</strong> icon at the upper right.
+<img alt="Figure 28" src="../../_images/Picture288.png" /></p></li>
+<li><p>A Scalable Vector Graphics (<strong>.svg</strong>) file, an XML based two-dimensional graphic file format, is also produced by the Proteome Comparison pipeline. It is a publication quality image that can be downloaded by clicking on <strong>SVG Image</strong>.
+<img alt="Figure 29" src="../../_images/Picture298.png" /></p></li>
+<li><p>A text file that shows the results of the BLAST comparison is also available for download. To download the file, click on <strong>Genome Comparison Table (txt)</strong>.
+<img alt="Figure 30" src="../../_images/Picture307.png" /></p></li>
+<li><p>The Excel version of the <strong>Genome Comparison Table (xls)</strong> is perhaps the best way to view this data, as it even matches the color showing the strength of the BLASTP hits.
+<img alt="Figure 31" src="../../_images/Picture3112.png" /></p></li>
+<li><p>The document contains information that includes all the genes in the reference data (genomes or fasta file) and the genes in the comparison data that have the best BLASTP hits to that reference. The first row will show the names of the data files in specific columns, and the column heading in the second row show the additional information. Data begins with the data that was used as a reference (Row 2, Columns A-J) and includes the following:</p>
+<ul class="simple">
+<li><p>Column A – Accession number for the contig in the reference genome</p></li>
+<li><p>Column B – The order number of this gene in the genome</p></li>
+<li><p>Column C – Size in amino acids</p></li>
+<li><p>Column D – BV-BRC locus tag</p></li>
+<li><p>Column E – RefSeq locus tag (if available)</p></li>
+<li><p>Column F – Gene name</p></li>
+<li><p>Column G – Functional annotation</p></li>
+<li><p>Column H – Start location for the gene on the contig</p></li>
+<li><p>Column I – End of the gene on the contig</p></li>
+<li><p>Column J – Strand that the gene is located on</p></li>
+</ul>
+</li>
+<li><p>This is followed by information on the comparison data (genomes or fasta file). This data in columns K-T for row 2 (for the first comparison genome) include:</p>
+<ul class="simple">
+<li><p>Column K – Data on the type of BLAST hit (bi- or uni-directional or missing).  Cells in this column will be colored to match the strength of the BLAST hit as seen in the circular diagram.</p></li>
+<li><p>Column L - Contig that contains the gene.</p></li>
+<li><p>Column M - The order number of this gene in the genome or data file.</p></li>
+<li><p>Column N - Size of the protein in amino acids</p></li>
+<li><p>Column O – BV-BRC locus tag</p></li>
+<li><p>Column P - RefSeq locus tag (if available)</p></li>
+<li><p>Column Q - Gene name</p></li>
+<li><p>Column R - Functional description</p></li>
+<li><p>Column S - Percent identity of the BLAST hit</p></li>
+<li><p>Column T - Sequence coverage compared to the reference This pattern is repeated for all comparison genomes.</p></li>
+</ul>
+</li>
+<li><p>Clicking on the <strong>View</strong> icon will reload the job landing page.
+<img alt="Figure 32" src="../../_images/Picture328.png" /></p></li>
+<li><p>The <strong>SVG</strong> image can be viewed or downloaded from the job landing page.
+<img alt="Figure 33" src="../../_images/Picture336.png" /></p></li>
+<li><p>An <strong>html</strong> version of the completed job is also available for view or download.
+<img alt="Figure 34" src="../../_images/Picture346.png" /></p></li>
+<li><p>The <strong>comp_genome.txt</strong> files show the contig that the reference gene is on, the start and stop positions of that gene, the percent identity to the gene in the comparison genome, and the gene ID of that gene in the comparison genome. These files are available for view or download.
+<img alt="Figure 35" src="../../_images/Picture356.png" /></p></li>
+<li><p>A <strong>JSON</strong> file is a file that stores simple data structures and objects in JavaScript Object Notation (JSON) format, which is a standard data interchange format. It is primarily used for transmitting data between a web application and a server.  While it is not recommended for viewing (it is a computer-readable file), the file is both downloadable and viewable.
+<img alt="Figure 36" src="../../_images/Picture366.png" /></p></li>
+<li><p>The <strong>genome_comparison.txt</strong> file is also available for download from the job landing page.
+<img alt="Figure 37" src="../../_images/Picture375.png" /></p></li>
+<li><p>The Excel version of the <strong>Genome Comparison Table (xls)</strong> is also available from the job landing page.
+<img alt="Figure 38" src="../../_images/Picture387.png" /></p></li>
+<li><p>The <strong>karyotype.txt</strong> file is an intermediate file used by the Circos drawing program.
+<img alt="Figure 39" src="../../_images/Picture397.png" /></p></li>
+<li><p>The <strong>legend.txt</strong> file is an intermediate file used by the Circos drawing program.
+<img alt="Figure 40" src="../../_images/Picture406.png" /></p></li>
+<li><p>The <strong>ref_genome.txt</strong> file shows the contig ID, start, stop, and gene ID for each of the genes/proteins in the reference data set.<br />
+<img alt="Figure 41" src="../../_images/Picture4112.png" /></p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Overbeek, R., et al., The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). 2013. 42(D1): p. D206-D214.</p></li>
+<li><p>Boratyn, G.M., et al., BLAST: a more efficient report with usability improvements. Nucleic acids research, 2013. 41(W1): p. W29-W33.</p></li>
+<li><p>Krzywinski, M., et al., Circos: an information aesthetic for comparative genomics. Genome research, 2009. 19(9): p. 1639-1645.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../comparative_systems/comparative_systems.html" class="btn btn-neutral float-right" title="Comparative Systems Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../metacats/metacats.html" class="btn btn-neutral float-left" title="Metadata-driven Comparative Analysis Tool (Meta-CATS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

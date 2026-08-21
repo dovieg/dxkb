@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Expression Import Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fastq Utilities Service" href="fastq_utilities_service.html" />
+    <link rel="prev" title="RNA-Seq Analysis Service" href="rna_seq_analysis_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Expression Import Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="rna_seq_analysis_service.html">RNA-Seq Analysis Service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Expression Import Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Expression Import Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/expression_data_import_service.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="expression-import-service">
+<h1>Expression Import Service<a class="headerlink" href="#expression-import-service" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Differential Expression Import Service facilitates upload of user-provided, pre-processed differential expression datasets generated by microarray, RNA-Seq, or proteomic technologies to the user’s private workspace. From there the data sets can be analyzed using annotations and analysis tools for comparison with other expression data sets in BV-BRC. Currently, BV-BRC only supports differential gene expression data in the form of log ratios, generated by comparing samples/conditions/time points.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/Expression">Expression Import Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/expression_import/expression_import.html"><span class="doc std std-doc">Expression Import Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-expression-import-service">
+<h2>Using the Expression Import Service<a class="headerlink" href="#using-the-expression-import-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Expression Import</strong> submenu option under the <strong>Services</strong> main menu (Transcriptomics category) opens the Expression Import input form (<em>shown below</em>). <em>Note: You must be logged into BV-BRC to use this service.</em> The Expression Data Import Service can also be accessed via the Command Line Interface (CLI).</p>
+<p><img alt="Expression Import Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Expression Import Input Form" src="../../_images/expression_import_input_form.png" /></p>
+</section>
+<section id="data-information">
+<h2>Data information<a class="headerlink" href="#data-information" title="Permalink to this headline">¶</a></h2>
+<section id="experiment-data-file">
+<h3>Experiment Data File<a class="headerlink" href="#experiment-data-file" title="Permalink to this headline">¶</a></h3>
+<p>Allows upload a data file containing differential gene expression values in the form of log ratios. The file should be in one of the supported formats described below. Optionally, you may also upload metadata related to sample comparisons in the prescribed format to provide additional context for data analysis. See Optional Metadata.</p>
+<p><strong>File Format:</strong>  Currently, BV-BRC allows you to upload your transcriptomics datasets in
+the form of differential gene expression measured as log ratios. Data can be uploaded in multiple file formats: comma separated values (.csv), tab delimited values (.txt), or Excel (.xls or .xlsx). Click to download the <span class="xref myst">Sample Data template</span> in Gene Matrix Format.
+Files should contain data in one of the following formats:</p>
+<p><em>Gene Matrix:</em> Gene IDs are represented in the first column with extra columns for each of the comparisons in the form of log ratio, i.e., log2(test/control). Below is an example of transcriptomics data in Gene Matrix format:</p>
+<p><img alt="Sample Gene Matrix" src="../../_images/sample_gene_matrix.png" /></p>
+<p><em>Gene List:</em> Data are represented in three columns: Gene ID, Comparison ID, and Log Ratio of expression value, i.e., log2(test/control). Below is an example of transcriptomics data in Gene List format:</p>
+<p><img alt="Sample Gene List" src="../../_images/sample_gene_list.png" /></p>
+</section>
+<section id="experiment-type">
+<h3>Experiment Type<a class="headerlink" href="#experiment-type" title="Permalink to this headline">¶</a></h3>
+<p>Dropdown list specifying the the experiment type, either Transcriptomics, Proteomics, or Phenomics.</p>
+</section>
+<section id="genome-type">
+<h3>Genome Type<a class="headerlink" href="#genome-type" title="Permalink to this headline">¶</a></h3>
+<p>Option for specifying if the data set is for bacteria/archea, or alternatively, eukaryotic host.</p>
+</section>
+<section id="source-id-type">
+<h3>Source ID Type<a class="headerlink" href="#source-id-type" title="Permalink to this headline">¶</a></h3>
+<p>Dropdown list for specifying the source ID type, e.g., ID, NCBI Gene ID, RefSeq Locus Tag. Used to map genes to genes in BV-BRC, allowing integration of other data in BV-BR into the analysis. Due to differences in annotation that may exist, some genes may go unmapped. Unmapped genes will be excluded from subsequent analysis.</p>
+<p><strong>Supported IDs:</strong></p>
+<ol class="simple">
+<li><p>RefSeq Locus Tag</p></li>
+<li><p>Feature ID</p></li>
+<li><p>NCBI GI Number</p></li>
+<li><p>NCBI Protein ID</p></li>
+<li><p>SEED ID</p></li>
+<li><p>PATRIC Legacy ID</p></li>
+</ol>
+</section>
+<section id="target-genome">
+<h3>Target Genome<a class="headerlink" href="#target-genome" title="Permalink to this headline">¶</a></h3>
+<p>Option for mapping the expression data to a particular genome in BV-BRC.  This will facilitate inclusion of other expression data in BV-BRC for that genome in subsequent analysis.</p>
+</section>
+</section>
+<section id="experiment-information">
+<h2>Experiment Information<a class="headerlink" href="#experiment-information" title="Permalink to this headline">¶</a></h2>
+<p>Metadata to specify the experiment title, description, organism, and Pubmed ID (optional) for providing contextual information for the uploaded data.</p>
+<section id="experiment-title">
+<h3>Experiment Title<a class="headerlink" href="#experiment-title" title="Permalink to this headline">¶</a></h3>
+<p>Title for the experiment (required).</p>
+</section>
+<section id="experiment-description">
+<h3>Experiment Description<a class="headerlink" href="#experiment-description" title="Permalink to this headline">¶</a></h3>
+<p>Description of the experiment (required).</p>
+</section>
+<section id="organism-name">
+<h3>Organism Name<a class="headerlink" href="#organism-name" title="Permalink to this headline">¶</a></h3>
+<p>Taxonomic name of the organism associated with the uploaded data.</p>
+</section>
+<section id="pubmed-id">
+<h3>Pubmed ID<a class="headerlink" href="#pubmed-id" title="Permalink to this headline">¶</a></h3>
+<p>Pubmed ID associated with the uploaded data, if available (optional).</p>
+</section>
+<section id="output-folder">
+<h3>Output Folder<a class="headerlink" href="#output-folder" title="Permalink to this headline">¶</a></h3>
+<p>Folder in the Workspace where the uploaded data file will be located.  The default is /home/Experiments.</p>
+</section>
+</section>
+<section id="optional-metadata">
+<h2>Optional Metadata<a class="headerlink" href="#optional-metadata" title="Permalink to this headline">¶</a></h2>
+<p>Allows upload of an additional file containing key metadata attributes about the comparisons. This will enhance your analysis when using the heatmap and clustering tools. The metadata table can be uploaded as a tab/comma-delimited or Excel file. <em>Note: The column names should be the same as in the example template. Also, comparison IDs in
+the metadata file should match those in the data file.</em> Click to download the <span class="xref myst">Metadata Template</span>.</p>
+</section>
+<section id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<p><strong>Reset:</strong> Resets the input form to default values.</p>
+<p><strong>Submit:</strong> Starts the upload.</p>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Expression Import Service Output Files" src="../../_images/expression_import_output_files.png" /></p>
+<p>The Expression Import Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include</p>
+<ul class="simple">
+<li><p><strong>experiment.json</strong> - JavaScript Object Notation (JSON) format file containing experiment metadata.</p></li>
+<li><p><strong>expression.json</strong> - JSON format file containing log-ratio expression values by feature.</p></li>
+<li><p><strong>mapping.json</strong> - JSON format file containing details of the mapping of genes/proteins in the uploaded file to Feature IDs.</p></li>
+<li><p><strong>sample.json</strong> - JSON format file containing the experiment conditions.</p></li>
+</ul>
+<section id="view-experiment-conditions">
+<h3>View Experiment Conditions<a class="headerlink" href="#view-experiment-conditions" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Expression Import View Icon" src="../../_images/expression_import_view_icon.png" /></p>
+<p>Clicking on the View icon at the top right of the page will display a page with each of the conditions that are part of the experiment.</p>
+<p><img alt="Expression Import Conditions Table" src="../../_images/expression_import_conditions_table.png" /></p>
+<p>Selecting one of the Conditions and clicking the Genes icon in the vertical green Action Bar on the right side of the table will display a table of the genes and how they are regulated for that condition. See <a class="reference internal" href="../organisms_taxon/transcriptomics_gene_list.html"><span class="doc std std-doc">Transcriptomics Tab</span></a> for more information on how to use this table and the associated heatmap.</p>
+</section>
+<section id="view-experiment-results-across-all-conditions">
+<h3>View Experiment Results Across All Conditions<a class="headerlink" href="#view-experiment-results-across-all-conditions" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Expression Import Experiment Icon" src="../../_images/expression_import_experiment_icon.png" /></p>
+<p>Clicking on the Experiment icon at the top right of the page will display a page with all of the results for all of the conditions.</p>
+<p><img alt="Expression Import Genes Table" src="../../_images/expression_import_genes_table.png" /></p>
+<p>See <a class="reference internal" href="../organisms_taxon/transcriptomics_gene_list.html"><span class="doc std std-doc">Transcriptomics Tab</span></a> for more information on how to use this table and the associated heatmap.</p>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one of the output files by clicking it, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide</strong> Link to the corresponding Quick Reference Guide.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected item.</p></li>
+<li><p><strong>View</strong> Displays the content of the file, typically as plain text or rendered html, depending on filetype.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Bar</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fastq_utilities_service.html" class="btn btn-neutral float-right" title="Fastq Utilities Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rna_seq_analysis_service.html" class="btn btn-neutral float-left" title="RNA-Seq Analysis Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

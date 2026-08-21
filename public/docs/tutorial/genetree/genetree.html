@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Gene Tree Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MSA and SNP/Variation Analysis Service" href="../msa_snp_variation/msa_snp_variation.html" />
+    <link rel="prev" title="Bacterial Phylogenetic Tree Service" href="../phylogenetic_tree/phylogenetic_tree.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Gene Tree Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../phylogenetic_tree/phylogenetic_tree.html">Bacterial Phylogenetic Tree Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Gene Tree Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-service">Locating the service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-input-data">Selecting input data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-an-algorithm-and-parameters">Choosing an algorithm and parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-completed-results">Viewing completed results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Gene Tree Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genetree/genetree.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="gene-tree-service">
+<h1>Gene Tree Service<a class="headerlink" href="#gene-tree-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 11/25/2022</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Phylogenetic Tree (Gene Tree) Building Service enables construction of custom phylogenetic trees built from user-selected genomes, genes or proteins. Trees can be built based on either nucleotide or protein input sequences. The “FastTree” option computes large minimum evolution trees with profiles instead of a distance matrix. [1,2]. We also offer two maximum likelihood tree building algorithms: PhyML [3] and RaxML [4]. User-defined settings are required for either. PhyML and RaxML infer a more evolutionarily-accurate phylogenetic topology by applying a substitution model to the nucleotide sequences. This algorithm is best applied to datasets containing:</p>
+<ol class="simple">
+<li><p>fewer than 100 very long sequences, and</p></li>
+<li><p>between 100 and 1,000 small or medium length sequences.
+The service returns a Newick file which can be rendered in the interactive Archaeopteryx Tree Viewer in the BV-BRC or downloaded and viewed in other software.</p></li>
+</ol>
+<section id="see-also">
+<h3>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/GeneTree">Gene Tree Service</a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/genetree.html"><span class="doc std std-doc">Gene Tree Service Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/archaeopteryx.html"><span class="doc std std-doc">Archaeopteryx.js Tree Viewer Quick Reference Guide</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="locating-the-service">
+<h2>Locating the service<a class="headerlink" href="#locating-the-service" title="Permalink to this headline">¶</a></h2>
+<p>At the top of any BV-BRC page, find the <strong>SERVICES</strong> tab and then click on Gene Tree (Viral Services category).</p>
+<p><img alt="Figure 0" src="../../_images/Picture0.png" /></p>
+<p>This will open the phylogenetic tree input form. <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="Figure 1" src="../../_images/Picture116.png" /></p>
+</section>
+<section id="selecting-input-data">
+<h2>Selecting input data<a class="headerlink" href="#selecting-input-data" title="Permalink to this headline">¶</a></h2>
+<p>The BV-BRC offers several algorithms for tree building. Users may opt to build trees, using either aligned or unaligned nucleotide or protein sequences. We will describe the various input methods below.</p>
+<p>1.	To select the type of input sequence: nucleotide or protein, select the appropriate box.</p>
+<p><img alt="Figure 2" src="../../_images/Picture217.png" /></p>
+<p>2.	If you have previously aligned nucleotide or protein datasets using BV-BRC, these fasta files can be added from your workspace either by clicking on the folder icon and searching for it, or simply typing the file name in the appropriate box.</p>
+<p><img alt="Figure 3" src="../../_images/Picture316.png" /></p>
+<p>3.	Once a file is chosen, click on the “add” button to add the file to the “Selected file/feature fasta”.</p>
+<p><img alt="Figure 4" src="../../_images/Picture416.png" /></p>
+<p>4.	Alternatively, users can also upload a pre-selected feature group, or unaligned feature table input file, or select it from their workbench, by using the option shown below.</p>
+<p><img alt="Figure 5" src="../../_images/Picture514.png" /></p>
+</section>
+<section id="choosing-an-algorithm-and-parameters">
+<h2>Choosing an algorithm and parameters<a class="headerlink" href="#choosing-an-algorithm-and-parameters" title="Permalink to this headline">¶</a></h2>
+<p>1.	Several parameters must be selected before the phylogenetic tree job can be submitted, allowing the “Submit” button to turn blue, and the job to be queued.</p>
+<p><img alt="Figure 6" src="../../_images/Picture614.png" /></p>
+<p>2.	Select the “Trim ends of alignment threshold,” which allows the user to trim ends of the alignment. Values can be selected in percentages. If no value is selected, ends will not be trimmed.</p>
+<p><img alt="Figure 7" src="../../_images/Picture714.png" /></p>
+<p>3.	Select the “Remove gappy sequences threshold,” which allows the user to remove gappy positions from alignment extremities. Values can be selected in percentages. If no value is selected, no sequences will be removed.</p>
+<p><img alt="Figure 8" src="../../_images/Picture814.png" /></p>
+<p>4.	Select the desired tree algorithm. Users can choose from one of the following tree-building algorithms: RaxML, PhyML, or FastTree.</p>
+<p><img alt="Figure 9" src="../../_images/Picture913.png" /></p>
+<p>5.	Next select the evolutionary model. The appropriate evolutionary model options will change based on whether the user is aligning nucleotide or protein sequences (see options below).
+Nucleotide: HKY85, JC69, K80, F81, F84, TN93, GTR
+Protein: LG, WAG, JTT, Blosum62, Dayhoff, HIVw, HIVb</p>
+<p><img alt="Figure 10" src="../../_images/Picture108.png" /></p>
+<p>6.	Finally, select the “Output folder” in the workspace where results will be placed, and choose an “Output name” for the job. This name will appear in the workspace when the annotation job is complete, and will be saved in the chosen workspace folder.</p>
+<p><img alt="Figure 11" src="../../_images/Picture117.png" /></p>
+<p>7.	When all the parameters are entered, the codon tree job is ready to submit. Submit the job by clicking on the blue Submit button.</p>
+<p><img alt="Figure 12" src="../../_images/Picture124.png" /></p>
+<p>8.	A message will appear below the box to indicate that the job is now in the queue.</p>
+<p><img alt="Figure 13" src="../../_images/Picture133.png" /></p>
+<p>9.	The bottom right corner of the BV-BRC page displays an indicator that shows the number of jobs that are queued, running or completed. Clicking on the word Jobs will rewrite the page to show the Job status.</p>
+<p><img alt="Figure 14" src="../../_images/Picture144.png" /></p>
+</section>
+<section id="viewing-completed-results">
+<h2>Viewing completed results<a class="headerlink" href="#viewing-completed-results" title="Permalink to this headline">¶</a></h2>
+<p>1.	Researchers can monitor the Jobs Status page to see the status of their job, which is indicated in the first column (Queued, Running, Complete, Failed).</p>
+<p><img alt="Figure 15" src="../../_images/Picture154.png" /></p>
+<p>2.	Clicking on the row that contains the job of interest will open two icons in the vertical green bar. If there is a problem with a particular job, the Report Issue icon should be clicked.</p>
+<p><img alt="Figure 16" src="../../_images/Picture164.png" /></p>
+<p>3.	This will open a pop-up window where issues with specific jobs can be reported. Users can add any additional information and click the submission button to generate a message to BV-BRC team members, notifying them that there has been a problem.</p>
+<p><img alt="Figure 17" src="../../_images/Picture174.png" /></p>
+<p>4.	A job that has been successfully completed can be viewed by clicking on the row and then clicking on the View icon in the vertical green bar.</p>
+<p><img alt="Figure 18" src="../../_images/Picture184.png" /></p>
+<p>5.	This will open a results page, consisting of a header describing the job and a list of output files, as shown below. The top box has the job ID number and gives pertinent information about the time it took to complete and the selected parameters. The lower table has a number of output files.</p>
+<p><img alt="Figure 19" src="../../_images/Picture194.png" /></p>
+<p>6.. The resulting tree can be viewed in the BV-BRC interactive Archaeopteryx.js Tree Viewer. To launch the viewer, click the <strong>VIEW</strong> icon at the top right of the page, to the left of the green bar.</p>
+<p><img alt="Figure 19a" src="../../_images/Picture19a.png" /></p>
+<p>(Example Archaeopteryx.js image)
+<img alt="Figure 19b" src="../../_images/Picture19b.png" /></p>
+<p>The <a class="reference internal" href="../../quick_references/services/archaeopteryx.html"><span class="doc std std-doc">Archaeopteryx.js Tree Viewer Quick Reference Guide</span></a> provides detailed information about its features and options.</p>
+<p>7.	Click on the tree_report.html file. This will populate the vertical green bar with several icons for downloading the data, viewing it, deleting or renaming the file, copying or sharing with another BV-BRC user, moving it to a different directory, or changing the type tagged to the file. To examine the tree_report.html, click on the View icon.</p>
+<p><img alt="Figure 20" src="../../_images/Picture204.png" /></p>
+<p>8. This will re-write the page to show the html report, which can also be downloaded. The report shows the rendered tree at the top, followed by the tree statistics.</p>
+<p><img alt="Figure 21" src="../../_images/Picture218.png" /></p>
+<p>9.	Click on the row that contains the “tree.nwk” file. This will populate the vertical green bar with several icons for downloading the tree, viewing it, as well as other options. Click on the “View” icon.</p>
+<p><img alt="Figure 22" src="../../_images/Picture224.png" /></p>
+<p>10.	This will re-write the page to show the phylogenetic tree, which can also be downloaded.</p>
+<p><img alt="Figure 23" src="../../_images/Picture234.png" /></p>
+<p>The service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include:</p>
+<ul class="simple">
+<li><p><strong>.afa</strong> – the alignment file in fasta format.</p></li>
+<li><p><strong>.xml</strong> – PhyloXML tree format file with genome IDs as leaf nodes</p></li>
+<li><p><strong>.nwk</strong> – Newick tree format file with genome IDs as leaf nodes.</p></li>
+<li><p><strong>stats.txt</strong> – Text file containing the statistics on the tree. May include the number of genomes in the tree, the number of proteins aligned, the number of amino acids included in the alignment, the number of genes (CDS) in the alignment, and/or the number of nucleotides.</p></li>
+<li><p><strong>Tree_report.html</strong> – Web viewable file displaying the rendered tree and tree statistics, including the number of genomes, proteins, and genes used in building the tree. This file will be created even if the tree cannot be built and will provide information to understand what went wrong.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Price MN, Dehal PS, Arkin AP. FastTree: computing large minimum evolution trees with profiles instead of a distance matrix. Mol Biol Evol. 2009 Jul;26(7):1641-50. doi: 10.1093/molbev/msp077. Epub 2009 Apr 17. PMID: 19377059; PMCID: PMC2693737.</p></li>
+<li><p>Price MN, Dehal PS, Arkin AP. FastTree 2–approximately maximum-likelihood trees for large alignments. PLoS One. 2010 Mar 10;5(3):e9490. doi: 10.1371/journal.pone.0009490. PMID: 20224823; PMCID: PMC2835736.</p></li>
+<li><p>Guindon, S. and Gascuel, O., (2003) Syst Biol. 52: 696-704</p></li>
+<li><p>Stamatakis, A. et al. (2005) Bioinformatics 21: 456-463</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../msa_snp_variation/msa_snp_variation.html" class="btn btn-neutral float-right" title="MSA and SNP/Variation Analysis Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../phylogenetic_tree/phylogenetic_tree.html" class="btn btn-neutral float-left" title="Bacterial Phylogenetic Tree Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

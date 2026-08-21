@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Private Genomes | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Analysis Service Jobs" href="jobs.html" />
+    <link rel="prev" title="Uploading Data" href="data_upload.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Private Genomes | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="workspace.html">Private Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="groups.html">Data Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_upload.html">Uploading Data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Private Genomes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See also:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-private-genomes">Creating Private Genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-and-using-private-genomes">Accessing and Using Private Genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#genome-sharing">Genome Sharing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jobs.html">Analysis Service Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../workspace_groups_upload.html">Workspaces and Groups</a> &raquo;</li>
+        
+      <li>Private Genomes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/workspaces/private_genomes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="private-genomes">
+<h1>Private Genomes<a class="headerlink" href="#private-genomes" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>BV-BRC allows users to have their own private genomes stored in the workspace and also available integrated with the rest of the BV-BRC public genome data to enable comparative analysis.</p>
+</section>
+<section id="see-also">
+<h2>See also:<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../services/genome_annotation_service.html"><span class="doc std std-doc">Genome Annotation Service Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/genome_annotation/genome_annotation.html"><span class="doc std std-doc">Genome Annotation Service Tutorial</span></a></p></li>
+<li><p><a class="reference internal" href="workspace.html"><span class="doc std std-doc">Private Workspace</span></a></p></li>
+<li><p><a class="reference internal" href="../organisms_taxon/genomes.html"><span class="doc std std-doc">Genomes Tab</span></a></p></li>
+<li><p><a class="reference internal" href="../organisms_gene/overview.html"><span class="doc std std-doc">Genome Overview Tab</span></a></p></li>
+</ul>
+</section>
+<section id="creating-private-genomes">
+<h2>Creating Private Genomes<a class="headerlink" href="#creating-private-genomes" title="Permalink to this headline">¶</a></h2>
+<p>A private genome is automatically created as a result of running the Genome Annotation Service. See the <a class="reference internal" href="../services/genome_annotation_service.html"><span class="doc std std-doc">Genome Annotation Service Quick Reference Guide</span></a> for details.</p>
+</section>
+<section id="accessing-and-using-private-genomes">
+<h2>Accessing and Using Private Genomes<a class="headerlink" href="#accessing-and-using-private-genomes" title="Permalink to this headline">¶</a></h2>
+<p>Upon successful completion of an annotation job, the resulting annotated genome is integrated into the other genome data in the website, but is only viewable by the owner (submitter) of the annotation job. This integration allows use of all the BV-BRC genome display and analysis tools, including comparisons with other public genomes.</p>
+<section id="directly-accessing-private-genomes">
+<h3>Directly Accessing Private Genomes<a class="headerlink" href="#directly-accessing-private-genomes" title="Permalink to this headline">¶</a></h3>
+<p>All private genomes can be accessed together by clicking the My Genomes option from the Workspaces top menu item.</p>
+<p><img alt="My Genomes Menu Option" src="../../_images/my_genomes_menu_option.png" /></p>
+<p>This will display the Genomes Tab with a table containing all of the user’s private genomes.</p>
+<p><img alt="Genomes Tab with List of Private Genomes" src="../../_images/private_genomes_list.png" /></p>
+<p>Private genomes can be used like any other genome in BV-BRC. Selecting one of the genomes and clicking the Genome button in the right-hand vertical green Action Bar will display the Genome Overview for that genome.</p>
+<p><img alt="Private Genome Overview Tab" src="../../_images/private_genome_overview.png" /></p>
+</section>
+<section id="accessing-private-genomes-in-the-context-of-other-genomes">
+<h3>Accessing Private Genomes in the Context of Other Genomes<a class="headerlink" href="#accessing-private-genomes-in-the-context-of-other-genomes" title="Permalink to this headline">¶</a></h3>
+<p>As described above, private genomes are integrated with public genomes in BV-BRC, but are only accessible and viewable by the owner of the genome. Private genomes will be displayed whenever the context (scope) of the view includes the genome, such as in the taxonimic level. Private genomes are denoted by a <strong>“false”</strong> in the <em>Public</em> metadata field (columnn) for that genome, which can be seen by adding the field to the table display by clicking the <strong>“+”</strong> sign in the top right corner of the table, shown below.</p>
+<p><img alt="Public Field in Genome Metadata" src="../../_images/genomes_public_field.png" /></p>
+<p>The Filters option in the Genomes Tab allows quick access to private genomes in the current context, shown below.</p>
+<p><img alt="Genomes Filtered to Private" src="../../_images/filtered_private_genomes.png" /></p>
+<p>From the Genomes Tab, Private and public genomes can be grouped together for further comparative tools and services, such as <a class="reference internal" href="../services/variation_analysis_service.html"><span class="doc std std-doc">Variation Analysis</span></a>, <a class="reference internal" href="../services/phylogenetic_tree_building_service.html"><span class="doc std std-doc">Phylogenetic Tree</span></a>, <a class="reference internal" href="../services/genome_alignment_service.html"><span class="doc std std-doc">Genome Alignment</span></a>, <a class="reference internal" href="../services/protein_family_service.html"><span class="doc std std-doc">Protein Family Sorter</span></a>, and <a class="reference internal" href="../services/proteome_comparison_service.html"><span class="doc std std-doc">Proteome Comparison</span></a>.</p>
+</section>
+</section>
+<section id="genome-sharing">
+<h2>Genome Sharing<a class="headerlink" href="#genome-sharing" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to share a genome annoted using the Genome Annotation Service with specified other registered BV-BRC users. This allows these other users to interact with the genome in the website in the same way as the user who originally annotated the genome. Selecting one or more of the genomes in the table enables the “Share” button in the vertical green Action Bar on the right side of the table. Clicking the Share button opens a dialog box for selecting other users with whom to share the genome.</p>
+<p><img alt="Sharing a Private Genome" src="../../_images/share_private_genome.png" /></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="jobs.html" class="btn btn-neutral float-right" title="Analysis Service Jobs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_upload.html" class="btn btn-neutral float-left" title="Uploading Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

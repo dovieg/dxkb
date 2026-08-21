@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Correlated Genes | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Interactions, Feature-Level" href="interactions.html" />
+    <link rel="prev" title="Transcriptomics, Gene-Level" href="transcriptomics.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Correlated Genes | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#taxon-level-data">Taxon-Level Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#genome-strain-level-data">Genome/Strain-Level Data</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../organisms_menu.html#gene-protein-level-data">Gene/Protein-Level Data</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Feature (Gene) Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_browser.html">Genome Browser, Feature View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="compare_region_viewer.html">Compare Region Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transcriptomics.html">Transcriptomics, Gene-Level</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Correlated Genes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interactions.html">Interactions, Feature-Level</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../organisms_menu.html">Organisms and Data Types</a> &raquo;</li>
+        
+      <li>Correlated Genes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/organisms_gene/correlated_genes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="correlated-genes">
+<h1>Correlated Genes<a class="headerlink" href="#correlated-genes" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Correlated Genes Tab shows the genes that are either up or down-regulated with respect to selected gene in the Feature View. The values are based on the public transcriptomics data that are available in BV-BRC.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Examining Transcriptomics Data Tutorial</p></li>
+<li><p><a class="reference internal" href="../organisms_taxon/transcriptomics_gene_list.html"><span class="doc std std-doc">Transcriptomics Gene List</span></a></p></li>
+<li><p><a class="reference internal" href="../organisms_taxon/transcriptomics_gene_heatmap.html"><span class="doc std std-doc">Transcriptomics Gene List Heatmap</span></a></p></li>
+<li><p><a class="reference internal" href="transcriptomics.html"><span class="doc std std-doc">Transcriptomcs Tab, Gene-Level</span></a></p></li>
+<li><p><a class="reference internal" href="../services/expression_data_import_service.html"><span class="doc std std-doc">Expression Data Import Service</span></a></p></li>
+</ul>
+<p>Most of the Ptranscriptomics data have been curated from published gene expression datasets related to bacterial pathogens in <a class="reference external" href="http://www.ncbi.nlm.nih.gov/geo/">NCBI’s GEO database</a>. Some additional data sets have been incorporated from the NIAID-funded [Systems Biology and Functional Genomics Centers and other sources.</p>
+</section>
+<section id="accessing-the-correleated-genes">
+<h2>Accessing the Correleated Genes<a class="headerlink" href="#accessing-the-correleated-genes" title="Permalink to this headline">¶</a></h2>
+<p>Clicking the Correlated Genes tab in the Feature View displays a table showing all the genes with expression data that are either up or down-regulated with respect to selected gene.</p>
+<p><img alt="Correlated Genes Table" src="../../_images/transcriptomics_correlated_genes.png" /></p>
+<section id="correlated-genes-table-tools">
+<h3>Correlated Genes Table Tools<a class="headerlink" href="#correlated-genes-table-tools" title="Permalink to this headline">¶</a></h3>
+<p>You may do the following with the table:</p>
+<ul class="simple">
+<li><p><strong>Download</strong> the entire contents of the data used to create the charts in text, CSV, or Excel format by clicking the Download button above the table on the left side.</p></li>
+<li><p><strong>Filter</strong> the correlated genes based on positive or negative correlation and cutoff value using the dropdown boxes above the table and clicking the Filter button.</p></li>
+</ul>
+<p>The columns in the table include the following:</p>
+<ul class="simple">
+<li><p><strong>ID:</strong> Unique identifier for the gene, usually of the form fig|#####.##.peg.####</p></li>
+<li><p><strong>RefSeq Locus Tag:</strong> RefSeq locus tag for the gene, if available</p></li>
+<li><p><strong>Local Family:</strong> “Local” Protein Family containing the gene</p></li>
+<li><p><strong>Global Family:</strong> “Global” Protein Family containing the gene</p></li>
+<li><p><strong>Gene Symbol:</strong> Gene symbol, if available</p></li>
+<li><p><strong>Product:</strong> Gene product, as annotated by BV-BRC</p></li>
+<li><p><strong>Correlation:</strong> Correlation value of the gene compared to the gene in the Feature View</p></li>
+<li><p><strong>Comparisons:</strong></p></li>
+</ul>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one or more of the experiments by clicking the checkbox beside the Title column in the table, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected items (rows).</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>Feature:</strong> Loads the Feature Page for the selected feature. <em>Available only if a single feature is selected.</em></p></li>
+<li><p><strong>Features:</strong> Loads the Features Table for the selected features. <em>Available only if multiple features are selected.</em></p></li>
+<li><p><strong>Genome:</strong> Loads the Genome View Overview page corresponding to the selected feature.  <em>Available only if a single feature is selected.</em></p></li>
+<li><p><strong>Genomes:</strong> Loads the Genomes Table, listing the genomes that correspond to the selected features. <em>Available only if multiple features are selected.</em></p></li>
+<li><p><strong>FASTA:</strong> Provides the FASTA DNA or protein sequence for the selected feature(s).</p></li>
+<li><p><strong>ID Map:</strong> Provides the option to map the selected feature(s) to multiple other idenfiers, such as RefSeq and UniProt.</p></li>
+<li><p><strong>MSA:</strong> Launches the Multiple Sequence Alignment (MSA) tool and aligns the selected features by DNA or protein sequence in an interactive viewer.</p></li>
+<li><p><strong>Pathway:</strong> Loads the Pathway Summary Table containing a list of all the pathways in which the selected features are found.</p></li>
+<li><p><strong>Group:</strong> Opens a pop-up window to enable adding the selected sequences to an existing or new group in the private workspace.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interactions.html" class="btn btn-neutral float-right" title="Interactions, Feature-Level" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transcriptomics.html" class="btn btn-neutral float-left" title="Transcriptomics, Gene-Level" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

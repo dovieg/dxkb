@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Protein Structure Prediction — Recipes | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Taxonomic Classification Service" href="../taxonomic_classification/taxonomic_classification.html" />
+    <link rel="prev" title="Protein Structure Prediction Tutorial" href="predict_structure.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Protein Structure Prediction — Recipes | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../msa_snp_variation/msa_snp_variation.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metacats/metacats.html">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../proteome_comparison/proteome_comparison.html">Proteome Comparison Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparative_systems/comparative_systems.html">Comparative Systems Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docking/docking.html">Small Molecule Ligand Docking Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="predict_structure.html">Protein Structure Prediction Tutorial</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Protein Structure Prediction — Recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-a-recipe">Choosing a recipe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-1-multi-chain-protein-complex-with-boltz">Recipe 1 — Multi-chain protein complex with Boltz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-2-protein-with-a-cofactor-ccd-code">Recipe 2 — Protein with a cofactor (CCD code)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-3-protein-with-a-smiles-ligand">Recipe 3 — Protein with a SMILES ligand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-4-let-bv-brc-compute-the-msa-with-colabfold">Recipe 4 — Let BV-BRC compute the MSA with ColabFold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-5-uploaded-msa-with-boltz-openfold-or-chai">Recipe 5 — Uploaded MSA with Boltz, OpenFold, or Chai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recipe-6-rerun-an-existing-job-with-a-different-tool">Recipe 6 — Rerun an existing job with a different tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-not-on-the-form">What’s not on the form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Protein Structure Prediction — Recipes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/predict_structure/predict_structure_recipes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="protein-structure-prediction-recipes">
+<h1>Protein Structure Prediction — Recipes<a class="headerlink" href="#protein-structure-prediction-recipes" title="Permalink to this headline">¶</a></h1>
+<p>This is a cookbook for the Protein Structure Prediction service. If you’re new to the service, start with the <a class="reference internal" href="predict_structure.html"><span class="doc std std-doc">Tutorial</span></a> — it walks you through a single-protein prediction end-to-end. Once you’re comfortable with the form, the recipes here cover the patterns that go beyond the defaults: multi-chain complexes, ligands, MSAs you supply or have computed, and reruns.</p>
+<p>For the full reference of every form field see the <a class="reference internal" href="../../quick_references/services/predict_structure_service.html"><span class="doc std std-doc">Quick Reference Guide</span></a>.</p>
+<section id="choosing-a-recipe">
+<h2>Choosing a recipe<a class="headerlink" href="#choosing-a-recipe" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Your situation</p></th>
+<th class="head"><p>Recipe</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single protein, just want a structure</p></td>
+<td><p><a class="reference internal" href="predict_structure.html"><span class="doc std std-doc">Tutorial</span></a> — uses Auto → ESMFold</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multi-chain protein complex</p></td>
+<td><p><span class="xref myst">Multi-chain complex with Boltz</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Protein + a small-molecule cofactor (ATP, NAD, …)</p></td>
+<td><p><span class="xref myst">Protein + ligand by CCD code</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein + a novel small molecule</p></td>
+<td><p><span class="xref myst">Protein + SMILES ligand</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Need an MSA but don’t have one</p></td>
+<td><p><span class="xref myst">Let BV-BRC compute the MSA</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Have an MSA, want best-quality fold</p></td>
+<td><p><span class="xref myst">Boltz / OpenFold / Chai with uploaded MSA</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Already ran one — try a different engine</p></td>
+<td><p><span class="xref myst">Rerun with a different tool</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recipe-1-multi-chain-protein-complex-with-boltz">
+<h2>Recipe 1 — Multi-chain protein complex with Boltz<a class="headerlink" href="#recipe-1-multi-chain-protein-complex-with-boltz" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> predict the structure of a complex (e.g. an antibody Fv with heavy + light chains, or a homo-tetramer).</p>
+<p><strong>Inputs:</strong> one FASTA file with multiple <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> records — each record becomes one chain. Soft limit: 26 chains and 10,000 total residues per job.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">heavy_chain</span>
+<span class="n">QVQLVQSGAEVKKPGASVKVSCKASGYTFT</span><span class="o">...</span>
+<span class="o">&gt;</span><span class="n">light_chain</span>
+<span class="n">DIQMTQSPSSLSASVGDRVTITCRASQDIS</span><span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Form settings:</strong></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prediction Tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Boltz</span></code> (or Auto if you’ve uploaded an MSA)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>the multi-chain FASTA</p></td>
+</tr>
+<tr class="row-even"><td><p>MSA Source</p></td>
+<td><p><em>Use MSA Server or Service</em> (recommended) or <em>Precomputed MSA from Workspace</em> if you already have one</p></td>
+</tr>
+<tr class="row-odd"><td><p>Other inputs</p></td>
+<td><p>leave empty</p></td>
+</tr>
+<tr class="row-even"><td><p>Job Name</p></td>
+<td><p>something descriptive — e.g. <code class="docutils literal notranslate"><span class="pre">antibody-fv-boltz</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Boltz for complexes?</strong> Boltz, OpenFold 3, and Chai-1 are all AF3-class diffusion models with strong multimer performance. Boltz is the auto-selector’s first choice when an MSA is available; OpenFold and Chai are reasonable swaps if you want to compare.</p>
+</section>
+<section id="recipe-2-protein-with-a-cofactor-ccd-code">
+<h2>Recipe 2 — Protein with a cofactor (CCD code)<a class="headerlink" href="#recipe-2-protein-with-a-cofactor-ccd-code" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> fold a protein with a known cofactor in place (e.g. an ATP-binding domain with ATP modeled).</p>
+<p><strong>Inputs:</strong> the protein FASTA plus a CCD code in the Ligands input.</p>
+<p><strong>Form settings:</strong></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prediction Tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Boltz</span></code> (or Auto)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>your FASTA</p></td>
+</tr>
+<tr class="row-even"><td><p>Ligands → Notation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CCD</span> <span class="pre">codes</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ligands → input</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ATP</span></code> (one per line if you have more)</p></td>
+</tr>
+<tr class="row-even"><td><p>MSA Source</p></td>
+<td><p><em>Use MSA Server or Service</em> or <em>Precomputed</em></p></td>
+</tr>
+</tbody>
+</table>
+<p>Common CCD codes: <code class="docutils literal notranslate"><span class="pre">ATP</span></code>, <code class="docutils literal notranslate"><span class="pre">ADP</span></code>, <code class="docutils literal notranslate"><span class="pre">GTP</span></code>, <code class="docutils literal notranslate"><span class="pre">NAD</span></code>, <code class="docutils literal notranslate"><span class="pre">FAD</span></code>, <code class="docutils literal notranslate"><span class="pre">HEM</span></code>, <code class="docutils literal notranslate"><span class="pre">MG</span></code>, <code class="docutils literal notranslate"><span class="pre">ZN</span></code>, <code class="docutils literal notranslate"><span class="pre">CA</span></code>. Glycans use their CCD codes too (<code class="docutils literal notranslate"><span class="pre">NAG</span></code>, <code class="docutils literal notranslate"><span class="pre">MAN</span></code>, <code class="docutils literal notranslate"><span class="pre">BMA</span></code>).</p>
+<p><strong>Limitation:</strong> the form’s Notation selector carries one notation per submission. To mix CCD ligands and SMILES ligands in the same job, you need the CLI (see <a class="reference internal" href="../../quick_references/services/predict_structure_cli.html"><span class="doc std std-doc">CLI Reference</span></a>).</p>
+</section>
+<section id="recipe-3-protein-with-a-smiles-ligand">
+<h2>Recipe 3 — Protein with a SMILES ligand<a class="headerlink" href="#recipe-3-protein-with-a-smiles-ligand" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> fold a protein with a novel small molecule (no CCD code yet) in place — e.g. a drug candidate.</p>
+<p><strong>Inputs:</strong> the protein FASTA plus the molecule as a SMILES string.</p>
+<p><strong>Form settings:</strong></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prediction Tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Boltz</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>your FASTA</p></td>
+</tr>
+<tr class="row-even"><td><p>Ligands → Notation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SMILES</span> <span class="pre">strings</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ligands → input</p></td>
+<td><p>the SMILES (e.g. <code class="docutils literal notranslate"><span class="pre">CCO</span></code> for ethanol, one per line for multiple)</p></td>
+</tr>
+<tr class="row-even"><td><p>MSA Source</p></td>
+<td><p><em>Use MSA Server or Service</em></p></td>
+</tr>
+</tbody>
+</table>
+<p>The form validates SMILES as you type; the first invalid line is reported inline. Standard SMILES syntax — branching parentheses must balance, atoms come from the typical organic set + halogens.</p>
+<p><strong>Tip:</strong> if you have the molecule’s 2D structure in another tool (e.g. RDKit, ChemDraw), export to canonical SMILES first.</p>
+</section>
+<section id="recipe-4-let-bv-brc-compute-the-msa-with-colabfold">
+<h2>Recipe 4 — Let BV-BRC compute the MSA with ColabFold<a class="headerlink" href="#recipe-4-let-bv-brc-compute-the-msa-with-colabfold" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> predict a structure that needs an MSA, but you don’t have one and don’t want to build it yourself.</p>
+<p><strong>Form settings:</strong></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prediction Tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Boltz</span></code>, <code class="docutils literal notranslate"><span class="pre">OpenFold</span></code>, or <code class="docutils literal notranslate"><span class="pre">Chai</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>your FASTA</p></td>
+</tr>
+<tr class="row-even"><td><p>MSA Source</p></td>
+<td><p><strong>Use MSA Server or Service</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>The service runs MMseqs2 against UniRef + ColabFoldDB and feeds the result to the selected engine. Expect 30 s – 3 min of extra wall time before folding starts.</p>
+<p><strong>When <em>not</em> to use this:</strong> if you already have an MSA from your own pipeline (JackHMMER, ColabFold local, etc.), upload it instead — your MSA is likely deeper / better filtered than the server’s defaults.</p>
+</section>
+<section id="recipe-5-uploaded-msa-with-boltz-openfold-or-chai">
+<h2>Recipe 5 — Uploaded MSA with Boltz, OpenFold, or Chai<a class="headerlink" href="#recipe-5-uploaded-msa-with-boltz-openfold-or-chai" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> highest-quality fold, with an MSA you’ve curated.</p>
+<p><strong>Inputs:</strong> a <code class="docutils literal notranslate"><span class="pre">.a3m</span></code>, <code class="docutils literal notranslate"><span class="pre">.sto</span></code>, or <code class="docutils literal notranslate"><span class="pre">.pqt</span></code> MSA file uploaded to your workspace.</p>
+<p><strong>Form settings:</strong></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prediction Tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Boltz</span></code> (default), or <code class="docutils literal notranslate"><span class="pre">OpenFold</span></code> / <code class="docutils literal notranslate"><span class="pre">Chai</span></code> to compare</p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>the query FASTA matching the MSA’s first sequence</p></td>
+</tr>
+<tr class="row-even"><td><p>MSA Source</p></td>
+<td><p><strong>Precomputed MSA from Workspace</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>MSA File</p></td>
+<td><p>the uploaded <code class="docutils literal notranslate"><span class="pre">.a3m</span></code> / <code class="docutils literal notranslate"><span class="pre">.sto</span></code> / <code class="docutils literal notranslate"><span class="pre">.pqt</span></code> file</p></td>
+</tr>
+</tbody>
+</table>
+<p>The service auto-converts A3M ↔ Parquet for the engine that needs it. Stockholm is converted to A3M-internally for Boltz / OpenFold.</p>
+<p><strong>Tip:</strong> a deeper MSA (more sequences) usually helps until ~256 effective sequences, after which gains flatten. ColabFold’s default depth of 5,000 raw → ~256 effective is a reasonable target.</p>
+</section>
+<section id="recipe-6-rerun-an-existing-job-with-a-different-tool">
+<h2>Recipe 6 — Rerun an existing job with a different tool<a class="headerlink" href="#recipe-6-rerun-an-existing-job-with-a-different-tool" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> you’ve run a fold and want to compare a different engine on the same inputs.</p>
+<ol class="simple">
+<li><p>Open the completed job in your workspace.</p></li>
+<li><p>Click the <strong>Rerun</strong> button in the Action Bar.</p></li>
+<li><p>The form re-opens pre-filled with the prior submission’s parameters.</p></li>
+<li><p>Change the <strong>Prediction Tool</strong> to the engine you want to compare against.</p></li>
+<li><p>Update the <strong>Job Name</strong> (the default will collide otherwise — <code class="docutils literal notranslate"><span class="pre">crambin-esmfold</span></code> → <code class="docutils literal notranslate"><span class="pre">crambin-boltz</span></code>, etc.).</p></li>
+<li><p><strong>Submit</strong>.</p></li>
+</ol>
+<p>This is the cleanest way to A/B-test engines without rebuilding the form from scratch.</p>
+</section>
+<section id="what-s-not-on-the-form">
+<h2>What’s not on the form<a class="headerlink" href="#what-s-not-on-the-form" title="Permalink to this headline">¶</a></h2>
+<p>These advanced knobs are <em>not</em> surfaced on the web form. Reach them via the CLI or JSON-RPC API:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_samples</span></code> — how many independent predictions to generate (default 5; useful for assessing ensemble disagreement)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_recycles</span></code> — recycling iterations (engine-specific defaults; AlphaFold defaults to 3)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code> — random seed for reproducibility (engine-specific)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output_format</span></code> — restrict output to a subset (<code class="docutils literal notranslate"><span class="pre">pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">cif</span></code>, <code class="docutils literal notranslate"><span class="pre">report</span></code>, <code class="docutils literal notranslate"><span class="pre">confidence</span></code>, …)</p></li>
+<li><p>Per-engine flags — see each engine’s adapter in <code class="docutils literal notranslate"><span class="pre">PredictStructureApp/adapters/</span></code></p></li>
+</ul>
+<p>See the <a class="reference internal" href="../../quick_references/services/predict_structure_cli.html"><span class="doc std std-doc">CLI Reference</span></a> and <a class="reference internal" href="../../quick_references/services/predict_structure_api.html"><span class="doc std std-doc">API Reference</span></a> for the full parameter surface.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="predict_structure.html"><span class="doc std std-doc">Protein Structure Prediction Service Tutorial</span></a> — the novice walkthrough</p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/predict_structure_service.html"><span class="doc std std-doc">Quick Reference Guide</span></a> — every form field, by section</p></li>
+<li><p><a class="reference external" href="https://bv-brc.org/app/PredictStructure">Protein Structure Prediction Service</a> — open the form</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../taxonomic_classification/taxonomic_classification.html" class="btn btn-neutral float-right" title="Taxonomic Classification Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="predict_structure.html" class="btn btn-neutral float-left" title="Protein Structure Prediction Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

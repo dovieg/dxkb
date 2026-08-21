@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Archaeopteryx.js Phylogenetic Tree Viewer | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mulitiple Sequence Alignment Viewer" href="../other/msa_viewer.html" />
+    <link rel="prev" title="Subspecies Classification Service" href="subspecies_classification_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Archaeopteryx.js Phylogenetic Tree Viewer | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/genome_browser.html">Genome Browser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/circular_genome_viewer.html">Circular Genome Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_gene/compare_region_viewer.html">Compare Region Viewer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Archaeopteryx.js Phylogenetic Tree Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../other/msa_viewer.html">Mulitiple Sequence Alignment Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../other/protein_family_sorter.html">Protein Family Sorter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../other/pathway_comparison_tool.html">Pathway Comparison Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../other/subsystems_data.html">Subsystems Data and Viewer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Archaeopteryx.js Phylogenetic Tree Viewer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/archaeopteryx.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="archaeopteryx-js-phylogenetic-tree-viewer">
+<h1>Archaeopteryx.js Phylogenetic Tree Viewer<a class="headerlink" href="#archaeopteryx-js-phylogenetic-tree-viewer" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Archaeopteryx.js provides an interactive display of phylogenetic trees, with the ability to adjust many parameters of the display, download images in multiple formats, and search within the tree.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bv-brc.org/app/GeneTree">Gene Tree Service</a></p></li>
+<li><p><a class="reference internal" href="genetree.html"><span class="doc std std-doc">Gene Tree Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/genetree/genetree.html"><span class="doc std std-doc">Gene Tree Tutorial</span></a></p></li>
+<li><p><a class="reference external" href="https://www.bv-brc.org/app/PhylogeneticTree">Phylogenetic Tree Service</a></p></li>
+<li><p><a class="reference internal" href="phylogenetic_tree_building_service.html"><span class="doc std std-doc">Phylogenetic Tree Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/phylogenetic_tree/phylogenetic_tree.html"><span class="doc std std-doc">Phylogenetic Tree Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="accessing-archaeopteryx-js">
+<h2>Accessing Archaeopteryx.js<a class="headerlink" href="#accessing-archaeopteryx-js" title="Permalink to this headline">¶</a></h2>
+<p><img alt="View icon" src="../../_images/view-icon.png" /></p>
+<p>Clicking the <strong>“VIEW”</strong> icon at the top right of the result page of a Gene Tree Service analysis job result will open the Archaeopteryx display.</p>
+<p><img alt="Archaeopteryx display" src="../../_images/archaeopteryx.png" /></p>
+<p>Archaeopteryx provides an interactive graphical representation of phylogenetic trees control panels on the left and right side of the tree display. The controls are described below.</p>
+</section>
+<section id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<p>The following describes the standard controls (found in the left control box). Depending on the tree displayed, some buttons might not be present. For example, if the tree being shown lacks confidence values (“bootstrap values”), the button to show confidence values does not appear.</p>
+<section id="tree-display-types">
+<h3>Tree Display Types<a class="headerlink" href="#tree-display-types" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Tree Display Types" src="../../_images/tree-display-types.png" /></p>
+<ul class="simple">
+<li><p><strong>P</strong> for phylogram display (uses branch length values)</p></li>
+<li><p><strong>A</strong> for phylogram display (uses branch length values) with left-aligned labels</p></li>
+<li><p><strong>C</strong> for cladogram display (ignores branch length values)</p></li>
+</ul>
+<p>Alternatively, use <em>Alt+P</em>  (“Option” on Macintosh) to cycle between these display types.</p>
+</section>
+<section id="display-data">
+<h3>Display Data<a class="headerlink" href="#display-data" title="Permalink to this headline">¶</a></h3>
+<p>These settings control which data is being shown. In general, only relevant buttons are shown (for example, for a tree which has no internal labels, the “Internal Labels” button is not shown). Depending on the tree being displayed additional buttons might also be present.</p>
+<p><img alt="Display Data" src="../../_images/display-data.png" /></p>
+<ul class="simple">
+<li><p><strong>Node Name</strong> to show/hide node names (node names usually are the untyped labels found in, for example, New Hampshire/Newick formatted trees)</p></li>
+<li><p><strong>Taxonomy</strong> to show/hide node taxonomic information</p></li>
+<li><p><strong>Sequence</strong>  to show/hide node sequence information</p></li>
+<li><p><strong>Confidence</strong> to show/hide confidence values</p></li>
+<li><p><strong>Branch Length</strong> to show/hide branch length values</p></li>
+<li><p><strong>Node Events</strong> to show speciations and duplications as colored nodes (e.g. speciations green duplications red)</p></li>
+<li><p><strong>Branch Events</strong> to show/hide branch events (e.g. mutations)</p></li>
+<li><p><strong>External Labels</strong> to show/hide external node labels (e.g. node labels, sequence and taxonomic information – if present)</p></li>
+<li><p><strong>Internal Labels</strong> to show/hide internal node labels</p></li>
+<li><p><strong>External Nodes</strong> to show external nodes as shapes (usually circles)</p></li>
+<li><p><strong>Internal Nodes</strong> to show internal nodes as shapes (usually circles)</p></li>
+<li><p><strong>Node Vis</strong> to show/hide node visualizations (node colors, shapes, sizes)</p></li>
+<li><p><strong>Dyna Hide</strong> to hide labels depending on expected visibility</p></li>
+<li><p><strong>Short Names</strong> to shorten long node labels</p></li>
+</ul>
+</section>
+<section id="zoom">
+<h3>Zoom<a class="headerlink" href="#zoom" title="Permalink to this headline">¶</a></h3>
+<p>These settings control zoom in horizontal and vertical directions.
+General zoom (where everything changes size) can also be achieved with the <strong>mouse-wheel</strong>.</p>
+<p><img alt="Zoom" src="../../_images/zoom.png" /></p>
+<ul class="simple">
+<li><p><strong>Y+</strong> to zoom in vertically (<em>Alt+Up</em> or <em>Shift+mousewheel</em>)</p></li>
+<li><p><strong>Y-</strong> to zoom out vertically (<em>Alt+Down</em> or <em>Shift+mousewheel</em>)</p></li>
+<li><p><strong>X+</strong> to zoom in horizontally (<em>Alt+Right</em> or <em>Shift+Alt+mousewheel</em>)</p></li>
+<li><p><strong>X</strong>- to zoom out horizontally (<em>Alt+Left</em> or <em>Shift+Alt+mousewheel</em>)</p></li>
+<li><p><strong>F</strong> to fit the tree to the display size (<em>Alt+C</em>, <em>Alt+Delete</em>, <em>Home</em>, or <em>Esc</em> to re-position controls as well)</p></li>
+<li><p><em>Alt+plus</em> and Alt+minus to zoom while keeping all font sizes constant</p></li>
+<li><p><em>Shift+Alt+plus</em> and <em>Shift+Alt+minus</em> or <em>Page Up</em> and <em>Page Down</em> or <em>Shift+Ctrl+mousewheel</em> to change all font sizes</p></li>
+</ul>
+</section>
+<section id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h3>
+<p>These settings control the tree being displayed.</p>
+<p><img alt="Tools" src="../../_images/tools.png" /></p>
+<ul class="simple">
+<li><p><strong>O</strong> to “order” the entire tree (<em>Alt+O</em>)</p></li>
+<li><p><strong>R1</strong> to return to super-tree, one branch at the time, if in sub-tree (<em>Alt+R</em>)</p></li>
+<li><p><strong>R</strong> to return to complete tree, if in sub-tree</p></li>
+<li><p><strong>U</strong> to uncollapse all, if collapse sub-trees present (<em>Alt+U</em>)</p></li>
+<li><p><strong>M</strong> to midpoint re-root the tree, if tree is re-rootable (uncollapses as well) (<em>Alt+M</em>)</p></li>
+</ul>
+</section>
+<section id="node-actions">
+<h3>Node Actions<a class="headerlink" href="#node-actions" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Node Actions" src="../../_images/node-actions.png" /></p>
+<p>(Left-) clicking on nodes allows to (not all actions are available at all times):</p>
+<ul class="simple">
+<li><p>Display Node Data</p></li>
+<li><p>Collapse</p></li>
+<li><p>Uncollapse</p></li>
+<li><p>Uncollapse All</p></li>
+<li><p>Go to Subtree</p></li>
+<li><p>Return to Supertree</p></li>
+<li><p>Swap Descendants</p></li>
+<li><p>Order Subtree</p></li>
+<li><p>Reroot</p></li>
+<li><p>Select/Deselect Node</p></li>
+<li><p>Select/Deselect All Ext Nodes</p></li>
+<li><p>List External Node Data</p></li>
+<li><p>Download Ext Node Data (to download data from external nodes which is currently displayed)</p></li>
+<li><p>Download All Ext Node Data (to download all data from external nodes)</p></li>
+<li><p>List Sequences in Fasta</p></li>
+<li><p>Delete Subtree/External Node</p></li>
+</ul>
+</section>
+<section id="size-control">
+<h3>Size Control<a class="headerlink" href="#size-control" title="Permalink to this headline">¶</a></h3>
+<p>These sliders control the size of various elements.</p>
+<p><img alt="Size Control" src="../../_images/size-control.png" /></p>
+<ul class="simple">
+<li><p><strong>External label size</strong> to control the size of the external label fonts</p></li>
+<li><p><strong>Internal label size</strong> to control the size of the internal label fonts</p></li>
+<li><p><strong>Branch label size</strong> to control the size of the fonts for confidence and branch lengths</p></li>
+<li><p><strong>Node size</strong> to control the size of the external and internal node shapes (if turned on with <strong>“External Nodes”</strong> and <strong>“Internal Nodes”</strong>)</p></li>
+<li><p><strong>Branch width</strong> to control the branch widths (if not set in the tree itself)</p></li>
+</ul>
+</section>
+<section id="collapse">
+<h3>Collapse<a class="headerlink" href="#collapse" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Collapse" src="../../_images/collapse.png" /></p>
+<ul class="simple">
+<li><p><strong>Collapse Depth</strong></p></li>
+<li><p><strong>Collapse Feature</strong> to collapse nodes based on shared metadata values</p></li>
+</ul>
+</section>
+<section id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>The following formats are available for download.</p>
+<p><img alt="Download" src="../../_images/download.png" /></p>
+<ul class="simple">
+<li><p>PNG image</p></li>
+<li><p>SVG vector image</p></li>
+<li><p>phyloXML tree file</p></li>
+<li><p>Newick tree file</p></li>
+</ul>
+</section>
+<section id="visualizations">
+<h3>Visualizations<a class="headerlink" href="#visualizations" title="Permalink to this headline">¶</a></h3>
+<p>Example: Node fill color representing PANGO lineages:</p>
+<p><img alt="Visualizations Nodes" src="../../_images/visualizations-nodes.png" /></p>
+<p><img alt="Visualizations Settings" src="../../_images/visualizations-settings.png" /></p>
+<p>The following visualizations are possible (depending on the data present):</p>
+<ul class="simple">
+<li><p><strong>Label Color</strong> to control label colors based on a selected metadata field</p></li>
+<li><p><strong>Node Fill Color</strong> to control node colors based on a selected metadata field</p></li>
+<li><p><strong>Node Border Color</strong> to control node border colors based on a selected metadata field</p></li>
+<li><p><strong>Node Shape</strong> to control node shapes based on a selected metadata field</p></li>
+<li><p><strong>Node Size</strong> to adjust node sizes based on the numerical values of a selected metadata field</p></li>
+</ul>
+</section>
+<section id="vis-legend">
+<h3>Vis Legend<a class="headerlink" href="#vis-legend" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Show</strong> to show/hide legends</p></li>
+<li><p><strong>Dir</strong> to toggle between vertical and horizontal alignment of multiple legends</p></li>
+<li><p>Arrows to move the position of legends</p></li>
+<li><p><strong>R</strong> to return legends to the default position</p></li>
+</ul>
+</section>
+<section id="search">
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<p>Archaeopteryx.js provides a wide variety of powerful search functions.</p>
+<p><img alt="Search" src="../../_images/search.png" /></p>
+<section id="search-fields">
+<h4>Search Fields<a class="headerlink" href="#search-fields" title="Permalink to this headline">¶</a></h4>
+<p>By default, all available data fields (such as sequence names, gene names, taxonomic names, etc.) are searched.</p>
+</section>
+<section id="basic-search">
+<h4>Basic Search<a class="headerlink" href="#basic-search" title="Permalink to this headline">¶</a></h4>
+<p>Search terms can be entered into the two input boxes. Matches of the search term entered in the top box are highlighted in green, while matches of the search term entered in the bottom box are in red. Matches of both search terms are in blue.</p>
+<p><strong>“R”</strong> buttons are used to reset (clear) search results. In addition, the <strong>“R”</strong> buttons change color if the corresponding search succeeds (one or more matches). The tooltip of the <strong>“R”</strong> buttons can be used to obtain the exact number of matches.</p>
+<p>If Archaeopteryx.js is set up to load with preset initial search terms, pressing the Escape (Esc) key will restore these terms.</p>
+</section>
+<section id="search-modes">
+<h4>Search Modes<a class="headerlink" href="#search-modes" title="Permalink to this headline">¶</a></h4>
+<p>Search mode options are as follows:</p>
+<ul class="simple">
+<li><p><strong>C</strong> - to search in a case-sensitive manner</p></li>
+<li><p><strong>W</strong> - to match complete words (separated by spaces) only (does not apply to regular expression search)</p></li>
+<li><p><strong>R</strong> - to search with regular expressions</p></li>
+<li><p><strong>P</strong> - to search (hidden) properties associated with nodes</p></li>
+<li><p><strong>N</strong> - to negate (invert) the search results</p></li>
+</ul>
+</section>
+<section id="logical-and-or-search">
+<h4>Logical AND/OR Search<a class="headerlink" href="#logical-and-or-search" title="Permalink to this headline">¶</a></h4>
+<p>A comma is for logical OR search and a plus sign is used for logical AND search. AND has precedence (is evaluated first) over OR.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>“human + pre-mRNA” only matches nodes with both “human” and “pre-mRNA” in their name/annotation(s)</p></li>
+<li><p>“human, mouse” matches all nodes with “human” or “mouse” in their name/annotation(s)</p></li>
+<li><p>“human + bcl-2, caeel + ced-9” matches all nodes with “human” and “bcl-2” or “caeel” and “ced-9” in their name/annotation(s)</p></li>
+</ul>
+</section>
+<section id="field-specific-search">
+<h4>Field-specific Search<a class="headerlink" href="#field-specific-search" title="Permalink to this headline">¶</a></h4>
+<p>To limit queries to specific data fields, the following prefixes can be used (given that the displayed tree has typed data elements, provided by, for example, <a class="reference external" href="http://www.phyloxml.org/">phyloXML</a> formatted trees):</p>
+<ul class="simple">
+<li><p>NN: node names</p></li>
+<li><p>TC: taxonomy codes (e.g. “CAEEL”)</p></li>
+<li><p>TS: taxonomy scientific names</p></li>
+<li><p>TN: taxonomy common name</p></li>
+<li><p>TI: taxonomy (database) identifiers</p></li>
+<li><p>SY: taxonomy synonym</p></li>
+<li><p>SN: sequence names</p></li>
+<li><p>GN: gene names</p></li>
+<li><p>SS: sequence symbols</p></li>
+<li><p>SA: sequence accessions</p></li>
+<li><p>AN: sequence annotations</p></li>
+<li><p>XR: sequence cross references</p></li>
+<li><p>MS: molecular sequences</p></li>
+</ul>
+<p>Field-specific searches can be combined with logical AND/OR.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>“SN:Bcl-2” matches all nodes with a sequence name containing Bcl-2</p></li>
+<li><p>“TC:CAEEL” matches all nodes for which the taxonomy code is “CAEEL”</p></li>
+<li><p>“SN:ced-9 + TC:CAEEL” matches all nodes with a ced-9 sequence from C. elegans</p></li>
+<li><p>“TC:CAEEL , TC:DROME” matches all nodes from C. elegans or Drosophila melanogaster</p></li>
+<li><p>“XR:NMR” matches all nodes with a NMR structure cross reference (for sequences from UniProt, for example)</p></li>
+<li><p>“XR:X-ray” matches all nodes with a X-ray structure cross reference (for sequences from UniProt, for example)</p></li>
+<li><p>“XR:X-ray + TC:MOUSE” matches all nodes from mouse with a X-ray structure cross reference</p></li>
+<li><p>“MS:GPIRQIR” matches all nodes with a protein sequence containing “GPIRQIR”</p></li>
+</ul>
+</section>
+<section id="regular-expression-search">
+<h4>Regular Expression Search<a class="headerlink" href="#regular-expression-search" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a> search can be enabled with the <strong>R</strong> button in the Search panel. Archaeopteryx.js follows the regular expression syntax of the <a class="reference external" href="https://www.debuggex.com/cheatsheet/regex/javascript">JavaScript language</a>, which in turn is very similar to widely known syntax used in Perl 5.</p>
+<p>When using regular expressions:</p>
+<ul class="simple">
+<li><p>“+” and “,” assume their normal use in regular expressions and cannot be used to indicate logical AND/OR searches</p></li>
+<li><p>Case-matching (“C” button) applies (i.e., when “Cas” is turned off [A-Z] and [a-z] are the same)</p></li>
+<li><p>“W” does not apply</p></li>
+</ul>
+<p>Regular Expression Search Examples:</p>
+<ul class="simple">
+<li><p>\d_C – matches everything which contains a digit followed by an underscore followed by the letter C (“Cas” turned on)</p></li>
+<li><p>^A – matches everything which starts with a letter A (“Cas” turned on)</p></li>
+<li><p>^B[a-z]{5,}\d{2,}$ – matches everything starting with a B and ending with at least two digits, separated by at least 5 lowercase characters  (“Cas” turned on)</p></li>
+<li><p>^C.\s – matches everything starting with “C.” followed by at least one white-space character (“Cas” turned on)</p></li>
+</ul>
+<p>Regular expression can be used for typed searches.</p>
+<p>Typed Regular Expression Search Examples:</p>
+<ul class="simple">
+<li><p>SN:Bcl-?2 – to search for nodes with sequences named “Bcl2” or “Bcl-2”</p></li>
+<li><p>MS:GP.R..R – to search molecular sequences for a motif or pattern</p></li>
+<li><p>MS:E{5,} – to search for molecular sequences with Glutamic acid repeats of at least length 5</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../other/msa_viewer.html" class="btn btn-neutral float-right" title="Mulitiple Sequence Alignment Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="subspecies_classification_service.html" class="btn btn-neutral float-left" title="Subspecies Classification Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

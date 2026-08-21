@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>SARS-Cov-2 Wastewater Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sequence Submission Service" href="../sequence_submission/sequence_submission.html" />
+    <link rel="prev" title="SARS-CoV-2 Genome Assembly and Annotation Service" href="../sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>SARS-Cov-2 Wastewater Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#viral-services">Viral Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.html">SARS-CoV-2 Genome Assembly and Annotation Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SARS-Cov-2 Wastewater Analysis Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-reads-to-the-service">Submitting Reads to the Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-the-sars-cov-2-wastewater-analysis-results">Finding the SARS-CoV-2 Wastewater Analysis results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sequence_submission/sequence_submission.html">Sequence Submission Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ha_numbering/ha_numbering.html">HA Subtype Numbering Conversion Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subspecies_classification/subspecies_classification.html">Subspecies Classification Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viral_assembly/assembly.html">Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>SARS-Cov-2 Wastewater Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/sars_cov_2_wastewater/sars_cov_2_wastewater.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="sars-cov-2-wastewater-analysis-service">
+<h1>SARS-Cov-2 Wastewater Analysis Service<a class="headerlink" href="#sars-cov-2-wastewater-analysis-service" title="Permalink to this headline">¶</a></h1>
+<p>The SARS-CoV-2 Wastewater Analysis service is a comprehensive analysis of wastewater aimed at detecting and quantifying lineages and variants of concern (VOC) of the SARS-CoV-2 virus.</p>
+<p>The service analyzes raw short amplicon reads by aligning them to the reference genome (Wuhan-Hu-1) and then performs variant analysis using Freyja.  Freyja is a tool to identify and recover relative lineage abundances from mixed SARS-CoV-2 samples from a sequencing dataset (BAM aligned to the Hu-1 reference).  The method uses lineage-determining mutational “barcodes” with information from the UShER global phylogenetic tree.  We manage updating the barcodes to provide you up to date variant and lineage assignments. The results of this analysis workflow include sample processing status, key variant calling and alignment statistics, and sequencing depth coverage plots. It also provides lineage and VOC abundance plots by sample, date, week, and month for tracking the prevalence and distribution of different variants over time to aid public health response.
+<img alt="An overview of the analysis pipeline" src="../../_images/image_1_workflow_image1.png" /></p>
+<p>How to access the SARS-CoV-2 Wastewater Analysis service under the Services menu at the top of the any BV-BRC page. Click the link to launch the service.</p>
+<p>The landing page for the SARS-CoV-2 Wastewater Analysis service has two parts. Start with paired or single reads uploaded to the workspace or directly access Sequence Read Archive (SRA). For each read you must also select the primer during sequencing.  If you are using the sequence read archive the primer information maybe available with the BioSample in information.  The sample date is optional to the service. If provided, the service will show the data organized by day, week, and month.  This service is designed to analyze short amplicon sequences</p>
+<p><img alt="An image of the submission pag" src="../../_images/image_2_submission_page1.png" /></p>
+<section id="submitting-reads-to-the-service">
+<h2>Submitting Reads to the Service<a class="headerlink" href="#submitting-reads-to-the-service" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Submitting paired or single reads uploaded to the workspace: Click the folder icon at the end of the text box.
+<img alt="An image of selecting the paired reads directory icon" src="../../_images/image_3_paired_reads_select_directory.png" /></p></li>
+<li><p>If your reads are already on the workspace then navigate to your reads and select the read file from the workspace. If you must upload your reads, click the upload icon.
+<img alt="An image with an arrow pointing to the upload icon" src="../../_images/image_2_2_upload_icon.png" /></p></li>
+<li><p>Click the blue box with ‘Select files’ or drag and drop your files into the upload box.
+<img alt="An image of the file upload space" src="../../_images/image_4_upload_window.png" /></p></li>
+<li><p>Clicking selected files will open a window that allows you to choose files that are stored on your computer. Select the file where you stored the fastq file on your computer and click “Open”
+<img alt="An image of an example file being selected for upload." src="../../_images/image_5_select_file.png" /></p></li>
+<li><p>Once selected, it will autofill the name of the file. Click on the Start Upload button.
+<img alt="An image of the upload window with a file staged for upload" src="../../_images/image_6_start_upload.png" /></p></li>
+<li><p>This will auto-fill the sample identifier. If using a paired read, repeat for Read 2. Edit the sample identifier If you would like to.
+<img alt="An image of two paired reads in the paired read submission box." src="../../_images/image_7.png" /></p></li>
+<li><p>Do not submit your job or leave the page until the read upload is 100% complete.
+<img alt="An image of the upload status bar" src="../../_images/image_8_upload_status.png" /></p></li>
+<li><p>Select the primer and version of the primer used when sequencing your sample.
+<img alt="An image of primer and version drop down" src="../../_images/image_9_primer_selection.png" /></p></li>
+<li><p>Then add a sample date if it is available to you. Take caution to format your date as Month, Day, Year, MM/DD/YYYY. You must type the “/” between Month and Day / Day and Year. For SRA samples it may be challenging the find the sample date. This may be available in the Biosample data.
+<img alt="An image of the date being entered" src="../../_images/image_10_date.png" /></p></li>
+<li><p>If you add a non-numeric value an error will be given.
+<img alt="An image of the error message when the data format is incorrect." src="../../_images/image_11_date_error.png" /></p></li>
+<li><p>Finally, click the arrow button at the top to send this read and metadata to the “Selected Libraries” box.
+<img alt="An image of the selected reads button." src="../../_images/image_11_select_reads_button.png" /></p></li>
+<li><ol class="simple">
+<li><p>To review your read and metadata over the ‘I’ icon.
+<img alt="An image of the 'i' icon displaying the read information." src="../../_images/image_13_read_i_icon.png" /></p></li>
+</ol>
+</li>
+<li><p>Now your read is in the selected libraries box. Notice the Sample ID and Date fields clear but the primer field remains the same. Take caution if you are uploading reads with different primer sequences.
+<img alt="An image of the input form after sending reads to the selected reads sample." src="../../_images/image_14_reads_selected.png" /></p></li>
+<li><p>In the parameters section you will select an output folder and output name. Currently, we only offer one alignment and variant calling strategy.
+<img alt="An image of the strategy drop down." src="../../_images/image_15_missing_outputs.png" /></p></li>
+<li><p>Select or create an output folder by clicking the folder icon at the end of the text field.
+<img alt="An image of the output directory submission box." src="../../_images/image_16_select_output_directory.png" /></p></li>
+<li><p>Create a new folder by clicking the folder icon with the plus in the upper right hand corner of the “Select an Output Folder” window that will pop up.
+<img alt="An image of the new folder icon." src="../../_images/image_17_output_dir_new_dir.png" /></p></li>
+<li><p>Give your folder an informative name. Then click “Create folder”.
+<img alt="An image of the create folder button." src="../../_images/image_18_creating_new_output_dir.png" /></p></li>
+<li><p>Your new folder should be available in the workspace. Select your directory. When selected it should highlight in blue. Then click “OK” in the bottom right and corner.
+<img alt="An image of the okay button." src="../../_images/image_19_selecting_new_output_dir.png" /></p></li>
+<li><p>The output folder field will populate with the name of your selected folder. Note: the submission page will guide you with warnings if a field is missing.
+<img alt="An image of the alert that populates when the output name is missing." src="../../_images/image_20_missing_output_name.png" /></p></li>
+<li><p>Our final task is to write an informative name for the job results.
+<img alt="An image of the submit button." src="../../_images/image_21_submitting.png" /></p></li>
+<li><p>Once the “Submit” button turns blue, click “Submit” and your job will be sent to the “Job List”.
+<img alt="An image of" src="../../_images/image_22_job_submitted.png" /></p></li>
+</ol>
+</section>
+<section id="finding-the-sars-cov-2-wastewater-analysis-results">
+<h2>Finding the SARS-CoV-2 Wastewater Analysis results<a class="headerlink" href="#finding-the-sars-cov-2-wastewater-analysis-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The SARS-CoV2 job can be located from three places on any BV-BRC page. Clicking on the Workspace tab will reveal two of the places where the workspace or jobs folder can be located, and also from the Jobs monitor located at the lower right of any BV-BRC page.
+<img alt="An image of the workspace and jobs buttons with the word or between them." src="../../_images/image_23_my_jobs.png" /></p></li>
+<li><p>Access the job though the workspace. Click on the Workspace tab, and then on the “home” in the drop-down box
+<img alt="An image of the workspace shortcut." src="../../_images/image_24_my_jobs_workspace.png" /></p></li>
+<li><p>This will take you to your home workspace. Scroll down until you find the folder where you stored the job, and then click on that.
+<img alt="An image of an example workspace." src="../../_images/image_25_my_jobs_home.png" /></p></li>
+<li><p>This will open the contents that folder. Completed jobs are indicated by a checkered flag in the first column. Clicking on the row, or the flag, that contains the job, will rewrite the page.
+<img alt="An image of the job icon." src="../../_images/image_27_select_job_result.png" /></p></li>
+<li><p>The new page will show all the files produced by the job that was submitted.
+<img alt="An image of the top of the job results landing page." src="../../_images/image_28_job_results_stats.png" /></p></li>
+<li><p>Each job submitted to the SARS-CoV-2 Wastewater Analysis service will return a report that summarizes the results. To view this report, click on the row that contains the words “SARS2Wastewater_report.html”.
+<img alt="An image selecting the report html file." src="../../_images/image_29_select_report.png" /></p></li>
+<li><p>The report begins with a detailed description of the service and analysis workflow.
+<img alt="An image of the top of the report file." src="../../_images/image_30_report_1.png" />
+8.The sample processing section shows the status of each sample at different steps of the workflow. If a sample fails a step, please scroll down to the ‘warnings’ sample of the report. We strive to capture the errors that cause the sample to fail.
+<img alt="An image of the sample processing status table." src="../../_images/image_31_report_2.png" /></p></li>
+<li><p>The Primer Trimming and Alignment Statistics give details about each sample. A description of the columns is available below this table in the report.
+<img alt="An image of the stats table in the report." src="../../_images/image_32_report_3.png" /></p></li>
+<li><p>Coverage plots are available for each sample. Graph that shows the coverage depth for the assembly at the specific positions in the genome. The plots in the report are all capped at the depth of 250. Each sample has sample specific directory with files that support the reports in the landing directory. Inside each sample specific directory is a sub directory, ‘assembly’. The ‘assembly’ directory will have two more views of this data. One, &lt;sample_id&gt;.png will show the same information without capping the y-axis. &lt;sample_id&gt;.log.png will display the same data with the where the depth has undergone a long transformation. If you want to save these plots, right click the plot inside of the report and click ‘save as’.
+<img alt="An image of the coverage plots." src="../../_images/image_33.png" /></p></li>
+<li><p>The Lineage and Variant Abundance by Sample section displays all the samples. The graphs on the left show the data at the variant level and the graphs on the right shows the data at the linage level.
+<img alt="An image of the lineage and variant plots." src="../../_images/image_30_report_1_sample_plot.png" /></p></li>
+<li><p>The stacked bar plots in this report are interactive. To interact with the plot hover over the stacked bar plot to view the exact percentage, sample, and variant or lineage classification.
+<img alt="An image of the saple plots." src="../../_images/Image_31_report_2_hover.png" /></p></li>
+<li><p>This plot, made with Plotly, offers many ways to interact with the plot.  Display the options by hovering over the right hand corner.
+<img alt="An image of the report tools." src="../../_images/Image_32_report_3_tools.png" /></p></li>
+<li><p>The first icon with a camera will capture the plot as a .PNG file. Note: if you have manipulated the plot (zoom, pan, etc.) the .PNG will capture the manipulations.
+<img alt="An image of the camera icon." src="../../_images/Image_33_report_4_download_image.png" /></p></li>
+<li><p>The second icon, a magnifying glass, allows you to zoom in on the plot. Note: double click within the plot to reset the plot. To zoom: click the magnifying glass. Then your cursor will turn into crosshairs. From there, click drag and drop to create a box where you would like to zoom in.
+<img alt="An image of the zoom icon." src="../../_images/Image_34_report_5_zoom.png" /></p></li>
+<li><p>The third icon is a picture of four lines with arrows pointing up, down, left and right. This will allow you to move the plot around.
+<img alt="An image of the pan icon." src="../../_images/Image_35_report_6_pan.png" /></p></li>
+<li><p>The fourth icon will allow you to select a small box and then zoom.
+<img alt="An image of the plotly select box icon." src="../../_images/Image_36_report_7_box_select.png" /></p></li>
+<li><p>The fifth icon, a lasso will allow you to freeform select portions of the plot. This will allow you to enable and disable specific parts of the plot.
+<img alt="An image of the plotly lasso icon." src="../../_images/Image_37_report_8_lasso.png" /></p></li>
+<li><p>The sixth and seventh icons, a plus icon and a minus icon. This will zoom in or out focusing on the middle of the plot – rather than the magnifying glass which allows you to zoom to a desired focal point.
+<img alt="An image of the plotly zoom in and out icons." src="../../_images/Image_37_report_8_zoom_in_zoom_out.png" /></p></li>
+<li><p>The eighth icon with four arrows pointing to the corner and ninth icon of a house, will allow you to return the lot to its initial settings. You can also double click within the plot.
+<img alt="An image of the plotly reset icons." src="../../_images/Image_38_report_8_reset.png" /></p></li>
+<li><p>The remaining icons are not relevant to this plot. They are toggle spike lines, show closest data on hover, compare data on hover and the Plotly logo which will take you to their homepage.</p></li>
+<li><p>The time series plots are only generated if dates are provided. The Lineage and Variant Abundance by date  show the data smoothed and ordered by date.
+<img alt="An image of the samples plotted by date." src="../../_images/image_39_date.png" /></p></li>
+<li><p>Lineage and Variant Abundance by Week will show the data compiled into weeks. This table shows the dates according to epiweek.  An “epiweek,” short for epidemiological week, is a standard method of grouping days into weeks for the purposes of public health and epidemiological tracking.
+<img alt="An image of of the samples plotted by week." src="../../_images/image_40_weeks.png" /></p></li>
+<li><p>As the week above does, Lineage and Variant Abundance by Month shows the data compiled by month.
+<img alt="An image of the samples plotted by month." src="../../_images/image_41_months.png" /></p></li>
+<li><p>Your results will be impacted by the barcodes. As described above, the method uses lineage-determining mutational “barcodes” with information from the UShER global phylogenetic tree. As the barcodes are updated the variants and linages are updated . If you were to rerun the samples, your results might be impacted. For this reason it is important for you to be familiar with the barcode version.
+<img alt="An image of the where to find the barcode version." src="../../_images/image_38.png" /></p></li>
+<li><p>The analysis warnings field will populate with warnings from the analysis. Warnings are captured when a sample fails analysis step which will be displayed in the sample processing table above.
+<img alt="An image of the warnings header." src="../../_images/image_39.png" /></p></li>
+<li><p>Please remember to cite the BV-BRC and  the authors of the tools we host.
+<img alt="An image of the reference section. Please remember to include us in your citations!" src="../../_images/image_40.png" /></p></li>
+<li><p>Return to the job landing page by clicking on your job name in the file path at the top of the page.</p></li>
+<li><p>View the raw Freyja results by highlight the file ‘freyja_results.tsv’ and click the ‘view’ eye icon on the green action bar.
+<img alt="An image of the job results with the raw Freyja results selected." src="../../_images/image_41_select_raw_freyja_results.png" /></p></li>
+<li><p>The relative variant and lineage abundances created from VARIANTS and DEPTHS files using the Freyja demix command. The file Freyja_result.tsv has these results from each sample compiled into one report. The columns are as follows:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Summarized – Describes the variants and the percentage of the assigned to those variants in the sample.</p></li>
+<li><p>Lineages - Describes the variants and the percentage of the assigned to those variants in the sample.</p></li>
+<li><p>Abundances - the abundances that correspodn to the lineages listed in the lineages column.</p></li>
+<li><p>Resid – Corresponds to the <strong>residual</strong> of the weighted abundances.</p></li>
+<li><p>Coverage – Provides the 10x coverage estimate (percent of sites with 10 or greater reads).
+<img alt="An image of raw Freyja results." src="../../_images/image_42_raw_freyja_results.png" /></p></li>
+</ul>
+<ol class="simple">
+<li><p>The MultiQC report provides the compiled FastQC statistics  for the FASTQ and BAM files. Note: as this service is designed for short amplicon reads which are designed to capture a target sequence multiple times, these reports will show a high number of duplicates. For this sequencing type you can ignore these warnings.
+<img alt="An image of MultiQC report." src="../../_images/image_43_multiqc.png" /></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sequence_submission/sequence_submission.html" class="btn btn-neutral float-right" title="Sequence Submission Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.html" class="btn btn-neutral float-left" title="SARS-CoV-2 Genome Assembly and Annotation Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>p3-get-genome-sp-genes | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="p3-get-genome-subsystems" href="p3-get-genome-subsystems.html" />
+    <link rel="prev" title="p3-get-genome-refseq-features" href="p3-get-genome-refseq-features.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>p3-get-genome-sp-genes | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cli_installation.html">Installing the BV-BRC Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_getting_started.html">Using the BV-BRC Command-line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_services.html">Using BV-BRC Services from the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_common_tasks.html">Common Tasks With P3 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_clustering.html">Looking for Hypothetical Proteins in Clusters of Related Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_signature_clusters.html">Computing Signature Clusters: an Application of the Command-Line Tools</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">BV-BRC Command Line Program Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="common_options.html">Common Options to Command Line Programs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenomeTypeObject.html">GenomeTypeObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hsp.html">Hsp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="P3DataAPI.html">P3DataAPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="P3Utils.html">P3Utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Sim.html">Sim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-enumerate-apps.html">appserv-enumerate-apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-enumerate-tasks.html">appserv-enumerate-tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-kill-task.html">appserv-kill-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-query-task.html">appserv-query-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-rerun-task.html">appserv-rerun-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-start-app.html">appserv-start-app</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-aggregates-to-html.html">p3-aggregates-to-html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-contigs.html">p3-all-contigs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-drugs.html">p3-all-drugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-genomes.html">p3-all-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-subsystem-roles.html">p3-all-subsystem-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-subsystems.html">p3-all-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-taxonomies.html">p3-all-taxonomies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-blast.html">p3-blast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-build-kmer-db.html">p3-build-kmer-db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-cat.html">p3-cat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-closest-seqs.html">p3-closest-seqs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-co-occur.html">p3-co-occur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-collate.html">p3-collate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-compare-cols.html">p3-compare-cols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-count.html">p3-count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-count-families.html">p3-count-families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-cp.html">p3-cp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-discriminating-kmers.html">p3-discriminating-kmers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-dump-genomes.html">p3-dump-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-echo.html">p3-echo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-extract.html">p3-extract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-fasta-md5.html">p3-fasta-md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-feature-gap.html">p3-feature-gap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-feature-upstream.html">p3-feature-upstream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-file-filter.html">p3-file-filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-couples.html">p3-find-couples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-features.html">p3-find-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-in-clusters.html">p3-find-in-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-serology-data.html">p3-find-serology-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-surveillance-data.html">p3-find-surveillance-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-format-results.html">p3-format-results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-function-parse.html">p3-function-parse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-function-to-role.html">p3-function-to-role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-generate-close-roles.html">p3-generate-close-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-generate-clusters.html">p3-generate-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-distance.html">p3-genome-distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-fasta.html">p3-genome-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-kmer-hits.html">p3-genome-kmer-hits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-md5.html">p3-genome-md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genus-species.html">p3-genus-species</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-drug-genomes.html">p3-get-drug-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-family-data.html">p3-get-family-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-family-features.html">p3-get-family-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-data.html">p3-get-feature-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-group.html">p3-get-feature-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-protein-regions.html">p3-get-feature-protein-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-protein-structures.html">p3-get-feature-protein-structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-regions.html">p3-get-feature-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-sequence.html">p3-get-feature-sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-subsystems.html">p3-get-feature-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-features-by-sequence.html">p3-get-features-by-sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-features-in-regions.html">p3-get-features-in-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-contigs.html">p3-get-genome-contigs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-data.html">p3-get-genome-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-drugs.html">p3-get-genome-drugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-expression.html">p3-get-genome-expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-features.html">p3-get-genome-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-group.html">p3-get-genome-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-protein-regions.html">p3-get-genome-protein-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-protein-structures.html">p3-get-genome-protein-structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-refseq-features.html">p3-get-genome-refseq-features</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">p3-get-genome-sp-genes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-subsystems.html">p3-get-genome-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-subsystem-features.html">p3-get-subsystem-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-subsystem-roles.html">p3-get-subsystem-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-taxonomy-data.html">p3-get-taxonomy-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto.html">p3-gto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-dna.html">p3-gto-dna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-fasta.html">p3-gto-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-fetch.html">p3-gto-fetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-scan.html">p3-gto-scan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-head.html">p3-head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-identify-clusters.html">p3-identify-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-job-status.html">p3-job-status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-join.html">p3-join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-kmer-compare.html">p3-kmer-compare</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-less.html">p3-less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-list-feature-groups.html">p3-list-feature-groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-list-genome-groups.html">p3-list-genome-groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-login.html">p3-login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-logout.html">p3-logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-ls.html">p3-ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-mass-cluster-run.html">p3-mass-cluster-run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-match.html">p3-match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-merge.html">p3-merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-mkdir.html">p3-mkdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-nucleon-runs.html">p3-nucleon-runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-peg-kmer-hits.html">p3-peg-kmer-hits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pick.html">p3-pick</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pick-by-class.html">p3-pick-by-class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pivot.html">p3-pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-project-subsystems.html">p3-project-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-put-feature-group.html">p3-put-feature-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-put-genome-group.html">p3-put-genome-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-qstat.html">p3-qstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rast.html">p3-rast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-related-by-clusters.html">p3-related-by-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rep-prots.html">p3-rep-prots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rm.html">p3-rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rmdir.html">p3-rmdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-fasta.html">p3-role-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-features.html">p3-role-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-matrix.html">p3-role-matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-sequence-profile.html">p3-sequence-profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-set-to-relation.html">p3-set-to-relation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-shuffle.html">p3-shuffle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-clusters.html">p3-signature-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-families.html">p3-signature-families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-peginfo.html">p3-signature-peginfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-sort.html">p3-sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-stats.html">p3-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-BLAST.html">p3-submit-BLAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-CGA.html">p3-submit-CGA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-MSA.html">p3-submit-MSA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-codon-tree.html">p3-submit-codon-tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-fastqutils.html">p3-submit-fastqutils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-gene-tree.html">p3-submit-gene-tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-genome-annotation.html">p3-submit-genome-annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-genome-assembly.html">p3-submit-genome-assembly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-metagenome-binning.html">p3-submit-metagenome-binning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-metagenomic-read-mapping.html">p3-submit-metagenomic-read-mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-proteome-comparison.html">p3-submit-proteome-comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-rnaseq.html">p3-submit-rnaseq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-sars2-analysis.html">p3-submit-sars2-analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-sars2-assembly.html">p3-submit-sars2-assembly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-taxonomic-classification.html">p3-submit-taxonomic-classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-variation-analysis.html">p3-submit-variation-analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-subsys-roles.html">p3-subsys-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tail.html">p3-tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tbl-to-fasta.html">p3-tbl-to-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tbl-to-html.html">p3-tbl-to-html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tests.html">p3-tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-uni-roles.html">p3-uni-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-user-subsystem.html">p3-user-subsystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-whoami.html">p3-whoami</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-write-kmers.html">p3-write-kmers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="submit-patric-annotation.html">submit-patric-annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="submit-patric-genbank.html">submit-patric-genbank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#rast-tutorials">RAST Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Command Line Interface</a> &raquo;</li>
+        
+          <li><a href="index.html">BV-BRC Command Line Program Reference</a> &raquo;</li>
+        
+      <li>p3-get-genome-sp-genes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/cli_tutorial/command_list/p3-get-genome-sp-genes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="p3-get-genome-sp-genes">
+<span id="cli-p3-get-genome-sp-genes"></span><h1>p3-get-genome-sp-genes<a class="headerlink" href="#p3-get-genome-sp-genes" title="Permalink to this headline">¶</a></h1>
+<section id="return-specialty-genes-of-the-specified-type-in-one-or-more-genomes">
+<h2>Return Specialty Genes of the Specified Type in One or More Genomes<a class="headerlink" href="#return-specialty-genes-of-the-specified-type-in-one-or-more-genomes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">genome</span><span class="o">-</span><span class="n">sp</span><span class="o">-</span><span class="n">genes</span><span class="o">.</span><span class="n">pl</span><span class="w"> </span><span class="p">[</span><span class="n">options</span><span class="p">]</span><span class="w"> </span><span class="n">property</span>
+</pre></div>
+</div>
+<p>This script returns specialty gene data for the genes in one of more genomes.</p>
+<p>If you are searching based on genome_id then genome_id should be passed as standard input to CLI command as in example below</p>
+<p>p3-all-genomes –eq genome_id,83332.12 –attr genome_id | p3-get-genome-sp-genes amr –attr patric_id,antibiotics,antibiotics_class,classification,gene,genome_id,feature_id,patric_id</p>
+<p>The script recognizes the following types
+of specialty genes.</p>
+<ul class="simple">
+<li><p>amr</p></li>
+</ul>
+<blockquote>
+<div><p>Antibiotic Resistance</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>human</p></li>
+</ul>
+<blockquote>
+<div><p>Human Homolog</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>target</p></li>
+</ul>
+<blockquote>
+<div><p>Drug Target</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>transporter</p></li>
+</ul>
+<blockquote>
+<div><p>Transporter</p>
+</div></blockquote>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>The positional parameter is the type of specialty gene desired.</p>
+<p>The standard input can be overridden using the options in <a class="reference internal" href="common_options.html#cli-input-options"><span class="std std-ref">Input Options</span></a>.</p>
+<p>Additional command-line options are those given in <a class="reference internal" href="common_options.html#cli-data-options"><span class="std std-ref">Data Options</span></a> and <a class="reference internal" href="common_options.html#cli-column-options"><span class="std std-ref">Column Options</span></a> plus the following.</p>
+<ul class="simple">
+<li><p>fields</p></li>
+</ul>
+<blockquote>
+<div><p>List the available field names.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>typeNames</p></li>
+</ul>
+<blockquote>
+<div><p>List the available specialty gene types.</p>
+<p>##TODO additional options</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="p3-get-genome-subsystems.html" class="btn btn-neutral float-right" title="p3-get-genome-subsystems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="p3-get-genome-refseq-features.html" class="btn btn-neutral float-left" title="p3-get-genome-refseq-features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

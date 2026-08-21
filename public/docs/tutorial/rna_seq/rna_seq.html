@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>RNA-Seq Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Expression Import Service" href="../expression_import/expression_import.html" />
+    <link rel="prev" title="Mobile Element Detection Service" href="../mobile_element/mobile_element.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>RNA-Seq Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RNA-Seq Analysis Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-locating-the-rna-seq-service-app">I. Locating the RNA-Seq Service App.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-filling-in-parameters-strategy">II.  Filling in parameters - Strategy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-filling-in-parameters-target-genome">III.  Filling in parameters - Target Genome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-filling-in-parameters-output-folder">IV.  Filling in parameters – Output folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-uploading-reads-from-your-computer-that-are-not-in-the-workspace">V. Uploading reads from your computer that are not in the workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-uploading-reads-from-your-computer-that-are-in-the-workspace">V. Uploading reads from your computer that are in the workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vi-selecting-a-condition-or-group-that-will-be-linked-to-a-read-optional">VI.  Selecting a condition or group that will be linked to a read (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vii-selecting-a-condition-or-group-that-will-be-linked-to-a-read">VII.  Selecting a condition or group that will be linked to a read</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viii-examining-the-rna-seq-job-results">VIII.  Examining the RNA-Seq job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ix-viewing-rna-seq-results-in-the-genome-browser">IX. Viewing RNA-Seq results in the genome browser.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-output-files">Other output files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../expression_import/expression_import.html">Expression Import Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>RNA-Seq Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/rna_seq/rna_seq.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rna-seq-analysis-service">
+<h1>RNA-Seq Analysis Service<a class="headerlink" href="#rna-seq-analysis-service" title="Permalink to this headline">¶</a></h1>
+<p><em><strong>This tutorial is outdated and requires work. It will be updated soon</strong></em></p>
+<p><em>Revised: 1/24/22</em></p>
+<section id="i-locating-the-rna-seq-service-app">
+<h2>I. Locating the RNA-Seq Service App.<a class="headerlink" href="#i-locating-the-rna-seq-service-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the Services tab. Click on RNA-Seq Analysis.
+<img alt="Step 1" src="../../_images/image120.png" /></p></li>
+<li><p>This will open up the RNA-Seq landing page where researchers can submit long reads, single or paired read files.
+<img alt="Step 2" src="../../_images/image220.png" /></p></li>
+</ol>
+</section>
+<section id="ii-filling-in-parameters-strategy">
+<h2>II.  Filling in parameters - Strategy<a class="headerlink" href="#ii-filling-in-parameters-strategy" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Information on any page is available by clicking on the blue icon (red arrow).  This will open an information box.
+<img alt="Step 3" src="../../_images/image318.png" /></p></li>
+</ol>
+<p>BV-BRC offers three different RNA-Seq strategies:</p>
+<ul class="simple">
+<li><p>Rockhopper supports various stages of bacterial RNA-Seq data analysis, including aligning sequencing reads to a genome, constructing transcriptome maps, quantifying transcript abundance, testing for differential gene expression and determining operon structures[1].</p></li>
+<li><p>Tuxedo is part of TopHat2[2], which allows for variable-length indels with respect to the reference genome and also aligns reads across fusion breaks, which can occur after genomic translocations. TopHat2 combines the ability to identify novel splice sites with direct mapping to known transcripts, producing sensitive and accurate alignments, even for highly repetitive genomes or in the presence of pseudogenes.</p></li>
+<li><p>HISAT (hierarchical indexing for spliced alignment of transcripts)[3] is a highly efficient system for aligning reads from RNA sequencing experiments. HISAT uses an indexing scheme based on the Burrows-Wheeler transform and the Ferragina-Manzini (FM) index, employing two types of indexes for alignment: a whole-genome FM index to anchor each alignment and numerous local FM indexes for very rapid extensions of these alignments.  BV-BRC provides this service (called Host HISAT2) to allow researchers is analyse RNA-Seq for a limited number of host genomes that include:</p>
+<ul>
+<li><p>Caenorhabditis elegans</p></li>
+<li><p>Danio rerio</p></li>
+<li><p>Drosophila melanogaster</p></li>
+<li><p>Gallus gallus</p></li>
+<li><p>Homo sapiens</p></li>
+<li><p>Macaca mulatta</p></li>
+<li><p>Mus musculus</p></li>
+<li><p>Mustela putorius furo</p></li>
+<li><p>Rattus norvegicus</p></li>
+<li><p>Sus scrofa</p></li>
+</ul>
+</li>
+</ul>
+<ol class="simple">
+<li><p>Clicking on the down arrow that follows the Strategy text box arrow (red arrow) will show the three options.  Click on the desired strategy (blue arrow).
+<img alt="Step 4" src="../../_images/image416.png" /></p></li>
+</ol>
+</section>
+<section id="iii-filling-in-parameters-target-genome">
+<h2>III.  Filling in parameters - Target Genome<a class="headerlink" href="#iii-filling-in-parameters-target-genome" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Researchers must select a Target Genome to align the reads against.  If this genome is a private genome, the search can be narrowed by clicking on the filter icon under the words Target Genome.  This will open the filter where the available categories of genomes can be selected, or de-selected, to narrow the choices and find the correct target genome.
+<img alt="Step 5" src="../../_images/image57.png" /></p></li>
+<li><p>After selecting the category, click on the down arrow at the end of the text box.  This will open up a drop-down box that lists the genomes available in that particular category.
+<img alt="Step 6" src="../../_images/image66.png" /></p></li>
+<li><p>Start typing the name of a genome.  A box below Target Genome will show the closest matches that can be selected. Click on the genome that should be used as the target.
+<img alt="Step 7" src="../../_images/image77.png" /></p></li>
+</ol>
+</section>
+<section id="iv-filling-in-parameters-output-folder">
+<h2>IV.  Filling in parameters – Output folder<a class="headerlink" href="#iv-filling-in-parameters-output-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Researchers that have used BV-BRC before can click on the down arrow at the end of the Output Folder text box.  This will open a dropdown box that will show the folders that exist in the workspace (red arrow).
+<img alt="Step 8" src="../../_images/image87.png" /></p></li>
+<li><p>Researchers that have not previously submitted a RNA-Seq job and want to create a new folder to store the results will need to click on the folder icon at the end of the Output Folder text box (red arrow).
+<img alt="Step 9" src="../../_images/image97.png" /></p></li>
+<li><p>This will open a pop-up window.  To create a new folder, click on the folder icon (red arrow) which will reload the window (black arrow) to show a text box where the new folder can be named (blue arrow).  Once the folder has been named, click on OK to finalize it (green arrow).
+<img alt="Step 10" src="../../_images/image106.png" /></p></li>
+<li><p>Finally, researchers must name the RNA-Seq job (red arrow).
+<img alt="Step 11" src="../../_images/image1111.png" /></p></li>
+</ol>
+</section>
+<section id="v-uploading-reads-from-your-computer-that-are-not-in-the-workspace">
+<h2>V. Uploading reads from your computer that are not in the workspace<a class="headerlink" href="#v-uploading-reads-from-your-computer-that-are-not-in-the-workspace" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To upload reads that have not previously been uploaded into BV-BRC, click on the folder icon that follows the Read File text box (red arrows).  This will open a pop-up window.  To upload new reads, click on the upload icon (blue arrow).
+<img alt="Step 12" src="../../_images/image127.png" /></p></li>
+<li><p>Select the file of interest (red arrow) and then click OK (blue arrow).
+<img alt="Step 13" src="../../_images/image136.png" /></p></li>
+<li><p>Once a file is selected, researchers must play particular attention to the Uploads monitor at the bottom of the page, which will show the progress in upload.
+<img alt="Step 14" src="../../_images/image146.png" /></p></li>
+<li><p>The name of the uploaded file will appear in the text box.
+<img alt="Step 15" src="../../_images/image156.png" /></p></li>
+</ol>
+</section>
+<section id="v-uploading-reads-from-your-computer-that-are-in-the-workspace">
+<h2>V. Uploading reads from your computer that are in the workspace<a class="headerlink" href="#v-uploading-reads-from-your-computer-that-are-in-the-workspace" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Clicking on the down arrow that follows the text box (red arrow) will open a drop down box where files can be selected (blue arrow).
+<img alt="Step 16" src="../../_images/image166.png" /></p></li>
+<li><p>Another way to upload reads that are already in the workspace is to click on the folder icon that follows the text box (red arrow) which will open a pop-up box where reads can be selected (blue arrow).  The upload is completed by clicking OK (blue arrow).
+<img alt="Step 17" src="../../_images/image176.png" /></p></li>
+<li><p>Single or paired end reads should be selected and then will appear in the text box(es).
+<img alt="Step 18" src="../../_images/image186.png" /></p></li>
+</ol>
+</section>
+<section id="vi-selecting-a-condition-or-group-that-will-be-linked-to-a-read-optional">
+<h2>VI.  Selecting a condition or group that will be linked to a read (Optional)<a class="headerlink" href="#vi-selecting-a-condition-or-group-that-will-be-linked-to-a-read-optional" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Metadata can be assigned to selected reads.  This will make identification easier in some of the downstream tools available on BV-BRC.  To do this, locate the Condition box and click the On box (red arrow).  This will make it possible to name specific conditions.
+<img alt="Step 19" src="../../_images/image196.png" /></p></li>
+<li><p>Name the condition (red arrow) and click the plus icon (blue arrow).  This will show the name of the condition and a color code assigned to it in the text box (green arrow).  As many conditions as desired can be entered.
+<img alt="Step 20" src="../../_images/image206.png" /></p></li>
+<li><p>To link the name of the condition or group to the selected reads, click on the down arrow that follows the text box under Condition (red arrow).  This will open a drop down box that shows all possible conditions.  Click on the appropriate one (blue arrow).
+<img alt="Step 21" src="../../_images/image2111.png" /></p></li>
+<li><p>This will autofill the Condition text box with the name of the condition.
+<img alt="Step 22" src="../../_images/image226.png" /></p></li>
+</ol>
+</section>
+<section id="vii-selecting-a-condition-or-group-that-will-be-linked-to-a-read">
+<h2>VII.  Selecting a condition or group that will be linked to a read<a class="headerlink" href="#vii-selecting-a-condition-or-group-that-will-be-linked-to-a-read" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Clicking on the arrow icon in any read library box (red arrow) will load the reads (shown together in the same line for paired reads) with their assigned condition into the selected library.
+<img alt="Step 23" src="../../_images/image236.png" /></p></li>
+<li><p>To submit the completed job, click the Submit button (red arrow).
+<img alt="Step 24" src="../../_images/image246.png" /></p></li>
+<li><p>If the job was submitted successfully, a message will appear that indicates that the job has entered the assembly queue.
+<img alt="Step 25" src="../../_images/image256.png" /></p></li>
+<li><p>To check the status of the assembly job, click on the Jobs indicator at the bottom of the BV-BRC page.
+<img alt="Step 26" src="../../_images/image266.png" /></p></li>
+<li><p>Clicking on Jobs opens the Jobs Status page, where researchers can see the progression of the assembly job as well as the status of all the previous service jobs that have been submitted.
+<img alt="Step 27" src="../../_images/image275.png" /></p></li>
+</ol>
+</section>
+<section id="viii-examining-the-rna-seq-job-results">
+<h2>VIII.  Examining the RNA-Seq job results<a class="headerlink" href="#viii-examining-the-rna-seq-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Once the RNA-Seq job of interest is located and clicked on in the jobs list, the vertical green bar will become populated with the View icon (red arrow).  To see the results, click on that icon.
+<img alt="Step 28" src="../../_images/image285.png" /></p></li>
+<li><p>This will open the results page for the RNA-Seq job.
+<img alt="Step 29" src="../../_images/image293.png" /></p></li>
+<li><p>Summary.txt file.  Clicking on the download button opens a text file that summarizes the steps and the different categories of feature alignment.<br />
+<img alt="Step 30" src="../../_images/image303.png" /></p></li>
+<li><p>Transcripts.txt file.  This text file contains the data on a per gene bases.  This data includes the contig, the transcription and translation stop and end sites, the strand, BV-BRC and RefSeq locus tags, the functional description, estimates of abundance levels per gene, and the q-value.  Estimates of transcription abundance sum the number of reads for a transcript and divides that by the transcript’s length and normalization factor. The q-value is an adjusted p-value, taking in to account the false discovery rate (FDR).</p></li>
+</ol>
+<p>Per [McClure 2013], “From the resulting P-values, differentially expressed genes are determined by computing q-values based on Benjamini–Hochberg correction (34) with a false discovery rate &lt;1%.”</p>
+<p>https://stats.stackexchange.com/questions/165119/choosing-the-q-value-in-the-benjamini-hochberg-procedure-to-control-false-discov/166392</p>
+<p>“The q value (lower case) is the Q value (upper case) at which that particular comparison would be right at the border of being a discovery. You can then report the q value for each comparison, rather than just a list of which comparisons are “discoveries” using an arbitrary value of Q.”</p>
+<p>http://www.nonlinear.com/support/progenesis/comet/faq/v2.0/pq-values.aspx</p>
+<p><img alt="Step 31" src="../../_images/image319.png" /></p>
+<ol class="simple">
+<li><p>BAM files.  BV-BRC also provides BAM files.  BAM is the compressed binary version of the Sequence Alignment/Map (SAM) format, a compact and index-able representation of nucleotide sequence alignments, and uploaded into a genome browser so that researchers can see the alignment of the reads compared to the annotation for the genome in question.
+<img alt="Step 32" src="../../_images/image323.png" /></p></li>
+<li><p>Gene_exp.gmx file.  The GMX file format is a tab delimited file format that describes gene sets or other collections of elements. The RNA-Seq gene_exp.gmx file contains a list of the genes and the ratio of their expression between two conditions.
+<img alt="Step 33" src="../../_images/image333.png" /></p></li>
+</ol>
+</section>
+<section id="ix-viewing-rna-seq-results-in-the-genome-browser">
+<h2>IX. Viewing RNA-Seq results in the genome browser.<a class="headerlink" href="#ix-viewing-rna-seq-results-in-the-genome-browser" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Once a job is selected, click on the View icon that has appeared in the vertical green bar.
+<img alt="Step 34" src="../../_images/image343.png" /></p></li>
+<li><p>This will open the landing page for that particular job.  To see the genome browser, where the results of the variation job can be summarized, click on the Browser icon that is visible in the upper right corner of the page.
+<img alt="Step 35" src="../../_images/image353.png" /></p></li>
+<li><p>This will open the genome browser for the genome that was selected as the reference.  There is a box on the left of the browser that shows the available tracks.  To see the reads, , click on the check boxes before in front of the names that end in bam.
+<img alt="Step 36" src="../../_images/image362.png" /></p></li>
+<li><p>This will show the individual reads, with the colors indicative of the orientation of the reads (blue is forward, red is reverse).
+<img alt="Step 37" src="../../_images/image372.png" /></p></li>
+</ol>
+</section>
+<section id="other-output-files">
+<h2>Other output files<a class="headerlink" href="#other-output-files" title="Permalink to this headline">¶</a></h2>
+<p>Descriptions of the other output files can be found in the <a class="reference internal" href="../../quick_references/services/rna_seq_analysis_service.html"><span class="doc std std-doc">RNA-Seq Analyis Service Quick Reference Guide</span></a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>McClure, R., et al., Computational analysis of bacterial RNA-Seq data. Nucleic Acids Res, 2013. 41(14): p. e140.</p></li>
+<li><p>Kim, D., et al., TopHat2: accurate alignment of transcriptomes in the presence of insertions, deletions and gene fusions. Genome Biol, 2013. 14(4): p. R36.</p></li>
+<li><p>Kim, D., B. Langmead, and S.L. Salzberg, HISAT: a fast spliced aligner with low memory requirements. Nat Methods, 2015. 12(4): p. 357-60.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../expression_import/expression_import.html" class="btn btn-neutral float-right" title="Expression Import Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../mobile_element/mobile_element.html" class="btn btn-neutral float-left" title="Mobile Element Detection Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

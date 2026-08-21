@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Data Management and Sharing | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data" href="data.html" />
+    <link rel="prev" title="Education" href="../education/index.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Data Management and Sharing | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Management and Sharing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-types">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standards">Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access-distribution-or-reuse-considerations">Access, Distribution, or Reuse Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oversight-of-data-management-and-sharing">Oversight of Data Management and Sharing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Data Management and Sharing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/system_documentation/data_management_sharing.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="data-management-and-sharing">
+<h1>Data Management and Sharing<a class="headerlink" href="#data-management-and-sharing" title="Permalink to this headline">¶</a></h1>
+<p>As a NIAID-funded resource, BV-BRC complies with the <a class="reference external" href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html">NIH Policy for Data Management and Sharing</a> (Notice Number: NOT-OD-21-013), which promotes the management and sharing of scientific data generated from NIH-funded or conducted research.</p>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<p>BV-BRC is an integrated data and analysis resource designed to support genomic and related infectious disease research for viral and bacterial pathogens. As such, the primary data type is genomic sequences, primarily ingested from public repositories such as NCBI GenBank. BV-BRC reannotates genomes with curated subsystem data for consistency, curates and standardizes metadata, and formats the data to enable the integrated tools to perform comparative analysis computations. BV-BRC also annotates genomes from assembled reads collected from SRA for specialized phenotypic characteristics, such as antimicrobial resistance (AMR). Annotations may be derived from computations such as gene and other feature prediction algorithms, subsystem and other functional groupings, and phenotype prediction such as AMR. Appropriate references to the computations performed are available in the user documentation.</p>
+<p>Data from expression studies have also been curated and structured for comparative analyses. Additional data are incorporated from various resources, such as protein structures from PDB as well as computed structures, e.g., from AlphaFold, to augment annotations and comparative analyses. Further, BV-BRC has integrated data sets from other NIAID programs, such as the Systems Biology Centers (SBCs). Additional metadata from serology and surveillance efforts may also be associated with genome sequences and other data types. Data from these resources has appropriate provenance information to enable traceability to the source.</p>
+<p>The table below summarizes the BV-BRC data types and their primary sources.</p>
+<table>
+  <tr>
+    <th>Primary Data Types</th>
+    <th>Related and Derived Data Types</th>
+    <th>Data Resources</th>
+  </tr>
+  <tr>
+    <td>Taxonomy</td>
+    <td>Reference organisms</td>
+    <td>NCBI Taxonomy, ICTV</td>
+  </tr>
+  <tr>
+    <td>Genomes</td>
+    <td>Clinical and environmental metadata, AMR / AVR phenotypes, QC results</td>
+    <td>GenBank, SRA</td>
+  </tr>
+  <tr>
+    <td>Genomic Features</td>
+    <td>Genes, RNAs, misc. features, GO terms, EC numbers, Pathways, Protein families, Subsystems, Virulence factors, AMR genes, Drug targets, essential genes</td>
+    <td>GenBank, PATRIC and IRD/ViPR (legacy BRC resources), GO, KEGG, Reactome, SEED, VFDB, Victors, CARD, NDARO, DrugBank, TTD</td>
+  </tr>
+  <tr>
+    <td>Comparative Genomics</td>
+    <td>Protein families, Orthologs, MSA, Gene trees, Metabolic pathways, Subsystems, Phylogenetic trees</td>
+    <td>PATRIC and IRD/ViPR (legacy BRC resources), KEGG, SEED</td>
+  </tr>
+  <tr>
+    <td>Protein Domains and Sequence Features</td>
+    <td>Variant types</td>
+    <td>UniProt, IRD/ViPR (legacy BRC resources)</td>
+  </tr>
+  <tr>
+    <td>Antimicrobial / Antiviral Agents</td>
+    <td>Drug targets</td>
+    <td>PubChem, DrugBank, ATC, PDB</td>
+  </tr>
+  <tr>
+    <td>Antimicrobial / Antiviral Resistance Data</td>
+    <td>Standardized AMR/AVR phenotypes</td>
+    <td>NIAID Genomics Centers for Infectious Diseases (GCIDs), BioSamples, publications</td>
+  </tr>
+  <tr>
+    <td>Clinical Studies</td>
+    <td>Clinical metadata, AMR/AVR phenotypes</td>
+    <td>NIAID GCIDs / Systems Biology Centers (SBCs), publications, others</td>
+  </tr>
+  <tr>
+    <td>Transcriptomics and Proteomics</td>
+    <td>BAM / WIG files, gene expression, differential expression, gene clusters, enrichment analysis</td>
+    <td>GEO, ArrayExpress, PRIDE, SBCs</td>
+  </tr>
+  <tr>
+    <td>Protein-Protein Interactions</td>
+    <td>Protein interaction networks, protein-drug interaction networks</td>
+    <td>IntAct, BIND, MINT, DIP, STRING, others</td>
+  </tr>
+  <tr>
+    <td>Protein 3D Structures</td>
+    <td>Sequence conservation location, immune epitope location</td>
+    <td>PDB, MMDB, NIAID Structural Genomics Centers (SGCs)</td>
+  </tr>
+  <tr>
+    <td>Phenomics</td>
+    <td>Organism attributes</td>
+    <td>Publications</td>
+  </tr>
+  <tr>
+    <td>Host Response and Host-Pathogen Interactions</td>
+    <td>BAM / WIG files, gene expression, differential expression, gene clusters, enrichment analysis</td>
+    <td>SRA, ArrayExpress, NIAID SBCs, IntAct, BIND, MINT, DIP, others</td>
+  </tr>
+  <tr>
+    <td>Epidemiology and Surveillance</td>
+    <td>MLST, SNP / SNV / in-del annotation, SNP / transmission trees</td>
+    <td>SRA, MLST, PubMLST, CDC, CEIRR DPCC, JCVI
+</td>
+  </tr>
+  <tr>
+    <td>Immunology and Serology</td>
+    <td>Organism attributes, phenotypes, epitopes</td>
+    <td>ImmPort, CEIRR</td>
+  </tr>
+</table>
+<p>In addition to ingested and processed data, users may elect to assemble and annotate their own sequenced genomes and make them publicly available through the BV-BRC resource. In these cases, BV-BRC team members work with the user to assess genome quality, verify metadata, and include appropriate attribution.</p>
+<p>Related Tools, Software and/or Code
+The data in BV-BRC are available through the website user interface and integrated searches and tools <a class="reference external" href="https://www.bv-brc.org/">BV-BRC website</a>, through the <a class="reference external" href="https://www.bv-brc.org/docs/cli_tutorial/index.html">command line interface (CLI)</a>, <a class="reference external" href="https://www.bv-brc.org/api/doc/">data API</a>, and from the <a class="reference external" href="ftp://ftp.bvbrc.org/">FTP site</a>. These are all provided freely to all users. All software developed by the project team in the system is available as open source in the <a class="reference external" href="https://github.com/BV-BRC">BV-BRC GitHub repository</a>.</p>
+<p>In the event of discontinuation of the resource, the databases, systems, and software code will be archived and transferred to NIAID or its designee.</p>
+</section>
+<section id="standards">
+<h2>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h2>
+<p>Where available, BV-BRC uses established standards with wide adoption in the target research communities. These include common file formats for sequence data (fasta in .fa, .fasta, .faa, .fna, .afa, .xmfa, .embl), aligned sequence data (.bai, .bam), tabular, e.g., expression, data (.csv, .txt, .xls, .xlsx), genome features (.gff, .gtf), phylogenetic trees (Newick, PhyloXML), variant calls (.vcf, .vcf.gz), structured data (.xml, .json), and others.</p>
+<p>BV-BRC uses metadata standards and ontologies to sufficiently characterize corresponding data to enable comparison, integration, and reuse in multiple analysis environments. The BV-BRC provides services and tools that accept and produce data using standard data formats, thus enabling data exchange and reuse among resources. We also provide open APIs that allow programmatic access to data and models within the resource, facilitate scripting of workflows that can programmatically interact with BV-BRC services, and can be used to by the community to develop new approaches for data analysis.</p>
+<p>For example, the genome metadata schema used in BV-BRC is based on the NIAID Human Pathogen and Vector Sequencing Metadata Standards, which include Project and Sample Application Standards and Clinical Metadata Standards. These standards were derived from the metadata standards used by Genomic Standards Consortium’s minimal information (MIxS) and NCBI’s BioSample/BioProjects checklists. We use The Systems Biology Metadata Standard developed to capture consistent metadata about experiments designed to assess host responses to pathogen infection. The BV-BRC team collaborated with the other BRCs and with the NIAID sponsored Systems Biology for Infectious Diseases program through the Data Dissemination Working Group to ensure that the standard covered the key experimental metadata.</p>
+<p>Data Preservation, Access, and Associated Timelines
+BV-BRC is, in essence, a knowledgebase for bacterial and viral genomic and related data associated with infectious diseases. It pulls, integrates, and adds value to data from other public databases and repositories, as described in the Data Types section above.</p>
+<p>Except for data that users have uploaded or generated in their private workspaces, all data in BV-BRC are publicly available. Data in private workspaces are entirely under the control of the user who owns the workspace. The user is responsible for complying with any NIAID policies for data release and deposition in public repositories for their private data.</p>
+<p>All genomes and other primary data types have persistent unique identifiers. The data in BV-BRC are retained for the life of the resource. Exceptions include replacement of outdated genomes from GenBank.</p>
+</section>
+<section id="access-distribution-or-reuse-considerations">
+<h2>Access, Distribution, or Reuse Considerations<a class="headerlink" href="#access-distribution-or-reuse-considerations" title="Permalink to this headline">¶</a></h2>
+<p>All public data in BV-BRC is freely available without restriction on its use. The resource does not include any PHI, PII, or other data covered by HIPAA.</p>
+</section>
+<section id="oversight-of-data-management-and-sharing">
+<h2>Oversight of Data Management and Sharing<a class="headerlink" href="#oversight-of-data-management-and-sharing" title="Permalink to this headline">¶</a></h2>
+<p>The BV-BRC Principal Investigators have primary responsibility for data management and sharing. Their designees, including Systems Leads and Database Administrators, perform the day-to-day maintenance and monitoring of the data stores and their content. All data integrated into the resource are stored and backed up on hardware and associated systems at the Argonne National Laboratory (ANL) facility. ANL has established and NIAID-approved procedures for data storage, backup, recovery, and security.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data.html" class="btn btn-neutral float-right" title="Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../education/index.html" class="btn btn-neutral float-left" title="Education" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

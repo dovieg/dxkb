@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>PATRIC July 2011 Release Features Integration of Genome Metadata | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>PATRIC July 2011 Release Features Integration of Genome Metadata | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>PATRIC July 2011 Release Features Integration of Genome Metadata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/PATRIC3/p3_docs/blob/master/docroot/news/2011/20110801-patric-july-2011-release.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="patric-july-2011-release-features-integration-of-genome-metadata">
+<h1>PATRIC July 2011 Release Features Integration of Genome Metadata<a class="headerlink" href="#patric-july-2011-release-features-integration-of-genome-metadata" title="Permalink to this headline">¶</a></h1>
+<p class="feed-meta">Published on <em class="feed-date">2011-08-01 00:00:00</em></p>
+<section id="new-searches-and-tools">
+<h2><strong>New Searches and Tools</strong><a class="headerlink" href="#new-searches-and-tools" title="Permalink to this headline">¶</a></h2>
+<p><strong>Integration of Genome Metadata</strong></p>
+<p>PATRIC has collected metadata associated with bacterial genomes from
+multiple sources, such as NCBI’s BioProject database, GenBank records,
+and the Human Microbiome Project.  Following the automated collection,
+the metadata was manually curated for consistency and accuracy,
+organized into a relational database, and integrated with the genomes
+available in PATRIC.  This metadata provides useful information about a
+genome, including genome status, isolation source, isolation country,
+collection date, host organism, associated disease, and more. The
+metadata is organized into the following broad categories:  organism
+info, project info, sequence info, isolate info, host info, and
+phenotype info.</p>
+<p>Genome metadata can be accessed in multiple ways on the PATRIC website:</p>
+<ul class="simple">
+<li><p>The improved Genome Finder allows users to locate genomes available
+in PATRIC by their associated metadata. A keyword search allows for
+the search across all available metadata fields, including the
+free-text comments. These search results are summarized by key
+metadata attributes, including genome status, isolation country, host
+name, disease, collection date, and completion date.  Progressive
+filtering of the results is also available.
+<a class="reference external" href="http://patricbrc.org/portal/portal/patric/GenomeFinder?cType=taxon&amp;cId=&amp;dm">http://patricbrc.org/portal/portal/patric/GenomeFinder?cType=taxon&amp;cId=&amp;dm</a>=</p></li>
+<li><p>A summary of key metadata attributes is provided on every Taxon
+Overview page.</p></li>
+</ul>
+<p style="padding-left: 30px;"><p>For an example see:
+<a class="reference external" href="http://patricbrc.org/portal/portal/patric/Taxon?cType=taxon&amp;cId=561">http://patricbrc.org/portal/portal/patric/Taxon?cType=taxon&amp;cId=561</a></p>
+</p><ul class="simple">
+<li><p>Metadata is also available at the Genome List tab, present at all
+taxonomy levels.  Progressive filtering by key metadata attributes is
+provided.  The Genome List table allows users to choose any of the 61
+currently available metadata attributes and add them to the table as
+columns. In addition, users can also download all available genomes
+and associated metadata as a tab delimited or Excel file.  For an
+example see:</p></li>
+</ul>
+<p style="padding-left: 30px;"><p><a class="reference external" href="http://patricbrc.org/portal/portal/patric/GenomeList?cType=taxon&amp;cId=561&amp;dataSource=&amp;displayMode=&amp;pk=9379#key=9379&amp;pS=20&amp;aP=1&amp;aT=0&amp;cwG=false&amp;cF=&amp;gId=&amp;gName=&amp;gdir=ASC&amp;gsort=genome_name&amp;sdir=&amp;ssort=">http://patricbrc.org/portal/portal/patric/GenomeList?cType=taxon&amp;cId=561&amp;dataSource=&amp;displayMode=&amp;pk=9379#key=9379&amp;pS=20&amp;aP=1&amp;aT=0&amp;cwG=false&amp;cF=&amp;gId=&amp;gName=&amp;gdir=ASC&amp;gsort=genome_name&amp;sdir=&amp;ssort=</a></p>
+</p><ul class="simple">
+<li><p>All available metadata for an individual genome is located on the
+Genome Overview Page under Genome Summary.</p></li>
+</ul>
+<p style="padding-left: 30px;"><p><a class="reference external" href="http://patricbrc.org/portal/portal/patric/Genome?cType=genome&amp;cId=200960">http://patricbrc.org/portal/portal/patric/Genome?cType=genome&amp;cId=200960</a></p>
+</p><p>To learn more about the genome metadata available at PATRIC, or how to
+search for a genome by its available metadata, visit <a class="reference external" href="../../../../../faqs/genome-metadata-faqs/">Genome Metadata
+FAQs</a> or <a class="reference external" href="../../../../../faqs/genome-finder-faqs/">Genome Finder
+FAQs</a>, respectively.</p>
+<p>The collection and refinement of genome metadata is an ongoing task.
+Future plans include integrating the genome metadata with various
+analysis tools available on the PATRIC website.</p>
+<p><strong>Data Download in GFF Format</strong></p>
+<p>PATRIC annotations are now available for download as GFF files, which
+can be accessed via the Downloads tab at the top of any PATRIC page.
+ Alternatively, GFF files can be accessed by clicking “Download genome
+data” in the upper-right of any PATRIC Genome Overview page.  For an
+example, see:</p>
+<p><a class="reference external" href="http://brcdownloads.vbi.vt.edu/patric2/genomes/Escherichia_coli_O104-H4_str_LB226692/Escherichia_coli_O104-H4_str_LB226692.PATRIC.gff">http://brcdownloads.vbi.vt.edu/patric2/genomes/Escherichia_coli_O104-H4_str_LB226692/Escherichia_coli_O104-H4_str_LB226692.PATRIC.gff</a></p>
+</section>
+<section id="genomes-and-annotations">
+<h2><strong>Genomes and Annotations</strong><a class="headerlink" href="#genomes-and-annotations" title="Permalink to this headline">¶</a></h2>
+<p>Since the June release, <a class="reference external" href="http://brcdownloads.vbi.vt.edu/patric2/genomes/RELEASE_NOTES/genomes_added">756 new
+genomes</a>
+have been added to PATRIC.  Many of them are draft assemblies available
+in GenBank but not in RefSeq. In addition, <a class="reference external" href="http://brcdownloads.vbi.vt.edu/patric2/genomes/RELEASE_NOTES/genomes_updated">62 genomes have been
+updated</a>
+or replaced with their newest versions. In total, 749 new genomes have
+been annotated using RAST.</p>
+<p>A summary of the genomes available on the PATRIC website through July,
+2011 is provided in the table below:</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table width="434" border="0" cellspacing="0" cellpadding="0"><tr><td width="39%"></td><td width="19%"><p>PATRIC</p>
+</td><td width="22%"><p>Legacy BRC</p>
+</td><td width="18%"><p>RefSeq</p>
+</td></tr><tr><td width="39%"><p>Number of genomes</p>
+</td><td width="19%"><p>3535</p>
+</td><td width="22%"><p>337</p>
+</td><td width="18%"><p>3685</p>
+</td></tr><tr><td width="39%"><p>Number of Complete genomes</p>
+</td><td width="19%"><p>1491</p>
+</td><td width="22%"><p>237</p>
+</td><td width="18%"><p>1488</p>
+</td></tr><tr><td width="39%"><p>Number of WGS genomes</p>
+</td><td width="19%"><p>2044</p>
+</td><td width="22%"><p>96</p>
+</td><td width="18%"><p>1800</p>
+</td></tr><tr><td width="39%"><p>Number of Plasmid only genomes</p>
+</td><td width="19%"></td><td width="22%"><p>4</p>
+</td><td width="18%"><p>397</p>
+</td></tr></table><p></td></tr></tbody></table><p><p>To view this Sequence Summary along with Genomic and Protein Feature
+Summaries, please
+visit: <a class="reference external" href="http://patricbrc.org/portal/portal/patric/Taxon?cType=taxon&amp;cId=2">http://patricbrc.org/portal/portal/patric/Taxon?cType=taxon&amp;cId=2</a></p>
+</p></section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

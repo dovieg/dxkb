@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Pathway Comparison Tool | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Subsystems Data and Viewer" href="subsystems_data.html" />
+    <link rel="prev" title="Protein Family Sorter" href="protein_family_sorter.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Pathway Comparison Tool | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/genome_browser.html">Genome Browser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/circular_genome_viewer.html">Circular Genome Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_gene/compare_region_viewer.html">Compare Region Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../services/archaeopteryx.html">Archaeopteryx.js Phylogenetic Tree Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="msa_viewer.html">Mulitiple Sequence Alignment Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="protein_family_sorter.html">Protein Family Sorter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Pathway Comparison Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subsystems_data.html">Subsystems Data and Viewer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Pathway Comparison Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/other/pathway_comparison_tool.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="pathway-comparison-tool">
+<h1>Pathway Comparison Tool<a class="headerlink" href="#pathway-comparison-tool" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Pathway Comparison Tool is based on the RASTtk (1) annotations. It allows researchers to identify a set of metabolic pathways based on taxonomy, EC number, pathway ID, pathway name and/or specific annotation type. The data are mapped to and summarized on pathway maps from the Kyoto Encyclopedia of Genes and Genomes, commonly known as KEGG (2). This tool also provides a table of unique pathways that match the search criteria (i.e., the genomes or proteins chosen by the researcher, or at any taxonomic level) from which researchers can select specific pathways of interest and view a KEGG Map, or on a heatmap view that summarizes the data, including presence/absence of individual EC numbers within the selected genomes.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bv-brc.org/app/ComparativeSystems">Comparative Systems Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/comparative_systems/comparative_systems.html"><span class="doc std std-doc">Comparative Systems Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="accessing-the-pathway-comparison-tool">
+<h2>Accessing the Pathway Comparison Tool<a class="headerlink" href="#accessing-the-pathway-comparison-tool" title="Permalink to this headline">¶</a></h2>
+<p>The Pathway Comparison Tool can be accessed by clickging the <strong>Pathways</strong> icon at the top right of the results page from a <a class="reference external" href="https://www.bv-brc.org/app/ComparativeSystems">Comparative Systems Service</a> analysis job.</p>
+<p><img alt="Pathways Icon" src="../../_images/pathways_icon.png" /></p>
+<p>Results are presented in tabular and pathway map views, as described below.</p>
+</section>
+<section id="pathway-and-ec-tables">
+<h2>Pathway and EC Tables<a class="headerlink" href="#pathway-and-ec-tables" title="Permalink to this headline">¶</a></h2>
+<p>Results will be shown in a Pathway table, shown below.</p>
+<p><img alt="Pathway Table" src="../../_images/pathways_table.png" /></p>
+<p>Pathways come from the Kyoto Encyclopedia of Genes and Genomes, commonly known as <a class="reference external" href="http://www.genome.jp/kegg/">KEGG</a>. The column data in this table provides summary information regarding the pathways:</p>
+<ul class="simple">
+<li><p><strong>Pathway ID:</strong> 5-digit identifier defined by KEGG.</p></li>
+<li><p><strong>Pathway Class:</strong> Higher level grouping of pathways provided by KEGG.</p></li>
+<li><p><strong>Pathway Name:</strong> Name of the pathway provided by KEGG</p></li>
+<li><p><strong>Genome Count:</strong> Total number of genomes that have some genes present in this pathway from the set of genomes chosen.</p></li>
+<li><p><strong>EC Number Count:</strong> The Enzyme Commission number (EC number) is a numerical classification scheme for enzymes, based on the chemical reactions they catalyze and in a given KEGG metabolic pathway, each step has an EC number assigned to it. In a given genome there may be several genes that have been assigned the same EC number, meaning that several different genes have the possibility of doing the same job. The unique EC count tells how many steps within the pathway have at least one gene behind them.</p></li>
+<li><p><strong>Gene Count:</strong> Total of number of unique genes that belong to this pathway from the set of genomes chosen.</p></li>
+<li><p><strong>Genome EC Count:</strong> Sum of the EC numbers found across all the genomes that have genes in this pathway.</p></li>
+<li><p><strong>EC Conservation %:</strong> For a single pathway (row), this number gives the percent of unique EC numbers present in all selected genomes. 100% describes a situation in which all unique EC numbers are present in all selected genomes. Smaller numbers indicate that there is one or more genomes are missing some EC numbers.</p></li>
+<li><p><strong>Gene Conservation:</strong> A genome can have several genes that have been assigned the same EC number. Gene conservation provides an estimate of pathways where there might be redundancies, or where EC numbers are missing. Numbers greater than one mean that in at least one genome, there is more than one gene that has been assigned a particular EC number. Numbers less than one mean indicate that in at least one genome, a particular EC number is missing. This provides a quick way to see which pathways have perfect conservation across all genomes (Gene Conservation = 1) to those pathways where there are differences among the genomes. Users can then explore these differences by drilling down on either the Unique Gene Count, or the Unique EC Count.</p></li>
+</ul>
+<p>Clicking on <strong>EC Number</strong> at the top left of the table shows the details of the EC numbers that are found across the selection of genomes for the individual pathway. Each EC Number has its own row, and the Description column provides the function of the genes in that pathway.</p>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one or more of the rows in the table by clicking the checkbox on the left side, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide:</strong> Opens the Quick Reference Guide for the page.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected items (rows).</p></li>
+<li><p><strong>Copy Rows:</strong> Copies the contents of the selected rows as text to the clipboard. Options include <em>All Columns (with headers), All Columns (without headers), Selected Columns (with headers),</em> and <em>Selected Columns (without headers)</em>.</p></li>
+<li><p><strong>Services:</strong> Provides links to tools and services in BV-BRC that can accept the selected items as input.</p></li>
+<li><p><strong>FASTA:</strong> Provides the FASTA DNA or protein sequence for the selected item(s).</p></li>
+<li><ul>
+<li><p><strong>ID Map:</strong> Provides the option to map the selected feature(s) to multiple other idenfiers, such as RefSeq and UniProt.</p></li>
+</ul>
+</li>
+<li><p><strong>Pathway:</strong> Displays the Pathway Summary Table containing a list of all the pathways in which the selected features are found.</p></li>
+<li><p><strong>Feature:</strong> Displays the Feature Page for the selected feature. <em>Available only if a single feature is selected.</em></p></li>
+<li><p><strong>Features:</strong> Displays the Features Table for the selected features. <em>Available only if multiple features are selected.</em></p></li>
+<li><p><strong>Map:</strong> Opens the Pathway View, which includes an EC table and the corresponding KEGG pathway map.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Buttons</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+<section id="pathway-viewers">
+<h2>Pathway Viewers<a class="headerlink" href="#pathway-viewers" title="Permalink to this headline">¶</a></h2>
+<p>Selecting a pathway in the table and then clicking the <strong>Map</strong> button in the vertical green Action Bar on the right side of the table opens the Pathway View for that pathway. From this page there are two view options - <strong>KEGG Map</strong> and <strong>Heatmap</strong>.</p>
+<section id="kegg-map">
+<h3>KEGG Map<a class="headerlink" href="#kegg-map" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Pathway View - KEGG Map" src="../../_images/pathway_kegg_map.png" /></p>
+<p>In the KEGG Map view option, there are two regions, the EC Number table and the KEGG Map itself.</p>
+<p><strong>EC Table:</strong> This table, located to the left of the KEGG Map, lists the Enzyme Commission (EC) Numbers of the genes that are found across all the genomes and are present in that particular pathway. The columns include</p>
+<ul class="simple">
+<li><p><strong>EC Number:</strong> The Enzyme Commission number.</p></li>
+<li><p><strong>Genome Count:</strong> The number of genomes that are summarized in the pathway.</p></li>
+<li><p><strong>Feature Count:</strong> The number of genes in the selection of genomes, or individual genome, that have the same EC number.</p></li>
+<li><p><strong>Genome Count Not Present</strong> The number of genomes in the current selection that <em>do not</em> have a gene with this particular EC number.</p></li>
+<li><p><strong>Occurrence:</strong> The number of times this EC number appears in this pathway.</p></li>
+<li><p><strong>Description:</strong> (Hidden by default) The description (name) associated with the EC Number. To show this column, click the plus sign (+) in the top right corner of the table and check the box beside “Description.”</p></li>
+</ul>
+<p>Selecting a row in the the table causes the associated EC number to be highlighted in red within the KEGG Map.</p>
+<p><strong>KEGG Map:</strong> This is the KEGG map associated with the selected pathway.</p>
+<ul class="simple">
+<li><p><strong>Map Numbers:</strong> The numbers in the boxes are EC numbers. These numbers are part of a numerical classification schema that has been developed for enzymes and the chemical reactions they catalyze.</p></li>
+<li><p><strong>Color Coding:</strong> The box containing the EC number will be one of three colors:</p>
+<ul>
+<li><p><strong>Bright green:</strong> A protein with this EC number has been annotated in all the genomes chosen.</p></li>
+<li><p><strong>Muted green:</strong> A protein with this EC number has been annotated in at least one, but not all, genomes chosen.</p></li>
+<li><p><strong>White (no color):</strong> The annotation did not identify a protein with that EC number.</p></li>
+<li><p><strong>Red:</strong> Selected EC number(s).</p></li>
+</ul>
+</li>
+<li><p><strong>Names Associated with EC numbers:</strong> Scrolling over the box that contains the EC number will give the name of the EC number.</p></li>
+<li><p><strong>Related Pathways:</strong> Generally, an individual KEGG pathway will show different associated pathways that specific enzymes play a part in. These pathways are named and are found on the KEGG Map in boxes with rounded corners. Clicking the link that appears when scrolling over one of these boxes will take you to that pathway. Alternatively, you could begin a new Comparative Pathway Tool search using the pathway name as a keyword in the initial search criteria.</p></li>
+</ul>
+</section>
+<section id="heatmap">
+<h3>Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Pathway View - Heatmap" src="../../_images/pathway_heatmap.png" /></p>
+<p>The Heatmap is an interactive visualization tool, which provides an overview of the distribution of genomes across the set of EC numbers within a selected pathway. Patterns visible in a Heatmap can allow for many types of analysis such as, a bird’s-eye view of the conservation (or lack thereof) of particular genes of interest, discerning how many
+proteins have the same function within a single genome, and identifying proteins with multiple homologs or paralogs across a set of genomes.</p>
+<p><strong>Color Coding:</strong>  Each cell is colored according to how many proteins (features) from a
+specific genome are assigned a particular EC number.</p>
+<ul class="simple">
+<li><p><strong>Black:</strong> No representative proteins from the genome assigned that EC number</p></li>
+<li><p><strong>Bright yellow:</strong> One representative protein</p></li>
+<li><p><strong>Dark yellow:</strong> Two representative proteins</p></li>
+<li><p><strong>Dark orange:</strong> Three or more representative genomes</p></li>
+</ul>
+<p><strong>Features and Functionality</strong></p>
+<p>EC Numbers and Descriptions are listed along the Y (vertical) axis and corresponding Genomes are listed along the X (horizontal) axis. The scale of these rows and columns may be controlled by sliding the x and/or y slidebars located at the axis intersection in the upper left corner of the Heatmap. The “Flip Axis” button at the top left of the heatmap will swap the positions (horizontal or vertical) of the Genomes and EC Numbers. Each individual column or row within the Heatmap may be clicked and dragged to any specified position.</p>
+<p>The following options may be accessed from a pop-up widow by clicking on any individual colored cell, any EC label, or any Genome label within the Heatmap. The same information can be collected for a whole region of interest within the Heatmap by clicking and dragging to select a group of cells.</p>
+<ul class="simple">
+<li><p><strong>Download Heatmap Data:</strong> Shows the count of representative features from each genome assigned to each EC Number in either a text or excel file. Note: Clicking this button from an EC label will produce a file with the count for each genome assigned to that EC number, while clicking on this button from a Genome label will produce a file with the count for that particular genome in every EC number associated for this selected pathway.</p></li>
+<li><p><strong>Download Proteins:</strong> Downloads the set of features associated with the chosen proteins.  Download available as csv, txt, or Excel file.</p></li>
+<li><p><strong>Show Proteins:</strong> Opens a feature list table containing the features associated with the chosen proteins. This view contains the same information as any feature list: Genome Name, Genome ID, RefSeq Locus Tab, Gene Symbol, protein family information, Product, length, start/stop, etc. This view also allows access to sequences, enables building of multiple sequence alignments, map IDs, etc.</p></li>
+<li><p><strong>Add Proteins to Group:</strong> button will save selected items to new, or existing, groups within the Workspace.</p></li>
+<li><p><strong>Cancel:</strong> Closes the pop-up window.</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Brettin, T. et al. RASTtk: a modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Scientific reports 5, 8365 (2015).</p></li>
+<li><p>Kanehisa, M., Furumichi, M., Sato, Y., Kawashima, M. &amp; Ishiguro-Watanabe, M. KEGG for taxonomy-based analysis of pathways and genomes. Nucleic Acids Research (2022).</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="subsystems_data.html" class="btn btn-neutral float-right" title="Subsystems Data and Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="protein_family_sorter.html" class="btn btn-neutral float-left" title="Protein Family Sorter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

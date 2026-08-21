@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>MSA and SNP/Variation Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Metadata-driven Comparative Analysis Tool (Meta-CATS)" href="../metacats/metacats.html" />
+    <link rel="prev" title="Gene Tree Service" href="../genetree/genetree.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>MSA and SNP/Variation Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MSA and SNP/Variation Analysis Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-msa-and-variation-analysis-app">Locating the MSA and Variation Analysis App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-alignment-parameters">Specifying alignment parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-a-job-for-msa">Submitting a job for MSA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checking-the-status-of-the-job">Checking the status of the job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-msa-in-the-bv-brc">Viewing MSA in the BV-BRC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#analyzing-sequence-variation">Analyzing Sequence Variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metacats/metacats.html">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../proteome_comparison/proteome_comparison.html">Proteome Comparison Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparative_systems/comparative_systems.html">Comparative Systems Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docking/docking.html">Small Molecule Ligand Docking Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure.html">Protein Structure Prediction Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure_recipes.html">Protein Structure Prediction — Recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>MSA and SNP/Variation Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/msa_snp_variation/msa_snp_variation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="msa-and-snp-variation-analysis-service">
+<h1>MSA and SNP/Variation Analysis Service<a class="headerlink" href="#msa-and-snp-variation-analysis-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 1/24/2022</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Multiple Sequence Alignment (MSA) and Single Nucleotide Polymorphism (SNP)/Variation Analysis Service allows users to choose an alignment algorithm to align sequences selected from: a search result, a FASTA file saved to the workspace, or through simply cutting and pasting. The service can also be used for variation and SNP analysis with feature groups, FASTA files, aligned FASTA files, and user input FASTA records. If a single alignment file is given, then only the variation analysis is run. If multiple inputs are given, the program concatenates all sequence records and aligns them. If a mixture of protein and nucleotides are given, then nucleotides are converted to proteins.</p>
+<section id="keywords">
+<h3>Keywords:<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
+<p>MSA, multiple sequence alignment, mafft, muscle, progressiveMauve, SNP, variation</p>
+</section>
+<section id="see-also">
+<h3>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/MSA">MSA and SNP/Variation Analysis Service</a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/msa_snp_variation_service.html"><span class="doc std std-doc">MSA and SNP/Variation Analysis Service Quick Reference Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/other/msa_viewer.html"><span class="doc std std-doc">MSA Viewer</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="locating-the-msa-and-variation-analysis-app">
+<h2>Locating the MSA and Variation Analysis App<a class="headerlink" href="#locating-the-msa-and-variation-analysis-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the SERVICES tab and then click on Multiple Sequence Alignment.</p></li>
+</ol>
+<p><img alt="Figure 0" src="../../_images/Picture01.png" /></p>
+<ol class="simple">
+<li><p>This will open up the Multiple Sequence Alignment and SNP/Variation Analysis landing page.</p></li>
+</ol>
+</section>
+<section id="specifying-alignment-parameters">
+<h2>Specifying alignment parameters<a class="headerlink" href="#specifying-alignment-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Users will need to first select which alignment algorithm they wish to use. Options include Mafft [1,2], MUSCLE [3,4], and progressiveMauve [5]. If not specified by the user, the default aligner used will be Mafft.</p></li>
+</ol>
+<p><img alt="Figure 1" src="../../_images/Picture138.png" /></p>
+<ol class="simple">
+<li><p>Users will then need to specify whether they require the alignment of a nucleic acid or protein sequence data (see below).</p></li>
+</ol>
+<p><img alt="Figure 2" src="../../_images/Picture228.png" /></p>
+<ol class="simple">
+<li><p>To specify output parameters, users will need to select an output folder in their workbench or create one if an appropriate folder is not available (red arrow). Users will also be prompted to specify an “Output Name” (red box) for the job result, before the job can be submitted.</p></li>
+</ol>
+<p><img alt="Figure 3" src="../../_images/Picture325.png" /></p>
+<p>Input sequence options
+Users may submit data or datasets for alignment and/or variation analysis to the service using one of several input methods: 1) cutting and pasting sequences in FASTA text format; 2) Selecting a FASTA formatted file after having uploaded it to their workspace; 3) Selecting a feature group (eg: CDS, tRNA etc.) previously saved to their workspace; 4) Selecting a previously aligned dataset (MSA) file in FASTA format; 5) any combination of the previously described options.</p>
+<p><em>Option 1:</em> To align a block of FASTA formatted text sequences, you may simply paste them into the “Fasta Text Input” box shown below.</p>
+<p><img alt="Figure 4" src="../../_images/Picture425.png" /></p>
+<p><em>Option 2:</em> Users may upload their own files here (red arrow), or use a previously saved file from their workspace. After the appropriate file has been selected, users can select the “plus” button (red box) to add the file to the selected object table for alignment.</p>
+<p><img alt="Figure 5" src="../../_images/Picture525.png" /></p>
+<p><em>Option 3:</em> Users may select a previously saved “Feature Group” file from their workspace (for more information, see “Searching for Genes &amp; Proteins” documentation). After the appropriate file has been selected, users can select the “plus” button (red box) to add the file to the selected object table for alignment.</p>
+<p><img alt="Figure 6" src="../../_images/Picture619.png" /></p>
+<p><em>Option 4:</em> If users have previously aligned their data using another service to which they would like to add further sequences for alignment, they may choose to upload an alignment file from their workspace or upload their own. After the appropriate file has been selected, users can select the “plus” button (red box) to add the file to the selected object table for alignment.</p>
+<p><img alt="Figure 7" src="../../_images/Picture719.png" /></p>
+<p><em>Option 5:</em> Alternatively, users may wish to combine several files using one or more of the methods described above, e.g., combining personal data with reference data from the database.</p>
+<p><img alt="Figure 8" src="../../_images/Picture818.png" /></p>
+</section>
+<section id="submitting-a-job-for-msa">
+<h2>Submitting a job for MSA<a class="headerlink" href="#submitting-a-job-for-msa" title="Permalink to this headline">¶</a></h2>
+<p>When the user has completed parameter and input file selection, the “Submit” button will become available.</p>
+<p><img alt="Figure 9" src="../../_images/Picture918.png" /></p>
+<p>A message will appear below the box to indicate that the job is now in the queue.</p>
+<p><img alt="Figure 10" src="../../_images/Picture1015.png" /></p>
+</section>
+<section id="checking-the-status-of-the-job">
+<h2>Checking the status of the job<a class="headerlink" href="#checking-the-status-of-the-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the Jobs indicator at the bottom of the BV-BRC page.</p></li>
+</ol>
+<p><img alt="Figure 11" src="../../_images/Picture1114.png" /></p>
+<ol class="simple">
+<li><p>This will open the Jobs Status page where researchers can see the status of their annotation job. The statuses of all the service jobs that have been submitted to BV-BRC are also available.</p></li>
+<li><p>Once the job is completed, you can select the job by clicking on it and click the “View” button on the right-hand bar to see the results.</p></li>
+</ol>
+<p><img alt="Figure 12" src="../../_images/Picture1212.png" /></p>
+<ol class="simple">
+<li><p>The results page will consist of a header describing the job and a list of output files, as shown below.</p></li>
+</ol>
+<p><img alt="Figure 13" src="../../_images/Picture139.png" /></p>
+<ol class="simple">
+<li><p>The MSA Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>.afa</strong> – the alignment file in fasta format.</p></li>
+<li><p><strong>.consensus.fasta</strong> – A consensus sequence, ie: the calculated order of most frequent residues (nucleotide or amino acid) in a sequence alignment.</p></li>
+<li><p><strong>.entropy.png</strong> –  a PNG (portable network graphics) image file showing the entropy score plotted against the sequence position.</p></li>
+<li><p><strong>.entropy.svg</strong> – a SVG (scalable vector graphics) image file showing the entropy score plotted against the sequence position.</p></li>
+<li><p><strong>.snp.tsv</strong> – A tab separated value file allowing users a tabular view of all nucleotide or amino acid variations found within their MSA.</p></li>
+</ul>
+</section>
+<section id="viewing-msa-in-the-bv-brc">
+<h2>Viewing MSA in the BV-BRC<a class="headerlink" href="#viewing-msa-in-the-bv-brc" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>After selecting the alignment (.afa) file (red box), users can download or view the alignment by selecting the appropriate button (Download or MSA respectively) on the green vertical Action Bar on the right-hand side of the page displays the results files (red arrow).</p></li>
+</ol>
+<p><img alt="Figure 14" src="../../_images/Picture1410.png" /></p>
+<ol class="simple">
+<li><p>If users select to view their file, a MSA viewer application will be opened in a new window (see below). To learn more about the MSA viewer options, please see <a class="reference internal" href="../../quick_references/other/msa_viewer.html"><span class="doc std std-doc">MSA Viewer</span></a> documentation.</p></li>
+</ol>
+<p><img alt="Figure 15" src="../../_images/Picture1510.png" /></p>
+<ol class="simple">
+<li><p>If users wish to download or view the consensus sequence generated from their MSA, they may select the “consensus.fasta” file (red box), then select the appropriate button (Download or View respectively) on the green vertical Action Bar on the right-hand side of the page displays the results files (red arrow).</p></li>
+</ol>
+<p><img alt="Figure 16" src="../../_images/Picture1610.png" /></p>
+<ol class="simple">
+<li><p>Similarly, if users wish to view or download the entropy score for each site within the alignment, they may select either the “entropy.png” or “entropy.svg” file, then select the view or download buttons on the green vertical Action Bar, as described above. Entropy plots will be displayed as shown below.</p></li>
+</ol>
+<p><img alt="Figure 17" src="../../_images/Picture179.png" /></p>
+</section>
+<section id="analyzing-sequence-variation">
+<h2>Analyzing Sequence Variation<a class="headerlink" href="#analyzing-sequence-variation" title="Permalink to this headline">¶</a></h2>
+<p>After a MSA is completed, a consensus sequence is created by “majority rule”. At each position, the consensus is the allele with frequency greater than 50%, regardless of coverage. If no allele exceeds 50%, N (for nucleotide) or Xaa (for amino acid) indicates ambiguity. Sequences in the alignment are then compared to the consensus to identify polymorphism.</p>
+<p>To score polymorphism at each position, a formula modified from the one cited in Crooks et al. [6] is used.
+S = -100 * Sum (Pi * log2Pi) where Pi is the frequency of the <em>ith</em> allele.</p>
+<p>The score is the normalized entropy of the observed allele distribution. For nucleotides, scores can range from 0 (no polymorphism) to 232 (4 alleles and an indel, 20% frequency each).</p>
+<ol class="simple">
+<li><p>If users are interested in the nucleotide or amino acid variation within their MSA, they can find a summary table by selecting the “snp.tsv” file, then selecting the appropriate button in the green vertical action bar as described above.</p></li>
+</ol>
+<p><img alt="Figure 18" src="../../_images/Picture189.png" /></p>
+<ol class="simple">
+<li><p>Variation results will be displayed in tabular format as shown below. Table columns include:  Position, Score, Consensus nucleotide or AA, as well as the number of sequences that contain each variant.</p></li>
+</ol>
+<p><img alt="Figure 19" src="../../_images/Picture199.png" /></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Katoh K., Misawa K., Kuma K., Miyata T. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res. 2002;30:3059–3066.</p></li>
+<li><p>Katoh K, Rozewicki J, Yamada KD. MAFFT online service: multiple sequence alignment, interactive sequence choice and visualization. Brief Bioinform. 2019 Jul 19;20(4):1160-1166. doi: 10.1093/bib/bbx108. PMID: 28968734; PMCID: PMC6781576.</p></li>
+<li><p>Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-97.</p></li>
+<li><p>Edgar, Robert C (2004), MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinformatics, 5(1):113.</p></li>
+<li><p>Darling AE, Mau B, Perna NT (2010) progressiveMauve: Multiple Genome Alignment with Gene Gain, Loss and Rearrangement. PLoS ONE 5(6): e11147. https://doi.org/10.1371/journal.pone.0011147</p></li>
+<li><p>Crooks GE, Hon G, Chandonia JM, Brenner SE. WebLogo: a sequence logo generator. Genome Res. 2004 Jun;14(6):1188-90.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../metacats/metacats.html" class="btn btn-neutral float-right" title="Metadata-driven Comparative Analysis Tool (Meta-CATS)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../genetree/genetree.html" class="btn btn-neutral float-left" title="Gene Tree Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Subsystems | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Experiments" href="experiments.html" />
+    <link rel="prev" title="Pathways" href="pathways.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Subsystems | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../organisms_menu.html#taxon-level-data">Taxon-Level Data</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Taxonomic Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="phylogeny.html">Phylogeny</a></li>
+<li class="toctree-l4"><a class="reference internal" href="taxonomy.html">Taxonomy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="strains.html">Strains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="strains.html#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genomes.html">Genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amr_phenotypes.html">AMR Phenotypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proteins.html">Proteins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="protein_structures.html">Protein Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="specialty_genes.html">Speciality Genes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domains_and_motifs.html">Domains and Motifs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="epitopes.html">Epitopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways.html">Pathways</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="experiments.html">Experiments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interactions.html">Interactions, Taxon/Genome-Level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surveillance_data.html">Surveillance Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serology_data.html">Serology Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sfvt.html">Sequence Feature Variant Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#genome-strain-level-data">Genome/Strain-Level Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../organisms_menu.html#gene-protein-level-data">Gene/Protein-Level Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../organisms_menu.html">Organisms and Data Types</a> &raquo;</li>
+        
+      <li>Subsystems</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/organisms_taxon/subsystems_tab.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="subsystems">
+<h1>Subsystems<a class="headerlink" href="#subsystems" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Subsystems Tab provides access to a graphical display (pie chart) of subsystem superclasses asserted to a genome or a genome group. Each of the 11 superclasses of subsystems (Metabolism, Energy, Protein Processing etc.) can be expanded to their class and subclass levels. The Subsystems (green)- and Gene (yellow) counts provided in parenthesis link to tabular representations of the appropriate data.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="subsystems.html"><span class="doc std std-doc">Subsystems</span></a></p></li>
+</ul>
+</section>
+<section id="accessing-subsystems">
+<h2>Accessing Subsystems<a class="headerlink" href="#accessing-subsystems" title="Permalink to this headline">¶</a></h2>
+<p>The Subsystems Overview can be accessed by</p>
+<ul class="simple">
+<li><p><strong>Clicking the Subsystems Tab in a Taxon View:</strong> Displays an overview pie chart of the subsystems that comprise the taxon, with additional options to view subsystems or genes in a tabular view, as shown below.</p></li>
+</ul>
+</section>
+<section id="subsystems-overview">
+<h2>Subsystems Overview<a class="headerlink" href="#subsystems-overview" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Subsystems Tab - Overview" src="../../_images/subsystems_tab_overview.png" /></p>
+<p>On the left side, a pie chart displays the subsystem superclasses asserted to taxon group (or genome group if in Genome Group View, or single genome if in Genome View). Clicking on one of the “slices” of the pie displays a table of the associated subsystems in that superclass. The Subsystems Table is described below.</p>
+<p>On the right side an interactive hierarchical display of the 11 superclasses of subsystems (Metabolism, Energy, Protein Processing etc.), with matching colors the corresponding slice in the pie chart. The subsystem superclasses and nested subclasses can be expanded to progressively lower levels by clicking the arrow (&gt;) on the left side of the subsystem name. On the right side of the subsystem name, two numbers are provided in parentheses.  The first is the count of subsystems (green) and the second is the count of senes (yellow) associated with the subsystem name. Clicking on the number displays a table containing all of the associated subsystems or genes, respectively.  These tables are described below.</p>
+</section>
+<section id="subsystems-table">
+<h2>Subsystems Table<a class="headerlink" href="#subsystems-table" title="Permalink to this headline">¶</a></h2>
+<p>Clicking the Subsystems menu option displays a table of all the subsystems associated within the taxon or selected subsystem, as shown below.<br />
+<img alt="Subsystems Tab - Subsystems" src="../../_images/subsystems_tab_subsystems.png" /></p>
+<p>The columns in this table provide additional information about each of the subsystems:</p>
+<ul class="simple">
+<li><p><strong>Superclass:</strong> One of the 11 highest level groupings of subsystems</p></li>
+<li><p><strong>Class:</strong> Second-level grouping of subsystems</p></li>
+<li><p><strong>Subclass:</strong> Third-level grouping of subsystems</p></li>
+<li><p><strong>Subsystem Name:</strong> Name of the subsystem</p></li>
+<li><p><strong>Genome Count:</strong> Total number of genomes that have been asserted to have an active or likely variant of the subsystem from the set of genomes chosen.</p></li>
+<li><p><strong>Gene Count:</strong> Total of number of unique genes that belong to this subsystem from the set of genomes chosen.</p></li>
+<li><p><strong>Role Count:</strong> Total of number of unique functional roles asserted for an active variant of the subsystem.</p></li>
+</ul>
+<p>Two additional columns (hidden by default) are available by clicking the (+) at the top right of the table.  They are</p>
+<ul class="simple">
+<li><p><strong>Variant (formerly named Active):</strong> A subsystem can be asserted to be active or likely if one or more functional roles are missing.</p></li>
+<li><p><strong>Subsystem ID:</strong> Unique identifier for the subsystem (usually the same as Subsystem Name by default).</p></li>
+</ul>
+<section id="subsystem-table-tools">
+<h3>Subsystem Table Tools<a class="headerlink" href="#subsystem-table-tools" title="Permalink to this headline">¶</a></h3>
+<p>Within this table you may do the following:</p>
+<ul class="simple">
+<li><p><strong>Download</strong> the entire contents of the table in text, CSV, or Excel format by clicking the Download button above the table on the left side.</p></li>
+<li><p><strong>Rearrange and narrow</strong> the list of genomes in the table via sorting (using column headers), keywords (using the Keyword box), and filtering (using the Filter Tool, described below).</p></li>
+</ul>
+</section>
+<section id="filter-tool">
+<h3>Filter Tool<a class="headerlink" href="#filter-tool" title="Permalink to this headline">¶</a></h3>
+<p>As with all tables, the Filters tool is available to narrow the display of the items in the table, show below:</p>
+<p><img alt="Subsystems Filter Panel" src="../../_images/subsystems_filter_panel.png" /></p>
+<p>Clicking on the Filters button at the top right of the table opens the Filter Panel above the table, displaying column names from the table and values for those columns with counts of occurence.  Clicking on the filter values narrows the genomes <em>displayed</em> in the table to those matching the chosen filter values.  Clicking the Hide button closes the Filter Panel.  Clicking the Apply button removes the non-matching genomes and <em>resets the scope</em> in the Taxonomic View to only the genomes matching the filter criteria. More details are available in the <span class="xref myst">Filter Tool</span> Quick Reference Guide.</p>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one or more of the genomes by clicking the checkbox beside the Genomes Name in the table, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>FASTA:</strong> Provides the FASTA DNA or protein sequence for the features corresponding to the selected subsystem(s).</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected items (rows).</p></li>
+<li><p><strong>Features:</strong> Loads the Features Table for the features corresponding to the selected subsystem(s).</p></li>
+<li><p><strong>Group:</strong> Opens a pop-up window to enable adding the selected subsystems to an existing or new group in the private workspace.</p></li>
+<li><p><strong>Map:</strong> Launches the Comparative Subsystems Heatmap, described below.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Buttons</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+<section id="comparative-subsystems-heatmap">
+<h2>Comparative Subsystems Heatmap<a class="headerlink" href="#comparative-subsystems-heatmap" title="Permalink to this headline">¶</a></h2>
+<p>The Heatmap is an interactive visualization tool, which provides an overview of the distribution of genomes across the set of functional roles defined by a subsystem. Patterns visible in a Heatmap can allow for many types of analysis such as, a bird’s-eye view of the conservation (or lack thereof) of particular functional roles of interest, discerning how many proteins have the same function within a single genome, and identifying proteins with multiple homologs or paralogs across a set of genomes. The Heatmap is accessible by selecting a Subsystem or Gene in the corresponding tables (described in this Quick Reference Guide) and then clicking the Map icon in the green action bar.</p>
+<p><img alt="Subsystems Heatmap" src="../../_images/subsystems_tab_heatmap.png" /></p>
+<section id="color-coding">
+<h3>Color Coding:<a class="headerlink" href="#color-coding" title="Permalink to this headline">¶</a></h3>
+<p>Each cell is colored according to how many genes are annotated to perform the specific functional role within a specific genome. Note that fragments of a gene can be presented as separate entities.</p>
+<ul class="simple">
+<li><p><strong>Black:</strong> No genes from the genome have the specific functional role assigned.</p></li>
+<li><p><strong>Bright yellow:</strong> One gene with the specific functional role</p></li>
+<li><p><strong>Dark yellow:</strong> Two genes with the specific functional role</p></li>
+<li><p><strong>Dark orange:</strong> Three or more genes with the specific functional role</p></li>
+</ul>
+</section>
+<section id="features-and-functionality">
+<h3>Features and Functionality<a class="headerlink" href="#features-and-functionality" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Functional roles needed for an “active” subsystem are listed along the Y (vertical) axis. Note that not all functional roles are always needed for a functional variant of a subsystem. Depending on a given genome one specific functional role or another can be present (non orthologous gene displacement). Also some subsystems are collections of similar functional roles for the purpose of disambiguation of paralogous genes.</p></li>
+<li><p>The corresponding Genomes are listed along the X (horizontal) axis. The scale of these rows and columns may be controlled by sliding the x and/or y slidebars located at the axis intersection in the upper left corner of the Heatmap. The “Flip Axis” button at the top left of the heatmap will swap the positions (horizontal or vertical) of the Genomes and EC Numbers.</p></li>
+<li><p>Each individual column or row within the Heatmap may be clicked and dragged to any specified position.</p></li>
+<li><p>The following options may be accessed from a pop-up widow by clicking on any individual colored cell, any EC label, or any Genome label within the Heatmap. The same information can be collected for a whole region of interest within the Heatmap by clicking and dragging to select a group of cells.</p>
+<ul>
+<li><p>Download Heatmap Data: Shows the count of representative features from each genome assigned to each EC Number in either a text or excel file. Note: Clicking this button from an EC label will produce a file with the count for each genome assigned to that EC number, while clicking on this button from a Genome label will produce a file with the count for that particular genome in every EC number associated for this selected pathway.</p></li>
+<li><p>Download Proteins: Downloads the set of features associated with the chosen proteins. Download available as csv, txt, or Excel file.</p></li>
+<li><p>Show Proteins: Open a feature list table containing the features associated with the chosen proteins. This view contains the same information as any feature list: Genome Name, Genome ID, RefSeq Locus Tab, Gene Symbol, protein family information, Product, length, start/stop, etc. This view also allows access to sequences, enables building of multiple sequence alignments, map IDs, etc.</p></li>
+<li><p>Add Proteins to Group: button will save selected items to new, or existing, groups within the Workspace.</p></li>
+<li><p>Cancel: Closes the pop-up window.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="genes-table">
+<h2>Genes Table<a class="headerlink" href="#genes-table" title="Permalink to this headline">¶</a></h2>
+<p>Clicking the Subsystems menu option displays a table of all the genes associated within the taxon or selected subsystem grouped by subsystem, as shown below.<br />
+<img alt="Subsystems Tab - Genes" src="../../_images/subsystems_tab_genes.png" />
+The functionality of this table is essentially the same as for the Subsystems Table, except the resolution is down to the gene level.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="experiments.html" class="btn btn-neutral float-right" title="Experiments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pathways.html" class="btn btn-neutral float-left" title="Pathways" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

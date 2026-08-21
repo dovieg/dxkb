@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Creating a Multiple-Sequence Alignment | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Creating a Multiple-Sequence Alignment | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Creating a Multiple-Sequence Alignment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/alignments/multiple_sequence_alignment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-a-multiple-sequence-alignment">
+<h1>Creating a Multiple-Sequence Alignment<a class="headerlink" href="#creating-a-multiple-sequence-alignment" title="Permalink to this headline">¶</a></h1>
+<section id="basic-steps">
+<h2>Basic Steps<a class="headerlink" href="#basic-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>List the features of interest and select them.</p></li>
+<li><p>Invoke the Multiple-Sequence Alignment Tool.</p></li>
+<li><p>Choose <em>Nucleotide</em> or <em>Amino Acid</em>.</p></li>
+<li><p>Process the result.</p></li>
+</ol>
+<section id="list-the-features-of-interest-and-select-them">
+<h3>List the Features of Interest and Select Them<a class="headerlink" href="#list-the-features-of-interest-and-select-them" title="Permalink to this headline">¶</a></h3>
+<p>Since it is a tool, rather than a service, Multiple-Sequence Alignment is not available from the menus at the top of the
+PATRIC web pages.  Instead, you select a group of features from a feature list and click on the tool icon in the green
+sidebar.</p>
+<p>You can do a feature search to find the features you want, or you can use a feature group.  In this example, we will align
+all of the features with EC number 6.1.1.20 in <em>Methanobacteriaceae archaeon</em> genomes.  In the screenshot below, the search
+we used to get these features is circled in blue.  To select all the features in the list, click on the checkbox shown by the
+red arrow.</p>
+<img alt="../../_images/feature_list.png" src="../../_images/feature_list.png" />
+<p>There are any number of ways to get a suitable feature list.  In addition to searching for eligible features, you can create
+a feature group in your workspace and list it from there (see <a class="reference internal" href="../../quick_references/workspaces/groups.html"><span class="doc">Data Groups</span></a>).</p>
+</section>
+<section id="invoke-the-multiple-sequence-alignment-tool">
+<h3>Invoke the Multiple-Sequence Alignment Tool<a class="headerlink" href="#invoke-the-multiple-sequence-alignment-tool" title="Permalink to this headline">¶</a></h3>
+<p>The icon for the Multiple-Sequence Alignment tool appears on the green control bar whenever you have more than one feature
+selected, and is identified by the acronym <strong>MSA</strong>.  In the screenshot above, the icon is circled in red.  Click this icon
+to invoke the tool.</p>
+</section>
+<section id="choose-the-alignment-type">
+<h3>Choose the Alignment Type<a class="headerlink" href="#choose-the-alignment-type" title="Permalink to this headline">¶</a></h3>
+<p>A callout will appear below the icon.  Click on <em>Nucleotide</em> for a DNA alignment or <em>Amino Acid</em> for a protein amino acid alignment.</p>
+</section>
+<section id="process-the-result">
+<h3>Process the Result<a class="headerlink" href="#process-the-result" title="Permalink to this headline">¶</a></h3>
+<p>The resulting alignment is shown below.</p>
+<img alt="../../_images/alignment.png" src="../../_images/alignment.png" />
+<p>Each codon is assigned a different color.  There are 15 color schemes defined in PATRIC.  You can choose any one of them, or turn
+color-coding off entirely, by clicking the <strong>colors</strong> icon on the green control bar.</p>
+<p>The default display shows the name of each genome containing the feature in a particular row of the alignment.  In our example, this
+doesn’t quite work because one of the genomes has two features in the list.  You can use the <strong>ID type</strong> icon to change the display to
+use feature IDs.  This is shown below.</p>
+<img alt="../../_images/alignment2.png" src="../../_images/alignment2.png" />
+<p>The <strong>filter</strong> button allows you to hid columns in the alignment.  You can hide columns by the percentage of conservation or the
+percentage of gaps, and for whichever criterion is selected, you can specify a minimum percentage, a maximum percentage, or a
+percentage range.  The filtering chooses
+columns to hide, so (for example) if you filter on gaps of less than 50%, it will hide those columns and show only columns with more
+than 50% gap characters.  Each time you use the filter button, it works with the columns remaining on the display.  So, if you hide
+columns with more than 50% gap characters and then hide the ones with more than 50% conservation, you will see only columns with
+less than 50% gap characters <em>and</em> less than 50% conservation.  To get all the columns back, use the <strong>Reset</strong> option.</p>
+<p>Finally, you can use the <strong>DWNLD</strong> button to download the alignment, either as an alignment in FASTA or text format, or as a
+tree in SVG or Newick format.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

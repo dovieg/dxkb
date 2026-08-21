@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Using the Core Genome MLST Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Using the Core Genome MLST Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Using the Core Genome MLST Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/core_genome_mlst/core_genome_mlst.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>The Core Genome Multi-Locus Sequence Typing (MLST) pipeline allows you to characterize bacterial and viruses based on the presence and absence of specific loci. These loci are defined in a schema.  This service defines a schema as a list of locus names and collection of allele sequences.  There are 32 schemas for priority pathogen species curated by species experts at <a class="reference external" href="https://www.ridom.de/seqsphere/cgmlst/">Ridom</a>
+Typical MLST schemas used 5-7 genes that are conserved and essential for basic cellular functions and are expected to be present in all strains of a species even as they evolve.  This service uses schemas with predefined sets of species-specific loci including both core and accessory genes.  This allows for finger resolution of bacterial strain differences and consistent tracking across labs.</p>
+<p><img alt="an image of the outbreak tracking triangle" src="../../_images/outbreak_tracking_triangle.png" /></p>
+<p>This service used Chewbbaca 3.3.10.  Elements of this tutorial are based on their documentation. The full documentation is available <a class="reference external" href="https://chewbbaca.readthedocs.io/en/latest/index.html">here</a> The pipeline begins with the alle call step which finds alleles in the genomes that are also listed in the schema. Thus identifying known and novel alleles in the input genomes. An allele is a specific sequence variant that occurs at a given locus.  The initial allele call can be considered as cgMLST including all alleles. Later, we will rerun this step to identify the core genome. The allele call uses the following tools:</p>
+<ul class="simple">
+<li><p>Pyrodigal predicts the coding sequences (CDSs) and generates predicted protein-coding genes which are used for allele matches.</p></li>
+<li><p>BLAST Score Ratio (BSR) screening for each locus in the schema.  The predicted CDSs are compared to the known alleles. A match is accepted if the BSR to a known allele is les than or greater than the global threshold of 0.6. The resulting alleles are classified according to the match. Scroll down to Reading “The Allele Call Classification Counts” section for definitions of each classification type.
+Then the service runs chewBBACA’s remove genes command to remove paralogous loci (if any) identified in the initial allele call. This is followed by the extract cgMLST command which determines the set of loci that constitute the core genome loci from the allele call results. The following steps take place:</p></li>
+<li><p>Masking: Converts less stable allele calls, INF- (inferred) allele labels and special classifications to 0 to standardize the data.</p></li>
+<li><p>Presence-absence matrix: Builds a loci presence-absence matrix and tracks missing/special calls per sample.</p></li>
+<li><p>Core Loci Selection: Determines which loci are “core” based on how often they appear across the genomes – providing results for default thresholds 95%, 99% and 100%.
+This service uses 95% as the threshold. A second allele call is performed with the allelic profiles meeting the 95% threshold. Followed by the allele call evaluator. This generates an interactive report, called “allelecall_report.html” that provides summary statistics to evaluate results per sample and per loci. This is available in your job results. The report includes a presence-absence matrix heatmap, a distance matrix based on the allelic differences and a Neighbor-Joining (NJ) tree based on the multiple sequence alignment (MSA) of the core genome loci.</p></li>
+</ul>
+<section id="using-the-core-genome-mlst-analysis-service">
+<h1>Using the Core Genome MLST Analysis Service<a class="headerlink" href="#using-the-core-genome-mlst-analysis-service" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Core Genome MLST Analysis</strong> option under the <strong>Services</strong> main menu under the <strong>Phylogenomics</strong> subheadingopens the Core Genome MLST Analysis Service input form (<em>shown below</em>). <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="tools and services menu" src="../../_images/cgmlst_tools_and_service_menu1.png" /></p>
+</section>
+<section id="service-menu">
+<h1>Service Menu<a class="headerlink" href="#service-menu" title="Permalink to this headline">¶</a></h1>
+<p><img alt="an image of the service_page" src="../../_images/cgMLST_service_page1.png" /></p>
+</section>
+<section id="select-a-genome-group">
+<h1>Select a Genome Group<a class="headerlink" href="#select-a-genome-group" title="Permalink to this headline">¶</a></h1>
+<p>This service accepts assembled genomes that are collected into one Genome Group. For more information about creating a genome group please visit our <a class="reference external" href="https://www.bv-brc.org/docs/quick_references/workspaces/groups.html">documentation</a> or our <a class="reference external" href="https://www.youtube.com/watch?v=BDCUyhX9brA&amp;t=36s">video tutorial</a></p>
+</section>
+<section id="select-reference-schema">
+<h1>Select Reference Schema<a class="headerlink" href="#select-reference-schema" title="Permalink to this headline">¶</a></h1>
+<p>The schemas are species-specific.  Selecting a schema built from a different species will not allow the service to correctly match your loci to the target genome. This could lead to inaccurate allele calls.</p>
+</section>
+<section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
+<p>In the parameters section you will select an output folder and output name.</p>
+</section>
+<section id="finding-the-core-genome-mlst-results">
+<h1>Finding the Core Genome MLST Results<a class="headerlink" href="#finding-the-core-genome-mlst-results" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>The job can be located from three places on any BV-BRC page. Clicking on the Workspace tab will reveal two of the places where the workspace or jobs folder can be located, and also from the Jobs monitor located at the lower right of any BV-BRC page.</p></li>
+</ol>
+<p><img alt="an image showing where to find the job results" src="../../_images/finding_job_results.png" /></p>
+<ol class="simple">
+<li><p>The landing page shows all the files produced by the job that was submitted. Note: the top portion gives details such as the run time and input parameters.</p></li>
+</ol>
+<p><img alt="Output files and job details" src="../../_images/CG_MLST_Step021.png" /></p>
+<ol class="simple">
+<li><p>Each job will return a report summarizing the results. To view the report click, allelecall_report.html.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Note:</strong> this file must be in the same directory as its supporting actor, “report_bundle.js” or else it will not work.</p>
+</div></blockquote>
+<p><img alt="allelecall_report.html" src="../../_images/CG_MLST_Step03.png" /></p>
+<ol class="simple">
+<li><p>The report has sections that you can display or hide. Click the down arrow on the right-hand side of the heading to show or hide.</p></li>
+</ol>
+<p><img alt="Show/Hide report sections" src="../../_images/CG_MLST_Step04.png" /></p>
+<ol class="simple">
+<li><p>The first section gives a report description to guide the reader through the report.</p></li>
+<li><p>The Results Summary Data provides a brief overview of the table.</p></li>
+</ol>
+<p><img alt="Results Summary Data" src="../../_images/CG_MLST_Step06.png" /></p>
+<ol class="simple">
+<li><p>Next, click on the heading “Counts Per Sample” and “Counts per Locus” to view the classification counts. The character codes along the y axis represent the percent idenity match. A better match gives more confidence. The codes are defined (with examples) below in the section “Reading The Allele Call Classification Counts”.</p></li>
+</ol>
+<p><img alt="Counts Per Sample figure" src="../../_images/CG_MLST_Step07A.png" />
+<img alt="Counts per Locus figure" src="../../_images/CG_MLST_Step07B.png" /></p>
+<ol class="simple">
+<li><p>Toggle between Sample stats (genome level) and Loci Stats (gene level) Note: the upper right-hand corner offers many ways to interact with this table including search, download as .CSV, view (and hide) columns, and filter.</p></li>
+</ol>
+<p><img alt="Sample stats table" src="../../_images/CG_MLST_Step08A.png" />
+<img alt="Loci stats table" src="../../_images/CG_MLST_Step08B.png" /></p>
+<p>The <strong>Sample Stats</strong> table includes the following columns:</p>
+<ul class="simple">
+<li><p><strong>Sample</strong>: The sample unique identifier.</p></li>
+<li><p><strong>Total Contigs</strong>: Total number of contigs in the sample FASTA file.</p></li>
+<li><p><strong>Total CDSs</strong>: Total number of CDSs identified in the sample.</p></li>
+<li><p><strong>Proportion of Classified CDSs</strong>: The proportion of CDSs identified in the sample that were classified.</p></li>
+<li><p><strong>Identified Loci</strong>: The number of schema loci identified in the sample.</p></li>
+<li><p><strong>Proportion of Identified Loci</strong>: The proportion of schema loci that were identified in the sample.</p></li>
+<li><p><strong>Valid Classifications</strong>: Total number of valid classifications (EXC and INF)</p></li>
+<li><p><strong>Invalid Classifications</strong>: Total number of invalid classifications (PLOT3, PLOT5, LOTSC, NIPH, NIPHEM, ALM, ASM and PAMA)</p></li>
+</ul>
+<p>The <strong>Loci Stats</strong> table includes the following columns:</p>
+<ul class="simple">
+<li><p><strong>Locus</strong>: The locus unique identifier.</p></li>
+<li><p><strong>Total CDSs</strong>: Total number of CDSs classified for that locus.</p></li>
+<li><p><strong>Valid Classifications</strong>: Total number of valid classifications (EXC+INF)</p></li>
+<li><p><strong>Invalid Classifications</strong>: Total number of invalid classifications (PLOT3, PLOT5, LOTSC, NIPH, NIPHEM, ALM, ASM, PAMA.</p></li>
+<li><p><strong>Proportion Samples</strong>: The proportion of samples the locus was identified in.</p></li>
+</ul>
+<ol class="simple">
+<li><p>The dropdown menu below the tables allows the selection of a single column to generate a histogram for the values in the selected column.</p></li>
+</ol>
+<p><img alt="Histogram menu" src="../../_images/CG_MLST_Step09.png" /></p>
+<ol class="simple">
+<li><p>the loci presence-absence heatmap representing the loci presence-absence matrix for all samples in the dataset. Blue cells (z=1) correspond to loci presence and grey cells (z=0) to loci absence. The <strong>Select Sample</strong> dropdown menu enables the selection of a single sample to display its heatmap on top of the main heatmap. The <strong>Select Locus</strong> dropdown menu enables the selection of a single locus to display its heatmap on the right of the main heatmap.</p></li>
+</ol>
+<p><img alt="Heatmap menu" src="../../_images/CG_MLST_Step10.png" /></p>
+<ol class="simple">
+<li><p>The seventh component displays a heatmap representing the symmetric distance matrix. The distances are computed by determining the number of allelic differences from the set of core loci (shared by 100% of the samples) between each pair of samples. The <strong>Select Sample</strong> dropdown menu enables the selection of a single sample to display its heatmap on top of the main heatmap. The menu after the heatmap enables the selection of a single sample and of a distance threshold to display a table with the list of samples at a distance equal or smaller than the specified distance value.</p></li>
+</ol>
+<p><img alt="Allelic Distance heatmap" src="../../_images/CG_MLST_Step11A.png" />
+<img alt="Allelic Distance heatmap" src="../../_images/CG_MLST_Step11B.png" /></p>
+<ol class="simple">
+<li><p>The last component displays a tree drawn with Phylocanvas.gl based on the Neighbor-Joining (NJ) tree computed by FastTree (with the options -fastest, -nosupport and -noml) The tree is computed based on the MSA for the set of loci that constitute the core-genome (The MSA for each core locus is determined with MAFFT, with the options –retree 1 and –maxiterate 0. The MSAs for all the core loci are concatenated to create the full MSA)</p></li>
+<li><p>Click one directory level up on the path at the top of the page to view the rest of your job results.</p></li>
+<li><p>The directory “extract_cg_mlst” houses the files determining the loci that constitute the core genome based on loci presence thresholds.  A cgMLST Schema is defined as the set of loci found in all or at least 95% of genomes analyzed.  The schemas this service uses offer a diverse and representative set of strains.  The number of strains differ depending on the species population structure (highly diverse, recombinogenic species may require more schemas). Any loci that are not found in at least 95% of the genomes analyzed are considered accessory genome (genes that are variably present in isolates from that population.</p></li>
+</ol>
+<p><img alt="extract_cg_mlst directory and files" src="../../_images/CG_MLST_Step14.png" /></p>
+<ul class="simple">
+<li><p>cgMLST.html details the number of loci present at 100%, 99% and 95%.</p></li>
+<li><p>cgMLST100.tsv, cgMLST95.tsv, cgMLST99.tsv contains a matrix of allelic profiles for the cgMLST for each threshold.</p></li>
+<li><p>cgMLSTschema100.txt,  cgMLSTschema95.txt,  cgMLSTschema99.txt,  contains the list of loci that constitute the cgMLST schema. The filtered schema allele call uses the cgMLSTschema95.txt file to define the loci list to perform allele calling on. Compared to full schema allele call which uses all the loci listed in the schema. For more information please visit the <a class="reference external" href="https://chewbbaca.readthedocs.io/en/latest/user/modules/ExtractCgMLST.html">Chewbbaca documentation</a>.</p></li>
+</ul>
+<ol class="simple">
+<li><p>The “filtered_schema_allele_call” and “full_schema_allele_call” contain the same contents and only differ on if the allele call used loci present in 95% of the genomes passed or the full schema of genes available (regardless of how many genomes they are present in).</p></li>
+</ol>
+<p><img alt="filtered_schema_allele_call directory and files" src="../../_images/CG_MLST_Step15.png" /></p>
+<ul class="simple">
+<li><p>allele_call_evaulator directory</p>
+<ul>
+<li><p>allelecall_report.html and report_bundle.js – The allelecall_report.html  is detailed above. The report_bundle.js must be kept in  the same directory as allelecall_report.html.</p></li>
+<li><p>cgMLST_MSA.fasta - contains the MSA of the core loci. For each locus in the core genome, the alleles found in all samples are translated and aligned with MAFFT. The alignment files are concatenated to generate the full core genome alignment.</p></li>
+<li><p>cgMLST_profiles.tsv  - contains the allelic profiles for the set of core loci.</p></li>
+<li><p>distance_matrix_symmetric.tsv contains the symmetric distance matrix. The matrix contains the pairwise allelic distances computed based on the set of core loci (shared by 100% of the samples).</p></li>
+<li><p>masked_profiles.tsv - contains the masked allelic profiles (the profiles in the results_alleles.tsv file are masked to remove INF- prefixes and substitute all non-EXC and non-INF classification by 0).</p></li>
+<li><p>presence_absence.tsv - contains the loci presence-absence matrix.</p></li>
+</ul>
+</li>
+<li><p>cds_coordinates.tsv - contains the coordinates (genome unique identifier, contig identifier, start position, stop position, protein identifier attributed by chewBBACA, and coding strand chewBBACA&gt;=3.3.0 assigns 1 and -1 to the forward and reverse strands,)) of the CDSs identified in each genome.</p></li>
+<li><p>invalid_cds.txt file contains the list of alleles predicted by Prodigal that were excluded based on the minimum sequence size value and presence of ambiguous bases.</p></li>
+<li><p>loci_summary_stats.tsv - contains the classification type counts (EXC, INF, PLOT3, PLOT5, LOTSC, NIPH, NIPHEM, ALM, ASM, PAMA, LNF) and the total number of classified CDSs (non-LNF) per locus.</p></li>
+<li><p>logging_info.txt - contains summary information about the allele calling process.</p></li>
+<li><p>missing_classes.fasta and missing_classes.tsv give insight into why the sequences were classified as non-EXC or non-INF.</p></li>
+<li><p>paralogous_counts.tsv - contains the list of paralogous loci and the number of times those loci matched a CDS that was also similar to other loci in the schema.</p></li>
+<li><p>paralogous_loci.tsv - contains the sets of paralogous loci identified per genome (genome identifier, identifiers of the paralogous loci and the coordinates of the CDS that is similar to the group of paralogous loci).</p></li>
+<li><p>results_alleles.tsv - contains the allelic profiles determined for the input samples. The first column has the identifiers of the genome assemblies. The remaining columns contain the allele identifiers or other classification labels for loci present in the schema, with the column headers being the locus identifiers.</p></li>
+<li><p>results_alleles_NoParalogs.tsv - details loci that were identified as possible paralogs. These loci should be removed from the schema due to the potential uncertainty in allele assignment. This is completed by the “RemoveGenes” command which is run prior to the filtered allele call.</p></li>
+<li><p>results_contigsInfo.tsv - contains the loci coordinates in the genomes analyzed. The first column contains the identifiers of the input genomes and the other columns (with loci names in the headers) the locus coordinate information or the classification attributed by chewBBACA if it was not an exact match or inferred allele.</p></li>
+<li><p>results_statistics.tsv  - contains the classification type counts (EXC, INF, PLOT3, PLOT5, LOTSC, NIPH, NIPHEM, ALM, ASM, PAMA, LNF), the total number of invalid CDSs, the total number of classified CDSs (non-LNF) and the total number of predicted CDSs per genome.</p></li>
+<li><p>unclassified_sequences.fasta – a FASTA file with the DNA sequences of the distinct CDSs that were not classified.</p></li>
+</ul>
+</section>
+<section id="reading-the-allele-call-classification-counts">
+<h1>Reading The Allele Call Classification Counts<a class="headerlink" href="#reading-the-allele-call-classification-counts" title="Permalink to this headline">¶</a></h1>
+<p>Consider this like quality control. These codes represent the quality of the DNA identity match. A high number of PLOT3/PLOT5, LOTSC, NIPH/NIPHEM, PAMA, and ASM/ALM classifications assigned to a genome usually indicates that the genome is of poor quality (e.g. highly fragmented or contaminated)</p>
+<ul class="simple">
+<li><p><strong>EXC</strong> - EXaCt match (100% DNA identity) with previously identified alleles.</p></li>
+<li><p><strong>INF</strong> - INFerred new alleles that had no exact match in the schema but are highly similar to loci in the schema. In the allelic profiles (included in the results_alleles.tsv output file), the INF- prefix in the allele identifier indicates that the allele was newly inferred and the number following the prefix is the allele identifier attributed to the allele. Inferred alleles are added to the FASTA file of the locus they share high similarity with (unless the –no-inferred parameter is used)</p></li>
+<li><p><strong>LNF</strong> - Locus Not Found. The number of schema loci for which it was not possible to identify a similar allele in the input genome. This means that, for those loci, there were no BLAST hits or they were not within the BSR threshold for allele assignment.</p></li>
+<li><p><strong>PLNF</strong> - Probable Locus Not Found. Attributed when a locus is not found during execution modes 1, 2 and 3. Those modes do not perform the complete analysis, which is only performed in mode 4 (default), and the distinct classification indicates that a more thorough analysis may have found a match for the loci that were not found.</p></li>
+<li><p><strong>PLOT3/PLOT5</strong> - Possible Locus On the Tip of a contig (see image below) A CDS is classified as PLOT5 or PLOT3 if it is close to the contig 5’- or 3’-end and if the unaligned portion of the matched representative allele exceeds the contig end. This could be an artifact caused by genome fragmentation resulting in the prediction of a shorter CDS. To avoid locus misclassification, loci in such situations are classified as PLOT.</p></li>
+<li><p><strong>LOTSC</strong> - A CDS is classified as LOTSC if the matched representative allele is bigger than the contig containing the CDS.
+<img alt="an image of the LOTSC match" src="../../_images/lotsc.png" /></p></li>
+<li><p><strong>NIPH/NIPHEM</strong> - The NIPH and NIPHEM classifications are assigned when multiple CDSs from the same genome match the same schema locus. NIPH (Non-Informative Paralogous Hit) is assigned when multiple CDSs from the same genome match a single locus. NIPHEM (Non-Informative Paralogous Hit Exact Match) is assigned when multiple CDSs from the same genome are exact matches to alleles of a single locus. These classifications suggest that a locus can have paralogous (or orthologous) loci in the query genome and should be removed from the analysis due to the potential uncertainty in allele assignment (for example, due to the presence of multiple copies of the same mobile genetic element (MGE) or as a consequence of gene duplication followed by pseudogenization) A high number of these classifications may also indicate a poorly assembled genome due to a high number of smaller contigs which result in partial CDS predictions.
+<img alt="an image of the NIPH and NIPHEM match" src="../../_images/niph.png" /></p></li>
+<li><p><strong>PAMA</strong> - PAralogous MAtch. Attributed to CDSs that are highly similar to more than one locus. This type of classification allows the identification of groups of similar loci in the schema that are classified as paralogous loci and listed in the paralogous_counts.tsv and paralogous_loci.tsv output files.
+<img alt="an image of the PAMA match" src="../../_images/pama.png" /></p></li>
+<li><p><strong>ASM/ALM</strong> - The ASM (Allele Smaller than Mode) and ALM (Allele Larger than Mode) classifications are assigned when the size of a CDS that matches a schema locus is below or above the locus size variation interval, respectively. The default behavior is to assign these classifications to alleles that are 20% shorter or longer than the locus allele size mode. It is important to remember that, although infrequently, the mode may change as more alleles for a given locus are called and added to a schema. The ALM and ASM classifications impose a limit on allele size variation since for the majority of loci the allele lengths are quite conserved. However, some loci can have larger variation in allele length and those should be manually curated.
+<img alt="an image of the ASM and ALM match" src="../../_images/asm.png" /></p></li>
+</ul>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Olson RD, Assaf R, Brettin T, Conrad N, Cucinell C, Davis JJ, Dempsey DM, Dickerman A, Dietrich EM, Kenyon RW, Kuscuoglu M, Lefkowitz EJ, Lu J, Machi D, Macken C, Mao C, Niewiadomska A, Nguyen M, Olsen GJ, Overbeek JC, Parrello B, Parrello V, Porter JS, Pusch GD, Shukla M, Singh I, Stewart L, Tan G, Thomas C, VanOeffelen M, Vonstein V, Wallace ZS, Warren AS, Wattam AR, Xia F, Yoo H, Zhang Y, Zmasek CM, Scheuermann RH, Stevens RL.</p></li>
+<li><p>Silva, Mickael, et al. “ChewBBACA: A Complete Suite for Gene-By-Gene Schema Creation and Strain Identification.” Microbial Genomics, vol. 4, no. 3, 1 Mar. 2018, https://doi.org/10.1099/mgen.0.000166.</p></li>
+</ol>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

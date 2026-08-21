@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>BLAST Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Primer Design Service" href="primer_design_service.html" />
+    <link rel="prev" title="Comprehensive Genome Analysis Service" href="comprehensive_genome_analysis_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>BLAST Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="genome_assembly_service.html">Genome Assembly Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_assembly_service.html#advanced-parameters">Advanced Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_annotation_service.html">Genome Annotation Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comprehensive_genome_analysis_service.html">Comprehensive Genome Analysis Service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BLAST Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="primer_design_service.html">Primer Design Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="similar_genome_finder_service.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_alignment_service.html">Genome Alignment Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variation_analysis_service.html">Variation Analysis Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tn_seq_analysis_service.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>BLAST Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/blast.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="blast-service">
+<h1>BLAST Service<a class="headerlink" href="#blast-service" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The BLAST service integrates the BLAST (Basic Local Aligment Search Tool) algorithms to perform searches against against public or private genomes in BV-BRC or other reference databases using a DNA or protein sequence and find matching genomes, genes, RNAs, or proteins.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bv-brc.org/app/Homology">BLAST Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/blast/blast.html"><span class="doc std std-doc">BLAST Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-blast-service">
+<h2>Using the BLAST Service<a class="headerlink" href="#using-the-blast-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>BLAST</strong> submenu option under the <strong>Services</strong> main menu (Genomics category) opens the BLAST input form (<em>shown below</em>). <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="BLAST Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="BLAST Input Form" src="../../_images/blast_input_form.png" /></p>
+</section>
+<section id="search-program">
+<h2>Search Program<a class="headerlink" href="#search-program" title="Permalink to this headline">¶</a></h2>
+<p>There are four BLAST programs provided by BV-BRC, and each has a specific query sequence and database. Clicking on the button in front of the program name will select it and will also select the appropriate databases.</p>
+<ul class="simple">
+<li><p><strong>BLASTN</strong> – The query sequence is DNA (nucleotide), and when enabled the program will search against DNA databases of contig or gene sequences.</p></li>
+<li><p><strong>BLASTX</strong> – The query sequence is DNA (nucleotide), and when enabled the program will search against the protein sequence database.</p></li>
+<li><p><strong>BLASTP</strong> – The query sequence is protein (amino acid), and when enabled the program will search against the protein sequence database.</p></li>
+<li><p><strong>tBLASTn</strong> – The query sequence is protein (amino acid), and when enabled the program will search against DNA databases of contig or gene sequences.</p></li>
+</ul>
+</section>
+<section id="query-source">
+<h2>Query Source<a class="headerlink" href="#query-source" title="Permalink to this headline">¶</a></h2>
+<p>There are three types of Query sources that are provided by BV-BRC:</p>
+<ul class="simple">
+<li><p><strong>Enter sequence</strong> - Paste the query sequence into the box.</p></li>
+<li><p><strong>Select FASTA file</strong> - Choose FASTA file that has been uploaded to the Workspace.</p></li>
+<li><p><strong>Select feature group</strong> - Choose a feature (gene/protein) that has been saved in the Workspace.</p></li>
+</ul>
+</section>
+<section id="database-source">
+<h2>Database Source<a class="headerlink" href="#database-source" title="Permalink to this headline">¶</a></h2>
+<p>BV-BRC has different databases to choose from for the source to search wihin:</p>
+<ul class="simple">
+<li><p><strong>Reference and representative genomes (bacteria, archaea)</strong> - Those designated by the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/refseq/about/prokaryotes/">NCBI</a>. This is the default.</p></li>
+<li><p><strong>Reference and representative genomes (virus)</strong> - Those designated by the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/refseq/about/">NCBI</a>.</p></li>
+<li><p><strong>Selected genome list</strong> - Clicking on “Search within genome list” in the drop-down box will open a new source box where desired genomes can be added.</p></li>
+<li><p><strong>Selected genome group</strong> - Genome group saved in the Workspace.</p></li>
+<li><p><strong>Selected feature group</strong> - Feature (gene/protein) group saved in the workspace.</p></li>
+<li><p><strong>Taxon</strong> - Selected taxonomic level from the database.</p></li>
+<li><p><strong>Selected fasta file</strong> - FASTA file that has been uploaded to the Workspace.</p></li>
+</ul>
+</section>
+<section id="database-type">
+<h2>Database Type<a class="headerlink" href="#database-type" title="Permalink to this headline">¶</a></h2>
+<p>There are three database types:</p>
+<ul class="simple">
+<li><p><strong>Genome Sequences (NT)</strong> - Genomic sequences from bacterial and viral genomes in BV-BRC, i.e. chromosomes, contigs, plasmids, segments, and partial genomic sequences</p></li>
+<li><p><strong>Genes (NT)</strong> - Gene sequences from bacterial and viral genomes in BV-BRC.</p></li>
+<li><p><strong>Proteins (AA)</strong> - Protein sequences from bacterial and viral genomes in BV-BRC.</p></li>
+</ul>
+</section>
+<section id="output-folder">
+<h2>Output Folder<a class="headerlink" href="#output-folder" title="Permalink to this headline">¶</a></h2>
+<p>Folder in the Workspace where you want the BLAST results stored.</p>
+</section>
+<section id="output-name">
+<h2>Output Name<a class="headerlink" href="#output-name" title="Permalink to this headline">¶</a></h2>
+<p>Name you provide to identify the results in the Workspace.</p>
+</section>
+<section id="advanced-options">
+<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h2>
+<p><strong>BLAST Parameters</strong> include the following:</p>
+<ul class="simple">
+<li><p><strong>Max hits</strong> - Maximum number of BLAST hits to return.</p></li>
+<li><p><strong>E-Value threshold</strong> - the number of expected hits of similar quality (score) that could be found just by chance.</p></li>
+</ul>
+</section>
+<section id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Reset</strong> above the search results reloads the input form so that the parameters can be easily adjusted and the search relaunched.</p></li>
+<li><p><strong>Submit</strong> Launches the search which, upon completion, returns a set of results matching the sequence provided and selected criteria.</p></li>
+<li><p><strong>View results (checkbox)</strong> - Displays the results of the BLAST search (when completed) directly without having to go to the Jobs Landing page.</p></li>
+</ul>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="BLAST Service Job Results Page" src="../../_images/blast_service_job_results_page.png" /></p>
+<p>The BLAST Service Job Results page (above) contains information about the job and all the files that are produced when the service completes. Information about the job submission can be seen in the table at the top of the results page. Clicking on “Parameters” below the job information table will display all the parameters that were selected when the job was submitted.</p>
+<p><img alt="BLAST Results View Icon" src="../../_images/blast_service_view_icon.png" /></p>
+<p>Clicking on the <strong>“View” icon</strong> near the top right of the page (left of the green action bar) will display a results table of the hits (below), from which you can perform more actions via the green Action Bar such as downloading, copying, accessing DNA and protein FASTA format data, constructing an MSA, creating a group of the results, and displaying the associated features and genomes in the database. See definitions of these actions at the bottom of this documentation.</p>
+<p><img alt="BLAST Service Results" src="../../_images/blast_service_results.png" /></p>
+<p>The table at the bottom of the page lists all of the files that were generated by the BLAST run:</p>
+<p><img alt="BLAST Service Results Files" src="../../_images/blast_service_results_files.png" /></p>
+<ul class="simple">
+<li><p><strong>blast_headers.txt</strong> - column headers in BLAST results table, which include</p>
+<ul>
+<li><p>qseqid: query or source (e.g., gene) sequence id</p></li>
+<li><p>sseqid: subject or target (e.g., reference genome) sequence id</p></li>
+<li><p>pident: percentage of identical matches</p></li>
+<li><p>length: alignment length (sequence overlap)</p></li>
+<li><p>mismatch: number of mismatches</p></li>
+<li><p>gapopen: number of gap openings</p></li>
+<li><p>qstart: start of alignment in query</p></li>
+<li><p>qend: end of alignment in query</p></li>
+<li><p>sstart: start of alignment in subject</p></li>
+<li><p>send: end of alignment in subject</p></li>
+<li><p>evalue: expect value</p></li>
+<li><p>bitscore: bit score</p></li>
+</ul>
+</li>
+<li><p><strong>blast_out.txt</strong> - Entire file generated by BLAST job. Used by BV-BRC to create the blast_out.json file.</p></li>
+<li><p><strong>blast_out.json</strong> -  JavaScript Object Notation (JSON) formatted file, which is a standard data interchange format. It is primarily used for transmitting data between the BV-BRC web application and backend servers.</p></li>
+<li><p><strong>blast_out.metadata.json</strong> - JSON-formatted file containing the metadata associated with the BLAST job.</p></li>
+<li><p><strong>blast_out.raw.json</strong> - JSON-formatted file containing list of BLAST identifiers (BLAST uses a different set of identifiers than BV-BRC).</p></li>
+<li><p><strong>blast_out.txt</strong> - Text file containing the BLAST results, including query and target sequences, and the strength of the BLAST hits.</p></li>
+</ul>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one of the output files by clicking it, or selecting a set of results (available via the “View” icon near the top right), a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected items (rows).</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>FASTA:</strong> Provides the FASTA DNA or protein sequence for the selected feature(s).</p></li>
+<li><p><strong>ID Map:</strong> Provides the option to map the selected feature(s) to multiple other idenfiers, such as RefSeq and UniProt.</p></li>
+<li><p><strong>MSA:</strong> Launches the Multiple Sequence Alignment (MSA) tool and aligns the selected features by DNA or protein sequence in an interactive viewer.</p></li>
+<li><p><strong>Pathway:</strong> Loads the Pathway Summary Table containing a list of all the pathways in BV-BRC in which the selected features are found.</p></li>
+<li><p><strong>Group:</strong> Opens a pop-up window to enable adding the selected sequences to an existing or new group in the private workspace.</p></li>
+<li><p><strong>Feature:</strong> Loads the Feature Page for the selected feature. <em>Available only if a single feature is selected.</em></p></li>
+<li><p><strong>Features:</strong> Loads the Features Table for the selected features. <em>Available only if multiple features are selected.</em></p></li>
+<li><p><strong>Genome:</strong> Loads the Genome View Overview page corresponding to the selected feature.  <em>Available only if a single feature is selected.</em></p></li>
+<li><p><strong>Genomes:</strong> Loads the Genomes Table, listing the genomes that correspond to the selected features. <em>Available only if multiple features are selected.</em></p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Bar</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Altschul, S. F. J. e. BLAST algorithm. (2001).</p></li>
+<li><p>Boratyn, G.M., Camacho, C., Cooper, P.S., Coulouris, G., Fong, A., Ma, N., Madden, T.L., Matten, W.T., McGinnis, S.D., Merezhuk, Y. et al. (2013) BLAST: a more efficient report with usability improvements. Nucleic acids research, 41, W29-33.</p></li>
+<li><p>O’Leary, N.A., Wright, M.W., Brister, J.R., Ciufo, S., Haddad, D., McVeigh, R., Rajput, B., Robbertse, B., Smith-White, B., Ako-Adjei, D. et al. (2016) Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation. Nucleic acids research, 44, D733-745.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="primer_design_service.html" class="btn btn-neutral float-right" title="Primer Design Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="comprehensive_genome_analysis_service.html" class="btn btn-neutral float-left" title="Comprehensive Genome Analysis Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

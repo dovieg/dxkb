@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Comparative Systems Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Small Molecule Ligand Docking Service" href="../docking/docking.html" />
+    <link rel="prev" title="Proteome Comparison Service" href="../proteome_comparison/proteome_comparison.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Comparative Systems Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../msa_snp_variation/msa_snp_variation.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metacats/metacats.html">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../proteome_comparison/proteome_comparison.html">Proteome Comparison Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Comparative Systems Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#source-code-for-algorithms">Source code for algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-folder-to-hold-the-comparative-systems-job-and-related-data">Creating a folder to hold the Comparative Systems job and related data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-comparative-systems-app">Locating the Comparative Systems App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-genomes">Selecting Genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-genome-groups">Selecting Genome Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-parameters">Selecting parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-progress-on-the-jobs-page">Monitoring progress on the Jobs page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-comparative-systems-job-results">Viewing the Comparative Systems job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-pathways">Viewing Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#protein-families-tabular-view">Protein Families – Tabular View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#protein-family-sorter-heatmap">Protein Family Sorter – Heatmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-subsystems">Viewing Subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generating-a-multiple-sequence-alignment-msa">Generating a Multiple Sequence Alignment (MSA)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../docking/docking.html">Small Molecule Ligand Docking Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure.html">Protein Structure Prediction Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../predict_structure/predict_structure_recipes.html">Protein Structure Prediction — Recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Comparative Systems Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/comparative_systems/comparative_systems.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="comparative-systems-service">
+<h1>Comparative Systems Service<a class="headerlink" href="#comparative-systems-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 11/22/2022</em></p>
+<p>The new Comparative Systems service at BV-BRC combines two tools that were part of the PATRIC resource (Protein Family Sorter and Comparative Pathways Viewer) and also includes subsystems1,2, a set of functional roles that together implement a specific biological process or structural complex and can also be generalized as pathways.   Up to 500 genomes can be compared.  All of the three systems use the two protein families (PATtyFams3) that are assigned in the BV-BRC annotation process known as RASTtk4.  The global families, known as PGFams, can be used for cross genus comparisons.  The local families (PLFams) are for intra genus comparisons.</p>
+<p>The Protein Family Sorter allows users to select a set of genomes of interest  and examine distribution of protein families across the genomes, commonly referred to as the “pan genome,” which in this case refers to the superset of proteins found in all selected genomes. This tool provides various filtering options to quickly locate protein families that are conserved across all the genomes (“core genome”), conserved only in a subset of the selected genomes (“accessory genome”) or that match a specified function. A tabular view shows protein families matching filtering criteria and an interactive heatmap viewer provides a bird’s-eye (“pan genome”) view of the distribution of the protein families across multiple genomes, with clustering and anchoring functions to show relative conservation of synteny and identify areas of possible horizontal transfer.</p>
+<p>The Comparative Pathway tool is also based on the annotations. It allows researchers to identify a set of metabolic pathways based on taxonomy, EC number, pathway ID, pathway name and/or specific annotation type. The data are mapped to and summarized on pathway maps from the Kyoto Encyclopedia of Genes and Genomes, commonly known as KEGG5. This tool also provides a table of unique pathways that match the search criteria (i.e., the genomes or proteins chosen by the researcher, or at any taxonomic level) from which researchers can select specific pathways of interest and view a KEGG Map, or on a heatmap view that summarizes the data, including presence/absence of individual EC numbers within the selected genomes.</p>
+<p>Subsystems are also included in the Comparative Systems service.  This part of the service includes a distribution pie chart that summarizes the functionality and genes across all genomes selected.  It also includes a table showing the individual subsystems available.  When a subsystem is selected, researchers can see a heatmap showing the genes that are included in it and the presence and absence of those genes across all the genomes in the selection.</p>
+<p><img alt="Image" src="../../_images/Picture110.png" /></p>
+<section id="source-code-for-algorithms">
+<h2>Source code for algorithms<a class="headerlink" href="#source-code-for-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>The source code for the Comparative Systems service can be found at: <br/>
+<a class="reference external" href="https://github.com/BV-BRC/comparative_systems_service">https://github.com/BV-BRC/comparative_systems_service</a></p>
+</section>
+<section id="creating-a-folder-to-hold-the-comparative-systems-job-and-related-data">
+<h2>Creating a folder to hold the Comparative Systems job and related data<a class="headerlink" href="#creating-a-folder-to-hold-the-comparative-systems-job-and-related-data" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>It is always good practice to create a folder to keep the results from a particular experiment or project in order.  To create a new folder, go to the Workspaces tab and click on home.
+<img alt="Image" src="../../_images/Picture210.png" /></p></li>
+<li><p>This will open the home directory on your workspace.  To create a new folder, click on the Add Folder icon at the top right of the table.
+<img alt="Image" src="../../_images/Picture310.png" /></p></li>
+<li><p>This will open a pop-up window.  Note that the Create Folder button is greyed out.  Type the desired name in the text box.
+<img alt="Image" src="../../_images/Picture410.png" /></p></li>
+<li><p>Once the name is entered, the Create Folder icon will turn blue.  To create the folder, click on that button.
+<img alt="Image" src="../../_images/Picture56.png" /></p></li>
+<li><p>The pop-up window will disappear.  At the button left of the page you will see a temporal message indicating that the folder was successfully created.
+<img alt="Image" src="../../_images/Picture62.png" /></p></li>
+</ol>
+</section>
+<section id="locating-the-comparative-systems-app">
+<h2>Locating the Comparative Systems App<a class="headerlink" href="#locating-the-comparative-systems-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the Services tab
+<img alt="Image" src="../../_images/Picture72.png" /></p></li>
+<li><p>In the drop-down box, underneath Genomics, click on Comparative Systems.
+<img alt="Image" src="../../_images/Picture82.png" /></p></li>
+<li><p>This will open up the Comparative Systems landing page.  The default page shows starting with a read file.
+<img alt="Image" src="../../_images/Picture91.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-genomes">
+<h2>Selecting Genomes<a class="headerlink" href="#selecting-genomes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To include any genome (reference, representative, other public, or private genomes), click on the filter button to narrow the selection and deselect the categories that are not of interest.
+<img alt="Image" src="../../_images/Picture101.png" /></p></li>
+<li><p>Typing in the text box will show a list of the genomes available that contain that text. Private genomes are indicated by a Lock symbol. Once the genome of interest is located, clicking on it will fill the box.
+<img alt="Image" src="../../_images/Picture111.png" /></p></li>
+<li><p>The genome must be added to the genomes for comparison, a box in the Selected Genomes box. Click on the arrow at the upper right of the Select Genome box (and the name of the genome will appear in the Selected Genomes box.
+<img alt="Image" src="../../_images/Picture121.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-genome-groups">
+<h2>Selecting Genome Groups<a class="headerlink" href="#selecting-genome-groups" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To select a genome group, go to the Select Genome Group box and click on the down arrow that follows the text box. That will show a list of all the genome groups, with the most recently created appearing at the top of the list
+<img alt="Image" src="../../_images/Picture141.png" /></p></li>
+<li><p>Entering a name (or part of a name) in the text box will populate the drop-down box with possible groups that match that text.
+<img alt="Image" src="../../_images/Picture151.png" /></p></li>
+<li><p>Clicking on the genome group of interest will make the name appear in the text box.
+<img alt="Image" src="../../_images/Picture161.png" /></p></li>
+<li><p>The genome group must be added to the genomes for comparison, a box in the Select Genomes box. Click on the arrow at the upper right of the Select Genome box and the name of the genome will appear in the box. This can be repeated until all the genome groups or genomes of interest, have been added to the Selected Genomes box.
+<img alt="Image" src="../../_images/Picture171.png" /></p></li>
+<li><p>Clicking on the X icon that follows the name of a genome or genome group in the Selected Input Genome Table will remove it from the selection.
+<img alt="Image" src="../../_images/Picture181.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-parameters">
+<h2>Selecting parameters<a class="headerlink" href="#selecting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A folder must be selected to hold the Comparative Systems job.  Recently created folders can be viewed by clicking on the drop-down arrow at the end of the text box underneath OUTPUT FOLDER.  Clicking on the folder of interest will select it.
+<img alt="Image" src="../../_images/Picture191.png" /></p></li>
+<li><p>Previously created folders can also be found by beginning to type the name in the text box.  A drop-down box below the box will show all available folders that match the text.
+<img alt="Image" src="../../_images/Picture201.png" /></p></li>
+<li><p>Previously created folders can also be located by clicking on the folder icon that follows the text box.  That will open an interface to the workspace, where the correct folder can be selected by clicking on the row that contains its name, and then on the OK button at the lower right of the window.
+<img alt="Image" src="../../_images/Picture212.png" /></p></li>
+<li><p>A name must be selected for the Comparative Systems job.  Enter the name in the text box underneath the words OUTPUT NAME.  At this point the Submit button will turn blue.  The job can be submitted by clicking on that button.
+<img alt="Image" src="../../_images/Picture221.png" /></p></li>
+<li><p>A message will appear above the submit button, indicating that the submission was successful.
+<img alt="Image" src="../../_images/Picture231.png" /></p></li>
+</ol>
+</section>
+<section id="monitoring-progress-on-the-jobs-page">
+<h2>Monitoring progress on the Jobs page<a class="headerlink" href="#monitoring-progress-on-the-jobs-page" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the Jobs box at the bottom right of any BV-BRC page.
+<img alt="Image" src="../../_images/Picture241.png" /></p></li>
+<li><p>This will open the Jobs Landing page where the status of submitted jobs is displayed.
+<img alt="Image" src="../../_images/Picture251.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-the-comparative-systems-job-results">
+<h2>Viewing the Comparative Systems job results<a class="headerlink" href="#viewing-the-comparative-systems-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To view a particular job, click on a row to select it. Once selected, the downstream processes available for the selection appear in the vertical green bar.  Clicking on the View icon will open the comparative systems job summary.
+<img alt="Image" src="../../_images/Picture261.png" /></p></li>
+<li><p>This will rewrite the page to show the information about the comparative systems job, and all of the files that are produced when the pipeline runs.<br />
+<img alt="Image" src="../../_images/Picture271.png" /></p></li>
+<li><p>The information about the job submission can be seen in the table at the top of the results page.  To see all the parameters that were selected when the job was submitted, click on the Parameters row.
+<img alt="Image" src="../../_images/Picture281.png" /></p></li>
+<li><p>This will show the information on what was selected when the job was originally submitted.
+<img alt="Image" src="../../_images/Picture291.png" /></p></li>
+<li><p>Pathway.tsv: To view, or download, a tab separated value (tsv) file of all the pathways and genes found across all the genomes in the selection, click on the row that has the file and then click on the View, or Download icon in the vertical green bar.
+<img alt="Image" src="../../_images/Picture312.png" /></p></li>
+<li><p>If the View icon was selected, a new tab will open showing the pathway table.
+<img alt="Image" src="../../_images/Picture321.png" /></p></li>
+<li><p>Pathways_tables.json:  A JSON file is a file that stores simple data structures and objects in JavaScript Object Notation (JSON) format, which is a standard data interchange format. It is primarily used for transmitting data between a web application and a server.  The downloadable files from the Comparative Systems job includes a pathways_table json file that can be viewed by clicking on the View icon in the vertical green bar or downloaded.
+<img alt="Image" src="../../_images/Picture331.png" /></p></li>
+<li><p>Proteinfams_tables.json: The downloadable files from the Comparative Systems job includes a protein families table json file that can be viewed by clicking on the View icon in the vertical green bar, or downloaded
+<img alt="Image" src="../../_images/Picture341.png" /></p></li>
+<li><p>Subsystems_tsv: A tsv file of all the subsystems and genes found across all the genomes in the selection is available for download or viewing.  To view the file, click on the row that has it and then click on the View, or Download icon in the vertical green bar.
+<img alt="Image" src="../../_images/Picture351.png" /></p></li>
+<li><p>If the View icon was selected, a new tab will open showing all the subsystem information.
+<img alt="Image" src="../../_images/Picture361.png" /></p></li>
+<li><p>Subsystems_tables-json: The downloadable files from the Comparative Systems job includes a subsystems table json file that can be viewed by clicking on the View icon in the vertical green bar, or downloaded
+<img alt="Image" src="../../_images/Picture371.png" /></p></li>
+<li><p>Report_txt: The downloadable files also include a report.txt file that provides the number of pathways, protein families, and subsystems that were identified in the Comparative Systems job.  The file can be viewed or downloaded by clicking on the appropriate icons in the vertical green bar.
+<img alt="Image" src="../../_images/Picture381.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-pathways">
+<h2>Viewing Pathways<a class="headerlink" href="#viewing-pathways" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The Comparative Systems job includes direct access to a page where pathways can be viewed and explored.  To reach that page, click on the Pathways icon at the upper right of the job page.
+<img alt="Image" src="../../_images/Picture391.png" /></p></li>
+<li><p>This will open a landing page where all the pathways can be viewed.  The table includes the KEGG pathway ID, pathway class and Pathway name.  It shows the number of the genomes withing the selection that have genes in that pathway (Genome Count), and the proteins with EC numbers that are in that pathway (EC Number Count).  Gene Count shows the number of genes in the genomes that have those EC numbers. The Genome EC Count shows the sum of the EC numbers found across all the genomes that have genes in this pathway.  The EC Conservation (%) number gives the percent of unique EC numbers present in all selected genomes. 100% describes a situation in which all unique EC numbers are present in all selected genomes. Smaller numbers indicate that there is one or more genomes are missing some EC numbers.
+<img alt="Image" src="../../_images/Picture401.png" /></p></li>
+<li><p>The EC Number tab is above the table.<br />
+<img alt="Image" src="../../_images/Picture412.png" /></p></li>
+<li><p>Clicking on that tab will show the details of the EC numbers that are found across the selection of genomes for the individual pathway.  Each EC Number has its own row, and the Description column provides the function of the genes in that pathway.
+<img alt="Image" src="../../_images/Picture421.png" /></p></li>
+<li><p>Clicking on the row or checkbox of a single row will populate the vertical green bar with possible downstream functions.  To view the details of an individual pathway, click on the Map icon.
+<img alt="Image" src="../../_images/Picture431.png" /></p></li>
+<li><p>This will open the Pathway View, which includes an EC table and the corresponding KEGG pathway map.
+<img alt="Image" src="../../_images/Picture441.png" /></p></li>
+<li><p>The EC table shows the EC Number, the number of genomes that have the gene with that number (Genome Count), the number of genes that have that EC number (Feature Count), the number of genomes in the selection that are missing that number (Genome Count Not Present), and the number of times that gene is shown in the pathway map (Occurrence).
+<img alt="Image" src="../../_images/Picture451.png" /></p></li>
+<li><p>Clicking on an individual row in the EC table will color the corresponding box with that EC number red in the pathway table.  Clicking on the Legend icon in the upper right will open a drop-down box that shows the legend.  EC numbers that are not found within the collection of genomes are found in white boxes.  Lime green boxes indicate that all genomes in the collection have at least one gene with this EC number, and the olive color indicates an EC number that is found only in some, but not all of the genomes in the selection.<br />
+<img alt="Image" src="../../_images/Picture461.png" /></p></li>
+<li><p>Above the EC table and pathway map are two tabs.  The KEGG Map view is the default.  Clicking on the Heatmap tab will show the presence and absence of the EC numbers across the selected genomes, as well as the number of genes that are annotated with that EC number across the selection of genomes.
+<img alt="Image" src="../../_images/Picture471.png" /></p></li>
+<li><p>The heatmap view opens to show the EC numbers and their functional description listed on the y axis, and the name of the genomes in the collection across the x axis.
+<img alt="Image" src="../../_images/Picture481.png" /></p></li>
+<li><p>A filter can be found directly above the heatmap.
+<img alt="Image" src="../../_images/Picture491.png" /></p></li>
+<li><p>Researchers can flip the axis of the heatmap view if desired.
+<img alt="Image" src="../../_images/Picture501.png" /></p></li>
+<li><p>Clicking on Save SVG will open a drop-down box.  Researchers can choose to download the visible portion of a large heatmap (Save snapshot) or the entire heatmap (Save entire chart).
+<img alt="Image" src="../../_images/Picture512.png" /></p></li>
+<li><p>A text box filter will highlight columns that have text that matches the text entered into the box.  This is indicated by a blue box above the column.
+<img alt="Image" src="../../_images/Picture521.png" /></p></li>
+<li><p>Mousing over individual cells in a column will open a pop-up window that shows the genome, the enzyme commission number and description, and the number of genes that the genome has in that family.
+<img alt="Image" src="../../_images/Picture531.png" /></p></li>
+<li><p>Areas within the heatmap can be examined.  To so this, use the mouse to draw a box over the area of interest in a heatmap or by clicking on the gene name, which will select the entire row.<br />
+<img alt="Image" src="../../_images/Picture541.png" /></p></li>
+<li><p>This will open a pop-up window that show the number of genomes in the selection, the number of EC numbers in the selection, and the number of genes/proteins (called Members) within the selection.
+<img alt="Image" src="../../_images/Picture551.png" /></p></li>
+<li><p>Clicking on Show Proteins will open a new tab showing the Features (aka genes/proteins) that were part of that selection.
+<img alt="Image" src="../../_images/Picture561.png" /></p></li>
+</ol>
+</section>
+<section id="protein-families-tabular-view">
+<h2>Protein Families – Tabular View<a class="headerlink" href="#protein-families-tabular-view" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The Comparative Systems job includes direct access to a page where protein families can be viewed and explored.  To reach that page, click on the Families icon at the upper right of the job page.
+<img alt="Image" src="../../_images/Picture58.png" /></p></li>
+<li><p>The page will reload to show the Protein Family Table view.  This contains a dynamic filter on the left, and a table on the right that shows all the families based on the selections of the filter.
+<img alt="Image" src="../../_images/Picture59.png" /></p></li>
+<li><p>The Protein Family Sorter loads showing all the protein families across all the genomes. This is the Pan Genome.
+<img alt="Image" src="../../_images/Picture60.png" /></p></li>
+<li><p>The Core Genome can be seen by clicking on the box in the column head below Present in all families. This will select all the genomes in the list and will reload the table to show all the protein families that are in that selection.
+<img alt="Image" src="../../_images/Picture611.png" /></p></li>
+<li><p>The Accessory Genome for a species can be seen by first clicking on the box in the column head below Absent in all families and then clicking on the text box in the Either/Mixed column in front of each genome of interest. This will select all the genomes in the list and will reload the table to show all the protein families that are in that selection.
+<img alt="Image" src="../../_images/Picture621.png" /></p></li>
+<li><p>The Accessory Genome for a single genome can be seen by first clicking on the box in the column head below Absent in all families and then clicking on the text box in the Present column in front of the genome of interest. This will select all the genomes in the list and will reload the table to show all the protein families that are in that selection.
+<img alt="Image" src="../../_images/Picture63.png" /></p></li>
+<li><p>The text filter box can be used to find protein families that contain specific names. Enter a name of interest and click the Filter button. This will re-filter the table to show the protein families that contain that text in the functional description.
+<img alt="Image" src="../../_images/Picture64.png" /></p></li>
+<li><p>The text box filter can also be used to find protein family IDs, which is an excellent way to see presence and absence across a group of genomes.  Entering the IDs in the table and then clicking on the filter icon will reload the table to show the protein families that meet that criterion.
+<img alt="Image" src="../../_images/Picture65.png" /></p></li>
+<li><p>There are additional filtering options below the text box.  This includes protein families meeting particular criteria.  One important filter is Perfect Families.  In BV-BRC, perfect families refer to those protein families where each of the genomes have a single protein that is part of the family.  This is an important default for the Phylogenetic Tree service, which could be used to see if a group of genomes are “tree able.”
+<img alt="Image" src="../../_images/Picture66.png" /></p></li>
+<li><p>The “non-perfect” protein families can also be examined, both selecting the Non perfect Families button, or filtering by the Number of Proteins per Family.
+<img alt="Image" src="../../_images/Picture67.png" /></p></li>
+<li><p>The number of Genomes per Family can also be examined.
+<img alt="Image" src="../../_images/Picture68.png" /></p></li>
+</ol>
+</section>
+<section id="protein-family-sorter-heatmap">
+<h2>Protein Family Sorter – Heatmap<a class="headerlink" href="#protein-family-sorter-heatmap" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The presence and/or absence of protein families can also be seen in a heatmap view. To see the heatmap, click on the Heatmap icon above the filter. This will reload the page to show the heatmap.
+<img alt="Image" src="../../_images/Picture69.png" /></p></li>
+<li><p>A filter is directly above the heatmap.<br />
+<img alt="Image" src="../../_images/Picture70.png" /></p></li>
+<li><p>A text box filter will highlight columns that have protein families that have text that matches the text entered into the box.  This is indicated by a blue box above the column.
+<img alt="Image" src="../../_images/Picture711.png" /></p></li>
+<li><p>Expanding the slider at the top of the heatmap view will allow researchers to expand the view enough to see the protein family name.  Note that the text in the name that matches the filter criterion will be highlighted blue.  In addition, a blue line remains directly above the column.
+<img alt="Image" src="../../_images/Picture721.png" /></p></li>
+<li><p>Researchers can flip the axis of the heatmap view if desired.
+<img alt="Image" src="../../_images/Picture73.png" /></p></li>
+<li><p>The protein families can also be clustered.  This will rearrange the order of both the genomes and the protein families, depending on the clustering algorithm selected.
+<img alt="Image" src="../../_images/Picture74.png" /></p></li>
+<li><p>Clicking on Advanced will show the different clustering options.
+<img alt="Image" src="../../_images/Picture75.png" /></p></li>
+<li><p>BV-BRC allows researcher to cluster by either Protein Families, Genomes, or Both.  The default is set at Both.
+<img alt="Image" src="../../_images/Picture76.png" /></p></li>
+<li><p>To see the Clustering algorithm choices, click on the down arrow that follows Pearson correlation, which is the default setting.
+<img alt="Image" src="../../_images/Picture77.png" /></p></li>
+<li><p>BV-BRC offers four types of clustering.  To see the options, click on the down arrow underneath Clustering type that follows Pairwise average-linkage, which is the default setting.
+<img alt="Image" src="../../_images/Picture78.png" /></p></li>
+<li><p>Choosing different clustering options will change the heatmap.
+<img alt="Image" src="../../_images/Picture79.png" /></p></li>
+<li><p>The protein family sorter allows users to see the protein families in the order that they appear in any given genome. This process is called anchoring a genome. To re-order the protein families, click on the Anchor icon. This will open a pop-up window where you can select a genome.  If you click on the down arrow that follows the words, Select a genome.
+<img alt="Image" src="../../_images/Picture80.png" /></p></li>
+<li><p>This will open a drop-down box of all the genomes available in the group.  The heatmap will rearrange in the order of the selected genome, starting with the first gene annotate in that genome to the last.  Researchers will be able to see regions of the reference genome that are absent in some of the comparison genomes.
+<img alt="Image" src="../../_images/Picture811.png" /></p></li>
+<li><p>Mousing over individual cells in a column will open a pop-up window that shows the genome, the protein family name and ID, and the number of genes that the genome has in that family.
+<img alt="Image" src="../../_images/Picture821.png" /></p></li>
+<li><p>Areas within the heatmap can be examined.  To so this, use the mouse to draw a box over the area of interest in a heatmap, which is indicated by the blue box in the figure below.  This will open a pop-up window that show the number of genomes in the selection, the number of families within it, and the number of genes/proteins (called Members) within the selection.
+<img alt="Image" src="../../_images/Picture83.png" /></p></li>
+<li><p>Clicking on Show Proteins will open a new tab showing the Features (aka genes/proteins) that were part of that selection.
+<img alt="Image" src="../../_images/Picture84.png" /></p></li>
+<li><p>Clicking on Save will open a drop-down box.  Researchers can choose to download the visible portion of a large heatmap (Save snapshot) or the entire heatmap (Save entire chart).  The heatmap can also be saved to a tab separated value (Save chart to TSV) for json file (Save chart to JSON).
+<img alt="Image" src="../../_images/Picture85.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-subsystems">
+<h2>Viewing Subsystems<a class="headerlink" href="#viewing-subsystems" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The Comparative Systems job includes direct access to a page where subsystems can be viewed and explored.  To reach that page, click on the Subsystems icon at the upper right of the job page.
+<img alt="Image" src="../../_images/Picture86.png" /></p></li>
+<li><p>This will open a new tab that shows the Subsystem Super Class distribution pie chart.
+<img alt="Image" src="../../_images/Picture87.png" /></p></li>
+<li><p>Researchers can drill into the table on the right and see the Classes and Subclasses in each Super Class by clicking on the carrot in front of the name.  The number of subsystems are colored green, and the number of genes within those subsystems are colored yellow.
+<img alt="Image" src="../../_images/Picture88.png" /></p></li>
+<li><p>To see a tabular view, click on the Subsystems tab at the top left of the page.
+<img alt="Image" src="../../_images/Picture89.png" /></p></li>
+<li><p>This will open a new tab that shows all the Subsystems available across the selection of genomes.
+<img alt="Image" src="../../_images/Picture90.png" /></p></li>
+<li><p>Clicking on the row or checkbox of a single row will populate the vertical green bar with possible downstream functions.  To view the details of an individual subsystem, click on the checkbox in the first column and then click on the Map icon.
+<img alt="Image" src="../../_images/Picture911.png" /></p></li>
+<li><p>This will open a heatmap view of the selected subsystem, with the genomes listed on the x-axis and the proteins along the y-axis.<br />
+<img alt="Image" src="../../_images/Picture92.png" /></p></li>
+<li><p>A filter is directly above the heatmap.<br />
+<img alt="Image" src="../../_images/Picture93.png" /></p></li>
+<li><p>A text box filter will highlight columns that have protein families that have text that matches the text entered into the box.  This is indicated by a blue box above the column, and by blue text that matches what was entered in the textbox in the names of the genomes.
+<img alt="Image" src="../../_images/Picture94.png" /></p></li>
+<li><p>Expanding the slider at the top of the heatmap view will allow researchers to expand the view enough to see the genome name.  Note that the text in the name that matches the filter criterion will be highlighted blue.  In addition, a blue line remains directly above the column.
+<img alt="Image" src="../../_images/Picture95.png" /></p></li>
+<li><p>Researchers can flip the axis of the heatmap view if desired.
+<img alt="Image" src="../../_images/Picture96.png" /></p></li>
+<li><p>The default subsystem view includes a number of reference genome to provide a sense of the genes used by other organisms to perform this function.  These genomes are to the right of the genomes that were initially selected for the Comparative Systems job.  The reference genomes will be eliminated from the view by clicking on the Reference Genomes icon.
+<img alt="Image" src="../../_images/Picture97.png" /></p></li>
+<li><p>Clicking on the Cluster icon will cluster the genomes together.
+<img alt="Image" src="../../_images/Picture98.png" /></p></li>
+<li><p>Mousing over individual cells in a column will open a pop-up window that shows the gene, the genome, and the number of genes that the genome with that annotation.
+<img alt="Image" src="../../_images/Picture99.png" /></p></li>
+<li><p>A pop-up window summarizing the data selected will appear after clicking on a row or column head.  Researchers can download or show the proteins or add them to a group.
+<img alt="Image" src="../../_images/Picture100.png" /></p></li>
+</ol>
+</section>
+<section id="generating-a-multiple-sequence-alignment-msa">
+<h2>Generating a Multiple Sequence Alignment (MSA)<a class="headerlink" href="#generating-a-multiple-sequence-alignment-msa" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A MSA can be generated from any feature table, or from the features selected from a heatmap. Clicking on the check box at the top of the first column will select all the features in the table.  This will populate the vertical green bar with possible downstream functions.  Click on the MSA icon.
+<img alt="Image" src="../../_images/Picture1011.png" /></p></li>
+<li><p>This will open a drop-down box where the nucleotide or amino acid sequence alignment can be selected.  The resulting tab will show an alignment and the corresponding gene tree.
+<img alt="Image" src="../../_images/Picture102.png" /></p></li>
+<li><p>Once the alignment has been generated, clicking on the Colors icon in the green bar will show a number of different choices that can be selected.  Each will change the color of the amino acids in the alignment to the left.
+<img alt="Image" src="../../_images/Picture103.png" /></p></li>
+<li><p>The tips at the end of the branches in the gene tree can be changed by clicking on the ID Type icon.  If the data exists for the particular genome that contains the gene in the alignment, that will now populate the gene tree.
+<img alt="Image" src="../../_images/Picture104.png" /></p></li>
+<li><p>Researchers can also click on the nodes within the tree.  The possible downstream functions will populate the green bar to the right, where you can create a group, generate a new alignment from the selection, and see the genes or the genomes.
+<img alt="Image" src="../../_images/Picture105.png" /></p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>1	Overbeek, R. et al. The subsystems approach to genome annotation and its use in the project to annotate 1000 genomes. Nucleic acids research 33, 5691-5702 (2005).</p></li>
+<li><p>2	Overbeek, R. et al. The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST).  42, D206-D214 (2013).</p></li>
+<li><p>3	Davis, J. J. et al. PATtyFams: Protein families for the microbial genomes in the PATRIC database.  7, 118 (2016).</p></li>
+<li><p>4	Brettin, T. et al. RASTtk: a modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Scientific reports 5, 8365 (2015).</p></li>
+<li><p>5	Kanehisa, M., Furumichi, M., Sato, Y., Kawashima, M. &amp; Ishiguro-Watanabe, M. KEGG for taxonomy-based analysis of pathways and genomes. Nucleic Acids Research (2022).</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docking/docking.html" class="btn btn-neutral float-right" title="Small Molecule Ligand Docking Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../proteome_comparison/proteome_comparison.html" class="btn btn-neutral float-left" title="Proteome Comparison Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

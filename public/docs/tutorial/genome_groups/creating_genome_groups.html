@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Creating Genome Groups | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Creating Genome Groups | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Creating Genome Groups</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genome_groups/creating_genome_groups.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-genome-groups">
+<h1>Creating Genome Groups<a class="headerlink" href="#creating-genome-groups" title="Permalink to this headline">¶</a></h1>
+<section id="i-creating-a-group-using-patrics-global-search">
+<h2>I. Creating a group using PATRIC’s Global Search<a class="headerlink" href="#i-creating-a-group-using-patrics-global-search" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Enter the word(s) or numbers of interest in the search box and hit enter.
+<img alt="Step 1" src="../../_images/image116.png" /></p></li>
+<li><p>This will return a page that shows the results of that search, divided into Genomes, Genome Features, Taxonomy, Transcriptomics Experiments and Specialty Genes.  To find the genomes that match the text entered, click on the number that follows the word Genomes (at either location, as indicated by the Red Arrows).
+<img alt="Step 2" src="../../_images/image216.png" /></p></li>
+<li><p>Clicking on the number opens a new page that shows the list of genomes that match the search term.
+<img alt="Step 3" src="../../_images/image314.png" /></p></li>
+<li><p>Clicking on the box in front of Genome Name will select all of the genomes (Red Arrow), or they can be selected individually.  Once a genome is selected, the green banner on the right becomes populated with icons that show next steps that can be taken.  To create a group of the selected genomes, click on the Group icon (Blue Arrow).
+<img alt="Step 4" src="../../_images/image413.png" /></p></li>
+<li><p>This will open a pop-up widow where the selected genomes can be added to an existing group, or to a new group.  The create a new group, click on the blue arrow that follows the text box that says Existing Group (Red Arrow).  This will open a drop down box (Blue Arrow) where New Group should be selected (Green Arrow).
+<img alt="Step 5" src="../../_images/image54.png" /></p></li>
+<li><p>Enter the desired name for the new group in the text box under the words Group Name (Red Arrow) and then click the blue Copy button (Blue Arrow).  This will create a group of the selected genomes with the name that was entered.
+<img alt="Step 6" src="../../_images/image64.png" /></p></li>
+</ol>
+</section>
+<section id="ii-creating-a-group-with-public-and-private-genomes-by-taxonomy">
+<h2>II. Creating a group with public and private genomes by taxonomy<a class="headerlink" href="#ii-creating-a-group-with-public-and-private-genomes-by-taxonomy" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>To find genomes within a specific taxonomy, search for the taxon name using global search.  If the genomes belong to one of the NIAID genera of category A, B or C pathogens, click on the Organism tab and select a genus of interest (Red Arrow).</p>
+<p><img alt="Step 7" src="../../_images/image74.png" /></p>
+</li>
+<li><p>This opens the landing page for the genus.
+<img alt="Step 8" src="../../_images/image84.png" /></p></li>
+<li><p>To find specific genomes, click on the Genomes tab at the top of the page (Red Arrow).
+<img alt="Step 9" src="../../_images/image94.png" /></p></li>
+<li><p>This will open a page with a list of all the genomes available in PATRIC for that genus.
+<img alt="Step 10" src="../../_images/image104.png" /></p></li>
+<li><p>One of the ways to find specific genomes, especially when a genus has hundreds or thousands of genomes, is to use the text box at the top of the page (Red Arrow).  Enter the desired text to identify specific genomes and hit return.
+<img alt="Step 11" src="../../_images/image117.png" /></p></li>
+<li><p>This will return a page that lists all the genomes in that genus that has that specific text, somewhere in its record.  It can be part of the name of the genome, or it could be part of the description that was entered when the genome was originally submitted to GenBank.  To create a group of these genomes, they must first be selected.  To do this, click on the box in front of Genome Name at the top of the table on the left (Red Arrow). This will select all the genomes in the table.</p>
+<p><img alt="Step 12" src="../../_images/image124.png" /></p>
+</li>
+<li><p>Once the genomes are selected, the green banner on the right becomes populated with icons that show next steps that can be taken.  To create a group of the selected genomes, click on the Group icon (Red Arrow).
+<img alt="Step 13" src="../../_images/image134.png" /></p></li>
+<li><p>This will open a pop-up widow where the selected genomes can be added to an existing group, or to a new group.  The create a new group, click on the blue arrow that follows the text box that says Existing Group (Red Arrow).  This will open a drop down box (Blue Arrow) where New Group should be selected (Green Arrow).
+<img alt="Step 14" src="../../_images/image144.png" /></p></li>
+<li><p>Enter the desired name for the new group in the text box under the words Group Name (Red Arrow) and then click the blue Copy button (Blue Arrow).  This will create a group of the selected genomes with the name that was entered.
+<img alt="Step 15" src="../../_images/image154.png" /></p></li>
+</ol>
+</section>
+<section id="iii-creating-a-genome-group-from-a-collection-of-genes">
+<h2>III.  Creating a genome group from a collection of genes<a class="headerlink" href="#iii-creating-a-genome-group-from-a-collection-of-genes" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Sometimes researchers are starting with a particular gene, and they are interested in finding all the genomes that have that gene present.  Furthermore, they might want to create a group of those genomes to see if there are any other characteristics that they share.  To find a specific gene, enter a name, gene symbol, or other identifier into the global search box.
+<img alt="Step 16" src="../../_images/image164.png" /></p></li>
+<li><p>This will return a page that shows the results of that search, divided into Genomes, Genome Features, Taxonomy, Transcriptomics Experiments and Specialty Genes.  To find the genes that match the text entered, click on the number that follows the word Genomic Features (at either location, as indicated by the Red Arrows).
+<img alt="Step 17" src="../../_images/image174.png" /></p></li>
+<li><p>Clicking on the number opens a new page that shows the list of genes, or genomic features that match the search term.
+<img alt="Step 18" src="../../_images/image184.png" /></p></li>
+<li><p>To further refine the search, perhaps by finding the protein family that has that genes as a member, an individual gene must be looked at.  To do this, click on the check box in front of one of the genome names (Red Arrow).  This will populate the green banner on the right becomes populated with icons that show next steps that can be taken.   To find more information on that gene, click on the Feature icon (Blue Arrow).
+<img alt="Step 19" src="../../_images/image194.png" /></p></li>
+<li><p>This opens a page that summarizes all the data integrated into PATRIC for that gene.  To examine the protein family that it belongs to, click on the hyperlink for the protein family that is built across the genus that the particular genome belongs to (Green Arrow).
+<img alt="Step 20" src="../../_images/image204.png" /></p></li>
+<li><p>This will open a page that shows all the genes in that protein family, and all the genomes that they belong to.  Clicking on the box in front of Genome Name (Red Arrow) will select all of the genes.  This is the first step to creating a genome group.</p>
+<p><img alt="Step 21" src="../../_images/image217.png" /></p>
+</li>
+<li><p>Once all the genes are selected, the green banner on the right becomes populated with icons that show next steps that can be taken.   To create a genome group, click on the Genomes icon (Blue Arrow).
+<img alt="Step 22" src="../../_images/image224.png" /></p></li>
+<li><p>This is necessary for creating a genome group.  This opens a page that shows the genomes (the genes are no longer visible).  To create a group of the genomes that had genes in that specific protein family, click on the check box in front of one of the genome names (Red Arrow).<br />
+<img alt="Step 23" src="../../_images/image234.png" /></p></li>
+<li><p>This will populate the green banner on the right becomes populated with icons that show next steps that can be taken.   To create a group of the selected genomes, click on the Group icon (Red Arrow).
+<img alt="Step 24" src="../../_images/image244.png" /></p></li>
+<li><p>This will open a pop-up widow where the selected genomes can be added to an existing group, or to a new group.  The create a new group, click on the blue arrow that follows the text box that says Existing Group (Red Arrow).  This will open a drop down box (Blue Arrow) where New Group should be selected (Green Arrow).
+<img alt="Step 25" src="../../_images/image254.png" /></p></li>
+<li><p>Enter the desired name for the new group in the text box under the words Group Name (Red Arrow) and then click the blue Copy button (Blue Arrow).  This will create a group of the selected genomes with the name that was entered.
+<img alt="Step 26" src="../../_images/image264.png" /></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

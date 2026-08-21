@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Analyzing Genome Quality | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Analyzing Genome Quality | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Analyzing Genome Quality</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genome_quality_report/genome_quality_report.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="analyzing-genome-quality">
+<h1>Analyzing Genome Quality<a class="headerlink" href="#analyzing-genome-quality" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 11/9/2022</em></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Genome quality analysis is automatically performed when <a class="reference internal" href="../metagenomic_binning/metagenomic_binning.html"><span class="doc">Metagenomic Binning Service</span></a>
+or <a class="reference internal" href="../genome_annotation/genome_annotation.html"><span class="doc">Genome Annotation Service</span></a>.</p>
+<p>The genome quality tools look at the functional roles present in an annotated genome to determine if the genome looks correct.
+A functional role is an atomic part of a functional annotation (the <strong>Product</strong> column in the list of CDS features).
+In most cases, the role and the functional annotation are the same; however, if a protein performs more than one task in
+the cell, each task will be considered a different role. So, for example,
+in <a class="reference external" href="https://www.bv-brc.org/view/Feature/PATRIC.511145.12.NC_000913.CDS.343.2799.fwd#view_tab=overview">fig|511145.peg.1</a>
+the functional annotation is</p>
+<blockquote>
+<div><p>Aspartokinase (EC 2.7.2.4) / Homoserine dehydrogenase (EC 1.1.1.3)</p>
+</div></blockquote>
+<p>This corresponds to two roles– <strong>Aspartokinase</strong> and <strong>Homoserine dehydrogenase</strong>, so the single CDS would be counted as
+an occurrence of both.</p>
+<p>Two separate mechanisms are used to predict the number of times each role should be found in the genome. A role is <em>good</em> if it
+occurs the predicted number of times; otherwise it is <em>problematic</em>.</p>
+<p>The first quality tool (<strong>EvalG</strong>) checks the <em>completeness</em> and <em>contamination</em> of the genome using a re-implementation of the
+<a class="reference external" href="http://genome.cshlp.org/content/early/2015/05/14/gr.186072.114">checkM algorithm</a> described
+in the paper</p>
+<blockquote>
+<div><p>Parks DH, Imelfort M, Skennerton CT, Hugenholtz P, Tyson GW.
+2014.  Assessing the quality of microbial genomes recovered from
+isolates, single cells, and metagenomes.  Genome Research, 25:
+1043-1055.</p>
+</div></blockquote>
+<p>EvalG identifies <em>universal roles</em> that are expected to occur exactly once in all genomes
+of a particular taxonomic grouping. Missing roles indicate the genome is less complete; extra roles indicate the genome may be
+contaminated.</p>
+<p>The second quality tool (<strong>EvalCon</strong>) checks the <em>consistency</em> of the genome annotation. Over 1300 roles that have a predictable relationship
+to other roles were identified by a machine learning process. EvalCon determines how many instances of each role
+are expected given the list of other roles in the genome. If a role in the genome is unexpected, or an expected role is missing,
+this is considered <em>coarse inconsistency</em>. If a role occurs a different number of times than predicted, this is
+<em>fine inconsistency</em>.</p>
+<p>The four numbers– <em>completeness</em>, <em>contamination</em>, <em>coarse consistency</em>, and <em>fine consistency</em>– express measures of the quality of the
+genome. <strong>EvalG</strong> and <strong>EvalCon</strong> tell us not only the numbers, but also identify the problematic roles that occur an unexpected number of times.
+The preceding are summarized in the Quality Report web page. The report is divided into three sections– the <a class="reference internal" href="#summary-section">Summary Section</a> that
+describes the genome itself, the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a> that lists the roles whose expected and actual occurrence numbers
+do not match, and the <a class="reference internal" href="#contig-report">Contig Report</a> that lists the contigs containing problematic roles.</p>
+</section>
+<section id="the-genome-quality-report">
+<h2>The Genome Quality Report<a class="headerlink" href="#the-genome-quality-report" title="Permalink to this headline">¶</a></h2>
+<section id="summary-section">
+<h3>Summary Section<a class="headerlink" href="#summary-section" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/summary_section.JPG" src="../../_images/summary_section.JPG" />
+<p>The summary section at the top of the page contains basic information about the whole genome. The following information is presented.</p>
+<dl class="simple">
+<dt>Genome ID:</dt><dd><p>This is the PATRIC ID number of the genome being analyzed. The link takes you to the main <a class="reference internal" href="../../quick_references/organisms_genome/overview.html"><span class="doc">Genome Overview</span></a>
+for the genome.</p>
+</dd>
+<dt>Genome Name:</dt><dd><p>The name assigned to the genome. This is the official name for a public genome, or the name assigned during annotation for a private genome.
+It almost always includes the species name. A name ending in <em>clonal population</em> means the genome was created by the binning service.</p>
+</dd>
+<dt>Reference Genomes:</dt><dd><p>Normally, this is the ID of the highest-quality genome of the same species or genus. If it is blank, then either no quality genomes were
+found, or the genome itself is the one that would be normally chosen for this species. If the genome was produced by the binning service,
+then the genome is the closest genome believed to be of the same species. There may be multiple genomes listed for a binning result genome
+in rare circumstances. The reference genomes are always public PATRIC genomes, and the links lead to each genome’s main page.</p>
+</dd>
+<dt>Coarse Consistency:</dt><dd><p>This is the percentage of roles whose presence or absence was correctly predicted by EvalCon. A higher number indicates the genome annotation
+is more self-consistent. A lower number means the genome annotation is less self-consistent.</p>
+</dd>
+<dt>Fine Consistency:</dt><dd><p>This is the percentage of roles whose exact number of occurrences was correctly predicted by EvalCon. A higher number indicates the genome is
+more self-consistent. A lower number means the genome is less self-consistent. This number is always less than or equal to the coarse consistency.
+The roles whose predicted and actual numbers did not match will all appear in the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a>.</p>
+</dd>
+<dt>Completeness:</dt><dd><p>This is the percentage of universal roles that appeared in the genome. A higher number indicates the genome is more complete. A lower number
+indicates that roles normally in this taxonomic grouping are missing. The missing roles will be listed in the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a> with
+the notation <strong>Universal Role</strong>. If the genome is not a Bacteria or Archaea, this number will always be 0.</p>
+</dd>
+<dt>Contamination:</dt><dd><p>This is an estimate of the percentage of the genome’s DNA that does not belong, computed by locating universal roles that occur more than once.
+A higher number indicates the genome is contaminated. A lower number indicates the genome is relativaely clean. Unlike the other three numbers, this one
+is better when it is lower. The roles with extra occurrences will be listed in the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a> with the notation <strong>Universal Role</strong>.
+If the genome is not a Bacteria or Archaea, this number will always be 100.</p>
+</dd>
+<dt>Evaluation Group:</dt><dd><p>This is the representative genome group that was used by EvalG to determine the universal roles. The prefix (R200 in the screen fragment)
+indicates the tightness of the grouping, with higher numbers indicating that the group is covering a smaller portion of the taxonomy
+tree.  In general, R200 covers a species, R100 a genus, and R50 a family, but this is not always the case.  The grouping is based on
+protein distance for a conserved protein– PheS– whose sequence mutations are known to have a high correlation with the overall
+protein mutation rate for a genome.  The mutation rate does not always correspond to taxonomic boundaries, and in particular <em>Enterobacteriaceae</em>
+has many species in the same R200 group, while <em>Wolbachia</em> has strains that are far apart enough to land in different groups.</p>
+</dd>
+<dt>Contig Count:</dt><dd><p>The number of contigs in the genome. For a given assembly size, a lower number indicates a better-quality assembly.</p>
+</dd>
+<dt>DNA size (bp):</dt><dd><p>The number of base pairs in the genome. This number provides context for the N50.</p>
+</dd>
+<dt>Contigs N50 (bp):</dt><dd><p>The number of base pairs in the smallest contig such that half of the genome’s DNA is in contigs of this size or larger. The closer this number is to the DNA
+size in a bacterial or archaeal genome, the better the quality of the assembly.</p>
+</dd>
+<dt>Overpresent Roles:</dt><dd><p>The number of roles that were found too many times. All of the roles in this set will be listed in the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a>.</p>
+</dd>
+<dt>Underpresent Roles:</dt><dd><p>The number of roles that were found too few times. All of the roles in this set will be listed in the <a class="reference internal" href="#problematic-roles-report">Problematic Roles Report</a>.</p>
+</dd>
+<dt>Predicted Roles:</dt><dd><p>The total number of roles that were examined by either EvalG or EvalCon. EvalCon uses a set of roughly 1300 roles. EvalG uses between 60 and 2000 roles
+depending on the taxonomic grouping chosen. The two sets frequently overlap.</p>
+</dd>
+<dt>Total Distinct Roles:</dt><dd><p>The number of different roles found in the genome.</p>
+</dd>
+<dt>Protein-Encoding Genes with Functional Assignment:</dt><dd><p>The number of CDS features in the genome with a known product.</p>
+</dd>
+<dt>Protein-Encoding Genes without Functional Assignment:</dt><dd><p>The number of hypothetical proteins in the genome.</p>
+</dd>
+<dt>% Protein-Encoding Feature Coverage:</dt><dd><p>The percent of coding regions vs. the number expected in a genome of this size.  The number will sometimes be more than 100%.</p>
+</dd>
+<dt>% Features that are Hypothetical:</dt><dd><p>The number of hypothetical proteins in the genome expressed as a percent of the total number of CDS features.</p>
+</dd>
+<dt>% Features that are in Local Protein Families:</dt><dd><p>The number of CDS features in the genome that are in the same protein family as other genomes for the same genus, expressed
+as a percent of the total number of CDS features.  The higher this number is, the more confidence we have in the gene-calling.</p>
+</dd>
+</dl>
+</section>
+<section id="problematic-roles-report">
+<h3>Problematic Roles Report<a class="headerlink" href="#problematic-roles-report" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Problematic Roles Report</strong> is the heart of the genome quality report. The main table lists all the roles whose predicted number of occurrences was different
+from the actual number, along with an analysis of the individual features implementing those roles. Below you can see a sample report table for a genome with six
+problematic roles. It should be noted that not all these roles represent errors in the genome or its annotation, they merely indicate features that should be
+examined more closely.</p>
+<img alt="../../_images/ppr_all.JPG" src="../../_images/ppr_all.JPG" />
+<p>The report has five columns.</p>
+<dl class="simple">
+<dt>Role:</dt><dd><p>The description of the functional role that is potentially problematic. This corresponds to the value of the <em>Product</em> column on the
+<a class="reference internal" href="../../quick_references/organisms_taxon/features.html"><span class="doc">Features</span></a>.</p>
+</dd>
+<dt>Predicted Count:</dt><dd><p>The number of features implementing the role, as predicted by the quality tools.</p>
+</dd>
+<dt>Annotated Count:</dt><dd><p>The actual number of features annotated as implementing the given role.</p>
+</dd>
+<dt>Feature Link:</dt><dd><p>A link for viewing the features implementing the role. If there are no such features, no link will be present. If there is a single feature implementing the role,
+the link will go to that feature’s <a class="reference internal" href="../../quick_references/organisms_gene/overview.html"><span class="doc">Feature (Gene) Overview</span></a>. If there are multiple feature’s implementing the role, the link will
+go to a <a class="reference internal" href="../../quick_references/organisms_taxon/features.html"><span class="doc">Features</span></a> listing all the features.</p>
+</dd>
+<dt>Comment:</dt><dd><p>The comment contains text designed to help you determine why the role is problematic. There are numerous items that can appear in here, and they will be
+discussed below.</p>
+</dd>
+</dl>
+<section id="types-of-comments">
+<h4>Types of Comments<a class="headerlink" href="#types-of-comments" title="Permalink to this headline">¶</a></h4>
+<section id="universal-role">
+<h5>Universal Role<a class="headerlink" href="#universal-role" title="Permalink to this headline">¶</a></h5>
+<p>If the comment includes <strong>Universal Role</strong>, then the role is considered a universal role for the genome’s taxonomic grouping by EvalG: that is, it is expected to occur
+exactly once. Universal roles are used to compute the completeness and contamination scores.</p>
+</section>
+<section id="basic-present-feature-comments">
+<h5>Basic Present-Feature Comments<a class="headerlink" href="#basic-present-feature-comments" title="Permalink to this headline">¶</a></h5>
+<p>If a feature is present in the genome, a comment will tell you about the contig in which it was found. The simplest present-feature comment looks like this.</p>
+<img alt="../../_images/simple_feature.JPG" src="../../_images/simple_feature.JPG" />
+<p>The link on the feature ID takes you to the <a class="reference internal" href="../../quick_references/organisms_gene/compare_region_viewer.html"><span class="doc">Compare Region Viewer</span></a> for the feature, which allows you to see the feature in
+context and how that context compares to other genomes that have similar proteins. The link on the contig ID takes you to a <a class="reference internal" href="../../quick_references/organisms_gene/compare_region_viewer.html"><span class="doc">Compare Region Viewer</span></a>
+for all the features in the contig.</p>
+<p>Short features sometimes indicate that the feature was incorrectly called. If the feature is 180 base pairs or less in length, this fact will be noted as shown below.</p>
+<img alt="../../_images/short_feature.JPG" src="../../_images/short_feature.JPG" />
+<p>You will also be told if the contig is short if 70% or more of the DNA is in longer contigs, as shown below.</p>
+<img alt="../../_images/short_contig.JPG" src="../../_images/short_contig.JPG" />
+<p>Our experience has shown that in genomes formed by binning metagenomic samples, short contigs are more likely to be placed in the wrong bin.
+Another indication of contamination during binning is if there are no good roles in the contig; that is, all of the roles found for features
+in the contig were problematic roles. This is a much looser criterion than the short-contig rule, since many of the features in the contig may
+implement roles for which EvalG and EvalCon have no information.</p>
+<img alt="../../_images/no_good_contig.JPG" src="../../_images/no_good_contig.JPG" />
+<p>If the feature starts or ends near the edge of the contig, this is also noted in the comment.</p>
+<img alt="../../_images/edge_feature.JPG" src="../../_images/edge_feature.JPG" />
+</section>
+<section id="advanced-comments-when-reference-genomes-are-available">
+<h5>Advanced Comments When Reference Genomes Are Available<a class="headerlink" href="#advanced-comments-when-reference-genomes-are-available" title="Permalink to this headline">¶</a></h5>
+<p>If a reference genome is available, the features implementing the role in the reference genome are extracted and compared, which can tell us when the quality tools are
+giving us a false indication. In the example below, EvalCon predicted a single occurrence of the <em>LSU ribosomal protein L31p</em>, but two were found. We see from the comments,
+however, that two instances of the role were found in the reference genome as well, and each one is close to a different feature in our genome. This correspondence tells
+us that the role is very likely not a problem. In this case, the genome being evaluated is an instance of Vibro haemolyticus, one of a few species that has two versions
+of <cite>LSU ribosomal protein L31p</cite>– a version that is used when zinc is present and a version that is used when zinc is not present.</p>
+<img alt="../../_images/false_negative_double.JPG" src="../../_images/false_negative_double.JPG" />
+<img alt="../../_images/correspondence.fw.png" src="../../_images/correspondence.fw.png" />
+<p>In this next example, only one of the two features had a correspondent in the reference genome. We presume this feature (<code class="docutils literal notranslate"><span class="pre">fig|610.163.peg.2490</span></code>) is good, while the
+other one is suspicious.</p>
+<img alt="../../_images/one_suspect_feature.JPG" src="../../_images/one_suspect_feature.JPG" />
+<img alt="../../_images/correspondence2.fw.png" src="../../_images/correspondence2.fw.png" />
+<p>Sometimes there are fewer implementing features than expected. In the example below, there were three implementing features in the reference genome (the expected number)
+but only two in our genome. The third feature has no similar proteins in our genome.</p>
+<img alt="../../_images/one_is_missing.JPG" src="../../_images/one_is_missing.JPG" />
+<p>The reference genome comparison is especially useful when the role is not implemented in our genome. In the examples below, both roles were predicted to occur once. The
+first role is not present in the reference genome, so we presume it is not a problem. The second one is found, so we presume its absence is suspicious.</p>
+<img alt="../../_images/missing_one_on_one_off.JPG" src="../../_images/missing_one_on_one_off.JPG" />
+<p>Sometimes an extra feature is present because a frame shift or an assembly error has split a gene in two. In the next example, one <em>TolA protein</em> was expected, but two were
+found. One of them starts at the edge of a contig and the other ends at the edge of a contig. Only one implementation of the role was found in a reference genome, and it
+is close to one of the features.</p>
+<img alt="../../_images/split_feature.JPG" src="../../_images/split_feature.JPG" />
+<p>If you click on the feature links, you will be taken to the <a class="reference internal" href="../../quick_references/organisms_gene/compare_region_viewer.html"><span class="doc">Compare Region Viewer</span></a> for each feature, where the nature of the split is
+obvious. <code class="docutils literal notranslate"><span class="pre">fig|85569.206.peg.350</span></code> matches the beginning of the protein, while <code class="docutils literal notranslate"><span class="pre">fig|85569.206.peg.4875</span></code> matches the end.</p>
+<img alt="../../_images/compare_regions2.jpg" src="../../_images/compare_regions2.jpg" />
+</section>
+</section>
+</section>
+<section id="contig-report">
+<h3>Contig Report<a class="headerlink" href="#contig-report" title="Permalink to this headline">¶</a></h3>
+<p>The Contig Report lists all of the contigs containing features that implement potentially problematic roles.</p>
+<img alt="../../_images/contig_report.JPG" src="../../_images/contig_report.JPG" />
+<p>The four columns are as follows.</p>
+<dl class="simple">
+<dt>Contig Name:</dt><dd><p>The name of the contig. This is its PATRIC ID normally, but may be its node identifier if the report was produced during binning. The link takes you to a list of
+all the features in the contig.</p>
+</dd>
+<dt>Length:</dt><dd><p>The number of base pairs in the contig.</p>
+</dd>
+<dt>Good Features:</dt><dd><p>The number of features implementing good roles, plus the features implementing problematic roles that have similar features in the reference genome. In a binning
+genome, good features are considered an indication that the contig was correctly placed.</p>
+</dd>
+<dt>Feature Link:</dt><dd><p>Indicates the number of features implementing problematic roles. If there is only one, the link will take you to the feature’s <a class="reference internal" href="../../quick_references/organisms_gene/overview.html"><span class="doc">Feature (Gene) Overview</span></a>.
+If there is more than one, the link will take you to the <a class="reference internal" href="../../quick_references/organisms_taxon/features.html"><span class="doc">Features</span></a> for the features in question.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

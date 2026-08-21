@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>BV-BRC Data Types and Sources | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BV-BRC Data Dictionary" href="data_dictionary.html" />
+    <link rel="prev" title="BV-BRC Data" href="index.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>BV-BRC Data Types and Sources | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">BV-BRC Data</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BV-BRC Data Types and Sources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phylogeny">Phylogeny</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taxonomy">Taxonomy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#genomes">Genomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_dictionary.html">BV-BRC Data Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genome_annotation.html">Genome Annotation Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antimicrobial_resistance.html">Antimicrobial Resistance (AMR)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">BV-BRC Data</a> &raquo;</li>
+        
+      <li>BV-BRC Data Types and Sources</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/data_protocols/data_types_sources.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="bv-brc-data-types-and-sources">
+<h1>BV-BRC Data Types and Sources<a class="headerlink" href="#bv-brc-data-types-and-sources" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>BV-BRC is an integrated data and analysis resource designed to support genomic and related infectious disease research for viral and bacterial pathogens. As such, the primary data type is genomic sequences, primarily ingested from public repositories such as NCBI GenBank. BV-BRC reannotates genomes with curated subsystem data for consistency, curates and standardizes metadata, and formats the data to enable the integrated tools to perform comparative analysis computations. BV-BRC also annotates genomes from assembled reads collected from SRA for specialized phenotypic characteristics, such as antimicrobial resistance (AMR). Annotations may be derived from computations such as gene and other feature prediction algorithms, subsystem and other functional groupings, and phenotype prediction such as AMR. Appropriate references to the computations performed are available in the user documentation.</p>
+<p>Data from expression studies have also been curated and structured for comparative analyses. Additional data are incorporated from various resources, such as protein structures from PDB as well as computed structures, e.g., from AlphaFold, to augment annotations and comparative analyses. Further, BV-BRC has integrated data sets from other NIAID programs, such as the Systems Biology Centers (SBCs). Additional metadata from serology and surveillance efforts may also be associated with genome sequences and other data types. Data from these resources has appropriate provenance information to enable traceability to the source.</p>
+<p>Below are the data types supported by BV-BRC. Each has a “source” designation of either</p>
+<ul class="simple">
+<li><p>Primary - retrieved and imported from an external source, with origin information</p></li>
+<li><p>Secondary - curated, derived, or generated by BV-BRC</p></li>
+</ul>
+<p>Phylogeny
+Taxonomy
+Strains
+Features
+Genomes
+AMR Phenotypes
+Sequences
+Features
+Proteins
+Protein Structures
+Speciality Genes
+Domains and Motifs
+Epitopes
+Pathways
+Subsystems
+Experiments
+Interactions, Taxon/Genome-Level
+Surveillance Data
+Serology Data
+Sequence Feature Variant Types</p>
+</section>
+<section id="phylogeny">
+<h2>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="taxonomy">
+<h2>Taxonomy<a class="headerlink" href="#taxonomy" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong> Primary</p>
+<p><strong>Related and Derived Data Types:</strong> Reference organisms</p>
+<p><strong>Origin Data Source(s):</strong> NCBI Taxonomy, ICTV</p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <a class="reference external" href="https://www.bv-brc.org/docs/quick_references/organisms_taxon/overview.html">Taxonomic Overview</a></p>
+</section>
+<section id="genomes">
+<h2>Genomes<a class="headerlink" href="#genomes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong> The central data type in BV-BRC is genomes. Most of the data and information within BV-BRC is linked back to sequenced, assembled, and annotated genomes stored in the BV-BRC database. Genomes are incorporated from RefSeq, GenBank, and other sources, and are annotated using a standard annotation protocol, RASTtk, to enable comparative analyses and linking of data across the website. In addition, the BV-BRC team searches literature for large published AMR studies and assembles corresponding genomes using the reads available in the SRA database.</p>
+<p><strong>Source:</strong> Primary</p>
+<p><strong>Related and Derived Data Types:</strong> Clinical and environmental metadata, AMR / AVR phenotypes, QC results</p>
+<p><strong>Origin Source(s):</strong> GenBank, SRA, User-published</p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <a class="reference external" href="https://www.bv-brc.org/docs/quick_references/organisms_taxon/genomes.html">Genomes</a></p>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id2">
+<h2><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id3">
+<h2><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id4">
+<h2><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id5">
+<h2><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id6">
+<h2><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id7">
+<h2><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id8">
+<h2><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id9">
+<h2><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id10">
+<h2><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+<section id="id11">
+<h2><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong></p>
+<p><strong>Source:</strong></p>
+<p><strong>Related and Derived Data Types:</strong></p>
+<p><strong>Origin Data Source(s):</strong></p>
+<p><strong>Processing Protocol(s):</strong></p>
+<p><strong>Quick Reference Guide:</strong> <span class="xref myst"></span></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data_dictionary.html" class="btn btn-neutral float-right" title="BV-BRC Data Dictionary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="BV-BRC Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

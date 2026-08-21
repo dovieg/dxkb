@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Metagenomic Read Mapping Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mobile Element Detection Service" href="mobile_element/mobile_element_service.html" />
+    <link rel="prev" title="Metagenomic Binning Service" href="metagenomic_binning_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Metagenomic Read Mapping Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="taxonomic_classification_service.html">Taxonomic Classification Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metagenomic_binning_service.html">Metagenomic Binning Service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Metagenomic Read Mapping Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mobile_element/mobile_element_service.html">Mobile Element Detection Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Metagenomic Read Mapping Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/metagenomic_read_mapping_service.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="metagenomic-read-mapping-service">
+<h1>Metagenomic Read Mapping Service<a class="headerlink" href="#metagenomic-read-mapping-service" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Metagenomic Read Mapping Service uses <a class="reference external" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2336-6">KMA</a> to align reads against antibiotic resistance genes, virulence factors, or other custom sets of genes.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/MetagenomicReadMapping">Metagenomic Read Mapping Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/metagenomic_read_mapping/metagenomic_read_mapping.html"><span class="doc std std-doc">Metagenomic Read Mapping Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-metagenomic-read-mapping-service">
+<h2>Using the Metagenomic Read Mapping Service<a class="headerlink" href="#using-the-metagenomic-read-mapping-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Metagenomic Read Mapping</strong> submenu option under the <strong>Services</strong> main menu (Metagenomics category) opens the Metagenomic Read Mapping Service input form (shown below). <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="Metagenomic Read Mapping Service Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Metagenomic Read Mapping Service Input Form" src="../../_images/metagenomic_read_mapping_input_form_v2.png" /></p>
+</section>
+<section id="input-file">
+<h2>Input File<a class="headerlink" href="#input-file" title="Permalink to this headline">¶</a></h2>
+<section id="paired-read-library">
+<h3>Paired read library<a class="headerlink" href="#paired-read-library" title="Permalink to this headline">¶</a></h3>
+<p><strong>Read File 1 &amp; 2:</strong>  Many paired read libraries are given as file pairs, with each file containing half of each read pair. Paired read files are expected to be sorted such that each read in a pair occurs in the same Nth position as its mate in their respective files. These files are specified as READ FILE 1 and READ FILE 2. For a given file pair, the selection of which file is READ 1 and which is READ 2 does not matter.</p>
+</section>
+<section id="single-read-library">
+<h3>Single read library<a class="headerlink" href="#single-read-library" title="Permalink to this headline">¶</a></h3>
+<p><strong>Read File:</strong> FASTQ file containing reads.</p>
+</section>
+<section id="sra-run-accession">
+<h3>SRA run accession<a class="headerlink" href="#sra-run-accession" title="Permalink to this headline">¶</a></h3>
+<p>Allows direct upload of read files from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/sra">NCBI Sequence Read Archive</a> to the service. Entering the SRR accession number and clicking the arrow will add the file to the selected libraries box for use in the assembly.</p>
+</section>
+</section>
+<section id="selected-libraries">
+<h2>Selected libraries<a class="headerlink" href="#selected-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Read files to be mapped.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><strong>Predefined Gene Set Name:</strong> A pre-built set of genes against which reads are mapped.  Two options are available:</p>
+<ul class="simple">
+<li><p>CARD - Antibiotic resistence gene set from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/27789705">Comprehensive Antibiotic Resistance Database</a></p></li>
+<li><p>VFDB - Virulence factor gene set from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/30395255">Virulence Factor Database</a></p></li>
+</ul>
+<p><strong>Feature Group:</strong>
+Reads can also be mapped to a previously created groups of features (genes or proteins). There are several ways to navigate to the feature group. Clicking on the drop-down box will show the feature groups, with the most recently created groups shown first. Clicking on the desired group will fill the box with that name.</p>
+<p><strong>Fasta File:</strong>
+Reads can be mapped to a fasta file describing an dna sequence. The file must be present in BV-BRC, which would be located by entering the name in the text box, clicking on the drop-down box, or navigating within the workspace. Inorder to select a file for this service the file type must be specified as one of our fasta types (aligned_dna_fasta, or feature_dna_fasta).</p>
+<p><strong>Output Folder:</strong> Workspace folder where the results will be saved.</p>
+<p><strong>Output Name:</strong> User-provided name used to uniquely identify results.</p>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Metagenomic Read Mapping Service Output Files" src="../../_images/metagenomic_read_mapping_output_files.png" /></p>
+<p>The Metagenomic Read Mapping Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include</p>
+<ul class="simple">
+<li><p><strong>MetagenomicReadMappingReport.html</strong> - A web-browser-friendly report that summarizes the results of the service (see description and image below).</p></li>
+<li><p><strong>kma.aln</strong> - The consensus alignment of the reads against their template.</p></li>
+<li><p><strong>kma.frag.gz</strong> - Mapping information on each mapped read, columns are: read, number of equally well mapping templates, mapping score, start position, end position (w.r.t. template), the choosen template.</p></li>
+<li><p><strong>kma.fsa</strong> - The consensus sequences drawn from the alignments.</p></li>
+<li><p><strong>kma.res</strong> - A result overview giving the most common statistics for each mapped template.</p></li>
+<li><p><strong>kma.mat.gz</strong> - Base counts on each position in each template, (only if “-matrix” is enabled).</p></li>
+</ul>
+<section id="metagenomic-read-mapping-report-output">
+<h3>Metagenomic Read Mapping Report Output<a class="headerlink" href="#metagenomic-read-mapping-report-output" title="Permalink to this headline">¶</a></h3>
+<p><img alt="KMA Read Mapping Report" src="../../_images/metagenomic_read_mapping_report.png" /></p>
+<p>This page is a web-friendly report that summarizes the output of MKA. It provides a link to the input data, an interactive chart view (see description below), and a table of the reference genes mapped.  The columns in the table are as follows:</p>
+<ul class="simple">
+<li><p>Template - Identifier of the template (reference gene) sequence that match the query reads. Clicking on any of the template identifiers in the first column will open a Specialty Gene List View that shows all the genes in BV-BRC that have BLAT hits to the same template gene.</p></li>
+<li><p>Function - Template gene function.</p></li>
+<li><p>Genome: Genome that contains template gene. Clicking on the name in the Genome column will open a new tab that shows the Genome List view, which shows all the genomes in BV-BRC that fall under the same taxonomy of the selected name.</p></li>
+<li><p>Score - Global alignment score of the template.</p></li>
+<li><p>Expected - Expected alignment score if all mapping reads were smeared over all templates in the database.</p></li>
+<li><p>Template_length - Template gene length in nucleotides.</p></li>
+<li><p>Template_Identity - Percent identity between the query and template sequence, divided the length of the matching template sequence</p></li>
+<li><p>Template_Coverage - Percent of the template that is covered by the query</p></li>
+<li><p>Query_Identity - Percent identity between the query and template sequence, over the length of the matching query sequence</p></li>
+<li><p>Query_Coverage - Length of the matching query sequnce divided by the template length</p></li>
+<li><p>Depth - Number of times the template has been covered by the query.</p></li>
+<li><p>q_value - Quantile from McNemars test, to test whether the current template is a significant hit.</p></li>
+<li><p>p_value - p-vaue corresponding to the obtained q_value</p></li>
+</ul>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one of the output files by clicking it, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide</strong> Link to the corresponding Quick Reference Guide.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected item.</p></li>
+<li><p><strong>View</strong> Displays the content of the file, typically as plain text or rendered html, depending on filetype.</p></li>
+<li><p><strong>Delete</strong> Deletes the file.</p></li>
+<li><p><strong>Rename</strong> Allows renaming of the file.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>Move</strong> Allows moving of the file to another folder.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Bar</span></a> Quick Reference Guide.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Kent, W. James. “BLAT—the BLAST-like alignment tool.” Genome research 12.4 (2002): 656-664.</p></li>
+<li><p>Jia, Baofeng, et al. “CARD 2017: expansion and model-centric curation of the comprehensive antibiotic resistance database.” Nucleic acids research (2016): gkw1004.</p></li>
+<li><p>Liu, Bo, et al. “VFDB 2019: a comparative pathogenomic platform with an interactive web interface.” Nucleic acids research 47.D1 (2018): D687-D692.</p></li>
+<li><p>Philip T.L.C. Clausen, Frank M. Aarestrup &amp; Ole Lund, “Rapid and precise alignment of raw reads against redundant databases with KMA”, BMC Bioinformatics, 2018;19:307.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mobile_element/mobile_element_service.html" class="btn btn-neutral float-right" title="Mobile Element Detection Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="metagenomic_binning_service.html" class="btn btn-neutral float-left" title="Metagenomic Binning Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

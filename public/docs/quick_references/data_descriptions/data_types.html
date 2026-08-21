@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>BV-BRC Data Types | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>BV-BRC Data Types | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>BV-BRC Data Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/data_descriptions/data_types.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="bv-brc-data-types">
+<h1>BV-BRC Data Types<a class="headerlink" href="#bv-brc-data-types" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>antibiotics</strong> -	Chemical, pharmacological and mechanistic details for antibacterial agents used in AMR analytics and clinical-isolate annotation.</p></li>
+<li><p><strong>bioset</strong> - Represents a contrast or set of statistically significant entities (genes, proteins, metabolites, etc.) derived from an experiment — typically a differential-expression list or time-point cluster.</p></li>
+<li><p><strong>bioset_result</strong> - Stores per-entity quantitative results (counts, log2 FC, p-values, z-scores…) that belong to a bioset so BV-BRC can render volcano plots, heat maps and enrichment tables.</p></li>
+<li><p><strong>enzyme_class_ref</strong> - Provides the authoritative mapping between EC numbers, their official textual descriptions, and corresponding GO terms, enabling enzyme look-ups and pathway annotation.</p></li>
+<li><p><strong>epitope</strong> - Captures experimentally verified immune epitopes mapped to BV-BRC proteins, including sequence, host context, assay counts and taxonomy.</p></li>
+<li><p><strong>epitope_assay</strong> - Holds detailed experimental assay records (B-cell, T-cell, MHC binding, etc.) linked to epitopes, with measurement values, host data and literature citations.</p></li>
+<li><p><strong>experiment</strong> - High-level metadata for functional-omics experiments (transcriptomics, proteomics, metabolomics, etc.), linking them to biosets, genomes, treatments and publications.</p></li>
+<li><p><strong>feature_sequence</strong> - Canonical raw sequence for every unique gene, RNA or protein encoded in BV-BRC genomes, keyed by MD5 for rapid identity checks and deduplication.</p></li>
+<li><p><strong>gene_ontology_ref</strong> - Maps GO identifiers to names, definitions and ontology namespaces so BV-BRC can annotate features and run GO-term enrichment.</p></li>
+<li><p><strong>genome</strong> - Rich sample, assembly and annotation metadata for every genome in BV-BRC, powering search, filters and downstream analyses across ∼1 M assemblies.</p></li>
+<li><p><strong>genome_amr</strong> - Antimicrobial-resistance phenotype and/or genotype evidence linked to each genome, including lab methods, computational predictions and literature support.</p></li>
+<li><p><strong>genome_feature</strong> - All annotated features—coding genes, RNAs, repeats—across BV-BRC genomes, with coordinates, functional annotation and family membership.</p></li>
+<li><p><strong>genome_sequence</strong> - Every nucleotide replicon (chromosome, plasmid, contig, viral segment, etc.) associated with a genome, with sequence, quality metrics and ACL information.</p></li>
+<li><p><strong>id_ref</strong> - Cross-walk table linking BV-BRC features to external identifier systems (NCBI GeneID, Ensembl, Pfam, etc.) for inter-database annotation and search.</p></li>
+<li><p><strong>misc_niaid_sgc</strong> - Tracks gene/protein targets selected by the NIAID Structural Genomics Centers, indicating clone/protein availability and project status.</p></li>
+<li><p><strong>pathway	Maps</strong> - enzyme-encoding features in a genome to Pathway Tools / MetaCyc pathways, enabling metabolic reconstructions and presence/absence matrices.</p></li>
+<li><p><strong>pathway_ref</strong> - Master lookup linking each EC activity to its position on curated pathway diagrams plus global occurrence counts for enrichment statistics.</p></li>
+<li><p><strong>ppi</strong> - Pairwise protein–protein interaction metadata (detection methods, scores, literature) for network visualisation and comparative interactomics.</p></li>
+<li><p><strong>protein_feature</strong> - Domain, motif, signal-peptide and other protein-level annotations identified in CDS translations, with coordinates and statistical scores.</p></li>
+<li><p><strong>protein_family_ref</strong> - Lookup for every PATRIC protein-family accession (PGFam / PLFam) with descriptive name and namespace.</p></li>
+<li><p><strong>protein_structure</strong> - Metadata and file pointers for every PDB entry mapped to BV-BRC genomes, including experimental details and chain-to-gene mappings.</p></li>
+<li><p><strong>sequence_feature</strong> - Per-genome sequence features such as SNPs, indels or peptide motifs, linking them to canonical definitions, evidence codes and literature.</p></li>
+<li><p><strong>sequence_feature_vt</strong> - Tracks each specific variant form of a canonical sequence feature across genomes, recording prevalence and variant sequences.</p></li>
+<li><p><strong>serology</strong> - Laboratory serology results linked to host metadata and matching viral genomes, enabling antibody-prevalence and vaccine-impact studies.</p></li>
+<li><p><strong>sp_gene</strong> - Lists antimicrobial-resistance, virulence and other “specialty” genes detected in genomes, with evidence metrics and curated classifications.</p></li>
+<li><p><strong>sp_gene_ref</strong> - Master reference catalogue of specialty-gene alleles (AMR, virulence, toxins) with drug associations and literature support.</p></li>
+<li><p><strong>spike_lineage</strong> - Month-by-month statistics for SARS-CoV-2 Pango lineages (growth, prevalence, VOC status) and their defining spike mutations.</p></li>
+<li><p><strong>spike_variant</strong> - Monthly global statistics for notable SARS-CoV-2 spike-protein variants (D614G, etc.) including prevalence, growth rate and lineage diversity.</p></li>
+<li><p><strong>strain</strong> - Per-strain metadata for segmented viruses (esp. influenza), linking segment accessions, host/geographic info and genome records.</p></li>
+<li><p><strong>structured_assertion</strong> - Machine-readable statements about genomic features (e.g. “gene confers ciprofloxacin resistance”) with evidence codes and citations.</p></li>
+<li><p><strong>subsystem</strong> - Links individual genes in a genome to SEED subsystems and roles, enabling subsystem heat-maps and completeness metrics.</p></li>
+<li><p><strong>subsystem_ref</strong> - Reference hierarchy for SEED subsystems, including descriptions, literature and role lists.</p></li>
+<li><p><strong>surveillance</strong> - Rich epidemiological, clinical and environmental metadata linking genomes to patient or wildlife surveillance information.</p></li>
+<li><p><strong>taxonomy</strong> - NCBI lineage metadata plus genome-derived statistics (genome count, GC content, etc.) for every taxonomic node represented in BV-BRC.</p></li>
+<li><p><strong>enzyme_class_ref</strong> - Authoritative mapping between EC numbers, textual descriptions and GO terms for enzyme look-ups and pathway annotation.</p></li>
+<li><p><strong>pathway	Maps</strong> - enzyme-encoding features to pathways enabling metabolic reconstructions.</p></li>
+</ul>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

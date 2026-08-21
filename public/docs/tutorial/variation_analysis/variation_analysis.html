@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Variation - SNP Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tn-Seq Analysis Service" href="../tn-seq/tn-seq.html" />
+    <link rel="prev" title="Genome Alignment Service" href="../genome_alignment/genome_alignment.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Variation - SNP Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../genome_assembly/assembly.html">Genome Assembly Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_annotation/genome_annotation.html">Genome Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primer_design/primer_design.html">Primer Design Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similar_genome_finder/similar_genome_finder.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_alignment/genome_alignment.html">Genome Alignment Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Variation - SNP Analysis Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-variation-analysis-service">Locating the Variation Analysis Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#read-files-for-target-isolates">Read files for target isolates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-parameters">Setting Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-progress-on-the-jobs-page">Monitoring progress on the Jobs page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-variation-job-results">Viewing the Variation job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-snps-on-the-genome-browser">Viewing SNPs on the genome browser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Variation - SNP Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/variation_analysis/variation_analysis.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="variation-snp-analysis-service">
+<h1>Variation - SNP Analysis Service<a class="headerlink" href="#variation-snp-analysis-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 02 August 2024</em></p>
+<p>SNP genotyping is the measurement of genetic variations of single nucleotide polymorphisms (SNPs) between members of a species. It is a form of genotyping, which is the measurement of more general genetic variation. SNPs are one of the most common types of genetic variation. A SNP is a single base pair mutation at a specific locus, usually consisting of two alleles. SNP calling requires the reads of target isolates and a reference genome as input and execute an external mapping tool and variant caller, followed by some filtering steps to remove low-quality SNPs. The BV-BRC Variation Analysis Service can be used to identify and annotate sequence variations, including SNPs, SNVs (a variation of a single nucleotide in a population’s genome), and indels (insertion or deletion of bases).</p>
+<p>Nucleotide substitutions during DNA replication of bacteria, with mutation rates of approximately 10(−9) changes per nucleotide per generation, are important biologically informative markers in bacteria.  They may fall within coding sequences of genes, non-coding regions of genes, or in the intergenic regions (regions between genes).  SNPs in coding regions can be synonymous or nonsynonymous.  Synonymous substitutions by definition do not result in a change of amino acid in the protein, whereas nonsynonymous substitutions do change the sequence.</p>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/Variation">Variation Analysis Service</a></p></li>
+<li><p><a class="reference internal" href="../../quick_references/services/variation_analysis_service.html"><span class="doc std std-doc">Variation Analysis Service Quick Reference Guide</span></a></p></li>
+</ul>
+</section>
+<section id="locating-the-variation-analysis-service">
+<h2>Locating the Variation Analysis Service<a class="headerlink" href="#locating-the-variation-analysis-service" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the Services tab at the top of the page and then click on Variation.
+<img alt="Figure 1" src="../../_images/Figure_1_Service_tab_to_Variation.png" /></p></li>
+<li><p>This will open the landing page for the service.
+<img alt="Figure 2" src="../../_images/Figure_2_Variation_landing_page.png" /></p></li>
+</ol>
+</section>
+<section id="read-files-for-target-isolates">
+<h2>Read files for target isolates<a class="headerlink" href="#read-files-for-target-isolates" title="Permalink to this headline">¶</a></h2>
+<section id="submitting-sequencing-reads-single-or-paired">
+<h3>Submitting sequencing reads (single or paired)<a class="headerlink" href="#submitting-sequencing-reads-single-or-paired" title="Permalink to this headline">¶</a></h3>
+<p>The service accepts both single and paired reads.  Paired read libraries are usually given as file pairs, with each file containing the forward or reverse half of each read pair. Paired read files are expected to be sorted in such a way that each read in a pair occurs in the same Nth position as its mate in their respective files. These files are specified as READ FILE 1 and READ FILE 2. For a given file pair, the selection of which file is READ 1 or READ 2 does not matter.</p>
+<p>Reads must first be uploaded to the BV-BRC workspace, and once there, they can be selected in several ways.</p>
+<ol class="simple">
+<li><p>Navigate to the workspace by clicking on the Folder icon at the end of the text box.  This will open a pop-up window.  Located the row that has the correct reads, and then click on that.  This will highlight the row.  Click on OK at the bottom of the pop-up box to select the reads.
+<img alt="Figure Selecting_reads" src="../../_images/Selecting_reads1.png" /></p></li>
+<li><p>Clicking on the down arrow at the end of the text box will open a drop-down box that shows the reads that have been selected most recently (top of list) to less frequently (down).  Clicking on the row that has the correct read will select those reads.</p></li>
+<li><p>Beginning to type the name of the read in the text box will open a drop-down box that shows reads matching that text.  Clicking on the row that has the correct read will select those reads.</p></li>
+<li><p>Multiple read pairs or single reads can be analyzed, but they must first be moved to the <strong>Selected Libraries</strong> box. Click on the <strong>arrow</strong> to the right of the selected reads.  This will move the file into the <strong>Selected Libraries</strong> box.
+<img alt="Figure Selected_libraries" src="../../_images/Move_to_selected_libraries_box.png" /></p></li>
+<li><p>Clicking on the information icon (<strong>i</strong>) will open a pop-up window that shows the reads selected, as well as where they are located in the workspace.
+<img alt="Figure Information" src="../../_images/Information_icon2.png" /></p></li>
+<li><ol class="simple">
+<li><p>Note that there is an <strong>S</strong> or <strong>P</strong> preceding the reads designates if they are single or paired.  Reads can be removed by clicking on the <strong>X</strong> at the end of the row where they are listed.
+<img alt="Figure Remove_reads" src="../../_images/Remove_reads1.png" /></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="submitting-reads-from-the-sequence-read-archive-sra">
+<h3>Submitting reads from the Sequence Read Archive (SRA)<a class="headerlink" href="#submitting-reads-from-the-sequence-read-archive-sra" title="Permalink to this headline">¶</a></h3>
+<p>BV-BRC also supports analysis of existing datasets from SRA. If users submit SRA values, the BV-BRC will input the corresponding FASTQ files to the service.</p>
+<ol class="simple">
+<li><p>To submit this type of data, locate the Run Accession number and copy it.
+<img alt="Figure SRA" src="../../_images/SRA_page1.png" /></p></li>
+<li><p>Paste the copied accession number in the text box underneath SRA Run Accession, then click on the icon of an <strong>arrow within a circle</strong>. This will generate a dialog box above the text box that indicates that the service is validating the run number with SRA.  Once the verification is complete, the number will appear in the <strong>Selected Libraries</strong> box.
+<img alt="Figure SRA_selected" src="../../_images/SRR_to_selected_libraries.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="setting-parameters">
+<h2>Setting Parameters<a class="headerlink" href="#setting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A reference genome needs to be selected.  This genome must be in BV-BRC.  Enter the unique genome ID into the text box underneath <strong>Target Genome</strong>. This opens a drop-down box underneath the text box.  Click on the name.  This will autofill the text box with the name of the genome.
+<img alt="Figure Target_genome" src="../../_images/Select_target_genome.png" /></p></li>
+<li><p>BV-BRC offers several types of <strong>aligners</strong> that can be used in the service. BWA-mem is set as the default aligner, but there are several options.</p>
+<ul class="simple">
+<li><p><strong>BWA-mem</strong>[1,2] is an alignment algorithm for aligning sequence reads or long query sequences against a large reference genome such as human. It automatically chooses between local and end-to-end alignments, supports paired end reads and performs chimeric alignment. The algorithm is robust to sequencing errors and applicable to a wide range of sequence lengths from 70bp to a few megabases. BWA-MEM is implemented as a component of BWA, which is available at https://github.com/lh3/bwa.</p></li>
+<li><p><strong>BWA-mem-strict</strong> is BWA-mem with the default parameters plus “-B9 -O16” to increase the gap extension and clipping penalty. These strict mapping parameters are recommended for cases where contigs and references are known to be very close to each other.</p></li>
+<li><p><strong>Bowtie2</strong>[3] improves on the previous Bowtie method in terms of speed and fraction of reads aligned and is substantially faster than non–full-text minute index–based approaches while aligning a comparable fraction of reads. Bowtie 2 performs sensitive gapped alignment without incurring serious computational penalties. The code for Bowtie2 is available at https://github.com/BenLangmead/bowtie.</p></li>
+<li><p><strong>Minimap2</strong>[4] is widely used for mapping long sequence reads and assembly contigs.  The new version can more accurately map long reads to highly repetitive regions and align through insertions or deletions up to 100 kb by default.  Minimap2 is available at https://github.com/lh3/minimap2?tab=readme-ov-file.</p></li>
+<li><p><strong>LAST</strong>[5] is a long read sequence aligner. It can align billions of DNA reads to a genome and will indicate reliability of each aligned column. In addition, it can compare DNA to proteins, with frameshifts, compare PSSMs to sequences, calculates the likelihood of chance similarities between random sequences, does split and spliced alignment, and can be trained for unusual kinds of sequences (like nanopore).  The code for Last is available at https://gitlab.com/mcfrith/last.</p></li>
+</ul>
+</li>
+<li><p>To see the other choices of aligners that can be used, click on the down arrow at the end of the <strong>Aligner</strong> text box. This will open a drop-down box that shows all the available programs. Clicking on the desired aligner will autofill the text box with that selection.
+<img alt="Figure Aligner" src="../../_images/Aligner_selection.png" /></p></li>
+<li><p>BV-BRC also offers a choice of <strong>SNP callers</strong>. The default selection is for FreeBayes, but SAMtools is another option.</p>
+<ul class="simple">
+<li><p><strong>FreeBayes</strong>[6] is an accurate method for sequence organization that includes fragment clustering, paralogue identification and multiple alignment. It calculates the probability that a given site is polymorphic and has an automated evaluation of the full length of all sequences, without limitations on alignment depth. The code for FreeBayes is available at https://github.com/freebayes/freebayes.</p></li>
+<li><p><strong>The Sequence Alignment/Map (SAM)</strong> format is a generic alignment format for storing read alignments against reference sequences. SAMtools[7] implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments. The SAMtools option invokes the BCFtools’ SNP calling algorithm on top of SAMtools’ mpileup result. . It has been restructured into the BCFtools subpackage[8].  The SAMtools option invokes the BCFtools’ SNP calling algorithm on top of SAMtools’ mpileup result. The code for SAMtools is available at http://www.htslib.org/.</p></li>
+</ul>
+</li>
+<li><p>To see the available choices, click on the down arrow that follows the <strong>SNP Caller</strong> text box. This will open a drop-down box that shows all the available programs. Either SNP caller is run with the default parameters. The raw SNPs are then filtered by SNP quality (QUAL&gt;10) and read depth (DP&gt;5) to keep only the high-quality SNPs. Clicking on the desired aligner will autofill the text box with that selection.
+<img alt="Figure Select_snp_caller" src="../../_images/Select_snp_caller.png" /></p></li>
+<li><p>The variation job must be placed in an <strong>Output Folder</strong>, and it needs an <strong>Output Name</strong>. After selecting a folder and assigning a name, the <strong>Submit</strong> button will turn blue.  Click on it to submit the job.
+<img alt="Figure Output_Folder_name" src="../../_images/Output_folder_and_name.png" /></p></li>
+<li><p>If the job was submitted successfully, a message will appear that indicates that the job has entered the queue. To check the status of the variation job, click on the Jobs indicator at the bottom of the BV-BRC page.
+<img alt="Figure 13" src="../../_images/Picture1316.png" /></p></li>
+</ol>
+</section>
+<section id="monitoring-progress-on-the-jobs-page">
+<h2>Monitoring progress on the Jobs page<a class="headerlink" href="#monitoring-progress-on-the-jobs-page" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the Jobs box at the bottom right of any BV-BRC page.
+<img alt="Figure 14" src="../../_images/Picture1416.png" /></p></li>
+<li><p>This will open the Jobs Landing page where the status of submitted jobs is displayed.
+<img alt="Figure 15" src="../../_images/Picture1515.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-the-variation-job-results">
+<h2>Viewing the Variation job results<a class="headerlink" href="#viewing-the-variation-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To view a particular job, click on a row to select it. Once selected, the downstream processes available for the selection appear in the vertical green bar.  Clicking on the View icon will open the variant analysis job summary.
+<img alt="Figure 16" src="../../_images/Picture1615.png" /></p></li>
+<li><p>This will rewrite the page to show the information about the variation job, and all of the files that are produced when the pipeline runs.<br />
+<img alt="Figure Job_result" src="../../_images/Job_result_page.png" /></p></li>
+<li><p>The information about the job submission can be seen in the table at the top of the results page.  To see all the parameters that were selected when the job was submitted, click on the <strong>Parameters</strong> row.
+<img alt="Figure 18" src="../../_images/Picture1813.png" /></p></li>
+<li><p>This will show the information on what was selected when the job was originally submitted.
+<img alt="Figure 19" src="../../_images/Picture1914.png" /></p></li>
+<li><p><strong>Bam files</strong>. The Binary Alignment/Map (BAM) is the companion format of the Sequence Alignment/Map (SAM) format[7]. A SAM file (.sam) is a tab-delimited text file that contains sequence alignment data. The bam format is compact in size and supports fast retrieval of alignments in specified regions. It is optimal for viewing in a genome browser. The BV-BRC variant analysis service provides a .bam file for each of the read libraries that were loaded.  These can be downloaded by selecting the row that contains that file and then clicking on the <strong>Download</strong> icon in the vertical green bar.  BV-BRC also provides a direct view of the bam file by clicking on <strong>Browser</strong> icon at the top right of the job page.  Viewing the data on the browser will be discussed below.
+<img alt="Figure 20" src="../../_images/Picture2013.png" /></p></li>
+<li><p><strong>Bam.bai files</strong>. A bai file is a companion to the bam file which contains the index. These are files that are used by a genome browser.  They can be downloaded by selecting the row that contains for file and then clicking on the <strong>Download</strong> icon in the vertical green bar.<br />
+<img alt="Figure 21" src="../../_images/Picture2117.png" /></p></li>
+<li><p><strong>Consensus fasta (consensus.fa)</strong>. This is the sequence of the read files in the order of the reference, so it is basically a reference-based assembly.   It can be downloaded by selecting the row that contains for file and then clicking on the <strong>Download</strong> icon in the vertical green bar.  Or it could be used in the annotation service.
+<img alt="Figure 22" src="../../_images/Picture2213.png" /></p></li>
+<li><p><strong>Tab Separated Values (tsv)</strong>. The BV-BRC variant analysis service provides a .tsv file for <em>each of the read libraries</em> that were loaded. This file summaries the locations of the variants, shows the nucleotide change, and identifies if it was a synonymous or nonsynonymous substitution, or an indel. It also identifies the gene, or intergenic region, where the variation occurred.  The list below shows the title and information about each column in the tsv file, from left to right.</p>
+<ul class="simple">
+<li><p><strong>Samples</strong> - internal library read name. The corresponding user library read name can be found in libs.txt</p></li>
+<li><p><strong>Contig</strong> - contig name</p></li>
+<li><p><strong>Pos</strong> - position of the variation</p></li>
+<li><p><strong>Ref</strong> - reference nucleotide(s) at the variation position</p></li>
+<li><p><strong>Var</strong> - variant nucleotide(s) at the variation position</p></li>
+<li><p><strong>Score</strong> - quality score from the variant caller tool</p></li>
+<li><p><strong>Var_cov</strong> - variant coverage (the average read depth of the variant)</p></li>
+<li><p><strong>Var_frac</strong> - variant fraction (the fraction of the variant read depth among the all the reads that cover this region)</p></li>
+<li><p><strong>Type</strong> - variant type</p></li>
+<li><p><strong>Ref_nt</strong> - reference nucleotide(s)</p></li>
+<li><p><strong>Var_nt</strong> - variant nucleotide(s)</p></li>
+<li><p><strong>Ref_nt_pos_change</strong> - nucleotide change</p></li>
+<li><p><strong>Ref_aa_pos_change</strong> - amino acid change</p></li>
+<li><p><strong>Frameshift</strong> - frameshift variant</p></li>
+<li><p><strong>Gene_ID</strong> – BV-BRC feature (peg) id</p></li>
+<li><p><strong>Locus_tag</strong> - RefSeq locus tag</p></li>
+<li><p><strong>Gene_name</strong> - gene name</p></li>
+<li><p><strong>Function</strong> - function description</p></li>
+<li><p><strong>Upstream_feature</strong> - upstream feature</p></li>
+<li><p><strong>Downstream_feature</strong> - downstream feature</p></li>
+<li><p><strong>snpEff_type</strong> - snpEFF variant type</p></li>
+<li><p><strong>snpEff_impact</strong> - snpEFF variant impact</p></li>
+</ul>
+</li>
+<li><p>The <strong>tsv</strong> file can be viewed by selecting the row that contains for file and then clicking on the <strong>View</strong> icon in the vertical green bar.<br />
+<img alt="Figure 23" src="../../_images/Picture2312.png" /></p></li>
+<li><p>The <strong>var.snpEFF.vcf</strong> files. The Variant Call Format (VCF) is a flexible and extendable line-oriented text format developed by the 1000 Genomes Project for releases of single nucleotide variants, indels, copy number variants and structural variants discovered by the project. SnpEff[9] rapidly categorizes the effects of variants in genome sequences. Once a genome is sequenced, SnpEff annotates variants based on their genomic locations and predicts coding effects. Annotated genomic locations include intronic, untranslated region, upstream, downstream, splice site, or intergenic regions. Coding effects such as synonymous or non-synonymous amino acid replacement, start codon gains or losses, stop codon gains or losses, or frame shifts can be predicted. The BV-BRC variant analysis service provides a var.snpEFF.vcf file for each of the read libraries that were loaded. It can be downloaded by selecting the row that contains for file and then clicking on the <strong>Download</strong> icon in the vertical green bar.
+<img alt="Figure 24" src="../../_images/Picture2411.png" /></p></li>
+<li><p>The impact of individual snps are defined in the snpEff_impact assignment, and are as defined by Cingolani[10].
+<img alt="Figure snpEFF_impact" src="../../_images/Variant_impact.png" /></p></li>
+<li><p>The <strong>var.vcf</strong> files. These files show the location of the snp on the genome. The BV-BRC variant analysis service provides a var.vcf file for each of the read libraries that were loaded, an example of which is shown below. It can be downloaded by selecting the row that contains for file and then clicking on the Download icon in the vertical green bar.
+<img alt="Figure 25" src="../../_images/Picture2510.png" /></p></li>
+<li><p>The <strong>var.vcf.gz</strong> file is a zipped file of the vcf file.  It is available for download but is best viewed in the genome browser.  This functionality will be discussed below.
+<img alt="Figure 26" src="../../_images/Picture2610.png" /></p></li>
+<li><p>The <strong>var.vcf.gz.tbi</strong> file is generated for each read set.  It is an indexed file used by a genome browser to load the vcf.gz file.  It is available for download.
+<img alt="Figure 27" src="../../_images/Picture279.png" /></p></li>
+<li><p>The service also generates a number of text files that show the different snp calls, which can be viewed in the circular viewer for the reference genome.  These can be viewed by clicking on the <strong>Text_Files_Circular_Viewer</strong> folder.  This will open a page that shows all the individual text files.  These should be downloaded and then submitted to the circular view.
+<img alt="Figure CircularViewer" src="../../_images/Text_filer_circular_viewer_folder.png" /></p></li>
+<li><p>The <strong>.html</strong> file. The HyperText Markup Language (HTML) file will open a webpage that shows the same data available in the .tsv file.  This file can be viewed in this window by clicking on the View icon or downloaded and viewed in your browser.
+<img alt="Figure 28" src="../../_images/Picture2811.png" /></p></li>
+<li><p>After clicking on the View icon, the page will reload to how the tsv table that is described above.  A description of each of the columns is provided above in the <strong>Tab Separated Value (tsv)</strong> section above.
+<img alt="Figure 29" src="../../_images/Picture2911.png" /></p></li>
+<li><p><strong>Tab Separated Values (tsv)</strong>. The BV-BRC variant analysis service provides a .tsv file for each of the read libraries that were loaded. It summaries the locations of the variants, shows the nucleotide change, and identifies if it was a synonymous or nonsynonymous substitution, or an indel. It also identifies the gene, or intergenic region, where the variation occurred. It can be viewed by selecting the row that contains for file and then clicking on the <strong>View</strong> icon in the vertical green bar.<br />
+<img alt="Figure 30" src="../../_images/Picture3010.png" /></p></li>
+<li><p>Clicking on the View icon will reload the page to show the <strong>tsv</strong> file.  A description of each of the columns is provided above in the <strong>Tab Separated Value (tsv)</strong> section above.
+<img alt="Figure 31" src="../../_images/Picture3115.png" /></p></li>
+<li><p>The <strong>libs.txt</strong> file. This is a text file that describes the libraries used in the comparison.  It can be viewed by selecting the row that contains for file and then clicking on the <strong>View</strong> icon in the vertical green bar.
+<img alt="Figure 32" src="../../_images/Picture3212.png" /></p></li>
+<li><p>The <strong>summary.txt</strong> files. This file provides a summary of the analysis. For each library it shows the number of reads, those that mapped to the reference, the number of bases in the reference, the median base coverage, bases with zero coverage, bases with less than (or equal to) 10 reads coverage, the raw variants that are detected by the variation calling tool, and those variants that have a high quality score. It can be viewed by selecting the row that contains for file and then clicking on the <strong>View</strong> icon in the vertical green bar.
+<img alt="Figure 33" src="../../_images/Picture3310.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-snps-on-the-genome-browser">
+<h2>Viewing SNPs on the genome browser<a class="headerlink" href="#viewing-snps-on-the-genome-browser" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To see the genome browser, where the results of the variation job can be summarized, click on the Browser icon that is visible in the upper right corner of the page.
+<img alt="Figure 34" src="../../_images/Picture349.png" /></p></li>
+<li><p>This will open the genome browser for the genome that was selected as the reference. There is a box on the left of the browser that shows the available tracks.
+<img alt="Figure 35" src="../../_images/Picture359.png" /></p></li>
+<li><p>You will need to zoom in and see the bam file, which contains a lot of data.  Find the magnifying glass icons immediately above the browser. Click on the one that has a plus side in it.  This will need to be clicked several times before a bam file can load. Incidentally, after several clicks of the magnifying icon, the six-frame translation and nucleotides will be visible.
+<img alt="Figure 36" src="../../_images/Picture369.png" /></p></li>
+<li><p>To see the how predictive the individual calls are, click on the track that ends in <strong>aln.bam</strong>.
+<img alt="Figure 36b" src="../../_images/Picture36b.png" /></p></li>
+<li><p>This will show the individual reads. Blue indicates reads on the forward strand, and red show the reads on the reverse strand.
+<img alt="Figure 37" src="../../_images/Picture378.png" /></p></li>
+<li><p>To see the value of individual reads, click on a single one.  This will open a pop-up window that shows the data associated with that selected read.
+<img alt="Figure 38" src="../../_images/Picture3810.png" /></p></li>
+<li><p>To see the location of the particular SNPs, MNPs or indels, click on the check boxes before in front of the names that end in <strong>var.vcf.gz</strong>.  This will add tracks below the annotation tracks that show the snps that were called, although scrolling down the length of the genome may be required to see them.
+<img alt="Figure 39" src="../../_images/Picture3910.png" /></p></li>
+<li><p>To see the value of individual vcf calls, click on a single one. This will open a pop-up window that shows the data associated with that selected read.
+<img alt="Figure 40" src="../../_images/Picture409.png" /></p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Li, H., Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM. arXiv preprint arXiv:1303.3997, 2013.</p></li>
+<li><p>Li, H., Toward better understanding of artifacts in variant calling from high-coverage samples. Bioinformatics, 2014. 30(20): p. 2843-2851.</p></li>
+<li><p>Langmead, B. and S.L. Salzberg, Fast gapped-read alignment with Bowtie 2. Nature methods, 2012. 9(4): p. 357.</p></li>
+<li><p>Li, H., New strategies to improve minimap2 alignment accuracy. Bioinformatics, 2021. 37(23): p. 4572-4574.</p></li>
+<li><p>Frith, M.C., M. Hamada, and P. Horton, Parameters for accurate genome alignment. BMC bioinformatics, 2010. 11(1): p. 1-14.</p></li>
+<li><p>Marth, G.T., et al., A general approach to single-nucleotide polymorphism discovery. Nature genetics, 1999. 23(4): p. 452-456.</p></li>
+<li><p>Li, H., et al., The sequence alignment/map format and SAMtools. Bioinformatics, 2009. 25(16): p. 2078-2079.</p></li>
+<li><p>Danecek, P., et al., Twelve years of SAMtools and BCFtools. Gigascience, 2021. 10(2): p. giab008.</p></li>
+<li><p>Cingolani, P., et al., A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso-2; iso-3. Fly, 2012. 6(2): p. 80-92.</p></li>
+<li><p>Cingolani, P., Variant annotation and functional prediction: SnpEff, in Variant calling: methods and protocols. 2012, Springer. p. 289-314.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tn-seq/tn-seq.html" class="btn btn-neutral float-right" title="Tn-Seq Analysis Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../genome_alignment/genome_alignment.html" class="btn btn-neutral float-left" title="Genome Alignment Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

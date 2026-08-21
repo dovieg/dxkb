@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Mulitiple Sequence Alignment Viewer | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Protein Family Sorter" href="protein_family_sorter.html" />
+    <link rel="prev" title="Archaeopteryx.js Phylogenetic Tree Viewer" href="../services/archaeopteryx.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Mulitiple Sequence Alignment Viewer | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/genome_browser.html">Genome Browser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_genome/circular_genome_viewer.html">Circular Genome Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organisms_gene/compare_region_viewer.html">Compare Region Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../services/archaeopteryx.html">Archaeopteryx.js Phylogenetic Tree Viewer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Mulitiple Sequence Alignment Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="protein_family_sorter.html">Protein Family Sorter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathway_comparison_tool.html">Pathway Comparison Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subsystems_data.html">Subsystems Data and Viewer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Mulitiple Sequence Alignment Viewer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/other/msa_viewer.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="mulitiple-sequence-alignment-viewer">
+<h1>Mulitiple Sequence Alignment Viewer<a class="headerlink" href="#mulitiple-sequence-alignment-viewer" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Multiple Sequence Alignment (MSA) Viewer provides an interactive visualization of a nucleic acid or amino acid multiple sequence alignment with a linked interactive tree viewer.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../organisms_taxon/features.html"><span class="doc std std-doc">Features Tab</span></a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/msa_snp_variation/msa_snp_variation.html"><span class="doc std std-doc">MSA and SNP/Variation Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="accessing-the-msa-viewer">
+<h2>Accessing the MSA Viewer<a class="headerlink" href="#accessing-the-msa-viewer" title="Permalink to this headline">¶</a></h2>
+<p>The MSA Viewer can be accessed in two different ways:</p>
+<ol class="simple">
+<li><p>By selecting a set of features in the Features Tab or any other table that contains features/genes (nucleotide sequences) or proteins (amino acid sequences), then clicking the MSA button in the vertical green Action Bar to the right of the table, as shown below. Results presented in the MSA Viewer are generated using FastTree[1], Gblocks[2], and Muscle[3].</p></li>
+</ol>
+<p><img alt="MSA Action Button Selection" src="../../_images/msa_action_button_select.png" /></p>
+<ol class="simple">
+<li><p>By selecting can be used after completing an alignment job in the MSA and Sequence Nucleotide Polymorphism (SNP)/Variation Service. Alternatively, if you already have an aligned file, you can also view the alignment by uploading it to this service. For more information, see MSA and Variation tutorial linked above. <em>Note: You must be logged into BV-BRC to use this service.</em></p></li>
+</ol>
+<p><img alt="MSA Action Button Selection 2" src="../../_images/msa_action_button_select2.png" /></p>
+<p>Results, whether nucleotide or amino acid, will be shown in the MSA Viewer, as shown in the figures below:</p>
+<p><strong>Nucleotide MSA</strong>
+<img alt="MSA Viewer - Nucleotide" src="../../_images/msa_nucleotide.png" /></p>
+<p><strong>Amino Acid MSA</strong>
+<img alt="MSA Viewer - Amino Acid" src="../../_images/msa_amino_acid.png" /></p>
+</section>
+<section id="features-and-functionality">
+<h2>Features and Functionality<a class="headerlink" href="#features-and-functionality" title="Permalink to this headline">¶</a></h2>
+<p>The visualization has 3 main components:</p>
+<ol class="simple">
+<li><p>Gene tree on the left-hand side that is constructed based on the alignment</p></li>
+<li><p>Multiple sequence alignment in the main body of the visualization.</p></li>
+<li><p>Sequence logo across the top wherein the hight of the letter corresponds to the amount of conservation of the corresponding nucleotide or amino acid</p></li>
+</ol>
+<section id="gene-tree">
+<h3>Gene tree<a class="headerlink" href="#gene-tree" title="Permalink to this headline">¶</a></h3>
+<p>The gene tree on the left-hand side is generated using . Clicking on a single sequence item in the tree selects that item, as indicated with a small check mark and a red line in the tree branch.  A set of corresponding actions becomes available in the vertical green Action Bar on the right side of the visualization (explained in detail in <em>Action buttons</em> section below).  Also, additional information and metadata about the selected item will be displayed in the information panel on the far right.  See figure below.</p>
+<p><img alt="MSA Viewer - Select Item in Tree" src="../../_images/msa_node_select.png" /></p>
+<p>Clicking on a node in the treee selects all items in that branch, as indicated by check marks and red lines in that branch of the tree.</p>
+<p><img alt="MSA Viewer - Select Branch Node" src="../../_images/msa_branch_select2.png" /></p>
+</section>
+<section id="multiple-sequence-alignment-and-sequence-logo">
+<h3>Multiple Sequence Alignment and Sequence Logo<a class="headerlink" href="#multiple-sequence-alignment-and-sequence-logo" title="Permalink to this headline">¶</a></h3>
+<p>The multiple sequence alignment shows color-coded alginment of the letters in the sequnces in columns. The color scheme can be changed using the Colors button in the vertical green Action Bar on right side of the aignment. The sequence logo shows the amount of consservation of the letters in that column, indicated by the height of the corresponding letter.  A scrollbar between the seqeunce logo and alignment allows horizontal scrolling across the entire alignment.</p>
+</section>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one or more of the experiments by clicking the checkbox beside the Title column in the table, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Colors:</strong> Displays a list of color coding options for the sequence alignment and logo. Several color schemes are available for visualizing MSAs.  Color schemes with an asterix (*) have been adapted from the Jalview MSA (more information here)</p>
+<ul>
+<li><p><em>Nucleotide* (nucleotide color scheme)</em></p></li>
+<li><p><em>Purine* = purine/pyrimidine (nucleotide color scheme)</em></p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/zappo.html">Zappo</a>* (protein color scheme):</em> amino acid residues are colored by their physicochemical properties</p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/taylor.html">Taylor</a>* (protein color scheme):</em> amino acid residues are colored by the scheme provided by <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/9342138/">Taylor, 1997</a>.</p></li>
+<li><p><em>Hydrophobicity (protein color scheme):</em> amino acid residues are colored by the <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/7108955/">table of hydrophobicity</a>. Briefly, the most hydrophobic residues are colored in red, the most hydrophilic ones in blue, and residues with intermediate properties are the halftones of purple.</p></li>
+<li><p><em>Lesk (protein color scheme)</em></p></li>
+<li><p><em>Cinema (protein color scheme)</em></p></li>
+<li><p><em>MAE (protein color scheme)</em></p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/clustal.html">Clustal</a>* (protein color scheme):</em> color scheme used in the “Clustal” application</p></li>
+<li><p><em>Clustal2 (protein color scheme):</em> color scheme used in the “Clustal2” application</p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/turn.html">Turn</a>* = turn propensity:</em> amino acid residues are colored by their preference for formation of turns (<a class="reference external" href="https://pubs.acs.org/doi/10.1021/bi00613a026">Levitt, 1978</a>).</p></li>
+<li><p><em>Strand* = strand propensity:</em> amino acid residues are colored by their preference for formation of beta-folds (<a class="reference external" href="https://pubs.acs.org/doi/10.1021/bi00613a026">Levitt, 1978</a>)</p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/buried.html">Buried</a>* = buried index:</em> amino acid residues are colored by their frequency of occurrence inside a globule.</p></li>
+<li><p><em><a class="reference external" href="http://www.jalview.org/help/html/colourSchemes/helix.html">Helix</a>*:</em> amino acid residues are colored by their preference for formation of alpha helices (<a class="reference external" href="https://pubs.acs.org/doi/10.1021/bi00613a026">Levitt, 1978</a>).</p></li>
+<li><p><em>PID (protein color scheme):</em> percent identity; amino acid residues are colored by the rate of occurrence of a symbol in a column. See default values in table below:</p>
+<ul>
+<li><p>Percent	Color</p></li>
+<li><p>&gt; 80 %	Mid blue</p></li>
+<li><p>&gt; 60 %	Light blue</p></li>
+<li><p>&gt; 40 %	Light grey</p></li>
+<li><p>&gt;= 40%	White</p></li>
+</ul>
+</li>
+<li><p><em>No color (no color scheme)</em></p></li>
+</ul>
+</li>
+<li><p><strong>ID Type:</strong> Allows changing labels on in gene tree from Genome Name to Gene ID.</p></li>
+<li><p><strong>Filter:</strong> Allows filtering (hiding) of columns based on % conservation and % gaps. Selecting one of these options will open a window that allows users to select the desired threshold (percent). If none is chosen, a default value will be provided. Options  are provided below.</p>
+<ul>
+<li><p>Hide columns by % conservation (&gt;=)</p></li>
+<li><p>Hide columns by % conservation (&lt;=)</p></li>
+<li><p>Hide columns by % conservation (between)</p></li>
+<li><p>Hide columns by % gaps (&gt;=)</p></li>
+<li><p>Hide columns by % gaps (&lt;=)</p></li>
+<li><p>Hide columns by % gaps (between)</p></li>
+<li><p>Reset</p></li>
+</ul>
+</li>
+<li><p><strong>Download:</strong>  allows users to download the file options listed below.</p>
+<ul>
+<li><p><em>MSA txt:</em> plain text version of the MSA.</p></li>
+<li><p><em>MSA fasta:</em> a MSA file in fasta format.</p></li>
+<li><p><em>MSA image:</em> portable network graphic file of the current view of the MSA.</p></li>
+<li><p><em>MSA clustal:</em> a MSA file in clustal format.</p></li>
+<li><p><em>Tree svg:</em> Scalable vector graphics image format.</p></li>
+<li><p><em>Tree newick:</em> Newick tree format file.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Price, M. N., Dehal, P. S., &amp; Arkin, A. P. (2009). FastTree: computing large minimum evolution trees with profiles instead of a distance matrix. Molecular biology and evolution, 26(7), 1641-1650.</p></li>
+<li><p>Castresana, J. (2002). Gblocks, v. 0.91 b. Online version available at: http://molevol.cmima.csic.es/castresana/Gblocks_server.html.</p></li>
+<li><p>Edgar, R.C. (2004) MUSCLE: multiple sequence alignment with high accuracy and high throughput. Nucleic Acids Res. 32(5):1792-1797.</p></li>
+<li><p>Waterhouse, A.M., Procter, J.B., Martin, D.M.A, Clamp, M. and Barton, G. J. (2009). Jalview Version 2 - a multiple sequence alignment editor and analysis workbench. Bioinformatics25 (9) 1189-1191. doi: 10.1093/bioinformatics/btp033</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="protein_family_sorter.html" class="btn btn-neutral float-right" title="Protein Family Sorter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../services/archaeopteryx.html" class="btn btn-neutral float-left" title="Archaeopteryx.js Phylogenetic Tree Viewer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

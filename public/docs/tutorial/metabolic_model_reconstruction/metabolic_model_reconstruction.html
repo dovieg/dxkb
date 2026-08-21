@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Metabolic Model Reconstruction | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Metabolic Model Reconstruction | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Metabolic Model Reconstruction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/metabolic_model_reconstruction/metabolic_model_reconstruction.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="metabolic-model-reconstruction">
+<h1>Metabolic Model Reconstruction<a class="headerlink" href="#metabolic-model-reconstruction" title="Permalink to this headline">¶</a></h1>
+<section id="constructing-a-genome-scale-metabolic-model-of-bacteria-what-is-the-metabolic-capability-of-bacteria">
+<h2>Constructing a genome scale metabolic model of bacteria: What is the metabolic capability of bacteria?<a class="headerlink" href="#constructing-a-genome-scale-metabolic-model-of-bacteria-what-is-the-metabolic-capability-of-bacteria" title="Permalink to this headline">¶</a></h2>
+<p>A genome-scale metabolic network of chemical reactions occurring within a living organism is primarily reconstructed from protein functional annotations originally derived from literature and subsequently propagated from genome to genome by sequence similarity. When a genome is functionally annotated, its metabolic genes are mapped onto biochemical reactions. This information is integrated with data on reaction stoichiometry, subcellular localization, biomass composition, estimation of energy requirements (directionality of reactions), and other constraints into a detailed stoichiometric model of metabolism. This model can be subsequently used for detailed analysis of the metabolic potential of the organism using constraint-based modeling approaches such as Flux Balance Analysis (FBA)[1]. So what you can do with metabolic models? Using metabolic models we are able address important biological questions such as: 1.) Can the organism grow on a certain media formulation? 2.) What is the minimal media condition for particular strain? 3) Can an organism be optimized to produce an important biofuel or a medically important drug molecule? What biochemical pathways being utilized when grown under certain environment?</p>
+<p>The model construction methodology in PATRIC is primarily based on the Model SEED framework[2] and the RAST genome annotation pipeline[3]. Biochemistry data used in the model construction pipeline have been gathered from multiple published metabolic models and from public databases such as KEGG, MetaCyc, EcoCyc, Plant BioCyc, Plant Metabolic Networks, and Gramene. Currently, the biochemistry database in PATRIC includes more than 13,000 biochemical reactions and over 16,000 metabolic compounds.</p>
+</section>
+<section id="model-construction-and-analysis-workflow-in-patric-involves-following-steps">
+<h2>Model construction and analysis workflow in PATRIC involves following steps:<a class="headerlink" href="#model-construction-and-analysis-workflow-in-patric-involves-following-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Reconstruction of metabolic model based on the genome annotations</p></li>
+<li><p>Fill the gaps in the metabolic network (Gapfilling)[4] based on a specific media condition (e.g Glucose minimal media)</p></li>
+<li><p>Simulate FBA in specified media condition</p></li>
+<li><p>Simulate single gene knockouts and predict essential genes in specified media condition</p></li>
+<li><p>Create downloadable files for viewing flux profile, gapfill reactions, essential genes, SBML version of the model, model reactions and compounds.</p></li>
+</ol>
+</section>
+<section id="here-are-the-steps-in-constricting-a-genome-scale-metabolic-model-in-patric">
+<h2>Here are the steps in constricting a genome scale metabolic model in PATRIC:<a class="headerlink" href="#here-are-the-steps-in-constricting-a-genome-scale-metabolic-model-in-patric" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Login to the PATRIC website so that you can use your workspace in the downstream analysis.</p></li>
+</ol>
+<p><img alt="Image 1" src="../../_images/image118.png" /></p>
+<ol class="simple">
+<li><p>On the PATRIC homepage (patricbrc.org), open the SERVICES dropdown in the navigation bar at the top of the page.</p></li>
+</ol>
+<p><img alt="Image 2" src="../../_images/image218.png" /></p>
+<ol class="simple">
+<li><p>Using the dropdown menu that appears click on Model Reconstruction. (Underlined in the picture below).</p></li>
+</ol>
+<p><img alt="Image 3" src="../../_images/image315.png" /></p>
+<ol class="simple">
+<li><p>This will open up the model reconstruction app where user will select:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Genome – select a genome from a drop-down list of publically available genomes (Reference, Representative or All Public Genomes) or from your private genome (My Genomes) where a model will be constructed.</p></li>
+</ul>
+<p><img alt="Image 4" src="../../_images/image414.png" /></p>
+<ul class="simple">
+<li><p>Media - select a predefined media formulation from a dropdown list of media formulations that this model be *gapfilled and simulated FBA. (e.g GMM – Glucose Minimal Media, NMS- Nitrate Mineral Salts Medium, LB - Luria-Bertani Medium)</p></li>
+<li><p>Output Folder – select an existing workspace folder or create a new one. Your model will be located on this folder.</p></li>
+<li><p>Output Name – A user given output name for the newly constructed metabolic model.</p></li>
+</ul>
+<p>*Gapfilling - Draft metabolic models usually have missing reactions (gaps) due to incomplete or incorrect functional genome annotations. As a result, these models are unable to generate biomass on media where the organism typically is capable of growing. Gapfilling algorithms can be used to overcome this problem. These algorithms tentatively fill metabolic gaps by identifying the minimal number of biochemical reactions to add to the draft metabolic model to enable it to produce biomass in a specified media. Gapfilling is an optimization procedure that can produce multiple solutions.</p>
+<p>As an example, for this tutorial we decide for to use the following parameters:</p>
+<ul class="simple">
+<li><p>Genome – Mycobacterium tuberculosis H37Rv (as the suggested by the e.g. tooltip in the input field).</p></li>
+<li><p>Media – Glucose Minimal Media (GMM).</p></li>
+<li><p>Output Folder – We created a folder named “metabolic models”.</p></li>
+<li><p>Output Name – We named our model “mycobacterium_model”.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Upon selecting the fields click the ‘Reconstruct’ button to construct your metabolic model. You will notice the ‘Model Reconstruction Job has been started’ message in green at the bottom of the app suggesting you have successfully submitted the model reconstruction app.</p></li>
+</ol>
+<p><img alt="Image 5" src="../../_images/image55.png" /></p>
+<ol class="simple">
+<li><p>Now you started the model reconstruction job, you can view the status of this job and any previous jobs by clicking the jobs icon at the bottom right corner of the page. This page provides a summary of jobs that are queued, started, in progress and completed.</p></li>
+</ol>
+<p><img alt="Image 6a" src="../../_images/image6a.png" />
+<img alt="Image 6b" src="../../_images/image6b.png" /></p>
+<ol class="simple">
+<li><p>Now you have constructed a new metabolic model from your selected genome, you can explore the details of the metabolic model such as reactions and compounds. Your newly constructed model will be stored in ‘metabolic models’ folder in your workspace.  To navigate to your model folder click the WORKSPACES the navigation bar at the top and navigate to your home (underlined in the picture below) folder.</p></li>
+</ol>
+<p><img alt="Image 7" src="../../_images/image75.png" /></p>
+<ol class="simple">
+<li><p>Upon selecting WORKSAPCES:home you will see multiple folders appear in your screen including ‘models’ folder where your models are stored (Highlighted with dark blue).</p></li>
+</ol>
+<p><img alt="Image 8" src="../../_images/image85.png" /></p>
+<ol class="simple">
+<li><p>Select the ‘metabolic models” folder, you can find all of your metabolic model files listed by the user assigned names.</p></li>
+</ol>
+<p><img alt="Image 9" src="../../_images/image95.png" /></p>
+<ol class="simple">
+<li><p>Select the desired model by clicking on the model file, in this case “mycobacterium_model”. A table will be displayed consisting of a summary of model information consisting of organism name, number of genes, reactions, compounds and biomass equations in the model.</p></li>
+</ol>
+<p><img alt="Image 10a" src="../../_images/image10a.png" /></p>
+<p>Additionally, a download section is available where all model relevant data can be downloaded. This section consists of a total of 7 files:</p>
+<ol class="simple">
+<li><p>gf.0.gftbl – Gapfill reactions table. This table contains the list of the reactions added to the model by the gapfilling algorithm during reconstruction.</p></li>
+<li><p>gf.0.fbatbl – FBA flux distribution for the gapfilling simulation.</p></li>
+<li><p>mycobacterium_model.sbml – The model in SBML format.</p></li>
+<li><p>mycobacterium_model.rxntbl – The list of all reactions in the model.</p></li>
+<li><p>mycobacterium_model.cpdtbl – The list of all compounds in the model.</p></li>
+<li><p>fba.0.fuxtbl -  FBA flux for all model reacttions.</p></li>
+<li><p>fba.0.essentials – List of genes in the model characterized as essential by the FBA simulation in the specified media.</p></li>
+</ol>
+<p><img alt="Image 10b" src="../../_images/image10b.png" /></p>
+<ol class="simple">
+<li><p>In addition, users can explore the metabolic model in detail by a user-friendly searchable table by clicking the ‘eye’ sign that appears on the top right corner of the page.
+<img alt="Image 11a" src="../../_images/image11a.png" /></p></li>
+</ol>
+<p>You will be navigated to the ModelSEED website (www.modelseed.org) and you will
+be prompt to login using your PATRIC account:
+<img alt="Image 11b" src="../../_images/image11b.png" /></p>
+<ol class="simple">
+<li><p>This will open the ModelSEED model viewer consisting¬ of multiple tabs representing Reactions, Compounds, Genes, Compartments of the model and the weighted components of the Biomass. Each column in the table is sortable by clicking the heading of the column. Any information of the model is searchable by using a search bar that appears on the top left corner of the table.</p></li>
+</ol>
+<p><img alt="Image 12" src="../../_images/image125.png" /></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Orth, J.D., I. Thiele, and B.O. Palsson, What is flux balance analysis? Nat Biotechnol. <strong>28</strong>(3): p. 245-8.</p></li>
+<li><p>Henry, C.S., et al., High-throughput generation, optimization and analysis of genome-scale metabolic models. Nat Biotechnol, 2010. <strong>28</strong>(9): p. 977-82.</p></li>
+<li><p>Overbeek, R., et al., The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). Nucleic Acids Res, 2014. <strong>42</strong>(Database issue): p. D206-14.</p></li>
+<li><p>Orth, J.D. and B.O. Palsson, Systematizing the generation of missing metabolic knowledge. Biotechnol Bioeng. <strong>107</strong>(3): p. 403-12.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

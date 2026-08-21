@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Compare Region Viewer" href="../compare_region_viewer/compare_region_viewer.html" />
+    <link rel="prev" title="Subspecies Classification Service" href="../subspecies_classification/subspecies_classification.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#viral-services">Viral Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.html">SARS-CoV-2 Genome Assembly and Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html">SARS-Cov-2 Wastewater Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequence_submission/sequence_submission.html">Sequence Submission Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ha_numbering/ha_numbering.html">HA Subtype Numbering Conversion Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subspecies_classification/subspecies_classification.html">Subspecies Classification Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#made-by-anna-capria-with-scribe">Made by Anna Capria with Scribe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viral-genome-assembly-service">Viral Genome Assembly Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#files-accepted-by-bv-brc-assembly-service">Files accepted by BV-BRC Assembly Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-parameters">Setting Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/viral_assembly/assembly.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="analyzing-viral-genome-assembly-using-bv-brc-tools-tutorial">
+<h1>Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial<a class="headerlink" href="#analyzing-viral-genome-assembly-using-bv-brc-tools-tutorial" title="Permalink to this headline">¶</a></h1>
+<section id="made-by-anna-capria-with-scribe">
+<h2><a class="reference external" href="https://scribehow.com/shared/Analyzing_Viral_Genome_Assembly_Using_BV-BRC_Tools_Tutorial__A-fXajgCQi-bD-Wzs4rmXw">Made by Anna Capria with Scribe</a><a class="headerlink" href="#made-by-anna-capria-with-scribe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="viral-genome-assembly-service">
+<h2>Viral Genome Assembly Service<a class="headerlink" href="#viral-genome-assembly-service" title="Permalink to this headline">¶</a></h2>
+<p>Alert: Beta Version: Updated on 3 June 2026</p>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>1. The Viral Genome Assembly Service allows users to assemble viral genomes utilzing IRMA(1)(currently the BV-BRC tool supports Influenza). Once the assembly process has started by clicking the Assemble button, the genome is queued as a “job” for the Assembly Service to process, and will increment the count in the Jobs information box on the bottom right of the page. Once the assembly job has successfully completed, the output file will appear in the workspace.<br />
+This service and tutorial are currently in beta- and will be updated to reflect the tools development.<br />
+A genome assembly is the sequence produced after chromosomes from the organism have been fragmented, those fragments have been sequenced, and the resulting sequences have been put back together. This is currently needed as DNA sequencing technology cannot read whole genomes in one go, but rather can read small pieces of between 20 and 30,000 bases, depending on the technology used. Typically, the short fragments, called reads, result from shotgun (random) sequencing of genomic DNA.</p>
+<p>De novo sequence assemblers are a type of program that assembles short nucleotide sequences into longer ones without the use of a reference genome. These are commonly used in bioinformatic studies to assemble genomes or transcriptomes.</p>
+<p>What follows is a tutorial showing how to submit reads for assembly and selecting parameters for the assembly algorithm.</p>
+<section id="irma-modules-in-the-viral-assembly-service">
+<h4>IRMA Modules in the Viral Assembly Service<a class="headerlink" href="#irma-modules-in-the-viral-assembly-service" title="Permalink to this headline">¶</a></h4>
+<p>The BV-BRC Viral Genome Assembly service uses an open source, third-part bioinformatics program- IRMA developed by the CDC. IRMA provides a robust next-generation sequencing assembly solution that is adapted to the needs and characteristics of viral genomes. More information about IRMA (<a class="reference external" href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3030-6">https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3030-6</a>) can be found here IRMA  and <a class="reference external" href="https://wonder.cdc.gov/amd/flu/irma/irma.html">https://wonder.cdc.gov/amd/flu/irma/irma.html</a> pages.</p>
+<p>The Viral Assembly Service provides access to a set of pre-configured IRMA (Iterative Refinement Meta-Assembler) modules designed to support accurate viral genome assembly across a range of pathogens, sequencing platforms, and data qualities.</p>
+<p>Each module represents a tuned workflow with optimized parameters for specific use cases, including:</p>
+<p>Different viruses (e.g., influenza, coronaviruses, RSV, filoviruses)
+Sequencing technologies (e.g., Illumina, Oxford Nanopore, PacBio)
+Data conditions (e.g., low-quality reads, low coverage, minority variant detection)</p>
+<p>IRMA uses a reference-guided, iterative approach, repeatedly refining read alignments and consensus sequences to improve assembly accuracy and variant resolution.</p>
+<p>Rather than requiring users to configure parameters manually, these modules allow you to:</p>
+<p>Select the appropriate workflow for your dataset
+Generate high-quality consensus genomes
+Capture genomic variation, including low-frequency variants when needed</p>
+<p>Overall, IRMA modules enable reproducible, flexible viral genome assembly while simplifying analysis for users at all experience levels.</p>
+<p>IRMA module overview</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Option</strong></p></th>
+<th class="head"><p><strong>Covers</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>FLU</strong></p></td>
+<td><p>Influenza A &amp; B</p></td>
+<td><p>Standard influenza assembly workflow (default)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU AD</strong></p></td>
+<td><p>Influenza A, B, C, &amp; D</p></td>
+<td><p>Broad influenza workflow supporting all types</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU Alt</strong></p></td>
+<td><p>Influenza (alt config)</p></td>
+<td><p>Alternative parameters for difficult or atypical datasets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU Avian</strong></p></td>
+<td><p>Avian Influenza A</p></td>
+<td><p>Optimized for avian influenza strains</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU Avian Residual</strong></p></td>
+<td><p>Avian residual reads</p></td>
+<td><p>Captures low-abundance or leftover avian influenza reads</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU Fast</strong></p></td>
+<td><p>Influenza (fast mode)</p></td>
+<td><p>Faster runtime for high-quality datasets</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU Low QC</strong></p></td>
+<td><p>Influenza (low quality)</p></td>
+<td><p>Designed for lower-quality or noisy sequencing data</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU ONT</strong></p></td>
+<td><p>Oxford Nanopore data</p></td>
+<td><p>Optimized for ONT long-read sequencing</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU PacBio</strong></p></td>
+<td><p>PacBio data</p></td>
+<td><p>Optimized for PacBio long-read sequencing</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU PGM</strong></p></td>
+<td><p>Ion Torrent PGM</p></td>
+<td><p>Optimized for Ion Torrent sequencing data</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU Roche</strong></p></td>
+<td><p>Roche/454 data</p></td>
+<td><p>Legacy support for Roche/454 sequencing</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU Secondary</strong></p></td>
+<td><p>Post-assembly</p></td>
+<td><p>Secondary refinement after initial assembly</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLU Sensitive</strong></p></td>
+<td><p>Low-frequency variants</p></td>
+<td><p>Increased sensitivity for minor variant detection</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLU UTR</strong></p></td>
+<td><p>UTR recovery</p></td>
+<td><p>Improved recovery of 5′ and 3′ untranslated regions</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CoV</strong></p></td>
+<td><p>SARS-CoV-2 &amp; MERS-CoV</p></td>
+<td><p>Coronavirus assembly workflows</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RSV</strong></p></td>
+<td><p>RSV (A &amp; B groups)</p></td>
+<td><p>Respiratory Syncytial Virus assembly</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ebola</strong></p></td>
+<td><p>Filoviruses</p></td>
+<td><p>Zaire, Sudan, Bundibugyo, Reston, Taï Forest, Lloviu, and Marburg viruses</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reference-guided-viral-assembly">
+<h4>Reference Guided Viral Assembly<a class="headerlink" href="#reference-guided-viral-assembly" title="Permalink to this headline">¶</a></h4>
+<p>Reference-Guided Assembly aligns sequencing reads to a known reference genome to reconstruct a consensus sequence. This approach is fast and effective for well-characterized viruses, enabling accurate genome recovery and variant detection when a suitable reference is available.
+Maps reads to a reference genome to reconstruct consensus sequences and call variants, providing efficient and accurate assembly for viruses with close reference sequences.</p>
+<p>The service whern using the FLU module and failing will automatically run the Low QC module in an effort to try to assemble your genome.</p>
+<p>Tip: See Also: <a class="reference external" href="https://bv-brc.org/app/ViralAssembly">Viral Genome Assembly Service</a></p>
+</section>
+<section id="using-the-viral-genome-assembly-service">
+<h4>Using the Viral Genome Assembly Service<a class="headerlink" href="#using-the-viral-genome-assembly-service" title="Permalink to this headline">¶</a></h4>
+<p>2. Using the Viral Genome Assembly Service<br />
+The <strong>Viral Assembly</strong> submenu option under the <strong>Services</strong> main menu (Viral Tools category) opens the Viral Genome Assembly input form, shown below. <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/3e44f1e8-a377-4ca0-a140-54b10bc3ce47/screenshot.jpeg?tl_px=0,0&amp;br_px=1434,1064&amp;force_format=jpeg&amp;q=100&amp;width=1120.0" /></p>
+<p>3. Navigate to <a class="reference external" href="https://www.bv-brc.org/">https://www.bv-brc.org/</a></p>
+<p>4. Click “Viral Assembly”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/c5c31b36-b02b-4a13-80bb-f4e3f191d8ec/File.jpeg?tl_px=0,53&amp;br_px=2122,1438&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=689,329" /></p>
+<p>5. Three options for file input types.</p>
+<p><strong>Paired read library</strong></p>
+<p><strong>Read File 1 &amp; 2:</strong> Many paired read libraries are given as file pairs, with each file containing half of each read pair. Paired read files are expected to be sorted such that each read in a pair occurs in the same Nth position as its mate in their respective files. These files are specified as READ FILE 1 and READ FILE 2. For a given file pair, the selection of which file is READ 1 and which is READ 2 does not matter.</p>
+</section>
+</section>
+<section id="single-read-library">
+<h3>Single read library<a class="headerlink" href="#single-read-library" title="Permalink to this headline">¶</a></h3>
+<p><strong>Read File:</strong> The fastq file containing the reads.</p>
+</section>
+<section id="sra-run-accession">
+<h3>SRA run accession<a class="headerlink" href="#sra-run-accession" title="Permalink to this headline">¶</a></h3>
+<p>Allows direct upload of read files from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/sra">NCBI Sequence Read Archive</a> to the BV-BRC Assembly Service. Entering the SRR accession number and clicking the arrow will add the file to the selected libraries box for use in the assembly.</p>
+</section>
+</section>
+<section id="files-accepted-by-bv-brc-assembly-service">
+<h2>Files accepted by BV-BRC Assembly Service<a class="headerlink" href="#files-accepted-by-bv-brc-assembly-service" title="Permalink to this headline">¶</a></h2>
+<p>The assembly service accepts read files in either fastq, fasta, fastq.gz, or fasta.gz format.</p>
+<p><strong>FASTQ</strong> is a text-based format for storing both a nucleotide sequence and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character. A FASTQ file normally uses four lines per sequence:</p>
+<ul class="simple">
+<li><p>Line 1 begins with a ‘&#64;’ character and is followed by a sequence identifier and an optional description (like a FASTA title line).</p></li>
+<li><p>Line 2 is the raw sequence letters.</p></li>
+<li><p>Line 3 begins with a ‘+’ character and is optionally followed by the same sequence identifier (and any description) again.</p></li>
+<li><p>Line 4 encodes the quality values for the sequence in Line 2 and must contain the same number of symbols as letters in the sequence.</p></li>
+</ul>
+<p><strong>FASTA</strong> is a text-based format for representing either nucleotide sequences or amino acid (protein) sequences using single-letter codes. The format allows for sequence names and comments to precede the sequences. A <strong>FASTA read file</strong> has two parts:</p>
+<ul class="simple">
+<li><p>Line 1 begins with a ‘&gt;’.  Everything from the beginning ‘&gt;’ to the first whitespace is considered the sequence identifier. Everything after that is considered the sequence description (this can be metadata, machine serial number, read orientation, etc.), all in a single line.</p></li>
+<li><p>Line 2 has the sequence, which can span multiple lines depending on the length.</p></li>
+</ul>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/7638a065-552c-4c34-80bb-031b1cabdefd/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=458,178" /></p>
+<p>6. Click the “Sra Run Accession” field.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/645c2b2d-4233-434d-8c86-733bc83e9c9b/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=580,177" /></p>
+<p>7. You can see the parameters for this service here.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><strong>Assembly Strategy:</strong></p>
+<ul class="simple">
+<li><p>IRMA - IRMA is currently the only viral assembly tool. Any other tool can be recommended or requested.</p></li>
+</ul>
+</section>
+<section id="setting-parameters">
+<h2>Setting Parameters<a class="headerlink" href="#setting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Currently the only assembly strategy available is IRMA.</p></li>
+</ol>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/e8e0ab37-63a3-40f4-90cc-4365f428640c/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=413,253" /></p>
+<p>8. Click “FLU”. The Flu module has been tested thoroughly the others are still in testing stages. Feel free to add feedback as necessary.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/a85998f3-934b-4be7-a479-87e23cce810b/File.jpeg?tl_px=0,61&amp;br_px=2122,1446&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=694,329" /></p>
+<p>9. An output folder must be selected for the assembly job.  Typing the name of the folder in the text box underneath the words <strong>Output Folder</strong> will show a drop-down box that shows close hits to the name, and clicking on the arrow at the end of the box will open a drop-down box that shows the most recently created folders.  To find a previously created folder, or to create a new one, click on the <strong>Folder</strong> icon at the end of the text box.  This will open a pop-up window that shows all the previously created folders.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/4e42f95f-71da-430c-82e0-dd705a404e29/File.jpeg?tl_px=0,127&amp;br_px=2122,1512&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=417,329" /></p>
+<p>10. Put your job in whatever folder you feel like having it in.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/137ac290-429b-4bbf-87ba-d2b65d63c3d2/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=422,325" /></p>
+<p>11. Name the job whatever you want it to be called- for the example it is Assembly_workshop_prep.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/44fcff05-5dd2-4213-85a0-c06a7c8b2622/File.jpeg?tl_px=0,210&amp;br_px=2122,1595&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=395,329" /></p>
+<p>12. Click “Tutorial” to view this tutorial if you have any questions.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/d1263bab-4437-4bd3-a38f-62210903339a/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=517,113" /></p>
+<p>13. Type in the SRA accession number of interest. For the example: SRR31821206</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/af1c875a-352b-42c1-9a40-c42c07175687/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=495,191" /></p>
+<p>14. Click “Assemble”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/1d54574d-1630-4dfd-9c34-ba56a683ffd6/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=541,359" /></p>
+<p>15. Check that “The accession is a valid id.”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/1b9b0256-39ee-4b91-a0fd-aae09db3b0ec/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=502,228" /></p>
+<p>16. Click “Submitting Assembly Job”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/2d7abedf-c18e-4fc4-8812-2f9593ba0307/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=603,380" /></p>
+<p>17. A message will appear at the bottom of the page, indicating that the submitted job has entered the BV-BRC queue.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/a9dc3389-3dcb-4fc6-8648-4498cc5747b4/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=592,416" /></p>
+<p>18. Clicking on the <strong>Jobs</strong> box at the bottom right of any BV-BRC page/</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/39fba459-fb71-4a97-a24a-384b28f3a930/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=950,668" /></p>
+<p>19. ## Viewing and Interpreting the Assembly Job Results</p>
+<ol class="simple">
+<li><p>On the jobs page, click on the row that has the assembly of interest. This will populate the vertical green bar on the right with possible downstream steps, which include viewing the results of the job, or reporting an issue that was experienced (like a job failure).  Click on the <strong>View</strong> icon.<br />
+<br />
+Double-click your completed job to view result.</p></li>
+</ol>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/97bb0930-1c86-4d3a-ad13-a69d909b6cd9/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=398,151" /></p>
+<p>20. This will rewrite the page to show the information about the assembly job, and all of the files that are produced when the pipeline runs.</p>
+<p>The information about the job submission can be seen in the table at the top of the results page.  To see all the parameters that were selected when the job was submitted, click on the <strong>Parameters</strong> row. This will show the information on what was selected when the job was originally submitted.<br />
+<br />
+You can click on the output files of the job to see the .fasta</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/7c883a6f-7f15-4a6a-b038-a48c67cb8b94/user_cropped_screenshot.jpeg?tl_px=0,119&amp;br_px=2122,1504&amp;force_format=jpeg&amp;q=100&amp;width=1120.0" /></p>
+<p>21. You can click on the report icon to see the report of this job.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/ef70f219-fbf0-47e2-94ee-63ab24ace02a/user_cropped_screenshot.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=705,27" /></p>
+<p>22. The Genome Assembly report contains valuable information about the assembly, including the number of contigs. Clicking on the row that contains the number of contigs, depth and coverage.  <strong>AssemblyReport.html</strong> will highlight it in blue and populate the action bar with possible downstream steps.  Click on the <strong>View</strong> icon.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/e4d504ed-84c8-4021-8aee-9e546581a162/File.jpeg?tl_px=0,98&amp;br_px=2122,1483&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=221,329" /></p>
+<p>23. You can click on the output files of the job to see the .fasta</p>
+<p>Click “A_MP.fasta” Or any of the fasta files to get the different fasta’s for each segment. You can download with the download icon on the green bar.<br />
+<br />
+The whole point of the assembly service is the assembly of a contig file from the submitted reads.  The contig files can be used in downstream services.  Note that the file, which can be clicked on from the Jobs page, has the type matched as “contigs” in the information panel beyond the green bar.  The contig file can be used as is in BV-BRC or downloaded for use in other resources or pipelines.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/b7a36134-947c-4b59-889e-6088df9b66b2/user_cropped_screenshot.jpeg?tl_px=0,80&amp;br_px=2122,1465&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=121,329" /></p>
+<p>24. Double-click “IRMA” to view the IRMA output files.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/59c46881-e318-4b27-94b4-9cedfc0682fa/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=97,480" /></p>
+<p>25. Double-click “amended_consensus” to see into that folder. Any of this can be used for further analysis.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/c4693be9-3f08-416d-8c78-490677ef20bb/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=115,473" /></p>
+<p>26. Click “IRMA”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/ed854d04-7939-418b-8b11-1a41eb2521e2/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=399,25" /></p>
+<p>27. Click “.irma_test_SRR31821206”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/125a72b9-64e6-4b8b-a6a7-7691310d1a2f/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=312,34" /></p>
+<p>28. Click this arrow to go back to the directory above as needed.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/3ba9d40f-a3dc-488a-9ed6-44b1e542b5a8/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=-21,97" /></p>
+<p>29. Double-click “irma_test_SRR31821206” This is an alternative way to get to the job run. The job is marked by a flag icon.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/f3182be4-befd-4b50-81a7-3425709cc0a6/File.jpeg?tl_px=0,50&amp;br_px=2122,1435&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=167,329" /></p>
+<p>30. Click “All statistics are based on contigs of size &gt;= 300 bp, unless otherwise noted (e.g., “# contigs (&gt;= 0 bp)” and “Total length (&gt;= 0 bp)” include …”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/2704f63f-e17d-4e3c-915c-3b4ad46a4edd/File.jpeg?tl_px=0,136&amp;br_px=2122,1521&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=205,329" /></p>
+<p>31. Click “Quast HTML Report”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/5b8602af-c0f5-44dd-a5db-0004f1ca599f/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=99,284" /></p>
+<p>32. Scrolling down will reveal a <strong>Quast report</strong>, which is also included in the Genome Assembly report. Quast is a quality assessment tool for evaluating and comparing genome assemblies, and shows statistics of the contigs generated in the assembly.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/e39d9243-7095-48d2-a8d7-c91f5502c020/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=303,34" /></p>
+<p>33. Double-click “quast”</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/1fdb2795-5d52-43dc-964f-e08995042b15/File.jpeg?tl_px=0,239&amp;br_px=2122,1624&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=25,360" /></p>
+<p>34. Click “GC_content_plot.pdf” You can download the GC content plot for further analysis.</p>
+<p><img alt="" src="https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2025-02-13/751c38d1-97ee-46dd-af2e-f118d67a157d/File.jpeg?tl_px=0,0&amp;br_px=2122,1384&amp;force_format=jpeg&amp;q=100&amp;width=1120.0&amp;wat=1&amp;wat_opacity=0.7&amp;wat_gravity=northwest&amp;wat_url=https://colony-recorder.s3.us-west-1.amazonaws.com/images/watermarks/FB923C_standard.png&amp;wat_pad=93,124" /></p>
+<p>35. The Viral Assembly Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include</p>
+<ul class="simple">
+<li><p><strong>assembly_report.html</strong> - Web-viewable report of the assembly including information about the submitted reads and assembly process used.</p></li>
+<li><p><strong>quast</strong> - Folder including all of the standard outputs of quast.</p></li>
+<li><p><strong>IRMA</strong> - Folder including the VCF, bam and bam.bai files generated by IRMA. It also includes sub folders for amended)consensus, figures, intermediate, log, matrices, secondary and tables.</p></li>
+<li><p><strong>.fasta</strong> - All of the associated fasta files for the assembly, including by segment and cummulative.</p></li>
+</ul>
+<section id="action-buttons">
+<h3>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h3>
+<p>After selecting one of the output files by clicking it, a set of options becomes available in the vertical green Action Bar on the right side of the table.  These include:</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide:</strong> Link to the corresponding Quick Reference Guide.</p></li>
+<li><p><strong>Download:</strong>  Downloads the selected item.</p></li>
+<li><p><strong>View:</strong> Displays the content of the file, typically as plain text or rendered html, depending on filetype.</p></li>
+<li><p><strong>Delete:</strong> Deletes the file.</p></li>
+<li><p><strong>Rename:</strong> Allows renaming of the file.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>Move:</strong> Allows moving of the file to another folder.</p></li>
+<li><p><strong>Edit Type:</strong> Allows changing of the type of the file in terms of how BV-BRC interprets the content and uses it in other services or parts of the website.  Allowable types include unspecified, contigs, nwk, reads, differential expression input data, and differential expression input metadata.</p></li>
+</ul>
+<p>More details will be available in the upcoming Quick Reference Guide.</p>
+<p>36. References<br />
+Gurevich, A., et al., QUAST: quality assessment tool for genome assemblies. Bioinformatics, 2013. 29(8): p. 1072-1075.<br />
+Shepard, S.S., Meno, S., Bahl, J. et al. Viral deep sequencing needs an adaptive approach: IRMA, the iterative refinement meta-assembler. BMC Genomics 17, 708 (2016). <a class="reference external" href="https://doi.org/10.1186/s12864-016-3030-6">https://doi.org/10.1186/s12864-016-3030-6</a></p>
+<section id="made-with-scribe">
+<h4><a class="reference external" href="https://scribehow.com/shared/Analyzing_Viral_Genome_Assembly_Using_BV-BRC_Tools_Tutorial__A-fXajgCQi-bD-Wzs4rmXw">Made with Scribe</a><a class="headerlink" href="#made-with-scribe" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../compare_region_viewer/compare_region_viewer.html" class="btn btn-neutral float-right" title="Compare Region Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../subspecies_classification/subspecies_classification.html" class="btn btn-neutral float-left" title="Subspecies Classification Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

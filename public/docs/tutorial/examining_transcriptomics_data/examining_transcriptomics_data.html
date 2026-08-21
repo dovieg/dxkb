@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Examining Transcriptomics Data | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Examining Transcriptomics Data | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Examining Transcriptomics Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/examining_transcriptomics_data/examining_transcriptomics_data.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="examining-transcriptomics-data">
+<h1>Examining Transcriptomics Data<a class="headerlink" href="#examining-transcriptomics-data" title="Permalink to this headline">¶</a></h1>
+<section id="i-finding-experimental-data-available-in-patric">
+<h2>I. Finding Experimental Data available in PATRIC<a class="headerlink" href="#i-finding-experimental-data-available-in-patric" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>PATRIC has imported experimental data from several prominent genera, most notably Escherichia and Mycobacterium.  To find this data, click on a genus of interest on the Organisms tab (or use the global search) and select a genus of interest.</p>
+<p><img alt="Step 1" src="../../_images/image110.png" /></p>
+</li>
+<li><p>This will take you to the landing page for that genus.  To see if any transcriptomic data is available, click on the Transcriptomics tab (red arrow).</p>
+<p><img alt="Step 2" src="../../_images/image210.png" /></p>
+</li>
+<li><p>This will open a new page that shows all the experimental data available for that genus.
+<img alt="Step 3" src="../../_images/image310.png" /></p></li>
+</ol>
+</section>
+<section id="ii-finding-specific-experiments-to-examine">
+<h2>II.  Finding Specific Experiments to Examine<a class="headerlink" href="#ii-finding-specific-experiments-to-examine" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>PATRIC provides filter to help find specific experimental data.  To find that, click on the Filters icon, which is located on the far right side of the page (red arrow).
+<img alt="Step 4" src="../../_images/image49.png" /></p></li>
+<li><p>This will open up a filter that is on top of the table.  It allows researchers to filter on the experimental conditions, the type of mutant, the species, the strain, and if the experiment is a time series or not.
+<img alt="Step 5" src="../../_images/image51.png" /></p></li>
+<li><p>Clicking on any of the text in the filter will highlight it (red arrow).
+<img alt="Step 6" src="../../_images/image61.png" /></p></li>
+<li><p>This will re-filter the table to show all the experiments that have that particular tag.
+<img alt="Step 7" src="../../_images/image71.png" /></p></li>
+</ol>
+</section>
+<section id="iii-examining-a-single-experiment-experiment-filter">
+<h2>III. Examining a single experiment-Experiment filter<a class="headerlink" href="#iii-examining-a-single-experiment-experiment-filter" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Clicking on the check box in front of the name of an experiment will highlight it (red arrow) and will also give information about the selected experiment in the area beyond the vertical green bar.
+<img alt="Step 8" src="../../_images/image81.png" /></p></li>
+<li><p>Once an experiment is selected, the green bar becomes populated with downstream processes that you can do with that selection.  In this case it includes downloading the information about the selection, creating a group that includes the selection, see the genes in that particular experiment, and viewing the experiment.  Click on the Genes icon.
+<img alt="Step 9" src="../../_images/image91.png" /></p></li>
+<li><p>This opens a new tab that shows all the genes and conditions from that particular experiment.
+<img alt="Step 10" src="../../_images/image101.png" /></p></li>
+</ol>
+</section>
+<section id="iv-examining-genes-within-an-experiment-gene-filter">
+<h2>IV. Examining genes within an experiment: Gene filter<a class="headerlink" href="#iv-examining-genes-within-an-experiment-gene-filter" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>A filter on the right side of the gene table where the genes in each experimental condition can be filtered on up- or down-regulation.  Clicking on one of the check boxes in front of a single experiment will re-filter the tables to meet that selection.</p>
+<p><img alt="Step 11" src="../../_images/image111.png" /></p>
+</li>
+<li><p>Clicking on a checkbox above this list of experimental conditions will auto-select all the conditions together, re-filtering the table to show all the genes that are similarly expressed across all conditions.
+<img alt="Step 12" src="../../_images/image121.png" /></p></li>
+<li><p>Many of the experiments examined more than one genome.  The filter table also provides the means to select specific genomes used within the experiment.  To do this, researchers need to click on the down arrow under Filter by Genome.  This will show all the genomes used in the experiment.  Clicking on one will re-filter the table to show only the results for that genome.</p>
+<p><img alt="Step 13" src="../../_images/image131.png" /></p>
+</li>
+<li><p>A text box provides the ability to search for the names of specific genes.  Entering text in that box and clicking on the Filter button will re-sort the table to show the genes that contained that word(s) in their functional description.
+<img alt="Step 14" src="../../_images/image141.png" /></p></li>
+<li><p>Researchers can also filter on the level of expression of specific genes by selecting a log ratio or Z score, and then clicking on the Filter button.  This will re-sort the table to show the number of genes that match that level of expression.</p>
+<p><img alt="Step 15" src="../../_images/image151.png" /></p>
+</li>
+</ol>
+</section>
+<section id="v-visualizing-the-genes-and-their-expression-on-a-heatmap">
+<h2>V. Visualizing the genes and their expression on a heatmap<a class="headerlink" href="#v-visualizing-the-genes-and-their-expression-on-a-heatmap" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>PATRIC also provides a way to visualize gene expression with a heatmap. Click on the Heatmap tab above the filter.</p>
+<p><img alt="Step 16" src="../../_images/image161.png" /></p>
+</li>
+<li><p>This will open a page that shows all the conditions and gene expression levels that match the selections made on the filter.</p>
+<p><img alt="Step 17" src="../../_images/image171.png" /></p>
+</li>
+<li><p>Several buttons on the upper right above the heatmap allow researchers to flip the axis, putting experimental conditions on the x-axis and the genes on the y-axis.  The colors used in the heatmap can be changed. The genes can be clustered, which at the default Pearson correlation with pairwise average-linkage as the clustering type.  There is also an advanced clustering method, and a way to see the significant genes, or all the genes in the genome.</p>
+<p><img alt="Step 18" src="../../_images/image181.png" /></p>
+</li>
+<li><p>Clicking on advanced clustering open a pop-up window that allows researchers to cluster by genes, comparisons, or both.  In addition, there are several clustering algorithms and clustering types to choose from.</p>
+<p><img alt="Step 19" src="../../_images/image191.png" /></p>
+</li>
+<li><p>Clicking on any of the clustering algorithms will re-sort the heat map to group genes that are expressed similarly together across the conditions.</p>
+<p><img alt="Step 20" src="../../_images/image201.png" /></p>
+</li>
+</ol>
+</section>
+<section id="vi-getting-the-data-about-the-genes-from-the-heatmap-visualization">
+<h2>VI. Getting the data about the genes from the heatmap visualization<a class="headerlink" href="#vi-getting-the-data-about-the-genes-from-the-heatmap-visualization" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>To find further information on a group of genes in the heatmap, researchers can use their mouse to draw a box around genes, or patterns, of interest.</p>
+<p><img alt="Step 21" src="../../_images/image211.png" /></p>
+</li>
+<li><p>This action will generate a pop-up window that provides several options for viewing the data, including download the genes, showing them, adding them to a group, or downloading the heatmap data.</p>
+<p><img alt="Step 22" src="../../_images/image221.png" /></p>
+</li>
+<li><p>Clicking on Show Genes will open a new tab that shows the list of genes from the selection. Clicking on the check box next to Genome Name at the top of the table head will auto-select all the genes that where selected in the heatmap.
+<img alt="Step 23" src="../../_images/image231.png" /></p></li>
+<li><p>Once any, or all the genes are selected, a list of downstream analysis tools will appear in the vertical green bar.</p>
+<p><img alt="Step 24" src="../../_images/image241.png" /></p>
+</li>
+<li><p>These downstream tools or processes include the ability to download all the features in the table, go to the feature list view (Features icon), go to a view showing all the genomes that are the genes from the original selection belong to (Genomes icon), get the amino acid or nucleotide fasta files for all genes selected (FASTA icon), generate a multiple sequence alignment (MSA icon), map the PATRIC genes to other identifiers like UniProt (ID Map icon), find out any pathways that the selected genes belong to (Pathway icon), or to add the genes to an existing group, or create a new group with the selected genes (Group icon).</p>
+<p><img alt="Step 25" src="../../_images/image251.png" /></p>
+</li>
+<li><p>If the Pathway Summary icon is selected, a new tab will open with a table showing this information.  This may take some time, depending on the number of genes selected.  A page with a spinning wheel will be displayed while PATRIC recovers the information.</p>
+<p><img alt="Step 26" src="../../_images/image261.png" /></p>
+</li>
+<li><p>Once the table loads, a list of the pathways, the number of genes from the original selection, the number of genes in the genome that are part of the pathway, and the percent coverage (the selected genes as opposed to the total genes in the genome that are part of the pathway) are displayed.</p>
+<p><img alt="Step 27" src="../../_images/image271.png" /></p>
+</li>
+<li><p>Clicking on an individual pathway open a list of downstream processes in the vertical green bar.
+<img alt="Step 28" src="../../_images/image281.png" /></p></li>
+<li><p>Clicking on the pathway map icon will open a new page that shows a list of genes based on their EC number on the left, and a KEGG pathway map with the genes from that genome displayed on the right.  Clicking on the legend at the top right of the page shows the genes with those specific EC numbers that are annotated in the genome (green box).  The genes that were part of the original selection from the heatmap will be colored blue.
+<img alt="Step 29" src="../../_images/image291.png" /></p></li>
+</ol>
+</section>
+<section id="vii-examining-multiple-experiments">
+<h2>VII. Examining multiple experiments<a class="headerlink" href="#vii-examining-multiple-experiments" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Researchers can compare more than one experiment for the same organism by clicking on the experiment titles in front of the name.
+<img alt="Step 30" src="../../_images/image301.png" /></p></li>
+<li><p>This may take some time, so the spinning wheel will show that PATRIC is working to display the data selected.
+<img alt="Step 31" src="../../_images/image311.png" /></p></li>
+<li><p>This opens a new tab that shows all the genes and conditions from that selected experiments.
+<img alt="Step 32" src="../../_images/image321.png" /></p></li>
+<li><p>The same ability of filtering by up- or down-regulation, genome name, or log-ratio/Z-score can be deployed by making a selection and clicking on the Filter button.</p>
+<p><img alt="Step 33" src="../../_images/image331.png" /></p>
+</li>
+<li><p>The heatmap view shows the results of the filtering on the various experiments selected.  Clicking on the Cluster icon will cluster the results across all experiments and conditions.
+<img alt="Step 34" src="../../_images/image341.png" /></p></li>
+<li><p>The information on specific genes can be viewed by using the mouse to draw a box over the selection, as described above.</p>
+<p><img alt="Step 35" src="../../_images/image351.png" /></p>
+</li>
+</ol>
+</section>
+<section id="viii-expression-at-the-gene-level-transcriptomics">
+<h2>VIII.  Expression at the Gene level - Transcriptomics<a class="headerlink" href="#viii-expression-at-the-gene-level-transcriptomics" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Genes can be found by global search, or by selecting a specific gene from a table (red arrow). This populates the vertical green band with possible downstream functions. Clicking on the Feature icon (blue arrow) will open a new tab that is the landing page for the Feature page.<br />
+<img alt="Step 36" src="../../_images/image361.png" /></p></li>
+<li><p>Once on the gene landing page, clicking on the Transcriptomics tab will show if there is any available expression data for the gene in PATRIC.
+<img alt="Step 37" src="../../_images/image371.png" /></p></li>
+<li><p>If data is available, the Transcriptomics tab will show first two charts that show the levels of expression based on Log ratio or Z score based on all the available data. A pie chart showing the strains, gene modification, or experimental conditions is also presented.
+<img alt="Step 38" src="../../_images/image381.png" /></p></li>
+<li><p>Inserting text in the filter (red arrow) and clicking on the filter button will filter the conditions, showing the expression levels based on the experimental conditions that meet the search criteria. Filtering on the Log ration (blue arrow) or Z score will also filter the results.
+<img alt="Step 39" src="../../_images/image391.png" /></p></li>
+<li><p>Clicking on the Table (red arrow) will rewrite the table to show a list of the conditions that the gene is expressed in.
+<img alt="Step 40" src="../../_images/image401.png" /></p></li>
+<li><p>Clicking on a specific condition (red arrow) wills how the information about that condition in the box beyond the vertical green band. It will also populate the vertical green band with downstream processes that apply.
+<img alt="Step 41" src="../../_images/image411.png" /></p></li>
+</ol>
+</section>
+<section id="ix-expression-at-the-gene-level-correlated-genes">
+<h2>IX.  Expression at the Gene level – Correlated Genes<a class="headerlink" href="#ix-expression-at-the-gene-level-correlated-genes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Clicking on the Correlated Genes tab (red arrow) will show the genes that are either up or down-regulated with the gene on the Feature page. The numbers are based on the public transcriptomics data that are available in PATRIC.
+<img alt="Step 42" src="../../_images/image421.png" /></p></li>
+<li><p>Researchers can filter the correlated genes based on positive or negative correlation
+<img alt="Step 43" src="../../_images/image431.png" /></p></li>
+<li><p>Results can also be filtered on the correlation cutoff level.
+<img alt="Step 44" src="../../_images/image441.png" /></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Building the Mac CLI Release | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Building the Mac CLI Release | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Building the Mac CLI Release</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/building_cli.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="building-the-mac-cli-release">
+<h1>Building the Mac CLI Release<a class="headerlink" href="#building-the-mac-cli-release" title="Permalink to this headline">¶</a></h1>
+<p>Clone the PATRIC distribution and tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PATRIC3</span><span class="o">/</span><span class="n">PATRIC</span><span class="o">-</span><span class="n">distribution</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">olsonanl</span><span class="o">/</span><span class="n">distro_utils</span>
+</pre></div>
+</div>
+<p>Bootstrap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">distro_utils</span>
+<span class="o">./</span><span class="n">bootstrap</span> <span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">PATRIC</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">runtime</span>
+<span class="o">.</span> <span class="n">user</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Retrieve your API token from github and set in environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">GITHUB_TOKEN</span><span class="o">=...</span>
+</pre></div>
+</div>
+<p>Set up distro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">PATRIC</span><span class="o">-</span><span class="n">distribution</span>
+<span class="n">create</span><span class="o">-</span><span class="n">manifest</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">recurse</span>
+</pre></div>
+</div>
+<p>Check out and build. This step must be done from a MacOS console session. A remote
+desktop session is suitable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">checkout</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">manifest</span> <span class="o">../</span><span class="n">build</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">export</span> <span class="n">KB_IGNORE_MISSING_DEPENDENCIES</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">distro</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">mac</span><span class="o">-</span><span class="n">app</span> <span class="o">--</span><span class="n">app</span><span class="o">-</span><span class="n">name</span> <span class="n">PATRIC</span> <span class="o">--</span><span class="n">icon</span> <span class="o">~/</span><span class="n">icon</span><span class="o">/</span><span class="n">patric</span><span class="o">.</span><span class="n">icns</span> <span class="o">--</span><span class="n">banner</span> <span class="s2">&quot;Welcome to the PATRIC Command Line Interface.&quot;</span> <span class="o">../</span><span class="n">build</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="building-the-ubuntu-cli-release">
+<h1>Building the Ubuntu CLI Release<a class="headerlink" href="#building-the-ubuntu-cli-release" title="Permalink to this headline">¶</a></h1>
+<p>Clone the PATRIC distribution and tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PATRIC3</span><span class="o">/</span><span class="n">PATRIC</span><span class="o">-</span><span class="n">distribution</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">olsonanl</span><span class="o">/</span><span class="n">distro_utils</span>
+</pre></div>
+</div>
+<p>Bootstrap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">distro_utils</span>
+<span class="o">./</span><span class="n">bootstrap</span> <span class="o">/</span><span class="n">usr</span>
+<span class="o">.</span> <span class="n">user</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Retrieve your API token from github and set in environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">GITHUB_TOKEN</span><span class="o">=...</span>
+</pre></div>
+</div>
+<p>Set up distro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">PATRIC</span><span class="o">-</span><span class="n">distribution</span>
+<span class="n">create</span><span class="o">-</span><span class="n">manifest</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">recurse</span>
+</pre></div>
+</div>
+<p>Check out and build. This step must be done from a MacOS console session. A remote
+desktop session is suitable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">checkout</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">manifest</span> <span class="o">../</span><span class="n">build</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">export</span> <span class="n">KB_IGNORE_MISSING_DEPENDENCIES</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">distro</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">app</span> <span class="o">--</span><span class="n">ignore</span> <span class="o">--</span><span class="n">app</span><span class="o">-</span><span class="n">name</span> <span class="n">patric</span><span class="o">-</span><span class="n">cli</span> <span class="o">--</span><span class="n">banner</span> <span class="s2">&quot;Welcome to the PATRIC Command Line Interface.&quot;</span> <span class="o">--</span><span class="n">description</span> <span class="s2">&quot;The PATRIC Command Line Interface&quot;</span> <span class="o">../</span><span class="n">build</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-unbuntu-for-build">
+<h1>Configuring Unbuntu for Build<a class="headerlink" href="#configuring-unbuntu-for-build" title="Permalink to this headline">¶</a></h1>
+<p>If not already there the universe repository is needed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">universe</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>Install the following packages:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>openssh-server</p></li>
+<li><p>git</p></li>
+<li><p>libconfig-simple-perl</p></li>
+<li><p>libtemplate-perl</p></li>
+<li><p>libwww-perl</p></li>
+<li><p>libjson-xs-perl</p></li>
+<li><p>libgetopt-long-descriptive-perl</p></li>
+<li><p>libfile-slurp-perl</p></li>
+<li><p>cpanminus</p></li>
+<li><p>libgraph-perl</p></li>
+<li><p>libparse-yapp-perl</p></li>
+<li><p>libdevel-stacktrace-perl</p></li>
+<li><p>libmoose-perl</p></li>
+<li><p>liblingua-en-inflect-perl</p></li>
+</ul>
+</div></blockquote>
+<p>This module doesn’t have a package, so install with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cpanm</span> <span class="n">Sort</span><span class="p">::</span><span class="n">Topological</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

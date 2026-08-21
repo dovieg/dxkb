@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Genome Alignment Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Variation - SNP Analysis Service" href="../variation_analysis/variation_analysis.html" />
+    <link rel="prev" title="Similar Genome Finder Service" href="../similar_genome_finder/similar_genome_finder.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Genome Alignment Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../genome_assembly/assembly.html">Genome Assembly Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_annotation/genome_annotation.html">Genome Annotation Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primer_design/primer_design.html">Primer Design Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similar_genome_finder/similar_genome_finder.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Genome Alignment Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-the-genome-alignment-job">Submitting the Genome Alignment job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-files-associated-with-the-genome-alignment-job">Viewing the files associated with the Genome Alignment job.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-and-adjusting-the-genome-alignment-viewer">Accessing and adjusting the Genome Alignment Viewer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../variation_analysis/variation_analysis.html">Variation - SNP Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Genome Alignment Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genome_alignment/genome_alignment.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="genome-alignment-service">
+<h1>Genome Alignment Service<a class="headerlink" href="#genome-alignment-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: February 12, 2024</em></p>
+<p>DNA sequence alignment is a prerequisite to many comparative genomic analyses.
+For longer genomic DNA, it helps to identify medium and large-scale rearrangements, as well as insertions and deletions. The BV-BRC Genome Alignment service uses progressiveMauve[1] which constructs positional homology multiple genome alignments to align regions conserved in subsets of the genomes.  The service uses genomes that are annotated within the BV-BRC resource (they can be private or public genomes), and up to 20 genomes can be compared.</p>
+<section id="submitting-the-genome-alignment-job">
+<h2>Submitting the Genome Alignment job<a class="headerlink" href="#submitting-the-genome-alignment-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the <strong>Tools &amp; Services</strong> tab at the top of the page, and then click on Genome Alignment.
+<img alt="Figure 1" src="../../_images/Picture118.png" /></p></li>
+<li><p>This will open the landing page for the <strong>Genome Alignment</strong> service.
+<img alt="Figure 2" src="../../_images/Picture219.png" /></p></li>
+<li><p>Genomes must be selected, either by using the name or the genome ID.  The genome <strong>MUST</strong> be in the BV-BRC resource.  Private or public genomes can be selected. The first genome selected will be the reference genome, which other genomes will be compared to.  Entering the genome ID in the text box underneath Select Genome will open a drop-down box that shows the corresponding genome.  Clicking on the name will autofill the name of the genome in the text box.
+<img alt="Figure 3" src="../../_images/Picture317.png" /></p></li>
+<li><p>Beginning to type the name in the text box underneath <strong>Select Genomes</strong> will show all possible genomes that match that text, starting with the private genomes (indicated by the lock symbol in front of the name).
+<img alt="Figure 4" src="../../_images/Picture417.png" /></p></li>
+<li><p>Clicking on the <strong>Filter</strong> icon at the beginning of the text box open a dynamic filter in the drop-down box.  Clicking on any of the check boxes will limit the search to whatever text is entered in the drop-down box.  Clicking on the genome will autofill the text box with the name of the genome.
+<img alt="Figure 5" src="../../_images/Picture515.png" /></p></li>
+<li><p>Once the genome is selected, it must be entered into the Selected Genomes box.  Clicking on the <strong>+Add</strong> button will move the name into the Selected Genomes box.
+<img alt="Figure 6" src="../../_images/Picture615.png" /></p></li>
+<li><p>Entering the genome ID or the name can be used to select the comparison genomes.  Click on the <strong>+Add</strong> button to add the genome to the Selected Genomes box.  Up to 20 genomes can be compared in the Genome Alignment service.
+<img alt="Figure 7" src="../../_images/Picture715.png" /></p></li>
+<li><p>Genome groups can also be selected.  If a reference genome was not previously selected, the first genome added to the genome group will be the reference genome.  Clicking on the down arrow at the end of the text box underneath <strong>And/Or Select Genome Group</strong> will open a drop-down box that shows the most recently created genome groups.  Clicking on the row that has the desired group will autofill the text box with that group.
+<img alt="Figure 9" src="../../_images/Picture914.png" /></p></li>
+<li><p>Clicking on the <strong>+Add</strong> button will move the genomes from that group into the Selected Genomes box.
+<img alt="Figure 10" src="../../_images/Picture109.png" /></p></li>
+<li><p>Genomes can be removed by clicking on the <strong>X</strong> at the end of any genome listed in the Selected Genomes box.
+<img alt="Figure 11" src="../../_images/Picture119.png" /></p></li>
+<li><p>Any job must be saved to your workspace.  In the <strong>Parameters</strong> box, you can start entering text in the box underneath Output Folder to find a workspace folder that has been previously created.  A drop-down box will return below the text box.  Clicking on the word will autofill the text box with that folder name.
+<img alt="Figure 12" src="../../_images/Picture125.png" /></p></li>
+<li><p>A name must be entered in the text box underneath <strong>Output Name</strong>.  At this point, the job can be submitted.
+<img alt="Figure 13" src="../../_images/Picture134.png" /></p></li>
+</ol>
+<p>The BV-BRC genome alignment service also allows users to adjust the Seed Weight and Weight.  To do this, click on the down arrow next to <strong>Advanced (Optional)</strong>. This will expand the <strong>Parameters</strong> box to show the <strong>Seed Weight</strong> slider, and the <strong>Weight</strong> text box.
+<img alt="Figure 14" src="../../_images/Picture145.png" /></p>
+<ol class="simple">
+<li><p>The <strong>Seed Weight</strong> parameter determines the minimum length of an inexact, ungapped match to be considered as an alignment anchor. By default, Mauve chooses this value to be appropriate for the length of sequences being aligned. The default seed size for 1MB genomes is typically around 11, is around 15 for 5MB genomes, and continues to grow with the size of the genomes being aligned.  The Weight determines the minimum pairwise score for a region to be considered as a locally collinear block (LCB). By default, an LCB weight of 3 times the seed size will be used. The default value is often too low, however, and this value should be set manually.
+<img alt="Figure 15" src="../../_images/Picture155.png" /></p></li>
+<li><p>Once all the genomes and parameters have been defined, the <strong>Submit</strong> button will turn blue.  Clicking on that submits the job.  Do not leave the page until you see a message that tells you that the job has been successfully submitted.
+<img alt="Figure 16" src="../../_images/Picture165.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-the-files-associated-with-the-genome-alignment-job">
+<h2>Viewing the files associated with the Genome Alignment job.<a class="headerlink" href="#viewing-the-files-associated-with-the-genome-alignment-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The JSON (JavaScript Object Notation) file (<strong>alignmnent.json</strong>) is a standardized format for representing structured data. Although JSON grew out of the JavaScript programming language, it’s a ubiquitous method of data exchange between systems. Most modern-day APIs accept JSON requests and issue JSON responses. Select the row that has that file.  This will populate the green action bar with possible downstream functions.  Click on the View icon to see the json file created by the Genome Alignment service.
+<img alt="Figure 17" src="../../_images/Picture175.png" /></p></li>
+<li><p>The alignment file (<strong>alignment.xmfa</strong>) contains the complete genome alignment generated by Mauve in the eXtended Multi-FastA (XMFA) file format. This standard file format is also used by other genome alignment systems that align sequences with rearrangements. Select the row that has that file.  This will populate the green action bar with possible downstream functions.  Click on the Download icon.
+<img alt="Figure 18" src="../../_images/Picture185.png" /></p></li>
+<li><p>The <strong>alignment.xmfa.backbone</strong> contains auxiliary information such as the genome phylogenetic guide tree that was used for alignment, an identity matrix for the genomes, the location of backbone (regions conserved among all genomes), and the locations of islands (regions where one or a subset of the genomes has a unique sequence element). Once the row is selected, click on the <strong>View</strong> icon in the green action bar.  This will open the <strong>alignment.xmfa.backbone</strong> file.
+<img alt="Figure 19" src="../../_images/Picture195.png" /></p></li>
+<li><p>The <strong>alignment.xmfa.bbcols</strong> file records the alignment columns that are predicted to be. part of larger conserved segments among each group of genomes.  The first column is the block ID, counting from 0 in the order that blocks appear in the XMFA file. The 2nd column is the alignment column where a conserved segment begins within the block. The 3rd column is the length of the conserved region (in alignment columns). The 4th and successive columns record the genome IDs participating in the conserved block. Once the row is selected, click on the <strong>View</strong> icon in the green action bar.  This will open the <strong>alignment.xmfa.bbcols</strong> file.
+<img alt="Figure 20" src="../../_images/Picture205.png" /></p></li>
+</ol>
+</section>
+<section id="accessing-and-adjusting-the-genome-alignment-viewer">
+<h2>Accessing and adjusting the Genome Alignment Viewer<a class="headerlink" href="#accessing-and-adjusting-the-genome-alignment-viewer" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Click on the <strong>View</strong> icon in the upper right corner of the landing page for your job. This will open the Genome Alignment viewer.
+<img alt="Figure 21" src="../../_images/Picture2110.png" /></p></li>
+<li><p>The default view shows the genomes as rows of linear blocks. The name and ID of each genome is above each block row.  Vertical lines indicate that the segment blocks between the genomes are shared, and the lines are similarly colored to the block.  A block above or below the other blocks in the row indicates a genomic block that is inverted.  Vertical red lines indicate a contig boundary.
+<img alt="Figure 22" src="../../_images/Picture225.png" /></p></li>
+<li><p>The order of the genomes can be changed in the visualization by clicking on the up or down arrow directly in front of the genome row.  This will move the genome up (or down) in the visualization.
+<img alt="Figure 23" src="../../_images/Picture235.png" /></p></li>
+<li><p>Above the visualization are a number of options to alter the view.  <strong>Reset</strong> will return the visualization to the original view.  The view can be saved as a scaled vector graph (Save SVG).  There are also different Options that can be selected, as well as the ability to move along the genome and zoom in to the see the genes called in the genome.
+<img alt="Figure 24" src="../../_images/Picture244.png" /></p></li>
+<li><p>Clicking on <strong>Options</strong> opens a drop-down box that can change the view.
+<img alt="Figure 25" src="../../_images/Picture254.png" /></p></li>
+<li><p>Unclicking the box in front of <strong>Show Genome ID</strong> removes the ID from the end of the names of the genomes.
+<img alt="Figure 26" src="../../_images/Picture264.png" /></p></li>
+<li><p>Unclicking the box in front of <strong>LCG Connecting Lines</strong> will remove the lines that connect the blocks.
+<img alt="Figure 27" src="../../_images/Picture274.png" /></p></li>
+<li><p>If the visualization is zoomed in to where the features are visible, unclicking the box in front of <strong>Show Features (zoomed)</strong> to remove them from the visualization.
+<img alt="Figure 28" src="../../_images/Picture284.png" /></p></li>
+<li><p>Unclicking the box in front of <strong>Show Contigs</strong> will remove the lines that show where the contigs begin and end.
+<img alt="Figure 29" src="../../_images/Picture294.png" /></p></li>
+<li><p>You can use the “&gt;” to shift the view to the right, and the “&lt;” to shift it to the left.  Using the “+” icon to zoom in, and the “–” icon to zoom out.  Zooming in far enough will show the genes that are annotated in that area as grey blocks.  Mousing over each block will open a pop-up window that shows the name of that gene and information about it.
+<img alt="Figure 30" src="../../_images/Picture303.png" /></p></li>
+</ol>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>The code used in the BV-BRC service can be found here:
+https://github.com/PATRIC3/p3_mauve</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Darling, A.E., B. Mau, and N.T. Perna, progressiveMauve: multiple genome alignment with gene gain, loss and rearrangement. PloS one, 2010. 5(6): p. e11147.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../variation_analysis/variation_analysis.html" class="btn btn-neutral float-right" title="Variation - SNP Analysis Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../similar_genome_finder/similar_genome_finder.html" class="btn btn-neutral float-left" title="Similar Genome Finder Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

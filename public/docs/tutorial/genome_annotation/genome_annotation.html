@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Genome Annotation Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Comprehensive Genome Analysis (CGA) Service" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html" />
+    <link rel="prev" title="Genome Assembly Service" href="../genome_assembly/assembly.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Genome Annotation Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#genomics">Genomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../genome_assembly/assembly.html">Genome Assembly Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Genome Annotation Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rasttk-annotation-of-bacteria-and-archaea">RASTtk Annotation of Bacteria and Archaea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vigor4-annotation-of-viruses">VIGOR4 Annotation of Viruses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mat-peptide-annotation-of-viruses">Mat_peptide Annotation of Viruses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#phanotate-annotation-of-bacteriophages">PHANOTATE Annotation of Bacteriophages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-annotation-service-app">Locating the Annotation Service App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-a-contig-file-for-annotation">Selecting a contig file for annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annotation-parameters">Annotation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-the-completed-annotation-job">Finding the completed Annotation job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annotation-job-results">Annotation job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#genome-report">Genome Report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-annotated-genome">Viewing the Annotated Genome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html">Comprehensive Genome Analysis (CGA) Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blast/blast.html">BLAST Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primer_design/primer_design.html">Primer Design Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similar_genome_finder/similar_genome_finder.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../genome_alignment/genome_alignment.html">Genome Alignment Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variation_analysis/variation_analysis.html">Variation - SNP Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tn-seq/tn-seq.html">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Genome Annotation Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/genome_annotation/genome_annotation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="genome-annotation-service">
+<h1>Genome Annotation Service<a class="headerlink" href="#genome-annotation-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised 09 December 2024</em></p>
+<p>Genome annotation is the process of identifying functional elements along the sequence of a genome. The Genome Annotation Service in BV-BRC uses the RAST tool kit (RASTtk)[1] to annotate genomic features in bacteria and archael genomes, the Viral Genome ORF Reader (VIGOR4)[2,3] or Mat_peptide[4] to annotate viral genomes, and PHANOTATE[5,6] to annotate bacteriophage genomes. All public genomes in BV-BRC have been consistently annotated with these services. Researchers can also submit their own private genome to the annotation service, where it will be deposited into their private workspace for their perusal and comparison with other BV-BRC genomes using BV-BRC analysis tools and services, e.g., Phylogenetic Tree, Genome Alignment, Comparative Systems, Similar Genome Finder and others.</p>
+<section id="rasttk-annotation-of-bacteria-and-archaea">
+<h2>RASTtk Annotation of Bacteria and Archaea<a class="headerlink" href="#rasttk-annotation-of-bacteria-and-archaea" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure 1" src="../../_images/Picture120.png" /></p>
+<p>The bacterial and archaeal annotation service available in BV-BRC uses a modular, updated version of RAST[7]  called the RAST toolkit (RASTtk)[1]. It includes algorithms that were developed by the RAST team and some that were developed by others and incorporated into the overall pipeline (seen in red in the figure above). tRNAscan-SE[8] is used to call the tRNA genes. BLASTN[9] is used to identify repeat regions within the genome, and tools by Croucher[10] are used to identify <em>Streptococcus</em> repeat regions. After repeat regions are identified, Prodigal[11], followed by Glimmer[12], are used to call coding sequences (CDS). Antimicrobial resistance is projected for a select group of genera based on a Adaboost machine learning[13], followed by an initial protein annotation event that involves taking every protein called in a genome and using BLAT[14] and BLASTP[15] to identify CDSs that have homology to proteins in specialty databases. Possible virulence factors are identified by blasting against a database containing proteins collected from the Virulence Factor Database[15], Violins[17], and a special curation effort by the BV-BRC team[18]. Genes with homology to those identified as being involved in antimicrobial resistance are
+BLATed against proteins from the Comprehensive Antibiotic Resistance Database (CARD)[19], the National Database of Antibiotic Resistant Organisms (NDARO https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/) and a special curation of relevant proteins by BV-BRC curators[20]. Genes with homology to transporters are identifed by searching against proteins from the Transporter Classification Database (TCDB)[21], and those similar to genes that have been identified as potential drug targets by comparison to proteins from DrugBank[22] and the Therapeutic Target Database (TTD)[23]. Protein families[24] are assigned, and then hypothetical proteins are identified. All proteins are then mapped to subsystems[25,26] when possible.  PubMLST[27] is used to assign sequence types, and then PhiSpy[28] is used to find prophages in bacterial genomes.</p>
+<p>The source code for RASTtk is available on Github (https://github.com/SEEDtk/RASTtk).</p>
+</section>
+<section id="vigor4-annotation-of-viruses">
+<h2>VIGOR4 Annotation of Viruses<a class="headerlink" href="#vigor4-annotation-of-viruses" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure Vigor4_overview_v2" src="../../_images/Vigor4_overview_v2.png" /></p>
+<p>The Viral Genome ORF Reader, known as VIGOR4[2,3], is a Java application to predict protein sequences encoded in viral genomes.  The protein coding sequences are determined by sequence similarity searching against curated viral protein databases. VIGOR4 uses the VIGOR_DB project which currently has databases for the following viruses:</p>
+<ul class="simple">
+<li><p>Influenza (A &amp; B for human, avian, and swine, and C for human)</p></li>
+<li><p>SARS-CoV-2, Sarbecovirus, Nobecovirus, Hibecovirus, Embecovirus, Merbecovirus, Wuhivirus</p></li>
+<li><p>West Nile Virus Lineage I/II, Zika Virus, Dengue Virus</p></li>
+<li><p>Chikungunya Virus</p></li>
+<li><p>Alphaviruses: Eastern Equine Encephalitis Virus, Venezuelan Equine Encephalitis Virus</p></li>
+<li><p>Respiratory Syncytial Virus</p></li>
+<li><p>Rotavirus A/B/C/F/G</p></li>
+<li><p>Enterovirus, Entovirus, Goukovirus, Horwuvirus, Hudivirus, Hudovirus, Ixovirus, Laulavirus, Lentinuvirus, Mobuvirus, Phasivirus, Pidchovirus, Rubodvirus, Tenuivirus, Uukuvirus, Wenrivirus</p></li>
+<li><p>Lassa Mammarenavirus, Antennavirus, Bandavirus, Reptarenavirus</p></li>
+<li><p>Hantaviridae, Nairoviridae, Peribunyaviridae, Phlebovirus</p></li>
+<li><p>Sapovirus</p></li>
+<li><p>Monkeypox Virus</p></li>
+<li><p>Beidivirus</p></li>
+<li><p>Feravirus, Hartmanivirus, Inshuvirus, Jonvirus, Sawastrivirus</p></li>
+<li><p>Coguvirus, Cicadellivirus, Orthophasmavirus</p></li>
+</ul>
+<p>The source code for VIGOR4 is available on GitHub (https://github.com/JCVenterInstitute/VIGOR4).</p>
+</section>
+<section id="mat-peptide-annotation-of-viruses">
+<h2>Mat_peptide Annotation of Viruses<a class="headerlink" href="#mat-peptide-annotation-of-viruses" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure Mat_peptide_overview" src="../../_images/Mat_peptide_overview.png" /></p>
+<p>The Mat_peptide[4] pipeline is used to annotate 165 different species that are part of sixteen viral families:</p>
+<ul class="simple">
+<li><p>Arenaviridae</p></li>
+<li><p>Caliciviridae</p></li>
+<li><p>Flaviviridae</p></li>
+<li><p>Hantaviridae</p></li>
+<li><p>Nairoviridae</p></li>
+<li><p>Orthomyxoviridae</p></li>
+<li><p>Peribunyaviridae</p></li>
+<li><p>Phasmaviridae</p></li>
+<li><p>Phenuiviridae</p></li>
+<li><p>Picornaviridae</p></li>
+<li><p>Pneumoviridae</p></li>
+<li><p>Poxviridae</p></li>
+<li><p>Sedoreoviridae</p></li>
+<li><p>Togaviridae</p></li>
+</ul>
+<p>Mat_peptides uses pairwise alignment with reference sequences. Mat_peptide calculates and transfers curated mature protein annotation positions from a reference to a target sequence.  This pipeline is deployed when an appropriate viral taxon that cannot be annotated by Vigor4 is submitted to the BV-BRC Annotation service.
+The source code for Mat_peptide is available on GitHub (software at https://github.com/VirusBRC/vipr_mat_peptide).</p>
+</section>
+<section id="phanotate-annotation-of-bacteriophages">
+<h2>PHANOTATE Annotation of Bacteriophages<a class="headerlink" href="#phanotate-annotation-of-bacteriophages" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure 1b" src="../../_images/Picture1b.png" /></p>
+<p>PHANOTATE is a bacteriophage genome annotation pipeline [5,6] that identifies open-reading frames and then performs sequence similarity searches to annotate proteins.
+The source code for PHANOTATE is available on GitHub (https://github.com/deprekate/PHANOTATE).</p>
+</section>
+<section id="locating-the-annotation-service-app">
+<h2>Locating the Annotation Service App<a class="headerlink" href="#locating-the-annotation-service-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, find the <strong>Services</strong> tab.
+<img alt="Figure Services_tab" src="../../_images/Services_tab.png" /></p></li>
+<li><p>In the drop-down box, underneath <strong>Genomics</strong>, click on <strong>Genome Annotation</strong>.
+<img alt="Figure Service_tab_Annotation" src="../../_images/Service_tab_Annotation.png" /></p></li>
+<li><p>This will open up the Annotation Service landing page.
+<img alt="Figure Annotation_landing" src="../../_images/Annotation_landing.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-a-contig-file-for-annotation">
+<h2>Selecting a contig file for annotation<a class="headerlink" href="#selecting-a-contig-file-for-annotation" title="Permalink to this headline">¶</a></h2>
+<p>The starting point for any annotation is an assembly, which produces contigs.  A contig (from the word “contiguous”) is a series of overlapping DNA sequences used to make a physical map that reconstructs the original DNA sequence of a chromosome or a region of a chromosome. It is a stretch of DNA sequence encoded as A, G, C, T or N, typically ending in fasta of fa.  The first line of a contig file beings with “ &gt;”, followed by information on the contig.  The second and subsequent line(s) contain the sequences.
+<img alt="Figure 10" src="../../_images/Picture1010.png" /></p>
+<p>Contigs  must be submitted to the annotation service. <strong>Submitting a read file will not work.</strong>  Researchers can upload a contig file that was generated in BV-BRC, or one that they have assembled independently.</p>
+<ol class="simple">
+<li><p>If an assembly was generated in BV-BRC the contigs can be selected by clicking on the down arrow at the end of the text box.  This will show the contig files that are available.
+<img alt="Figure 11" src="../../_images/Picture1110.png" /></p></li>
+<li><p>If the name is not easily seen, begin typing the name in the text box.  The search function will start looking for names that match the text that is entered.</p></li>
+</ol>
+<p><img alt="Figure 12" src="../../_images/Picture126.png" /></p>
+<ol class="simple">
+<li><p>Clicking on the appropriate name will fill the text box.<br />
+<img alt="Figure 13" src="../../_images/Picture13a.png" /></p></li>
+<li><p>If an assembly has been generated outside of BV-BRC, click on the <strong>Folder</strong> at the end of the text box. If you want to upload data directly to your home directory, click on the icon with the arrow pointing up. This opens up a pop-up window where the files for upload can be selected. Click on the icon with the <strong>arrow pointing up</strong>.
+<img alt="Figure 14" src="../../_images/Picture146.png" /></p></li>
+<li><p>This opens a new window where the file you want to upload can be selected. Click on the <strong>Select File</strong> in the blue bar.
+<img alt="Figure 15" src="../../_images/Picture156.png" /></p></li>
+<li><p>This will open a window that allows you to choose files that are stored on your computer. Select the file where you stored the contig file on your computer and click <strong>Open</strong>.
+<img alt="Figure 16" src="../../_images/Picture166.png" /></p></li>
+<li><p>Once selected, it will autofill the name of the file. Click on the <strong>Start Upload</strong> button.
+<img alt="Figure 17" src="../../_images/Picture176.png" /></p></li>
+<li><p>This will autofill the name of the document into the text box. This should be a quick process as contig files are generally small.</p></li>
+</ol>
+<p><img alt="Figure 18" src="../../_images/Picture186.png" /></p>
+<ol class="simple">
+<li><p>Progress of the upload can be seen in the <strong>Uploads</strong> information bar at the bottom of every BV-BRC page.  The three columns show completed jobs (first column), jobs in progress (second), and the percent completion of the jobs in progress (third).  Wait until the upload is complete prior to submitting the job.</p></li>
+</ol>
+<p><img alt="Figure 19" src="../../_images/Picture196.png" /></p>
+<ol class="simple">
+<li><p>You can also navigate to a desired folder. Use the scroll bar at the left of the pop-up window to see all the data in your directory.  When the desired folder is found, click on it. This will open that directory in the window, where you can use the upload icon to upload data directly to the selected folder.
+<img alt="Figure 20" src="../../_images/Picture206.png" /></p></li>
+</ol>
+</section>
+<section id="annotation-parameters">
+<h2>Annotation Parameters<a class="headerlink" href="#annotation-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Annotation parameters must be selected next. BV-BRC provides annotation for Bacteria, Archaea and Bacteriophages. Bacteria and Archaea are annotated using the RASTtk pipeline. Bacteriophage genomes are annotated using the PHANOTATE pipeline. Viruses are annotated with VIGOR4 or Mat_peptide.   To select a particular annotation strategy from one of those taxa, click on the check box preceding the correct strategy.</p></li>
+</ol>
+<p><img alt="Figure 21" src="../../_images/Picture21a.png" /></p>
+<ol class="simple">
+<li><p>The taxonomic name must next be selected.  Begin typing in the lowest ranked taxonomic name known for the sequenced isolate.  For bacteria/archaea, try to get to Genus, if possible, so that the annotation will contain two types of protein families; global (cross-genus) and local (within genus)[24].  Once typing begins, a drop-down box will start showing taxonomic names that match the text entered.<br />
+<img alt="Figure 22" src="../../_images/Picture22a.png" /></p></li>
+<li><p>Click on the most appropriate name, which will autofill the text box and also the corresponding Taxonomy ID.  If the Taxonomy ID is known, that can be filled in first and the matching taxonomic name will be autofilled.  BV-BRC provides two different version of protein families, which are called  PATtyFams [24]. If a taxonomic level above Genus is selected, the annotation will only have global protein families (PGFams) assigned.  If a genus or species is selected, the annotation will include both PGFams, and the local protein families (PLFams), which are genus specific.</p></li>
+</ol>
+<p><img alt="Figure 23" src="../../_images/Picture23a.png" /></p>
+<ol class="simple">
+<li><p>Give the genome a unique name by entering text in the box underneath <strong>My Label</strong>.  The name that is entered will appear in the <strong>Output Name</strong> in the lowest text box.</p></li>
+</ol>
+<p><img alt="Figure 24" src="../../_images/Picture24a.png" /></p>
+<ol class="simple">
+<li><p>An output folder must be selected for the assembly job.  Typing the name of the folder in the text box underneath the words <strong>Output Folder</strong> will show a drop-down box that shows close hits to the name.  Clicking on the arrow at the end of the box will open a drop-down box that shows the most recently created folders.  To find a previously created folder that is not seen in the drop-down box, click on the folder icon at the end of the text box.  This will open a pop-up window that shows all the previously created folder, then follow the instructions at the top of this tutorial.<br />
+<img alt="Figure 26" src="../../_images/Picture265.png" /></p></li>
+<li><p>Once the input data and the parameters have been selected, the <strong>Submit</strong> button at the bottom of the page will turn blue.  The annotation job will be submitted once this button is clicked. Once submitted, the job will enter the queue.  You can check the status of your job by clicking on the <strong>Jobs</strong> monitor at the lower right.</p></li>
+</ol>
+<p><img alt="Figure 27" src="../../_images/Picture27a.png" /></p>
+</section>
+<section id="finding-the-completed-annotation-job">
+<h2>Finding the completed Annotation job<a class="headerlink" href="#finding-the-completed-annotation-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>There are two places to access a completed job in BV-BRC.  Clicking on the <strong>Jobs</strong> icon at the bottom right of any page will open the list of jobs that have been submitted.
+<img alt="Figure 28" src="../../_images/Picture285.png" /></p></li>
+<li><p>A complete list of all completed jobs will appear from most recent to the very first job ever submitted.  Clicking on any of the column heads will resort the page to show the results in that order.
+<img alt="Figure 29" src="../../_images/Picture295.png" /></p></li>
+<li><p>Clicking on an individual job or row will show possible downstream functions, which appear as icons, in the vertical green bar to the right of the list.  Clicking on the View icon will rewrite the page to show the results of the selected job.
+<img alt="Figure 30" src="../../_images/Picture304.png" /></p></li>
+<li><p>The files produced by the specific job will be shown on the Jobs results page.  As with the Jobs page, clicking on an individual row will populate the vertical green bar with possible action icons, like viewing or downloading the data.
+<img alt="Figure 31" src="../../_images/Picture318.png" /></p></li>
+<li><p>Completed jobs can also be access through the workspace, which you can access by clicking on the <strong>Workspaces</strong> tab, which is at the top of any BV-BRC page.
+<img alt="Figure 32" src="../../_images/Picture323.png" /></p></li>
+<li><p>This will open a drop-down box for the workspace.  To view the home workspace, click on <strong>home</strong>.
+<img alt="Figure 33" src="../../_images/Picture333.png" /></p></li>
+<li><p>This will rewrite the page to show the home directory. Scrolling down the page will show the files and folders in the workspace.
+<img alt="Figure 34" src="../../_images/Picture343.png" /></p></li>
+<li><p>If the job is in a particular folder, that can be opened by double clicking on the row that has the job.
+<img alt="Figure 35" src="../../_images/Picture353.png" /></p></li>
+<li><p>This rewrites the page to show the data in that particular folder.  Completed jobs are indicated by a checkered flag in the first column.   The completed job can be accessed by double clicking on that row.
+<img alt="Figure 36" src="../../_images/Picture363.png" /></p></li>
+<li><p>This will rewrite the page to show the files produced by the completed job. Clicking on an individual row will populate the vertical green bar with possible action icons, like viewing or downloading the data. Every annotation job (bacterial, bacteriophage and viral) includes <strong>contigs.fasta</strong>, <strong>embl</strong>, <strong>feature_dna.fasta</strong>, <strong>feature_protein.fasta</strong>, <strong>features.txt</strong>, <strong>gb</strong>, <strong>genome</strong>, <strong>gff</strong>, <strong>merged.gb</strong>, <strong>tar.gz</strong>, <strong>txt</strong>, <strong>xls</strong> and <strong>quality.json</strong> files, as well as a <strong>load_files</strong> folder.</p></li>
+</ol>
+<p><img alt="Figure Annotation_result_files" src="../../_images/Annotation_result_files.png" /></p>
+</section>
+<section id="annotation-job-results">
+<h2>Annotation job results<a class="headerlink" href="#annotation-job-results" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Any annotation job run in the BV-BRC contains a number of files, as well as information about the submitted job.  To view the input parameters that were selected when the job was submitted, click on the arrow that precedes the word <strong>Parameters</strong>.
+<img alt="Figure 38" src="../../_images/Picture383.png" /></p></li>
+<li><p>This will open a drop-down box that shows the parameters.  This box can be closed by clicking on the same arrow.
+<img alt="Figure 39" src="../../_images/Picture393.png" /></p></li>
+<li><p>The <strong>contigs.fasta</strong> contains the assembled contigs of the genome in DNA FASTA format.
+<img alt="Figure 40" src="../../_images/Picture403.png" /></p></li>
+<li><p>The file ending in <strong>.embl</strong> contains an EMBL dump of the annotated genome.
+<img alt="Figure 41" src="../../_images/Picture418.png" /></p></li>
+<li><p>The <strong>feature_dna.fasta</strong> file contains all the feature sequences of the genome in DNA FASTA format.
+<img alt="Figure 42" src="../../_images/Picture423.png" /></p></li>
+<li><p>The <strong>feature_protein.fasta</strong> contains all the protein sequences of the genome in protein FASTA format.
+<img alt="Figure 43" src="../../_images/Picture433.png" /></p></li>
+<li><p>The <strong>features.txt</strong> is a tab-delimited text file listing all the features of the genome. For each feature, it contains the BV-BRC ID, the location string, the feature type, the functional assignment, any alternated IDs found, and (for protein-coding genes) the protein MD5 [29] checksum.
+<img alt="Figure 44" src="../../_images/Picture443.png" /></p></li>
+<li><p>The <strong>gb</strong> file contains the annotated genome in GenBank format.
+<img alt="Figure 45" src="../../_images/Picture453.png" /></p></li>
+<li><p>The <strong>genome</strong> file contains a special “Genome Typed Object (GTO)” JSON-format file that encapsulates all the data from the annotated genome.</p></li>
+</ol>
+<p><img alt="Figure 46" src="../../_images/Picture463.png" /></p>
+<ol class="simple">
+<li><p>The <strong>gff</strong> lists all the features of the genome in General Feature Format.
+<img alt="Figure 47" src="../../_images/Picture473.png" /></p></li>
+<li><p>The <strong>merged.gb</strong> is a GenBank file where the individual contigs are each included as a GenBank fasta record under a single locus.
+<img alt="Figure 48" src="../../_images/Picture483.png" /></p></li>
+<li><p>The <strong>tar.gz</strong> file is a zipped file that contains all the information about the annotation job.
+<img alt="Figure 49" src="../../_images/Picture493.png" /></p></li>
+<li><p>The text, or <strong>txt</strong> file shows the nucleotide and protein sequence of all the annotated genes.
+<img alt="Figure 50" src="../../_images/Picture503.png" /></p></li>
+<li><p>The <strong>.xls</strong> is an excel file that shows the nucleotide and protein sequence of all the annotated genes.
+<img alt="Figure 51" src="../../_images/Picture516.png" /></p></li>
+<li><p>The <strong>genome_quality_details.txt</strong> file is only produced when the <strong>Bacteria/Archaea</strong> recipe was selected.  It shows some of the quality scores seen in the <strong>GenomeReport.html</strong>, and a list of the genes in both the newly annotated and reference genomes, and the number of copies of this gene in each.</p></li>
+</ol>
+<p><img alt="Figure 52" src="../../_images/Picture523.png" /></p>
+<ol class="simple">
+<li><p>The <strong>Load</strong> files folders contains all the json files related to the annotation job.
+<img alt="Figure 53" src="../../_images/Picture533.png" /></p></li>
+<li><p>The <strong>quality.json</strong> file has the same information in json format.
+<img alt="Figure 54" src="../../_images/Picture543.png" /></p></li>
+<li><p>Genomes annotated by VIGOR4, will include additional files in the results folder, as seen below.
+<img alt="Figure Vigor4_output" src="../../_images/Vigor4_output.png" /></p></li>
+</ol>
+</section>
+<section id="genome-report">
+<h2>Genome Report<a class="headerlink" href="#genome-report" title="Permalink to this headline">¶</a></h2>
+<p>Genome quality analysis is automatically performed when using the Genome Annotation (Metagenomic Binning Service ) for bacterial and archaeal genomes. The genome quality tools look at the functional roles (or genes) present in an annotated genome to determine if the genome looks correct. Two separate mechanisms are used to predict the number of times each gene should be found in the genome. A role is good if it occurs the predicted number of times; otherwise it is problematic.</p>
+<p>The first quality tool (EvalG) checks the completeness and contamination of the genome using a re-implementation of the CheckM [30] algorithm. EvalG identifies universal genes that are expected to occur exactly once in all genomes of a particular taxonomic grouping. Missing genes indicate the genome is less complete; extra genes indicate the genome may be contaminated.</p>
+<p>The second quality tool (EvalCon) [31] checks the consistency of the genome annotation. Over 1300 genes that have a predictable relationship to other genes were identified by a machine learning process. EvalCon determines how many instances of each gene are expected given the list of other genes in the genome. If a gene in the genome is unexpected, or an expected gene is missing, this is considered coarse inconsistency. If a gene occurs a different number of times than predicted, this is fine inconsistency.</p>
+<p>The four numbers –completeness, contamination, coarse consistency, and fine consistency– express measures of the quality of the genome. EvalG and EvalCon relay not only the numbers, but also identify the problematic genes that occur an unexpected number of times. These are summarized in the Quality Report web page. The report is divided into three sections– the Summary Section that describes the genome itself, the Problematic Roles Report that lists the genes whose expected and actual occurrence numbers do not match, and the Contig Report that lists the contigs containing problematic roles.</p>
+<ol class="simple">
+<li><p>To view the <strong>GenomeReport.html</strong>, click on its row and then on the View icon.<br />
+<img alt="Figure 55" src="../../_images/Picture553.png" /></p></li>
+<li><p>This will reload the page to show the <strong>Genome Report</strong>. The top of the page is the summary section, which shows the scores achieved by the binned genome.</p></li>
+</ol>
+<p><img alt="Figure 56" src="../../_images/Picture563.png" /></p>
+<ol class="simple">
+<li><p>A yellow color indicates a poor scoring value.</p></li>
+</ol>
+<p><img alt="Figure 57" src="../../_images/Picture572.png" /></p>
+<ol class="simple">
+<li><p>The <strong>Potentially Problematic Roles</strong> report lists the genes whose expected and actual occurrence numbers do not match.  It shows the gene (role) that would be expected in a normal genome (<strong>Predicted count</strong>), the number of genes found in the binned genome (<strong>Annotated count</strong>), the link to those genes (<strong>Feature link</strong>), and more information about the genes (<strong>Comment</strong>).
+<img alt="Figure 58" src="../../_images/Picture582.png" /></p></li>
+<li><p>Clicking on the <strong>Feature link</strong> will open a new table that shows the problematic genes in the binned genome.
+<img alt="Figure 59" src="../../_images/Picture592.png" /></p></li>
+<li><p>To view the problematic gene, click on the gene ID in the <strong>Comment</strong> section.  This will open a new tab that takes you to the landing page of that particular gene.  This page has several tabs, but it opens the Compare Region View, which shows the neighborhood around the problematic gene (which will be colored red).
+<img alt="Figure 60" src="../../_images/Picture602.png" /></p></li>
+<li><p>The <strong>Comment</strong> section also contains a link to the contig that has the problematic gene.  Clicking on the contig ID will open a new tab that lists the genes on that contig.
+<img alt="Figure 61" src="../../_images/Picture616.png" /></p></li>
+<li><p>The final section is the Contig Report, which lists the contigs containing problematic genes. This table has four columns, including the <strong>Contig Name</strong>, the <strong>Length</strong> of the contig, the number of <strong>Good Features</strong> (or genes) on that contig, and link to a table with those problematic genes (<strong>Feature link</strong>).</p></li>
+</ol>
+<p><img alt="Figure 62" src="../../_images/Picture623.png" /></p>
+</section>
+<section id="viewing-the-annotated-genome">
+<h2>Viewing the Annotated Genome<a class="headerlink" href="#viewing-the-annotated-genome" title="Permalink to this headline">¶</a></h2>
+<p>Private genomes that have been annotated in BV-BRC can be viewed directly from the annotation job, or through the workspace, or by using the Global Search function.</p>
+<section id="viewing-the-genome-from-the-job-report">
+<h3>Viewing the genome from the job report<a class="headerlink" href="#viewing-the-genome-from-the-job-report" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>At the top right of the annotation job there are three icons that provide a direct link to information about the genome.  Clicking on the <strong>View</strong> icon will open a new tab that contains the Genome landing page, with all the information about the newly annotated genome.
+<img alt="Figure 63" src="../../_images/Picture632.png" /></p></li>
+<li><p>Clicking on the <strong>CDS</strong> icon will open a new tab that contains a table with all of the genes that have been annotated in the genome.
+<img alt="Figure 64" src="../../_images/Picture642.png" /></p></li>
+<li><p>Clicking on the <strong>Browser</strong> icon will open a new tab that contains the genome browser, showing all the genes and their orientation in the genome.</p></li>
+</ol>
+<p><img alt="Figure 65" src="../../_images/Picture652.png" /></p>
+</section>
+<section id="finding-the-genome-using-the-workspace">
+<h3>Finding the genome using the workspace<a class="headerlink" href="#finding-the-genome-using-the-workspace" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Private genomes can be located through the workspace.  Click on the <strong>Workspaces</strong> tab at the top of any page.  This will open a drop-down box.  Click on <strong>My Genomes</strong> at the upper right of this box.
+<img alt="Figure 66" src="../../_images/Picture662.png" /></p></li>
+<li><p>This will open a table that contains all of the genomes that you have annotated.  The top of the table contains a text box that can be used to filter the data.  Enter the name, or the unique genome ID into this box and then hit return on your keyboard.
+<img alt="Figure 67" src="../../_images/Picture672.png" /></p></li>
+<li><p>This will filter the genomes to show those that match the text entered.  Clicking on the row that contains the correct genome will highlight the vertical green bar to the right with possible downstream functions.  Clicking on the <strong>Genome</strong> icon will open a new tab that has the Genome landing page for that genome.
+<img alt="Figure 68" src="../../_images/Picture682.png" /></p></li>
+</ol>
+</section>
+<section id="finding-the-genome-using-global-search">
+<h3>Finding the genome using Global Search<a class="headerlink" href="#finding-the-genome-using-global-search" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>The Global Search can be used to locate public and private data.  The name of the genome can be entered into the box, which can be found on the home page, and also at the top right of any other page.
+<img alt="Figure 69" src="../../_images/Picture692.png" /></p></li>
+<li><p>Entering the Genome ID, if known, will provide a more direct access to an individual genome.  Click return after entering.
+<img alt="Figure 70" src="../../_images/Picture702.png" /></p></li>
+<li><p>This will re-write the page to show the results of the search.  Clicking on the name under Genomes will re-write the page to show the landing page for that genome.
+<img alt="Figure 71" src="../../_images/Picture716.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Brettin, T. et al. RASTtk: A modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Sci Rep 5: 8365 (2015).</p></li>
+<li><p>Wang, A. et al. VIGOR, an annotation program for small viral genomes. BMC Bioinformatics 11:451 (2010).</p></li>
+<li><p>Wang, A. et al. VIGOR extended to annotate genomes for additional 12 different viruses. Nucleic Acids Res 40:W186-92 (2012).</p></li>
+<li><p>Larsen, C.N. et al. Mat_peptide: comprehensive annotation of mature peptides from polyproteins in five virus families. Bioinformatics 36(5):1627-1628 (2020).</p></li>
+<li><p>McNair, K. et al. Phage Genome Annotation Using the RAST Pipeline. Methods Mol Biol: 1681:231-238 (2018).</p></li>
+<li><p>McNair, K. et al. PHANOTATE: a novel approach to gene identification in phage genomes. Bioinformatics 35, 4537-4542 (2019).</p></li>
+<li><p>Aziz, R. K. et al. The RAST Server: rapid annotations using subsystems technology. BMC genomics 9, 75 (2008).</p></li>
+<li><p>Chan, P.P. et al. tRNAscan-SE 2.0: improved detection and functional classification of transfer RNA genes. Nucleic Acids Res 49:9077–9096 (2021).</p></li>
+<li><p>Altschul, S.F. et al. Basic local alignment search tool. J. Mol. Biol. 215:403-410 (1990).</p></li>
+<li><p>Croucher, N.J. et al. Identification, variation and transcription of pneumococcal repeat sequences. BMC genomics 12, 1-13 (2011).</p></li>
+<li><p>Hyatt, D. et al.  Prodigal: prokaryotic gene recognition and translation initiation site identification. BMC Bioinformatics: 11:119 (2010).</p></li>
+<li><p>Delcher, A. L. et al. Identifying bacterial genes and endosymbiont DNA with Glimmer. Bioinformatics 23: 673-679 (2007).</p></li>
+<li><p>Schapire R.E. Explaining adaboost. In: Empirical inference. Springer; 2013. p. 37–52.</p></li>
+<li><p>Kent, W. J. BLAT—the BLAST-like alignment tool. Genome research 12, 656-664 (2002).</p></li>
+<li><p>Johnson, M. et al. NCBI BLAST: a better web interface. Nucleic acids research 36, W5-W9 (2008).</p></li>
+<li><p>Liu, B. et al. VFDB 2022: a general classification scheme for bacterial virulence factors.  Nucleic Acids Res. 50(D1):D912-D917 (2022).</p></li>
+<li><p>He Y, et al.  Updates on the web-based VIOLIN vaccine database and analysis system.  Nucleic Acids Res. 42(Database issue):D1124-32 (2014).</p></li>
+<li><p>Mao, C. et al. Curation, integration and visualization of bacterial virulence factors in PATRIC.
+Bioinformatics 31, 252-258 (2015).</p></li>
+<li><p>Alcock, B.P. et al. CARD 2020: antibiotic resistome surveillance with the comprehensive antibiotic resistance database.  Nucleic Acids Res 48(D1):D517-D525 (2020).</p></li>
+<li><p>Davis, J.J. et al.  Antimicrobial resistance prediction in PATRIC and RAST. Scientific reports 6, 27930 (2016).</p></li>
+<li><p>Saier, M.H. et al. The Transporter Classification Database (TCDB): 2021 update. Nucleic Acids Res 49(D1):D461-D467 (2021).</p></li>
+<li><p>Knox, C.,et al. DrugBank 6.0: the DrugBank Knowledgebase for 2024. Nucleic Acids Res. 52(D1):D1265-D1275 (2024).</p></li>
+<li><p>Zhou Y. et al. TTD: Therapeutic Target Database describing target druggability information. Nucleic Acids Res 52(D1):D1465-D1477 (2024).</p></li>
+<li><p>Davis, J. J. et al. PATtyFams: Protein families for the microbial genomes in the PATRIC database. 7, 118 (2016).</p></li>
+<li><p>Overbeek, R. et al. The subsystems approach to genome annotation and its use in the project to annotate 1000 genomes. Nucleic acids research 33, 5691-5702 (2005).</p></li>
+<li><p>Overbeek, R. et al. The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). 42, D206-D214 (2013).</p></li>
+<li><p>Jolley, K.A. et al. Open-access bacterial population genomics: BIGSdb software, the PubMLST.org website and their applications. Wellcome Open Res 3:124 (2018).</p></li>
+<li><p>Akhter, S. et al. PhiSpy: a novel algorithm for finding prophages in bacterial genomes that combines similarity-and composition-based strategies. Nucleic acids research 40: e126e126 (2012).</p></li>
+<li><p>Rivest, R. RFC1321: The MD5 message-digest algorithm (1992).</p></li>
+<li><p>Parks, D. H. et al. CheckM: assessing the quality of microbial genomes recovered from isolates, single cells, and metagenomes. Genome research 25, 1043-1055 (2015).</p></li>
+<li><p>Parrello, B. et al. A machine learning-based service for estimating quality of genomes using PATRIC. BMC Bioinformatics 20(1):486 (2019).</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../comprehensive_genome_analysis/comprehensive_genome_analysis.html" class="btn btn-neutral float-right" title="Comprehensive Genome Analysis (CGA) Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../genome_assembly/assembly.html" class="btn btn-neutral float-left" title="Genome Assembly Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

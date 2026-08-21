@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Terminology and Features (for IRD/ViPR Users) | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BV-BRC Data" href="../data_protocols/index.html" />
+    <link rel="prev" title="Data and Functionality Overview (for PATRIC Users)" href="data_functionality_overview.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Terminology and Features (for IRD/ViPR Users) | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html">Quick Start Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_functionality_overview.html">Data and Functionality Overview (for PATRIC Users)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Terminology and Features (for IRD/ViPR Users)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viral-data">Viral Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches">Searches</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-search">Global Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-searches">Advanced Searches</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-tools">Analysis Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workbench">Workbench</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Quick Start</a> &raquo;</li>
+        
+      <li>Terminology and Features (for IRD/ViPR Users)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/quick_start/ird-vipr_bv-brc_mapping.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+</style>
+<section id="terminology-and-features-for-ird-vipr-users">
+<h1>Terminology and Features (for IRD/ViPR Users)<a class="headerlink" href="#terminology-and-features-for-ird-vipr-users" title="Permalink to this headline">¶</a></h1>
+<p>BV-BRC integrates key IRD and ViPR viral data and tools with bacterial data and tools from PATRIC. The BV-BRC system is built on the PATRIC system infrastructure (database, services, and website). As a result, the interfaces for accessing and using data and tools differ substantially from IRD and ViPR. To aid researchers in making this transition, the table below provides a mapping of IRD and ViPR features to the corresponding BV-BRC features. Links to relevant BV-BRC help documentation are provided as well.</p>
+<ul class="simple">
+<li><p><span class="xref myst">Viral Genomes and Other Data</span></p></li>
+<li><p><a class="reference internal" href="#id1"><span class="std std-doc">Searches</span></a></p></li>
+<li><p><span class="xref myst">Viral Analysis Tools</span></p></li>
+<li><p><a class="reference internal" href="#id2"><span class="std std-doc">Workbench</span></a></p></li>
+</ul>
+<p>Additional details are presented below.</p>
+<hr>
+<section id="viral-data">
+<span id="data"></span><h2>Viral Data<a class="headerlink" href="#viral-data" title="Permalink to this headline">¶</a></h2>
+<p>As in ViPR, viral data in BV-BRC are organized by families, with additional links to subsets of featured viruses including Influenza A (focus of IRD), Dengue, Ebolavirus, Enterovirus, Hepatitis C, Lassa mammarenavirus, SARS-CoV-2, Zika, and bacteriophages.</p>
+<p>In <em>ViPR</em>, users can directly access viral data by family by clicking the appropriate link in the middle of the <a class="reference external" href="https://www.viprbrc.org/brc/home.spg?decorator=vipr">ViPR Homepage</a> homepage, as shown below. (The <a class="reference external" href="https://www.fludb.org/brc/home.spg?decorator=influenza">IRD homepage</a> is already scoped to Influenza.)</p>
+<p><strong><em>ViPR</em> Homepage:</strong>
+<img alt="ViPR homepage" src="../_images/vipr_homepage_families.png" /></p>
+<p>Similarly, <em>BV-BRC</em> provides a landing page with access to viral data at the same levels. It can be reached by clicking the VIRUSES button on the <a class="reference external" href="https://bv-brc.org/">BV-BRC homepage</a>, as shown below:</p>
+<p><strong><em>BV-BRC</em> Homepage:</strong>
+<img alt="BV-BRC homepage virus navigation" src="../_images/bv_homepage_viruses_button.png" /></p>
+<p>This will display the <a class="reference external" href="https://bv-brc.org/view/Virus/10239">BV-BRC Viruses landing page</a> (below):</p>
+<p><strong><em>BV-BRC</em> Viruses Landing Page:</strong>
+<img alt="BV-BRC Viruses Landing Page" src="../_images/bv_virus_landing_page.png" /></p>
+<p>Clicking on one of these links (e.g., “Coronaviridae” in the figure below) will display the corresponding viral data in BV-BRC, scoped to that viral family or subset, shown in the second figure below.</p>
+<p><img alt="Coronaviridae family link" src="../_images/bv_coronaviridae_link.png" /></p>
+<p><em>Alternatively</em>, the same set of viral families and featured viral groups can be accessed directly from the ORGANISMS top menu (below).</p>
+<p><strong><em>BV-BRC</em> Organisms Menu</strong>
+<img alt="BV-BRC Organisms Menu" src="../_images/bv_organisms_menu_top_nav.png" /></p>
+<p>The ORGANISMS menu provides links to viral families and featured viruses, as well as bacteria genera, archaea, and eukaryotic hosts.</p>
+<p><img alt="Organisms Menu, Viruses" src="../_images/bv_organisms_menu_virus2.png" /></p>
+<p>Once the desired virus family or subset is selected, the corresponding <strong>Taxon landing page</strong> will be displayed. The <strong>Data Tabs</strong> (Overview, Taxonomy, Genomes, Proteins, Protein Structures, Domains and Motifs, Epitopes, etc.) on this page will be similarly scoped to the selected Taxon as well.</p>
+<p><img alt="Coronaviridae page" src="../_images/bv_coronaviridae_page.png" /></p>
+<p>Clicking on the Data Tabs (e.g., “Genomes”) will display a list of all of the data and associated metadata of that type in BV-BRC for the selected Taxon. Keyword Search, Advanced Search, and Filter tools are available to refine the list. Also, the metadata columns can be resized, rearranged, added, removed, and sorted.</p>
+<p><img alt="Coronaviridae Genomes tab" src="../_images/bv_coronaviridae_genomes_tab.png" /></p>
+<p>Detailed instructions for using the Taxon-level data pages is available from the <a class="reference internal" href="../quick_references/organisms_menu.html"><span class="doc std std-doc">BV-BRC Organisms Quick Reference Guide</span></a>.</p>
+<hr>
+</section>
+<section id="searches">
+<span id="id1"></span><h2>Searches<a class="headerlink" href="#searches" title="Permalink to this headline">¶</a></h2>
+<p>Similar to IRD and ViPR, BV-BRC provides searches to facilitate rapide direct access to viral data of interest. Two types of searches are provided: <strong>Global Search</strong> and <strong>Advanced Searches</strong>.</p>
+<section id="global-search">
+<h3>Global Search<a class="headerlink" href="#global-search" title="Permalink to this headline">¶</a></h3>
+<p>The <em>BV-BRC</em> <strong>Global Search</strong> provides keyword search capability similar to the <em>IRD/ViPR</em> <strong>Quick Search</strong> (available from the <a class="reference external" href="https://www.fludb.org/brc/search_landing.spg?decorator=influenza">IRD/ViPR Search Tools page</a>, below), but with advanced controls for selecting data type and other search conditions.</p>
+<p><strong><em>IRD/ViPR</em> Quick Search</strong>
+<img alt="IRD/ViPR Quick Search" src="../_images/ird_quick_search.png" /></p>
+<p>The <em>BV-BRC</em> <strong>Global Search</strong> is available at the top right of all BV-BRC pages, except for the home page, where it is in the upper center of the page, as shown below.</p>
+<p><strong><em>BV-BRC</em> Global Search</strong>
+<img alt="BV-BRC Global Search" src="../_images/bv_global_search.png" /></p>
+<p>The Global Search provides optional filters for data types and search term options (All, Any, Exact).</p>
+<p><img alt="Global Search Options" src="../_images/bv_global_search_options.png" /></p>
+<p>Detailed instructions for using the Global Search are available from the <a class="reference internal" href="../quick_references/global_search.html"><span class="doc std std-doc">BV-BRC Global Search Quick Reference Guide</span></a>.</p>
+</section>
+<section id="advanced-searches">
+<h3>Advanced Searches<a class="headerlink" href="#advanced-searches" title="Permalink to this headline">¶</a></h3>
+<p>The <em>BV-BRC</em> <strong>Advanced Searches</strong> provide fine-grained searches based on data type and metadata values, similar to the <em>IRD/ViPR</em> <strong>Search Tools</strong> (available from the <a class="reference external" href="https://www.fludb.org/brc/search_landing.spg?decorator=influenza">IRD/ViPR Search Tools page</a>, below). Some searches have been deprecated based on limited usage and available data.</p>
+<p><strong><em>IRD/ViPR</em> Search Tools</strong>
+<img alt="IRD/ViPR Search Tools" src="../_images/ird_search_tools.png" /></p>
+<p>The <em>BV-BRC</em> <strong>Advanced Searches</strong> are available from the SEARCHES top menu, as shown below.</p>
+<p><strong><em>BV-BRC</em> Advanced Searches</strong>
+<img alt="BV-BRC Searches Menu" src="../_images/bv_searches_menu_top_nav.png" /></p>
+<p>Advanced Searches are available for each of the major data types in BV-BRC.</p>
+<p><img alt="Advanced Searches" src="../_images/bv_searches_menu.png" /></p>
+<p>Clicking on one of the Advanced Searches (e.g., “Strains”) opens a search form with drop down box options for primary metadata values and other special criteria.</p>
+<p><img alt="Strain Advanced Search" src="../_images/bv_strain_search.png" /></p>
+<p>Detailed instructions for using the Advanced Searches are available from the <a class="reference internal" href="../quick_references/searches_menu.html"><span class="doc std std-doc">BV-BRC Advanced Searches Quick Reference Guide</span></a>.</p>
+<p>The table below provides a mapping of the IRD/ViPR Search Tools to corresponding BV-BRC Advanced Searches.</p>
+<p><strong>Mapping of IRD/ViPR Search Tools to BV-BRC Advanced Searches</strong></p>
+<table style="width:100%">
+  <tr>
+    <th style="width:40%">IRD/ViPR</th>
+    <th style="width:40%">BV-BRC</th>
+    <th style="width:20%">Documentation</th>
+  </tr>
+ <tr>
+    <td>
+      <a href="https://www.fludb.org/brc/search_landing.spg?decorator=influenza">Quick Search</a> (upper right)
+    </td>
+    <td><a href="https://bv-brc.org/view/Taxonomy/10239">Global Search</a> (top right)</td>
+    <td><a href="../quick_references/global_search.html">Quick Reference</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.fludb.org/brc/influenza_sequence_search_segment_display.spg?method=ShowCleanSearch&decorator=influenza">Nucleotide Search (IRD)</a><br>
+      <a href="https://www.fludb.org/brc/influenza_sequence_search_segment_display.spg?method=ShowCleanSearch&decorator=influenza">Genome Search (ViPR)</a>
+    </td>
+    <td><a href="https://bv-brc.org/searches/GenomeSearch">Genome Search</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.fludb.org/brc/influenza_surveillanceRecord_search.spg?method=ShowCleanSearch&decorator=influenza">Animal Surveillance Search (IRD)</a><br>
+      <a href="https://www.fludb.org/brc/influenza_humanSurveillanceData_search.spg?method=ShowCleanSearch&decorator=influenza">Human Surveillance Records (IRD)</a>
+    </td>
+    <td><a href="https://bv-brc.org/searches/SurveillanceSearch">Surveillance Search</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/influenza_surveillanceRecord_search.spg?method=ShowCleanSearch&decorator=influenza">3-D Protein Structure Search</a></td>
+    <td><a href="https://bv-brc.org/searches/ProteinStructureSearch">Protein Structure Search</a></td>
+    <td></td>
+  </tr>
+  <! --- Insert Anti-Viral Drugs Search when available --->
+  <tr>
+    <td><a href="https://www.fludb.org/brc/serology_experiment_search.spg?method=ShowCleanSearch&decorator=influenza">Serology Experiment Search (IRD)</a></td>
+    <td><a href="https://bv-brc.org/searches/SerologySearch">Serology Search</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/hostFactorExperiments.spg?method=SubmitForm&decorator=influenza&navRoot=true">Host Factor Experiments</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/influenza_epitope_search.spg?method=ShowCleanSearch&decorator=influenza">Immune Epitope Search</a></td>
+    <td><a href="https://bv-brc.org/searches/EpitopeSearch">Epitope Search</a></td>
+    <td></td>
+  </tr>
+  <! --- Insert Phenotypes Search if/when available --->
+  <! --- Insert PCR Primer Probe Search if/when available --->
+  <! --- Insert Sequence Feature Variant Type Search if/when available --->
+  <! --- Insert Human Clinical Studies Search if/when available --->
+  <! --- Insert ORFeome Plasmid Data Search if/when available --->
+  <tr>
+    <td><a href="https://www.viprbrc.org/brc/vipr_virusDomain_search.spg?method=ShowCleanSearch&decorator=corona">Protein Domains Search</a></td>
+    <td><a href="https://bv-brc.org/searches/ProteinFeatureSearch">Domain and Motif Search</a></td>
+    <td></td>
+  </tr>
+</table>
+<hr>
+</section>
+</section>
+<section id="analysis-tools">
+<span id="tools"></span><h2>Analysis Tools<a class="headerlink" href="#analysis-tools" title="Permalink to this headline">¶</a></h2>
+<p>Similar to IRD and ViPR, BV-BRC provides tools and visualizations to enable  researchers to perform in-depth analyses and exploration of their own data and in combination with BV-BRC data. BV-BRC integrates the most used analysis tools In <em>IRD/ViPR</em> (available from the <a class="reference external" href="https://www.fludb.org/brc/analysis_landing.spg?decorator=influenza">IRD/ViPR Analysis Tools page</a>, below).</p>
+<p><strong><em>IRD/ViPR</em> Analysis Tools</strong>
+<img alt="IRD/ViPR Analysis Tools" src="../_images/ird_analysis_tools.png" /></p>
+<p>In <em>BV-BRC</em>, analysis tools are available from the TOOLS &amp; SERVICES top menu, as shown below. A list of all tools with descriptions is available from the <a class="reference external" href="https://bv-brc.org/tools">BV-BRC Tools &amp; Services page</a></p>
+<p><strong><em>BV-BRC</em> Tools &amp; Services</strong>
+<img alt="BV-BRC Tools &amp; Services Menu" src="../_images/bv_tools_services_menu_top_nav.png" /></p>
+<p>In the BV-BRC TOOLS &amp; SERVICES menu, viral analysis tools are shown alongside bacterial analysis tools. Where practical, the two have been merged into one tool, with appropriate settings and logic to perform the correct type of computation based on the the organism type (e.g., Genome Annotation). The figure below highlights tools that have been added or updated to support viral data.</p>
+<p><img alt="Tools &amp; Services" src="../_images/bv_services_menu_viral_tools.png" /></p>
+<p>Clicking on one of the tools (e.g., “Annotation”) opens an input form that allows users to upload their own data, set parameters, and specify a location in the Workspace to save the results. Links to <strong>Quick Reference Guides</strong> and <strong>Tutorials</strong> are available on every input form. Quick Reference Guides provide short descriptions of each feature of the tool. Tutorials provide detailed, step-by-step instructions for using the tool.</p>
+<p><img alt="BV-BRC Genome Annotation Service" src="../_images/bv_annotation_service_form.png" /></p>
+<p>Most analysis tools in BV-BRC are implemented as computational “services” that use high-performance computing (HPC) resources to perform the analysis on the backend. When an analysis tool is started, it creates a “job” that runs on the HPC resources. The job processing status (Queued, Running, Complete, Failed) and results are listed on the user’s Job Status page, which is displayed by clicking the small Jobs status monitor on the bottom right of each page.</p>
+<p><img alt="Job Status Page" src="../_images/bv_job_status_page.png" /></p>
+<p>The <a class="reference internal" href="../quick_references/services_menu.html"><span class="doc std std-doc">Tools &amp; Services Quick Reference Guide</span></a> provides an overview available tools. The table below provides a mapping of the IRD/ViPR Search Tools to corresponding BV-BRC Advanced Searches.</p>
+<table style="width:100%">
+  <tr>
+    <th style="width:40%">IRD/ViPR</th>
+    <th style="width:40%">BV-BRC</th>
+    <th style="width:20%">Documentation</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.fludb.org/brc/blast.spg?method=ShowCleanInputPage&decorator=influenza">Identify Similar Sequences (BLAST)</a><br>
+      <a href="https://www.fludb.org/brc/sssearch.spg?method=ShowCleanInputPage&decorator=influenza&preSelectDB=true">Identify Short Peptides in Proteins</a>
+    </td>
+    <td><a href="https://bv-brc.org/app/Homology">BLAST (Homology)</a></td>
+    <td>
+      <a href="../quick_references/services/blast.html">Quick Reference</a><br>
+      <a href="../tutorial/blast/blast.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/tree.spg?method=ShowCleanInputPage&decorator=influenza">Generate Phylogenetic Tree</a></td>
+    <td><a href="">Phylogenetic Tree (Gene Tree)</a></td>
+    <td>
+      <a href="../quick_references/services/genetree.html">Quick Reference</a><br>
+      <a href="../tutorial/genetree/genetree.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.fludb.org/brc/msa.spg?method=ShowCleanInputPage&decorator=influenza">Align Sequences (MSA)</a><br>
+      <a href="https://www.fludb.org/brc/snpAnalysis.spg?method=ShowCleanInputPage&decorator=influenza">Analyze Sequence Variation</a><br>
+      <a href="https://www.fludb.org/brc/jalviewUsingFasta.spg?method=ShowCleanInputPage&decorator=influenza">Visualize Aligned Sequences</a>
+    </td>
+    <td><a href="https://bv-brc.org/app/MSA">MSA and SNP Analysis</a></td>
+    <td>
+      <a href="../quick_references/services/msa_snp_variation_service.html">Quick Reference</a><br>
+      <a href="../tutorial/msa_snp_variation/msa_snp_variation.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td><a href="https://www.viprbrc.org/brc/vigorAnnotator.spg?method=ShowCleanInputPage&decorator=corona">Genome Annotation (VIGOR4)</a></td>
+    <td><a href="https://bv-brc.org/app/Annotation">Genome Annotation</a></td>
+    <td>
+      <a href="../quick_references/services/genome_annotation_service.html">Quick Reference</a><br>
+      <a href="../tutorial/genome_annotation/genome_annotation.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/mgc.spg?method=ShowCleanInputPage&selectionContext={selectionContext}&decorator=influenza">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></td>
+    <td><a href="https://bv-brc.org/app/MetaCATS">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></td>
+    <td>
+      <a href="../quick_references/services/metacats.html">Quick Reference</a><br>
+      <a href="../tutorial/metacats/metacats.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td><a href="https://www.fludb.org/brc/primer3.spg?method=ShowCleanInputPage&decorator=influenza">Polymerase Chain Reaction (PCR) Primer Design</a></td>
+    <td><a href="https://bv-brc.org/app/PrimerDesign">Primer Design</a></td>
+    <td>
+      <a href="../quick_references/services/primer_design_service.html">Quick Reference</a><br>
+      <a href="../tutorial/primer_design/primer_design.html">Tutorial</a>
+    </td>  
+  </tr>
+  <tr>
+    <td>Influenza H5, H3, H1 clade, rotavirus genotype, and flavivirus serotype classification</td>
+    <td><a href="https://www.bv-brc.org/app/SubspeciesClassification">Subspecies Classification</a></td>
+    <td>
+      Coming soon.
+    </td>  
+  </tr>
+</table>  
+<hr>
+</section>
+<section id="workbench">
+<span id="id2"></span><h2>Workbench<a class="headerlink" href="#workbench" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the <a class="reference external" href="https://www.fludb.org/brc/workbench_landing.spg?decorator=influenza&amp;method=WorkbenchDetail">IRD/ViPR Workbench</a> (shown below), BV-BRC provides a private <strong>Workspace</strong>, where users can upload their own data, perform analyses with BV-BRC Tools, compare their data with other data in BV-BRC, and share their data via shared and public workspaces.</p>
+<p><strong><em>IRD/ViPR</em> Workbench</strong>
+<img alt="IRD Workbench" src="../_images/ird_workbench.png" /></p>
+<p>As with the IRD/ViPR Workbench, users will need to sign in (top right of page) to access their BV-BRC Workspace. IRD/ViPR users can use the same login ID and password as they do for IRD/ViPR.  At present, we do not have the capability to transfer over data from IRD/ViPR Workbenches to the BV-BRC Workspace.</p>
+<p><strong><em>BV-BRC</em> Workspace Login</strong>
+<img alt="BV-BRC Sign In and Registration" src="../_images/bv_workspace_login.png" /></p>
+<p>Once signed in, users can access their private and shared workspaces from the WORKSPACES top menu.</p>
+<p><em><strong>Note that, as of November 1, 2022, all IRD/ViPR workbench data and files were copied into the user’s corresponding workspace in BV-BRC. The data are organized into three folders: Working Sets, Uploaded Files, and Analysis Results. You can access this workspace with the same login credentials that you have for IRD/ViPR. There will be a README.txt file in the workspace that provides additional details.</strong></em></p>
+<p><img alt="BV-BRC Workspaces Top Menu" src="../_images/bv_workspaces_menu_top_nav.png" /></p>
+<p><img alt="BV-BRC Workspaces Menu" src="../_images/bv_workspaces_menu.png" /></p>
+<p>Clicking on the “Home” workspace opens the user’s private workspace at the top level. The Workspace contains folders to facilitate organization of files. Users can upload files and create new folders. Move, copy, delete, and other controls are also available.</p>
+<p><img alt="BV-BRC Workspace" src="../_images/bv_workspace.png" /></p>
+<p>Also, users can create <strong>Groups</strong> of genomes, features (genes), and other data types, similar to <em>IRD/ViPR</em> “Working Sets.”</p>
+<p><img alt="BV-BRC Workspace" src="../_images/bv_workspace_groups.png" /></p>
+<p>Detailed information on using the BV-BRC Workspace can be found in the <a class="reference internal" href="../quick_references/workspace_groups_upload.html"><span class="doc std std-doc">Workspace, Private Data, Groups, Jobs Quick Reference Guides</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../data_protocols/index.html" class="btn btn-neutral float-right" title="BV-BRC Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_functionality_overview.html" class="btn btn-neutral float-left" title="Data and Functionality Overview (for PATRIC Users)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Developing PATRIC Code at Argonne | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Developing PATRIC Code at Argonne | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Developing PATRIC Code at Argonne</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/dev_at_argonne.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="developing-patric-code-at-argonne">
+<h1>Developing PATRIC Code at Argonne<a class="headerlink" href="#developing-patric-code-at-argonne" title="Permalink to this headline">¶</a></h1>
+<p>This is a quick guide for PATRIC developers working on the internal
+systems at Argonne National Laboratory.</p>
+<section id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<p>One must have a Unix login account at Argonne to be able to develop
+in the PATRIC environment. Contact one of the PATRIC staff to get this
+if you believe you should be working there.</p>
+<p>To get to the internal systems where the PATRIC environment runs one
+must first log in to the bastion host <code class="docutils literal notranslate"><span class="pre">login.mcs.anl.gov</span></code>. From
+there the internal machines are visible. A useful machine to use is
+<code class="docutils literal notranslate"><span class="pre">holly.mcs.anl.gov</span></code>.</p>
+</section>
+<section id="environment">
+<h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
+<p>The PATRIC code deployments are in two parts. A <em>runtime library</em>
+incorporates all the basic software required to run the
+PATRIC-specific code (language interpreters and associated runtime
+libraries; bioinformatic analysis tools; libraries and development
+tools that do not come with the base OS; etc).</p>
+<p>The <em>deployment</em> contains all the PATRIC-specific code that typically
+changes much more often and is part of the PATRIC release cycle.</p>
+<p>On the Argonne machines, the runtime library is typically located on
+local disk on the machines that run PATRIC components in the path
+<code class="docutils literal notranslate"><span class="pre">/disks/patric-common/runtime</span></code>.</p>
+<p>On the Argonne systems that have PATRIC deployments installed, the
+standard deployment location is <code class="docutils literal notranslate"><span class="pre">/disks/p3/deployment</span></code>. The software
+deployment infrastructure creates user environment configuration
+scripts to set up the environment for the execution of the PATRIC
+scripts and the associated runtime routines. These may be sourced in
+your environment via the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">disks</span><span class="o">/</span><span class="n">p3</span><span class="o">/</span><span class="n">deployment</span><span class="o">/</span><span class="n">user</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>For any application that touches the workspace you will need to be
+logged into PATRIC. Use the <a class="reference internal" href="../cli_tutorial/command_list/p3-login.html#cli-p3-login"><span class="std std-ref">p3-login</span></a> command to log in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ p3-login olson
+Password: *********
+Logged in with username olson@patricbrc.org
+</pre></div>
+</div>
+<p>This will authenticate you with the PATRIC authentication service and
+create a file in your home directory <code class="docutils literal notranslate"><span class="pre">.patric_token</span></code> containing the
+authentication token.</p>
+</section>
+<section id="checking-application-output">
+<h2>Checking Application Output<a class="headerlink" href="#checking-application-output" title="Permalink to this headline">¶</a></h2>
+<p>If you know the identifier for a given PATRIC job, you can find the
+standard output and error files, its exit status if complete, and the
+host it ran on by viewing the application service output logs. These
+are found on the system <code class="docutils literal notranslate"><span class="pre">beech.mcs.anl.gov</span></code> in the directory
+<code class="docutils literal notranslate"><span class="pre">/disks/p3/task_status/&lt;job-id&gt;</span></code>. For example, if I have a job
+<code class="docutils literal notranslate"><span class="pre">388b0885-3357-402c-aad3-01e4717c640c</span></code> I can find the details thus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /disks/p3/task_status/388b0885-3357-402c-aad3-01e4717c640c
+$ ls -l
+total 28
+-rw-rw-r--. 1 p3 p3    2 Aug 17 04:02 exitcode
+-rw-rw-r--. 1 p3 p3   19 Aug 16 23:52 hostname
+-rw-rw-r--. 1 p3 p3    5 Aug 16 23:52 pid
+-rw-rw-r--. 1 p3 p3 6258 Aug 17 04:02 stderr
+-rw-rw-r--. 1 p3 p3    0 Aug 17 04:02 stderr.EOF
+-rw-rw-r--. 1 p3 p3 6366 Aug 16 23:53 stdout
+-rw-rw-r--. 1 p3 p3    0 Aug 17 04:02 stdout.EOF
+$ cat exitcode
+0
+$ cat hostname
+redwood.mcs.anl.gov
+</pre></div>
+</div>
+<p>Here I can see the job exited sucessfully (exit code 0) and ran on
+host redwood.mcs.anl.gov. The files <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> contain
+logs of the standard output and error streams from the
+application. These will be updated as the application runs, so one can
+check the status of a long-running application by viewing them.</p>
+</section>
+<section id="testing-existing-applications">
+<h2>Testing Existing Applications<a class="headerlink" href="#testing-existing-applications" title="Permalink to this headline">¶</a></h2>
+<p>One of the common uses for using raw access to the Argonne systems is
+the testing of service backends without going through the job
+submission infrastructure. To do this one must understand a little
+about how the application service works.</p>
+<p>Each application is defined by an application specification
+document. This document specifies the inputs that the service
+expectes. For example, the phylogenetic tree application assumes the
+following configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;App-PhylogeneticTree&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Compute phylogenetic tree&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;PhylogeneticTree&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Computes a phylogenetic tree given a set of in-group and out-group genomes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Path to which the output will be written. &quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;folder&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Output Folder&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;output_path&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Basename for the generated output files.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wsid&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;File Basename&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;output_file&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;in_genome_ids&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;In-group genomes&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;allow_multiple&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;out_genome_ids&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Out-group genomes&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;allow_multiple&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;full_tree_method&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;ml&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Full tree method&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Full tree method&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;refinement&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Automated progressive refinement&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Automated progressive refinement&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The application specifications may be found in the app_service <a class="reference external" href="https://github.com/TheSEED/app_service/tree/master/app_specs">repository</a> on
+GitHub.</p>
+<p>Each application service is implemented by a program named
+<code class="docutils literal notranslate"><span class="pre">App-ApplicationName</span></code>. Thus the phylogenetic tree application is
+called <code class="docutils literal notranslate"><span class="pre">App-PhylogeneticTree</span></code>. Sources for the applications are
+also found in the app_service <a class="reference external" href="https://github.com/TheSEED/app_service/tree/master/scripts">repository</a> on
+GitHub.</p>
+<p>All of the application scripts accept the same parameters, described
+by its usage statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ App-PhylogeneticTree -h
+ Usage: /disks/p3/deployment/plbin/App-PhylogeneticTree.pl app-service-url app-definition.json param-values.json [stdout-file stderr-file]
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">app-definition.json</span></code> parameter is the application specification
+document mentioned above. The <code class="docutils literal notranslate"><span class="pre">param-values.json</span></code> parameter is
+another JSON file that defines the actual values of the parameters as
+defined in the specification document.</p>
+<p>An example of a parameters file for the phylogenetic tree application
+is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat tree.in`
+{
+   &quot;in_genome_ids&quot;: [
+       &quot;66976.18&quot;,
+       &quot;1262772.3&quot;,
+       &quot;1262773.3&quot;
+   ],
+   &quot;out_genome_ids&quot;: [
+       &quot;66976.17&quot;
+   ],
+   &quot;output_path&quot;: &quot;/olson@patricbrc.org/test&quot;,
+   &quot;output_file&quot;: &quot;tree-15&quot;,
+   &quot;full_tree_method&quot;: &quot;ft&quot;,
+   &quot;refinement&quot;: &quot;no&quot;
+}
+</pre></div>
+</div>
+<p>Here, we request a phylogentic tree with three in-group genomes and
+one out-group genome, with the output to be written to the folder
+<code class="docutils literal notranslate"><span class="pre">/olson&#64;patricbrc.org/test</span></code> in the PATRIC workspace with the output
+name to be <code class="docutils literal notranslate"><span class="pre">tree-15</span></code>. The full tree method request is FastTree, and
+no refinement is requested.</p>
+<p>We may run this application as follows. We give the application script
+a bogus first parameter; in production execution that is a URL that
+will result in the standard output and error streams to be fed in
+realtime to the application service where it is logged and available
+for display in the PATRIC website.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ App-PhylogeneticTree xx /disks/p3/deployment/services/app_service/app_specs/PhylogeneticTree.json tree.in
+Process tree $VAR1 = {
+          &#39;parameters&#39; =&gt; [
+                            {
+                              &#39;id&#39; =&gt; &#39;output_path&#39;,
+                              &#39;type&#39; =&gt; &#39;folder&#39;,
+                              &#39;desc&#39; =&gt; &#39;Path to which the output will
+                          be written. &#39;,
+                              &#39;default&#39; =&gt; undef,
+                              &#39;required&#39; =&gt; 1,
+                              &#39;label&#39; =&gt; &#39;Output Folder&#39;
+                            },
+[....]
+</pre></div>
+</div>
+<p>We see the execution beginning here. There is a fairly large amount of
+debugging output from both the application service infrastructure as
+well as the tools invoked by the application service infrastructure to
+accomplish the computation desired.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

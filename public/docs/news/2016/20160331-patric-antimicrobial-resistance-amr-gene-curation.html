@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>PATRIC Antimicrobial Resistance (AMR) Gene Curation | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>PATRIC Antimicrobial Resistance (AMR) Gene Curation | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>PATRIC Antimicrobial Resistance (AMR) Gene Curation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/PATRIC3/p3_docs/blob/master/docroot/news/2016/20160331-patric-antimicrobial-resistance-amr-gene-curation.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="patric-antimicrobial-resistance-amr-gene-curation">
+<h1>PATRIC Antimicrobial Resistance (AMR) Gene Curation<a class="headerlink" href="#patric-antimicrobial-resistance-amr-gene-curation" title="Permalink to this headline">¶</a></h1>
+<p class="feed-meta">Published on <em class="feed-date">2016-03-31 00:00:00</em></p>
+<p>PATRIC has undertaken an antimicrobial resistance (AMR) curation effort
+with the goal of providing PATRIC users with the ability to rapidly
+recognize and project known AMR related genome features to new genomes
+in an automated fashion and to use comparative genomics approaches for
+the discovery of new resistance mechanisms.</p>
+<p><strong>Specific Aims:</strong></p>
+<ul class="simple">
+<li><p>Catalog published AMR related genes in the 22 genera of infectious
+disease organisms, providing high quality detailed annotations of all
+AMR determinants</p></li>
+<li><p>Enable rapid recognition and automated projection of known AMR
+related genome features to new genomes</p></li>
+<li><p>Support classification of genomes as resistant or susceptible</p></li>
+<li><p>Enable prediction and discovery of novel resistance mechanisms</p></li>
+</ul>
+<p>The ongoing <strong>AMR curation</strong> enables this through the development and of
+a comprehensive up-to-date collection of AMR determinants and genomic
+variations.  These structured collections will be used in several ways
+including automated <strong>propagation of AMR-related annotations</strong> that will
+significantly enhance AMR analysis for PATRIC users.</p>
+<p>Two approaches are currently under construction to project AMR gene
+annotations to a new genome. First, once a new AMR-related function has
+been entered into the database, it will be recognized by our k-mer-based
+projection software, and new genomes with the gene will be annotated
+with that function (1-3). Secondly, when a genome that is being
+annotated is very similar to one of the reference genomes in PATRIC, the
+AMR annotations from the reference genome will be directly applied to
+the new genome, when appropriate to do so.</p>
+<p>The database that will drive this annotation module is currently under
+construction.  It is structured as a collection of dedicated
+<strong>AMR-related Subsystems</strong> that are being added to the genome annotation
+engine underlying the PATRIC database. Subsystems connect encoded AMR
+determinants to relevant literature, describe mechanisms of action (if
+available), and lay the basis for variation analysis.  Approximately
+half of new Subsystems required to encode known AMR-related genes and
+gene products are in place. An Excel spreadsheet with these data is
+available
+<a class="reference download internal" download="" href="../../_downloads/a1869a3f035711c01b0e6baa272aa6ef/PATRIC-AMR-Gene-Curation-2016-03-31.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.
+ Together they cover 265 unique Functional roles (isofunctional protein
+families), each corresponding to a specific AMR determinant encoded
+across a representative set of ~1000 diverse prokaryotic genomes.</p>
+<p>Curation thus far has focused on encoding the following mechanisms of
+drug resistance (shown below): outer membrane porins, multidrug efflux
+mechanisms, and capsular and extracellular polysacchrides (as the
+balance of drug influx and efflux is the first line of microbial defense
+against antibiotics).  In addition, all types of tetracycline resistance
+have been captured and work on beta-lactamases has started.  The
+remaining AMR determinants will be encoded during the remainder the
+project.</p>
+<p><strong>Common mechanisms of drug resistance</strong></p>
+<ul class="simple">
+<li><p><strong>Efflux pumps</strong></p>
+<ul>
+<li><p>Up-regulation, often via mutations in promotors, operators</p></li>
+</ul>
+</li>
+<li><p>** Outer membrane proteins/porins (influx)**</p>
+<ul>
+<li><p>Inactivation via loss of function mutations, deletions,
+truncations</p></li>
+</ul>
+</li>
+<li><p>** Drug modifying enzymes**</p>
+<ul>
+<li><p>Ribosome protection (TetR) proteins</p></li>
+<li><p>β-lactamases</p></li>
+<li><p>Aminoglycoside-modifying enzymes</p></li>
+<li><p>RNA methyltransferases</p></li>
+</ul>
+</li>
+<li><p>** Target modifications**</p>
+<ul>
+<li><p>Gyrase modifications (gyrA/B, parC/E mutations)</p></li>
+<li><p>Ribosomal subunit, rRNA mutations</p></li>
+<li><p>mecA – PBP2a (MRSA)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>References</strong></p>
+<ol class="arabic simple">
+<li><p>Brettin T, Davis JJ, Disz T, Edwards RA, Gerdes S, Olsen GJ, Olson R,
+Overbeek R, Parrello B, Pusch GD, Shukla M, Thomason JA 3rd, Stevens
+R, Vonstein V, Wattam AR, Xia F. RASTtk: a modular and extensible
+implementation of the RAST algorithm for building custom annotation
+pipelines and annotating batches of genomes. Sci Rep. 2015 Feb
+10;5:8365. doi: 10.1038/srep08365. PMID:
+<a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/?term=25666585">25666585</a>.
+PMCID: <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4322359/">PMC4322359</a>.</p></li>
+<li><p>Overbeek R, Olson R, Pusch GD, Olsen GJ, Davis JJ, Disz T, Edwards
+RA, Gerdes S, Parrello B, Shukla M, Vonstein V, Wattam AR, Xia F,
+Stevens R. The SEED and the Rapid Annotation of microbial genomes
+using Subsystems Technology (RAST). Nucleic Acids Res. 2014
+Jan;42(Database issue):D206-14. doi: 10.1093/nar/gkt1226. PMID:
+<a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/?term=24293654">24293654</a>.
+PMCID: <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3965101/">PMC3965101</a>.</p></li>
+<li><p>Davis JJ, Gerdes S, Olsen GJ, Olson R, Pusch GD, Shukla M, Vonstein
+V, Wattam AR, Yoo H. PATtyFams: Protein Families for the Microbial
+Genomes in the PATRIC Database. Front Microbiol. 2016 Feb 8;7:118.
+doi: 10.3389/fmicb.2016.00118. eCollection 2016. PMID:
+<a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/?term=26903996">26903996</a>.
+PMCID:
+<a class="reference external" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4744870/">PMC4744870</a>.</p></li>
+</ol>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

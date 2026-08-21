@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Hsp | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="P3DataAPI" href="P3DataAPI.html" />
+    <link rel="prev" title="GenomeTypeObject" href="GenomeTypeObject.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Hsp | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Command Line Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installing-the-cli-release">Installing the CLI Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#tutorials-and-reference-documentation">Tutorials and Reference Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cli_installation.html">Installing the BV-BRC Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_getting_started.html">Using the BV-BRC Command-line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_services.html">Using BV-BRC Services from the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_common_tasks.html">Common Tasks With P3 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_clustering.html">Looking for Hypothetical Proteins in Clusters of Related Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli_signature_clusters.html">Computing Signature Clusters: an Application of the Command-Line Tools</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">BV-BRC Command Line Program Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="common_options.html">Common Options to Command Line Programs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenomeTypeObject.html">GenomeTypeObject</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Hsp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="P3DataAPI.html">P3DataAPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="P3Utils.html">P3Utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Sim.html">Sim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-enumerate-apps.html">appserv-enumerate-apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-enumerate-tasks.html">appserv-enumerate-tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-kill-task.html">appserv-kill-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-query-task.html">appserv-query-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-rerun-task.html">appserv-rerun-task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appserv-start-app.html">appserv-start-app</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-aggregates-to-html.html">p3-aggregates-to-html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-contigs.html">p3-all-contigs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-drugs.html">p3-all-drugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-genomes.html">p3-all-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-subsystem-roles.html">p3-all-subsystem-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-subsystems.html">p3-all-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-all-taxonomies.html">p3-all-taxonomies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-blast.html">p3-blast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-build-kmer-db.html">p3-build-kmer-db</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-cat.html">p3-cat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-closest-seqs.html">p3-closest-seqs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-co-occur.html">p3-co-occur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-collate.html">p3-collate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-compare-cols.html">p3-compare-cols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-count.html">p3-count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-count-families.html">p3-count-families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-cp.html">p3-cp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-discriminating-kmers.html">p3-discriminating-kmers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-dump-genomes.html">p3-dump-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-echo.html">p3-echo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-extract.html">p3-extract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-fasta-md5.html">p3-fasta-md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-feature-gap.html">p3-feature-gap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-feature-upstream.html">p3-feature-upstream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-file-filter.html">p3-file-filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-couples.html">p3-find-couples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-features.html">p3-find-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-in-clusters.html">p3-find-in-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-serology-data.html">p3-find-serology-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-find-surveillance-data.html">p3-find-surveillance-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-format-results.html">p3-format-results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-function-parse.html">p3-function-parse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-function-to-role.html">p3-function-to-role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-generate-close-roles.html">p3-generate-close-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-generate-clusters.html">p3-generate-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-distance.html">p3-genome-distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-fasta.html">p3-genome-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-kmer-hits.html">p3-genome-kmer-hits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genome-md5.html">p3-genome-md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-genus-species.html">p3-genus-species</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-drug-genomes.html">p3-get-drug-genomes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-family-data.html">p3-get-family-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-family-features.html">p3-get-family-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-data.html">p3-get-feature-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-group.html">p3-get-feature-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-protein-regions.html">p3-get-feature-protein-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-protein-structures.html">p3-get-feature-protein-structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-regions.html">p3-get-feature-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-sequence.html">p3-get-feature-sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-feature-subsystems.html">p3-get-feature-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-features-by-sequence.html">p3-get-features-by-sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-features-in-regions.html">p3-get-features-in-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-contigs.html">p3-get-genome-contigs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-data.html">p3-get-genome-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-drugs.html">p3-get-genome-drugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-expression.html">p3-get-genome-expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-features.html">p3-get-genome-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-group.html">p3-get-genome-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-protein-regions.html">p3-get-genome-protein-regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-protein-structures.html">p3-get-genome-protein-structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-refseq-features.html">p3-get-genome-refseq-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-sp-genes.html">p3-get-genome-sp-genes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-genome-subsystems.html">p3-get-genome-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-subsystem-features.html">p3-get-subsystem-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-subsystem-roles.html">p3-get-subsystem-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-get-taxonomy-data.html">p3-get-taxonomy-data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto.html">p3-gto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-dna.html">p3-gto-dna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-fasta.html">p3-gto-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-fetch.html">p3-gto-fetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-gto-scan.html">p3-gto-scan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-head.html">p3-head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-identify-clusters.html">p3-identify-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-job-status.html">p3-job-status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-join.html">p3-join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-kmer-compare.html">p3-kmer-compare</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-less.html">p3-less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-list-feature-groups.html">p3-list-feature-groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-list-genome-groups.html">p3-list-genome-groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-login.html">p3-login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-logout.html">p3-logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-ls.html">p3-ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-mass-cluster-run.html">p3-mass-cluster-run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-match.html">p3-match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-merge.html">p3-merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-mkdir.html">p3-mkdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-nucleon-runs.html">p3-nucleon-runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-peg-kmer-hits.html">p3-peg-kmer-hits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pick.html">p3-pick</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pick-by-class.html">p3-pick-by-class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-pivot.html">p3-pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-project-subsystems.html">p3-project-subsystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-put-feature-group.html">p3-put-feature-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-put-genome-group.html">p3-put-genome-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-qstat.html">p3-qstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rast.html">p3-rast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-related-by-clusters.html">p3-related-by-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rep-prots.html">p3-rep-prots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rm.html">p3-rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-rmdir.html">p3-rmdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-fasta.html">p3-role-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-features.html">p3-role-features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-role-matrix.html">p3-role-matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-sequence-profile.html">p3-sequence-profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-set-to-relation.html">p3-set-to-relation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-shuffle.html">p3-shuffle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-clusters.html">p3-signature-clusters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-families.html">p3-signature-families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-signature-peginfo.html">p3-signature-peginfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-sort.html">p3-sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-stats.html">p3-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-BLAST.html">p3-submit-BLAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-CGA.html">p3-submit-CGA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-MSA.html">p3-submit-MSA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-codon-tree.html">p3-submit-codon-tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-fastqutils.html">p3-submit-fastqutils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-gene-tree.html">p3-submit-gene-tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-genome-annotation.html">p3-submit-genome-annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-genome-assembly.html">p3-submit-genome-assembly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-metagenome-binning.html">p3-submit-metagenome-binning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-metagenomic-read-mapping.html">p3-submit-metagenomic-read-mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-proteome-comparison.html">p3-submit-proteome-comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-rnaseq.html">p3-submit-rnaseq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-sars2-analysis.html">p3-submit-sars2-analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-sars2-assembly.html">p3-submit-sars2-assembly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-taxonomic-classification.html">p3-submit-taxonomic-classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-submit-variation-analysis.html">p3-submit-variation-analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-subsys-roles.html">p3-subsys-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tail.html">p3-tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tbl-to-fasta.html">p3-tbl-to-fasta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tbl-to-html.html">p3-tbl-to-html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-tests.html">p3-tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-uni-roles.html">p3-uni-roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-user-subsystem.html">p3-user-subsystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-whoami.html">p3-whoami</a></li>
+<li class="toctree-l4"><a class="reference internal" href="p3-write-kmers.html">p3-write-kmers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="submit-patric-annotation.html">submit-patric-annotation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="submit-patric-genbank.html">submit-patric-genbank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#rast-tutorials">RAST Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Command Line Interface</a> &raquo;</li>
+        
+          <li><a href="index.html">BV-BRC Command Line Program Reference</a> &raquo;</li>
+        
+      <li>Hsp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/cli_tutorial/command_list/Hsp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hsp">
+<span id="cli-hsp"></span><h1>Hsp<a class="headerlink" href="#hsp" title="Permalink to this headline">¶</a></h1>
+<section id="high-scoring-segment-pair-object">
+<h2>High-scoring Segment Pair Object<a class="headerlink" href="#high-scoring-segment-pair-object" title="Permalink to this headline">¶</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>The HSP object provides access by name to the fields of a BLAST result.
+Unlike a standard object, the similarity object is stored as a list
+reference, not a hash reference. The HSP fields are pulled from the
+appropriate places in the list.</p>
+<p>A blast takes a sequence called the <em>query</em> and matches it against a
+<em>database</em>. When describing the data in an HSP, we will
+refer repeatedly to the query sequence and the database sequence. Often,
+the query and database sequences will be given by peg IDs. In some cases,
+however, they will be contig IDs. In both cases, the match is represented
+by an alignment between portions of the sequences. Gap characters may
+be required to get the alignments to match, and the number of gaps is
+part of the data in the HSP.</p>
+</section>
+<section id="new">
+<h3>new<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$hsp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">Hsp</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="w">  </span><span class="nv">@data</span><span class="w"> </span><span class="p">);</span>
+<span class="k">my</span><span class="w"> </span><span class="nv">$hsp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">Hsp</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="w"> </span><span class="o">\</span><span class="nv">@data</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Create an HSP object from an array of fields.</p>
+<ul class="simple">
+<li><p>data</p></li>
+</ul>
+<blockquote>
+<div><p>An array of data in fields:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="mi">0</span><span class="w">   </span><span class="n">qid</span><span class="w">        </span><span class="n">query</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">id</span>
+<span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="n">qdef</span><span class="w">       </span><span class="n">query</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">comment</span>
+<span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="n">qlen</span><span class="w">       </span><span class="n">total</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="nb">length</span>
+<span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="n">sid</span><span class="w">        </span><span class="n">subject</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">id</span>
+<span class="w"> </span><span class="mi">4</span><span class="w">   </span><span class="n">sdef</span><span class="w">       </span><span class="n">subject</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">comment</span>
+<span class="w"> </span><span class="mi">5</span><span class="w">   </span><span class="n">slen</span><span class="w">       </span><span class="n">total</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="nb">length</span>
+<span class="w"> </span><span class="mi">6</span><span class="w">   </span><span class="n">scr</span><span class="w">        </span><span class="n">match</span><span class="w"> </span><span class="n">score</span>
+<span class="w"> </span><span class="mi">7</span><span class="w">   </span><span class="n">e_val</span><span class="w">      </span><span class="n">match</span><span class="w"> </span><span class="n">e</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="p">(</span><span class="n">probability</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">coincidence</span><span class="p">)</span>
+<span class="w"> </span><span class="mi">8</span><span class="w">   </span><span class="n">p_n</span><span class="w">        </span><span class="n">the</span><span class="w"> </span><span class="n">p</span><span class="o">-</span><span class="n">number</span>
+<span class="w"> </span><span class="mi">9</span><span class="w">   </span><span class="n">p_val</span><span class="w">      </span><span class="n">the</span><span class="w"> </span><span class="n">Poisson</span><span class="w"> </span><span class="n">value</span>
+<span class="mi">10</span><span class="w">   </span><span class="n">n_mat</span><span class="w">      </span><span class="n">match</span><span class="w"> </span><span class="nb">length</span>
+<span class="mi">11</span><span class="w">   </span><span class="n">n_id</span><span class="w">       </span><span class="n">identity</span><span class="w"> </span><span class="n">count</span>
+<span class="mi">12</span><span class="w">   </span><span class="n">n_pos</span><span class="w">      </span><span class="n">positive</span><span class="w"> </span><span class="n">count</span>
+<span class="mi">13</span><span class="w">   </span><span class="n">n_gap</span><span class="w">      </span><span class="n">gap</span><span class="w"> </span><span class="n">count</span>
+<span class="mi">14</span><span class="w">   </span><span class="n">dir</span><span class="w">        </span><span class="n">frame</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nb">shift</span>
+<span class="mi">15</span><span class="w">   </span><span class="n">q1</span><span class="w">         </span><span class="n">start</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">sequence</span>
+<span class="mi">16</span><span class="w">   </span><span class="n">q2</span><span class="w">         </span><span class="n">end</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">sequence</span>
+<span class="mi">17</span><span class="w">   </span><span class="n">qseq</span><span class="w">       </span><span class="n">query</span><span class="w"> </span><span class="n">alignment</span><span class="w"> </span><span class="n">sequence</span>
+<span class="mi">18</span><span class="w">   </span><span class="n">s1</span><span class="w">         </span><span class="n">start</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="n">sequence</span>
+<span class="mi">19</span><span class="w">   </span><span class="n">s2</span><span class="w">         </span><span class="n">end</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="n">sequence</span>
+<span class="mi">20</span><span class="w">   </span><span class="n">sseq</span><span class="w">       </span><span class="n">subject</span><span class="w"> </span><span class="n">alignment</span><span class="w"> </span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>RETURN</p></li>
+</ul>
+<blockquote>
+<div><p>Returns an HSP object that allows the values to be accessed by name.</p>
+</div></blockquote>
+<section id="dummy">
+<h4>dummy<a class="headerlink" href="#dummy" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$hsp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">Hsp</span><span class="o">-&gt;</span><span class="n">dummy</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Return an empty, dummy Hsp.</p>
+</section>
+<section id="qid">
+<h4>qid<a class="headerlink" href="#qid" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$qid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">qid</span>
+</pre></div>
+</div>
+<p>Return the query sequence id.</p>
+</section>
+<section id="qdef">
+<h4>qdef<a class="headerlink" href="#qdef" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$qdef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">qdef</span>
+</pre></div>
+</div>
+<p>Return the query sequence comment.</p>
+</section>
+<section id="qlen">
+<h4>qlen<a class="headerlink" href="#qlen" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$qlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">qlen</span>
+</pre></div>
+</div>
+<p>Return the total query sequence length.</p>
+</section>
+<section id="sid">
+<h4>sid<a class="headerlink" href="#sid" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">sid</span>
+</pre></div>
+</div>
+<p>Return the subject sequence id.</p>
+</section>
+<section id="sdef">
+<h4>sdef<a class="headerlink" href="#sdef" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$sdef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">sdef</span>
+</pre></div>
+</div>
+<p>Return the subject sequence comment.</p>
+</section>
+<section id="slen">
+<h4>slen<a class="headerlink" href="#slen" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$slen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">slen</span>
+</pre></div>
+</div>
+<p>Return the total subject sequence length.</p>
+</section>
+<section id="scr">
+<h4>scr<a class="headerlink" href="#scr" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$scr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">scr</span>
+</pre></div>
+</div>
+<p>Return the match score.</p>
+</section>
+<section id="e-val">
+<h4>e_val<a class="headerlink" href="#e-val" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$e_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">e_val</span>
+</pre></div>
+</div>
+<p>Return the match e-value (probability match is a coincidence).</p>
+</section>
+<section id="p-n">
+<h4>p_n<a class="headerlink" href="#p-n" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$p_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">p_n</span>
+</pre></div>
+</div>
+<p>Return the the p-number.</p>
+</section>
+<section id="p-val">
+<h4>p_val<a class="headerlink" href="#p-val" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$p_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">p_val</span>
+</pre></div>
+</div>
+<p>Return the the Poisson value.</p>
+</section>
+<section id="n-mat">
+<h4>n_mat<a class="headerlink" href="#n-mat" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$n_mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">n_mat</span>
+</pre></div>
+</div>
+<p>Return the match length.</p>
+</section>
+<section id="n-id">
+<h4>n_id<a class="headerlink" href="#n-id" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$n_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">n_id</span>
+</pre></div>
+</div>
+<p>Return the identity count.</p>
+</section>
+<section id="pct">
+<h4>pct<a class="headerlink" href="#pct" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$pct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">pct</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Return the percent identity.</p>
+</section>
+<section id="n-pos">
+<h4>n_pos<a class="headerlink" href="#n-pos" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$n_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">n_pos</span>
+</pre></div>
+</div>
+<p>Return the positive count.</p>
+</section>
+<section id="n-gap">
+<h4>n_gap<a class="headerlink" href="#n-gap" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$n_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">n_gap</span>
+</pre></div>
+</div>
+<p>Return the gap count.</p>
+</section>
+<section id="dir">
+<h4>dir<a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">dir</span>
+</pre></div>
+</div>
+<p>Return the frame direction or shift.</p>
+</section>
+<section id="q1">
+<h4>q1<a class="headerlink" href="#q1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$q1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">q1</span>
+</pre></div>
+</div>
+<p>Return the start position of match in the query sequence.</p>
+</section>
+<section id="q2">
+<h4>q2<a class="headerlink" href="#q2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">q2</span>
+</pre></div>
+</div>
+<p>Return the end position of match in the query sequence.</p>
+</section>
+<section id="qseq">
+<h4>qseq<a class="headerlink" href="#qseq" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$qseq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">qseq</span>
+</pre></div>
+</div>
+<p>Return the query alignment sequence.</p>
+</section>
+<section id="s1">
+<h4>s1<a class="headerlink" href="#s1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">s1</span>
+</pre></div>
+</div>
+<p>Return the start position of match in the subject sequence.</p>
+</section>
+<section id="s2">
+<h4>s2<a class="headerlink" href="#s2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">s2</span>
+</pre></div>
+</div>
+<p>Return the end position of match in the subject sequence.</p>
+</section>
+<section id="sseq">
+<h4>sseq<a class="headerlink" href="#sseq" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$sseq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">sseq</span>
+</pre></div>
+</div>
+<p>Return the subject alignment sequence.</p>
+</section>
+<section id="sloc">
+<h4>sloc<a class="headerlink" href="#sloc" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$sloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">sloc</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Return the match region of the subject sequence as a location object.</p>
+</section>
+<section id="qloc">
+<h4>qloc<a class="headerlink" href="#qloc" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">my</span><span class="w"> </span><span class="nv">$qloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hsp</span><span class="o">-&gt;</span><span class="n">qloc</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Return the match region of the query sequence as a location object.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="P3DataAPI.html" class="btn btn-neutral float-right" title="P3DataAPI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GenomeTypeObject.html" class="btn btn-neutral float-left" title="GenomeTypeObject" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

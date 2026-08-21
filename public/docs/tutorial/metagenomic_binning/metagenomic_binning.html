@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Metagenomic Binning Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Metagenomic Read Mapping" href="../metagenomic_read_mapping/metagenomic_read_mapping.html" />
+    <link rel="prev" title="Taxonomic Classification Service" href="../taxonomic_classification/taxonomic_classification.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Metagenomic Binning Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../taxonomic_classification/taxonomic_classification.html">Taxonomic Classification Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Metagenomic Binning Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#locating-the-metagenomic-binning-service-app">Locating the Metagenomic Binning Service App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-with-reads-or-contigs">Starting with reads or contigs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-sequencing-reads-single-or-paired">Submitting sequencing reads (single or paired)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-parameters-when-reads-are-the-input">Setting Parameters when reads are the input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-the-metagenomic-binning-job">Submitting the Metagenomic binning job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-the-completed-metagenomic-binning-job">Finding the completed Metagenomic binning job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metagenomic-binning-job-results">Metagenomic binning job results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metagenomic_read_mapping/metagenomic_read_mapping.html">Metagenomic Read Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile_element/mobile_element.html">Mobile Element Detection Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Metagenomic Binning Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/metagenomic_binning/metagenomic_binning.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="metagenomic-binning-service">
+<h1>Metagenomic Binning Service<a class="headerlink" href="#metagenomic-binning-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 14 November 2024</em></p>
+<p>The BV-BRC metagenomic binning service utilizes the BV-BRC database to furnish a large, diverse set of reference genomes. This is a service for supervised extraction and annotation of high-quality, near-complete genomes from reads or metagenomically-derived contigs [1]. Reads are assembled using either MetaSPAdes [2] or MEGAHIT [3].  Each set of binned contigs represents a draft genome that will be annotated by RASTtk [4] for bacteria, or with VIGOR4 [5,6] or  Mat_Peptide [7] for viruses. A structured-language binning report is provided containing quality measurements and taxonomic information about the contig bins. The BV-BRC metagenome binning service emphasizes extraction of high-quality genomes for downstream analysis using other BV-BRC tools and services.</p>
+<p><img alt="Figure 1" src="../../_images/Picture130.png" /></p>
+<p>Metagenomic binning jobs that include assembly take, on average, take an hour to complete.  However, the BV-BRC assembly service is quite popular, and there is often a long queue resulting in jobs taking 24 hours to complete.  If the size of the read file is large (Gb) or the queue is long, results could take several days.</p>
+<p>The code for the binning script is located at:
+<a class="reference external" href="https://github.com/SEEDtk/p3_code/blob/master/scripts/p3x-process-checkv.pl">https://github.com/SEEDtk/p3_code/blob/master/scripts/p3x-process-checkv.pl</a></p>
+<p>The code for the RASTtk pipeline is located at:
+<a class="reference external" href="https://github.com/SEEDtk/p3_code/blob/master/scripts/p3x-process-bins_generate.pl">https://github.com/SEEDtk/p3_code/blob/master/scripts/p3x-process-bins_generate.pl</a></p>
+<section id="locating-the-metagenomic-binning-service-app">
+<h2>Locating the Metagenomic Binning Service App<a class="headerlink" href="#locating-the-metagenomic-binning-service-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At the top of any BV-BRC page, clicking on the <strong>Tools &amp; Services</strong> tab.  Click on <strong>Metagenomic Binning</strong> in the drop-down box, underneath <strong>Metagenomics</strong>.
+<img alt="Figure Service_tab_MB" src="../../_images/Service_tab_MB.png" /></p></li>
+<li><p>This will open up the Metagenomic Binning Service landing page.  The default page shows starting with a read file.<br />
+<img alt="Figure MB_landing" src="../../_images/MB_landing.png" /></p></li>
+</ol>
+</section>
+<section id="starting-with-reads-or-contigs">
+<h2>Starting with reads or contigs<a class="headerlink" href="#starting-with-reads-or-contigs" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Researchers can assemble and annotate a genome, or they can submit contigs to just do an annotation.  The default setting has <strong>Read File</strong> selected in the <strong>Start With</strong> box.
+<img alt="Figure Read_Contig" src="../../_images/Read_Contig.png" /></p></li>
+</ol>
+</section>
+<section id="submitting-sequencing-reads-single-or-paired">
+<h2>Submitting sequencing reads (single or paired)<a class="headerlink" href="#submitting-sequencing-reads-single-or-paired" title="Permalink to this headline">¶</a></h2>
+<p>The service accepts both single and paired reads.  Paired read libraries are usually given as file pairs, with each file containing the forward or reverse half of each read pair. Paired read files are expected to be sorted in such a way that each read in a pair occurs in the same Nth position as its mate in their respective files. These files are specified as READ FILE 1 and READ FILE 2. For a given file pair, the selection of which file is READ 1 or READ 2 does not matter.</p>
+<p>Reads must first be uploaded to the BV-BRC workspace, and once there, they can be selected in several ways.</p>
+<ol class="simple">
+<li><p>Navigate to the workspace by clicking on the <strong>Folder</strong> icon at the end of the text box.  This will open a pop-up window.  Located the row that has the correct reads, and then click on that.  This will highlight the row.  Click on <strong>OK</strong> at the bottom of the pop-up box to select the reads.
+<img alt="Figure Selecting_reads" src="../../_images/Selecting_reads.png" /></p></li>
+<li><p>Clicking on the <strong>down arrow</strong> at the end of the text box will open a drop-down box that shows the reads that have been selected most recently (top of list) to less frequently (down).  Clicking on the row that has the correct read will select those reads.</p></li>
+<li><p>Beginning to type the name of the read in the text box will open a drop-down box that shows reads ching that text.  Clicking on the row that has the correct read will select those reads.</p></li>
+<li><p>Multiple read pairs or single reads can be analyzed, but they must first be moved to the <strong>Selected Libraries</strong> box. Click on the <strong>arrow</strong> to the right of the selected reads.  This will move the file into the <strong>Selected Libraries</strong> box.
+<img alt="Figure Move_selected_libraries" src="../../_images/Move_selected_libraries.png" /></p></li>
+<li><p>Clicking on the inforion icon (<strong>i</strong>) will open a pop-up window that shows the reads selected, as well as where they are located in the workspace.
+<img alt="Figure Inforion_icon" src="../../_images/Information_icon.png" /></p></li>
+<li><p>Note that there is an <strong>S</strong> or <strong>P</strong> preceding the reads designates if they are single or paired.  Reads can be removed by clicking on the <strong>X</strong> at the end of the row where they are listed.
+<img alt="Figure Remove_reads" src="../../_images/Remove_reads.png" /></p></li>
+</ol>
+<section id="submitting-reads-that-are-present-at-the-sequence-read-archive-sra">
+<h3>Submitting reads that are present at the Sequence Read Archive (SRA)<a class="headerlink" href="#submitting-reads-that-are-present-at-the-sequence-read-archive-sra" title="Permalink to this headline">¶</a></h3>
+<p>BV-BRC also supports analysis of existing datasets from SRA. If users submit SRA values, the BV-BRC will input the corresponding FASTQ files to the service.</p>
+<ol class="simple">
+<li><p>To submit data from the SRA, locate the Run Accession number and copy it.<br />
+<img alt="Figure SRA_page" src="../../_images/SRA_page.png" /></p></li>
+<li><p>Paste the copied accession number in the text box underneath SRA Run Accession, then click on the icon of an <strong>arrow within a circle</strong>. This will generate a dialog box above the text box that indicates that the service is validating the run number with SRA.  Once the verification is complete, the number will appear in the <strong>Selected Libraries</strong> box.
+<img alt="Figure SRR_selected_libraries" src="../../_images/SRR_selected_libraries.png" /></p></li>
+</ol>
+</section>
+<section id="starting-with-contigs">
+<h3>Starting with contigs<a class="headerlink" href="#starting-with-contigs" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>BV-BRC also supports analysis of contigs that have been assembled in or outside of the resource.  To submit contigs, you need to click on the <strong>Assembled Contigs</strong> button.<br />
+<img alt="Figure Start_contigs" src="../../_images/Start_contigs.png" /></p></li>
+<li><p>This will reload the page to show contigs only as the <strong>Input file</strong>.  Selecting contig files are similar to what has been described for the read files above.<br />
+<img alt="Figure Contig_landing" src="../../_images/Contig_landing.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="setting-parameters-when-reads-are-the-input">
+<h2>Setting Parameters when reads are the input<a class="headerlink" href="#setting-parameters-when-reads-are-the-input" title="Permalink to this headline">¶</a></h2>
+<p>Parameters must be selected prior to the submission of the Metagenomic Binning job in BV-BRC.  The <strong>Parameters</strong> box changes slightly if one began with reads, or with contigs.
+<img alt="Figure Reads_Contigs" src="../../_images/Reads_Contigs.png" /></p>
+<section id="assembly-strategy">
+<h3>Assembly Strategy<a class="headerlink" href="#assembly-strategy" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Assembly Strategy</strong>.  If reads had been selected in the <strong>Start With</strong> box, an assembly strategy must be selected.  Clicking on the down arrow that follows the text box under Assembly Strategy will open a drop-down box that shows all the strategies that BV-BRC offers.  A description of each strategy is listed below.</p>
+<ul class="simple">
+<li><p>The <strong>MetaSPAdes</strong>[2] software is part of the SPAdes toolkit, and requires paired reads. The latest version of the SPAdes toolkit that includes metaSPAdes is available here (http://cab.spbu.ru/software/spades/).</p></li>
+<li><p><strong>MEGAHIT</strong>[3] is a <em>de novo</em> assembler that can assemble either paired or single reads. The MEGAHIT software is available here: https://github.com/voutcn/megahit).</p></li>
+<li><p>If <strong>Auto</strong> is selected, MetaSPAdes will run if paired reads are submitted, and MEGAHIT  will run if single reads have been submitted.</p></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Figure 30" src="../../_images/Picture306.png" /></p>
+<ol class="simple">
+<li><p><strong>Organisms of Interest</strong> must be selected.  Clicking on <strong>Bacteria/Archaea</strong> will only show those results, clicking on <strong>Viruses</strong> will only show those, and clicking on <strong>Both</strong> will show all of those results.</p>
+<ul class="simple">
+<li><p>If <strong>Bacteria/Archaea</strong> are selected, the RASTtk[4] annotation pipeline will be used. The code for the RASTtk pipeline is located at https://github.com/SEEDtk/p3_code/blob/master/scripts/p3x-process-bins_generate.pl</p></li>
+<li><p>Selection of <strong>Viruses</strong> will use one of two annotation pipelines. The first pipeline is VIGOR4[5,6].  (The software for the VIGOR pipeline is located at: https://github.com/JCVenterInstitute/VIGOR4). If VIGOR4 does not find a virus match, the MatPeptide[7] pipeline is used. (The software for the Mat_peptide pipeline is available at:  https://github.com/VirusBRC/vipr_mat_peptide)</p></li>
+<li><p>When selecting <strong>Both</strong> the bacterial/archaeal and viral pipelines will both be run.  The workflow for this strategy is available at the top of this tutorial.</p></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Figure 31" src="../../_images/Picture3111.png" /></p>
+<ol class="simple">
+<li><p><strong>Output Folder</strong>. An output folder must be selected for the metagenomic binning job.  Typing the name of the folder in the text box underneath the words <strong>Output Folder</strong> will show a drop-down box that shows close hits to the name.<br />
+<img alt="Figure 33" src="../../_images/Picture335.png" /></p></li>
+<li><p>Clicking on the arrow at the end of the box will open a drop-down box that shows the most recently created folders.<br />
+<img alt="Figure 34" src="../../_images/Picture345.png" /></p></li>
+<li><p>To find a previously created folder, or to create a new one, click on the folder icon at the end of the text box.  This will open a pop-up window that shows all the previously created folder.<br />
+<img alt="Figure 35" src="../../_images/Picture355.png" /></p></li>
+<li><p>Click on the folder of interest, and then click the <strong>OK</strong> button in the lower right corner of the window.<br />
+<img alt="Figure 36" src="../../_images/Picture365.png" /></p></li>
+<li><p><strong>Output Name</strong>. A name for the job must be included prior to submitting the job.  Enter the name in the text box underneath the words Output Name.<br />
+<img alt="Figure 37" src="../../_images/Picture374.png" /></p></li>
+<li><p><strong>Genome Group Name</strong>.	The metagenome binning service currently creates a series of single-bin annotations and a genome group which supports some rudimentary multi-genome functionality, e.g. protein family heatmaps.  A name for the genome group that will be generated must be included prior to submitting the job.  Enter the name in the text box underneath the words <strong>Genome Group Name</strong>.<br />
+<img alt="Figure 38" src="../../_images/Picture385.png" /></p></li>
+<li><p><strong>ADVANCED</strong>.  Clicking on the down arrow following <strong>ADVANCED</strong> will extend the <strong>Parameters</strong> box.
+<img alt="Figure Advanced" src="../../_images/Advanced_Parameters.png" /></p></li>
+<li><p>A checkbox in front of <strong>Disable search for dangling contigs (Decreases memory use)</strong>.  This deserves some explanation.  After contigs are binned using kmers, there is a second step that looks for large DNA segments (generally 50 or more base pairs) that the contigs have in common; in particular, sequences near the end of one contig that are also found in another contig (hence the “dangling” reference).  It generally finds a small number of contigs, and it is very memory intensive.  If the sample causes an out-of-memory error during binning (as opposed to the normal case in assembly), you can uncheck that box and will generally get a successful run.
+<img alt="Figure Dangling" src="../../_images/Dangling.png" /></p></li>
+<li><p><strong>Min Contig Length</strong> and <strong>Min Contig Coverage</strong> can be adjusted by clicking on the up and down arrows at the end of the text boxes.
+<img alt="Figure Length_and_coverage" src="../../_images/Length_and_coverage.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="submitting-the-metagenomic-binning-job">
+<h2>Submitting the Metagenomic binning job<a class="headerlink" href="#submitting-the-metagenomic-binning-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Once the input data and the parameters have been selected, the Submit button at the bottom of the page will turn blue.  The metagenomic binning job will be submitted once this button is clicked. Once submitted, the job will enter the queue.  You can check the status of your job by clicking on the Jobs monitor at the lower right.<br />
+<img alt="Figure 39" src="../../_images/Picture395.png" /></p></li>
+</ol>
+</section>
+<section id="finding-the-completed-metagenomic-binning-job">
+<h2>Finding the completed Metagenomic binning job<a class="headerlink" href="#finding-the-completed-metagenomic-binning-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>There are two places to access a completed job in BV-BRC.  Clicking on the <strong>Workspaces</strong> tab, and then on <strong>My Jobs</strong> in the drop-down box.  Researchers can also click on the <strong>Jobs</strong> icon at the bottom right of any page.  Either of those actions will open the list of jobs that have been submitted.
+<img alt="Figure Finding_jobs" src="../../_images/Finding_jobs.png" /></p></li>
+<li><p>Once located, the job can be viewed by first clicking on the row that has the name, and then clicking on the <strong>View</strong> icon in the green action bar.<br />
+<img alt="Figure View_icon" src="../../_images/View_icon.png" /></p></li>
+</ol>
+</section>
+<section id="metagenomic-binning-job-results">
+<h2>Metagenomic binning job results<a class="headerlink" href="#metagenomic-binning-job-results" title="Permalink to this headline">¶</a></h2>
+<p>The Metagenomic Binning service returns a number of files when the job is completed.  Every job returns one or two <strong>Binning Reports</strong>, depending upon the selection of <strong>Bacteria/Archaea</strong>, <strong>Viruses</strong> or <strong>Both</strong> in the <strong>Organisms of Interest</strong>.  If the job was able to assemble or annotate genomes, a <strong>bin</strong> (demarked by a checkered flag) will be present, and these have additional files within them.  There will also be <strong>.fa</strong> files for each genome, bacterial or viral, that are returned.  These are the contig files.  Finally, there are other files returned (<strong>bins.json</strong>, <strong>bins.stats.txt</strong>,<strong>coverage.stat.txt</strong> and others).  Details on each of those files are described below.
+<img alt="Figure Job_results_page" src="../../_images/Job_results_page.png" /></p>
+<p><em>Binning Reports</em></p>
+<ol class="simple">
+<li><p>If <strong>Both</strong> was selected under <strong>Organisms of interest</strong>, there will be two binning reports of slightly different formats.
+<img alt="Figure Comparison" src="../../_images/Binning_report_comparison.png" /></p></li>
+<li><p>To view the Viral Binning report, click on the row that contains <strong>ViralBinningReport.html</strong>  and then on the <strong>View</strong> icon in the green action bar.  This will rewrite the page to show the binning report. The top part of the page shows the input data, and the lower part shows information on the generated bins.  Each of the columns contains specific information:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Bin</strong>: The number of the particular viral bin.  The table will show all the bins that were generated.</p></li>
+<li><p><strong>Virus ID</strong>: This is the GenBank accession number for the reference used for this binned genome.</p></li>
+<li><p><strong>Taxon ID</strong>:  This is the taxonomy ID for the reference used for this binned genome.</p></li>
+<li><p><strong>Genome ID</strong>: The ID number assigned to the genome in BV-BRC that represents the bin. Clicking on this number takes you to the genome.  If the viral genome is not one that BV-BRC currently annotated, this cell will say Not annotated.</p></li>
+<li><p><strong>Genome Name</strong>:  The name given to the bin. This is usually the species of the closest reference genome.</p></li>
+<li><p><strong>Length</strong>: The number of DNA base pairs in the bin.</p></li>
+<li><p><strong>Completeness (%)</strong>: CheckV[8] is used to estimates genome completeness.  It bases this score on comparison with a large database of complete viral genomes derived from NCBI GenBank and environmental samples and reports a confidence level for the estimate.</p></li>
+<li><p><strong>Error (%)</strong>: CheckV reports a confidence level for each AAI-based estimate according to the expected relative unsigned error rate: high confidence (0–5% error), medium confidence (5–10% error) or low confidence (&gt;10% error).</p></li>
+<li><p><strong>Coverage (%)</strong>: The average coverage for contigs in the bin.
+<img alt="Figure Viral_Binning" src="../../_images/ViralBinningReport.png" /></p></li>
+</ul>
+<ol class="simple">
+<li><p>To view the Bacterial Binning report, click on the row that contains <strong>BinningReport.html</strong>  and then on the <strong>View</strong> icon in the green action bar.
+<img alt="Figure View_report" src="../../_images/View_BinningReport.png" /></p></li>
+<li><p>This will rewrite the page to show the bacterial binning report. The top part of the page shows information about the binning job. Immediately below is a brief description of the results. The binning report shows all of the bins found by the BV-BRC metagenomic processor. The bins are divided into two categories– those of high quality (good) and those of questionable quality (bad).  Each of the columns contains specific information:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Score</strong>: A weighted sum of the completeness and consistency scores, less the contamination score. The contamination is weighted very heavily, so a highly contaminated bin may have a negative score. The maximum score is 2090 and the minimum score is -5000. The bins are sorted from the highest score to the lowest. Clicking on this number takes you to the detail report on the bin.</p></li>
+<li><p><strong>Genome ID</strong>: The ID number assigned to the genome in BV-BRC that represents the bin. Clicking on this number takes you to the genome.</p></li>
+<li><p><strong>Genome Name</strong>: The name given to the bin. This is usually the species of the closest reference genome followed by the phrase clonal population.</p></li>
+<li><p><strong>Reference Genome</strong>: The ID of the reference genomes used to create the bin. There is usually only one. Sometimes there are two, indicating that the bin represents multiple strains that could not be easily distinguished during the binning.</p></li>
+<li><p><strong>Coarse Consistency</strong>: The percent of predictable roles whose presence or absence matches the computations of the consistency tool. A high coarse consistency indicates the bin is either a single genome or a cluster of very close strains.</p></li>
+<li><p><strong>Fine Consistency</strong>: The percent of predictable roles whose number of occurrences matches the computations of the consistency tool. This number is always lower than the coarse consistency. A high fine consistency indicates a bin that can be treated like a functioning genome. A fine consistency of 87% is the minimum required for a bin to be considered a good genome.</p></li>
+<li><p><strong>Completeness</strong> and <strong>Contamination</strong>: Two internal BV-BRC tools are used– EvalG[9], which computes completeness and contamination using marker roles, and EvalCon[9], which determines whether the proteins found in the genome make sense together. A genome that is sufficiently complete (80%), with sufficiently low contamination (10%), and sufficiently consistent proteins (87%) is considered good and is shown in the first table.</p></li>
+<li><p><strong>Hypothetical</strong>: The percent of the annotated proteins in the genome that are named “Hypothetical.” A high percental of hypothetical proteins is an indication of a poor-quality genome.</p></li>
+<li><p><strong>Contig count</strong>:  The number of contigs from the assembled sample that were placed in the bin.</p></li>
+<li><p><strong>DNA size (bp)</strong>:  The number of DNA base pairs in the bin.</p></li>
+<li><p><strong>Contigs N50 (bp)</strong>: A statistical measure of the relative contig sizes: a higher number indicates a better assembly. This is the size of the longest contig such that half of the base pairs are in contig this size or larger.</p></li>
+<li><p><strong>Mean coverage</strong>:  The average coverage for contigs in the bin. If no coverage information was provided, this will be 50 for every bin.</p></li>
+<li><p><strong>Potentially Problematic Roles</strong>:  The number of roles that failed the consistency or completeness/contamination checks. Clicking on the numbers in this column takes you to the bin’s detail report, which includes a list of the roles in question.</p></li>
+<li><p><strong>Good PheS</strong>:  A Yes, or “Y” here indicates that the bin contains a single PheS protein of reasonable size, otherwise it is left blank. Because the PheS is used to identify the reference genomes of the bin, a questionable PheS protein is considered a serious problem with the bin.</p></li>
+<li><p>A <strong>yellow cell</strong> indicates a score that is problematic for the quality of the bin.
+<img alt="Figure BacterialReport" src="../../_images/Bacterial_Binning_Report.png" /></p></li>
+</ul>
+<ol class="simple">
+<li><p>Several of the cells in the binning report are hyperlinks.  The number underneath <strong>Score</strong> is a hyperlink that opens the <strong>GenomeReport</strong>.  The one underneath <strong>GenomeID</strong> is actually the unique identifier assigned to that particular genome.  If clicked, the landing page for that private genome will open.  Underneath <strong>Reference Genome</strong> is the unique identifier for the genome that served as a reference for this particular annotation job, and clicking on it will open the landing page for that genome.  Finally, <strong>Potentially Problematic Roles</strong> is on top of a number that describes the number of annotated genes that have potential problems.  Clicking on it will open the <strong>GenomeReport</strong>, where you can scroll down and see the number of problematic genes in the newly annotated genome.
+<img alt="Figure Hyperlinks" src="../../_images/Hyperlinks.png" /></p></li>
+<li><p>When a binned virus can be annotated by the BV-BRC viral annotation pipeline, the viral binning report will provide a hyperlink to the genome landing page for that virus.
+<img alt="Figure ViralID" src="../../_images/Viral_genomID_link.png" /></p></li>
+</ol>
+<p><em>Bins and contig files</em></p>
+<ol class="simple">
+<li><p>The metagenomic binning job will return a bin for each genome that has been annotated by the pipeline.  The bacterial bins start with <strong>bin</strong> and have a checkered flag before the name, and the viral bins that can be annotated by BV-BRC begins with <strong>vBin</strong>.  Viruses that cannot be annotated at this time do not have a binning job with a checkered flag.  Bacterial contigs are found in the rows that being with <strong>bin</strong> and end with <strong>.fa</strong>.  The viral contigs begin with <strong>vBin</strong> and also end with <strong>.fa</strong>.
+<img alt="Figure Bin_analysis" src="../../_images/Bin_analysis.png" /></p></li>
+<li><p>The details in both bacterial and viral binning jobs can be accessed by double clicking on the row that has the checkered flag. Details on the files returned by the annotation jobs that produce these bins can be found in the Annotation Tutorial (https://www.bv-brc.org/docs/tutorial/genome_annotation/genome_annotation.html).
+<img alt="Figure Flag" src="../../_images/Flag.png" /></p></li>
+<li><p>The pipeline produces additional contig files.  One of these is the data that cannot be mapped to the selected organisms.  The file that contains these contigs is called <strong>unbinned.fasta</strong>.
+<img alt="Figure Unbinned" src="../../_images/Unbinned.png" /></p></li>
+<li><p>The <strong>unplaced.fasta</strong> file includes the contigs actually the “Unmatched 12-mer contigs” that can be seen in the diagram at the top of this tutorial.<br />
+<img alt="Figure Unplaced" src="../../_images/Unplaced.png" /></p></li>
+</ol>
+<p><em>Other Job Result Files</em></p>
+<ol class="simple">
+<li><p>The pipeline also produces a json file.  A JSON file which stores simple data structures and objects in JavaScript Object Notation (JSON) format. It is primarily used for transmitting data between a web application and a server.  If you want to see what it looks like, you can select the row that contains the <strong>bins.json</strong>, and then click the <strong>View</strong> icon in the vertical green bar to the right. This will open a view of the json file.
+<img alt="Figure bins_json" src="../../_images/bins_json.png" /></p></li>
+<li><p>The pipeline also produces a file on the statistics of the bacterial bins found in the <strong>bins.stats.txt</strong>file.  As mentioned above, selecting the row that contains this file will highlight the vertical green bar to the right with possible downstream functions.  To view it, click on the <strong>View</strong> icon. The file will appear in the view.  It shows the data associated with the bins.
+<img alt="Figure vins_stats" src="../../_images/bins_stats.png" /></p></li>
+<li><p>The pipeline also produces a file on the coverage statistics of the bacterial bins.  To view that, click on the row that contains the <strong>coverage.stats.txt</strong> file and then on the <strong>View</strong> icon. This will open the file, which shows the assembly statistics associated with the bacterial bins.  <strong>contigLen</strong>  shows the number of contigs that the pipeline produced that match that particular size in base pairs (&gt; 1000 bp = 0000K).  <strong>contigOut</strong>  shows the number of contigs called by the assembly pipeline and written to the output.  <strong>contigFound</strong> shows the number of contigs read in from the FASTA file. Coverage statistics are also provided. The <strong>coverageOut</strong>  shows the contigs that have coverage data, and the <strong>cov</strong> rows show the number of contigs with that particular coverage (.1% =0X).  If the contig is too short or its coverage is too low, it won’t be written out. The <strong>dataLineFound</strong> is an input fasta line that contains sequence data rather than an ID and comment. <strong>letters</strong> is the total number of DNA letters. <strong>fastaLineIn</strong> is any input line from a FASTA file.</p></li>
+</ol>
+<p><img alt="Figure coverage" src="../../_images/coverage_stats.png" /></p>
+<ol class="simple">
+<li><p>The <strong>megahit.log</strong> file is generated if MEGAHIT was used to assemble the contigs.  The log file shows the steps that that the assembler took to generate the contigs.
+<img alt="Figure megahit" src="../../_images/megahit_log.png" /></p></li>
+<li><p>The <strong>options.json</strong> file is generated if MEGAHIT was the used to assemble the contigs.  It shows the assembler megahit options, including the default values that were not explicitly selected.
+<img alt="Figure options" src="../../_images/options_json.png" /></p></li>
+<li><p>If MetaSPAdes was used to assemble the contigs, the <strong>spades.log</strong> file shows the steps that that the assembler took to generate the contigs.
+<img alt="Figure spades" src="../../_images/spades_log.png" /></p></li>
+<li><p>The <strong>params.txt</strong> file is generated if MetaSPAdes was the used to assemble the contigs.  It shows the assembler SPAdes options, including the default values that were not explicitly selected.
+<img alt="Figure params_txt" src="../../_images/params_txt.png" /></p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Parrello, B., Butler, R., Chlenski, P., Pusch, G. D. &amp; Overbeek, R. Supervised extraction of near-complete genomes from metagenomic samples: A new service in PATRIC. Plos one 16, e0250092 (2021).</p></li>
+<li><p>Nurk, S., Meleshko, D., Korobeynikov, A. &amp; Pevzner, P. A. metaSPAdes: a new versatile metagenomic assembler. Genome research 27, 824-834 (2017)</p></li>
+<li><p>Li, D. et al. MEGAHIT v1. 0: a fast and scalable metagenome assembler driven by advanced methodologies and community practices. Methods 102, 3-11 (2016).</p></li>
+<li><p>Brettin, T. et al. RASTtk: a modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Scientific reports 5, 8365 (2015).</p></li>
+<li><p>Wang, S., Sundaram, J. P. &amp; Spiro, D. VIGOR, an annotation program for small viral genomes. BMC bioinformatics 11, 1-10 (2010).</p></li>
+<li><p>Wang, S., Sundaram, J. P. &amp; Stockwell, T. B. VIGOR extended to annotate genomes for additional 12 different viruses. Nucleic acids research 40, W186-W192 (2012).</p></li>
+<li><p>Larsen, C. N. et al. Mat_peptide: comprehensive annotation of mature peptides from polyproteins in five virus families. Bioinformatics 36, 1627-1628 (2020).
+8.Nayfach, S. et al. CheckV assesses the quality and completeness of metagenome-assembled viral genomes. Nature biotechnology 39, 578-585 (2021).</p></li>
+<li><p>Parrello, B. et al. A machine learning-based service for estimating quality of genomes using PATRIC. BMC bioinformatics 20, 1-9 (2019).</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../metagenomic_read_mapping/metagenomic_read_mapping.html" class="btn btn-neutral float-right" title="Metagenomic Read Mapping" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../taxonomic_classification/taxonomic_classification.html" class="btn btn-neutral float-left" title="Taxonomic Classification Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

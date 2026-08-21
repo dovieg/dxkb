@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Small-Molecule Docking Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Small-Molecule Docking Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Small-Molecule Docking Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/docking_service.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="small-molecule-docking-service">
+<h1>Small-Molecule Docking Service<a class="headerlink" href="#small-molecule-docking-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: August 8, 2024</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The small molecule docking service uses the DiffDock method of molecular docking to compute a set of predicted
+poses for a given protein structure and a set of small-molecule ligands.  This service utilizes a diffusion model, <a class="reference external" href="https://arxiv.org/abs/2210.01776">DiffDock</a> to compute a set of poses for a target protein structure and a set of small-molecule ligands.  The aim is to simulate and analyze potential binding scenarios “in silico”. Offering a crucial advantage by predicting the success of protein ligand combinations ahead of costly and time-consuming in vivo experiments.</p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/Docking">Docking Application</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/docking/docking.html"><span class="doc std std-doc">Docking Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-docking-service">
+<h2>Using the Docking Service<a class="headerlink" href="#using-the-docking-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Docking</strong> submenu option under the <strong>“SERVICES”</strong> main menu (Protein Tools category) opens the Docking Service input form. <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="Docking menu option" src="../../_images/updated_services_menu.png" /></p>
+<p>Below is a screenshot of the Docking Service landing page, as well as a summary of customizable parameters.</p>
+<p><img alt="User Interface" src="../../_images/docking_service_UI.png" /></p>
+</section>
+<section id="pdb-selection">
+<h2>PDB Selection<a class="headerlink" href="#pdb-selection" title="Permalink to this headline">¶</a></h2>
+<p><strong>PDB ID:</strong> The PDB identifier of the target protein. The PDB identifiers here come from
+the collection loaded into the BV-BRC resource. The <strong>Preview PDB</strong> button may be used
+to preview the given PDB structure using the BV-BRC structure viewer.</p>
+</section>
+<section id="ligand-library-selection">
+<h2>Ligand library selection<a class="headerlink" href="#ligand-library-selection" title="Permalink to this headline">¶</a></h2>
+<p>Choose a set of ligands to bind. These may be specified using one of the following mechanisms:</p>
+<ul class="simple">
+<li><p>By using the <strong>Predefined Ligand Libraries</strong> option. We offer three ligand libraries. The exemplar drug database is intended to be used in demonstrations. This is a small set of ligands that we will walk through in this tutorial. The approved compound library are compounds approved by at least one of various governing bodies for human use.  There are around two thousand compounds in this library. The experimental drug compound library is more robust, with nearly ten thousand compounds. The results from the ligand libraries will link out to <a class="reference external" href="https://go.drugbank.com/">DrugBank Online</a>.</p></li>
+<li><p>By using the <strong>Select Workspace File of SMILES Strings</strong> option. Here you may choose an existing
+file of SMILES strings from the workspace or upload a new file from your computer. This file can be formatted in two ways. The file can contain the ID, name and SMILE string separated by tabs.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DB00135</span>   <span class="n">Tyrosine</span>    <span class="n">N</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="nd">@H</span><span class="p">](</span><span class="n">CC1</span><span class="o">=</span><span class="n">CC</span><span class="o">=</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="n">C</span><span class="o">=</span><span class="n">C1</span><span class="p">)</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="o">=</span><span class="n">O</span>
+<span class="n">DB00515</span>   <span class="n">Cisplatin</span>    <span class="p">[</span><span class="n">H</span><span class="p">][</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">Pt</span><span class="p">](</span><span class="n">Cl</span><span class="p">)(</span><span class="n">Cl</span><span class="p">)[</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">H</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Or the file can contain solely the ID, and the SMILE separated by tabs.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tyrosine</span>    <span class="n">N</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="nd">@H</span><span class="p">](</span><span class="n">CC1</span><span class="o">=</span><span class="n">CC</span><span class="o">=</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="n">C</span><span class="o">=</span><span class="n">C1</span><span class="p">)</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="o">=</span><span class="n">O</span>
+<span class="n">Cisplatin</span>    <span class="p">[</span><span class="n">H</span><span class="p">][</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">Pt</span><span class="p">](</span><span class="n">Cl</span><span class="p">)(</span><span class="n">Cl</span><span class="p">)[</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">H</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>By using the <strong>Enter SMILES Strings</strong> option, one or more SMILES strings may be pasted into the text
+box, one per line. If you wish to specify identifiers for the SMILES strings these may be provided before the SMILES string.
+For example:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tyrosine</span>    <span class="n">N</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="nd">@H</span><span class="p">](</span><span class="n">CC1</span><span class="o">=</span><span class="n">CC</span><span class="o">=</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="n">C</span><span class="o">=</span><span class="n">C1</span><span class="p">)</span><span class="n">C</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="o">=</span><span class="n">O</span>
+<span class="n">Cisplatin</span>    <span class="p">[</span><span class="n">H</span><span class="p">][</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">Pt</span><span class="p">](</span><span class="n">Cl</span><span class="p">)(</span><span class="n">Cl</span><span class="p">)[</span><span class="n">N</span><span class="p">]([</span><span class="n">H</span><span class="p">])([</span><span class="n">H</span><span class="p">])[</span><span class="n">H</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><strong>Output Folder:</strong> The workspace folder where results will be placed.</p>
+<p><strong>Output Name:</strong> A user-specified label. This name will appear in the workspace when the analysis job is complete.</p>
+</section>
+<section id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<p><strong>Reset:</strong> Resets the input form to default values</p>
+<p><strong>Submit:</strong> Launches the Docking job. A message will appear below the box to indicate that the job is now in the queue.</p>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Select output folder" src="../../_images/select_output_folder_output_name.png" /></p>
+<p>The Docking Service generates several files that are deposited in the Private Workspace in the designated Output Folder.</p>
+<p>The top-level folder includes a file named <strong>DockingRreport.html</strong>.
+This contains a report summarizing the results of the docking against each ligand
+including scores for each match and a link to the structure viewer with the protein structure
+with the ligand placed in it.</p>
+<p>Each protein that was docked has more detailed output in a folder named with the PDB identifier for the protein.
+In this folder is a set of additional folders, one per ligand. In these folders you will find the details
+for the docking of the protein with the given ligand:</p>
+<ul class="simple">
+<li><p><strong>result.csv</strong> contains a table summarizing the results. The columns are as follows:</p>
+<ul>
+<li><p><strong>Ident</strong> Ligand Identifier</p></li>
+<li><p><strong>Rank</strong> Rank of the pose as determined by DiffDock</p></li>
+<li><p><strong>Score</strong> The DiffDock output confidence score is assigned by DiffDock. This is referred to as the DiffDock Confidence score in the report. A lower confidence score indicates more confidence in the ligand protein docking successfully. This score, C, pertains to the pose of the molecule and ligand. If C is greater than 0 the pose is considered high confidence. If C is between -1.5 and 0 the pose is considered moderate confidence If C is below -1.5 the pose is considered low confidence. The above confidence guidelines pertain to protein ligand combinations of medium-sized proteins with small, drug-like molecules. This is what DiffDock had it the training set. For large ligands, large protein complexes, or unbound conformations, adjust these intervals downward.</p></li>
+<li><p><strong>lig_sdf</strong> The name of A SDF file containing the posed ligand</p></li>
+<li><p><strong>comb_pdb</strong> The name of a PDB file containing the ligand and PDB structure composed together</p></li>
+<li><p><strong>CNN Score</strong> CNN refers to a type of artificial intelligence called convolutional neural network (CNNs). The CNN Score gives a numerical value that represents how plausible is the binding pose is within the pocket based on the CNN model’s evaluation. The evaluation is based on key features of protein-ligand interactions. The CNN score is a value between 0 and 1 that is used to rank the poses of the ligand, where a score of 1 denotes a perfect ligand pose.</p></li>
+<li><p><strong>CNN Affinity</strong> CNN affinity is a hypothetical measurement of the strength of the binding interaction between the molecule and the target protein when docked as calculated by the central neural network described above. A higher affinity value indicates a greater chance of successful ligand docking at that pose.</p></li>
+<li><p><strong>Vinardo</strong> The Vinardo score is an empirical score function that evaluate the binding pose with terms from Gaussian steric attractions, quadratic steric repulsions, Lennard-Jones potentials, electrostatic interactions, hydrophobic interactions, non-hydrophobic interactions, and non-directional hydrogen bonds. A lower Vinardo score indicates a better chance of ligand binding.</p></li>
+</ul>
+</li>
+<li><p><strong>&lt;PDB_ID&gt;_rank&lt;N&gt;_confidence-&lt;CONF&gt;.pdb</strong> - The composed PDB file for rank N with confidence CONF</p></li>
+<li><p><strong>rank&lt;N&gt;.sdf</strong> - A SDF file containing the top-ranked ligand pose</p></li>
+<li><p><strong>rank&lt;N&gt;_confidence-&lt;CONF&gt;.sdf</strong> - A SDF file for the pose with rank N</p></li>
+<li><p><strong>rank&lt;N&gt;_confidence-&lt;CONF&gt;.pdb</strong> - A PDB file for the pose with rank N</p></li>
+</ul>
+</section>
+<section id="action-buttons">
+<h2>Action buttons<a class="headerlink" href="#action-buttons" title="Permalink to this headline">¶</a></h2>
+<p>After selecting one of the output files by clicking it, a set of options becomes available in the vertical green Action Bar on the right side of the table. These include:</p>
+<ul class="simple">
+<li><p><strong>Hide/Show:</strong> Toggles (hides) the right-hand side Details Pane.</p></li>
+<li><p><strong>Guide Link:</strong> to the corresponding Quick Reference.</p></li>
+<li><p><strong>Download:</strong> Downloads the selected item.</p></li>
+<li><p><strong>View:</strong> Displays the content of the file, typically as plain text or rendered html, depending on filetype.</p></li>
+<li><p><strong>Delete:</strong> Deletes the file.</p></li>
+<li><p><strong>Rename:</strong> Allows renaming of the file.</p></li>
+<li><p><strong>Copy:</strong> Copies the selected items to the clipboard.</p></li>
+<li><p><strong>Move:</strong> Allows moving of the file to another folder.</p></li>
+</ul>
+<p>More details are available in the <a class="reference internal" href="../action_bar.html"><span class="doc std std-doc">Action Bar</span></a> Quick Reference Guide.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Olson RD, Assaf R, Brettin T, Conrad N, Cucinell C, Davis JJ, Dempsey DM, Dickerman A, Dietrich EM, Kenyon RW, Kuscuoglu
+M, Lefkowitz EJ, Lu J, Machi D, Macken C, Mao C, Niewiadomska A, Nguyen M, Olsen GJ, Overbeek JC, Parrello B, Parrello V, Porter JS, Pusch GD, Shukla M, Singh I, Stewart L, Tan G, Thomas C, VanOeffelen M, Vonstein V, Wallace ZS, Warren AS,Wattam AR, Xia F, Yoo H, Zhang Y, Zmasek CM, Scheuermann RH, Stevens RL. Nucleic Acids Res. 2022 Nov 9:gkac1003. doi: 10.1093/nar/gkac1003. Epub ahead of print. PMID: 36350631.</p></li>
+<li><p>Corso, Gabriele, Arthur Deng, Benjamin Fry, Nicholas Polizzi, Regina Barzilay, and Tommi Jaakkola. “Deep Confident Steps to New Pockets: Strategies for Docking Generalization.” arXiv preprint arXiv:2402.18396 (2024).</p></li>
+<li><p>McNutt, Andrew T., Paul Francoeur, Rishal Aggarwal, Tomohide Masuda, Rocco Meli, Matthew Ragoza, Jocelyn Sunseri, and David Ryan Koes. “GNINA 1.0: molecular docking with deep learning.” Journal of cheminformatics 13, no. 1 (2021): 43.</p></li>
+<li><p>Quiroga R, Villarreal MA (2016) Vinardo: A Scoring Function Based on Autodock Vina Improves Scoring, Docking, and Virtual Screening. PLOS ONE 11(5): e0155183. https://doi.org/10.1371/journal.pone.0155183.</p></li>
+<li><p>Bento, A.P., Hersey, A., Félix, E. et al. An open source chemical structure curation pipeline using RDKit. J Cheminform 12, 51 (2020). https://doi.org/10.1186/s13321-020-00456-1.</p></li>
+<li><p>David Sehnal, Sebastian Bittrich, Mandar Deshpande, Radka Svobodová, Karel Berka, Václav Bazgier, Sameer Velankar, Stephen K Burley, Jaroslav Koča, Alexander S Rose: Mol* Viewer: modern web app for 3D visualization and analysis of large biomolecular structures, Nucleic Acids Research, 2021; https://doi.org/10.1093/nar/gkab314.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

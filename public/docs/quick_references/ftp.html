@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>FTP Site | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="copilot.html" />
+    <link rel="prev" title="System Requirements" href="system_requirements.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>FTP Site | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services_menu.html">Tools &amp; Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FTP Site</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bv-brc-ftp-site-transition-from-unencrypted-ftp-to-encrypted-ftp-ftps">BV-BRC FTP Site: Transition from Unencrypted FTP to Encrypted FTP (FTPS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#programmatic-access">Programmatic Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#organization-of-data-on-the-bv-brc-ftp-site">Organization of Data on the BV-BRC FTP Site</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#release-notes">RELEASE_NOTES/</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#genomes">genomes/</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viruses">viruses/</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-data-for-large-number-of-genomes">Downloading Data for Large Number of Genomes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#uploading-downloading-data-from-your-private-workspace-using-ftp-client">Uploading/Downloading Data From Your Private Workspace using FTP Client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Quick Reference Guides</a> &raquo;</li>
+        
+      <li>FTP Site</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/BV-BRC/bvbrc_docs/blob/master/docroot/quick_references/ftp.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="ftp-site">
+<h1>FTP Site<a class="headerlink" href="#ftp-site" title="Permalink to this headline">¶</a></h1>
+<section id="bv-brc-ftp-site-transition-from-unencrypted-ftp-to-encrypted-ftp-ftps">
+<h2>BV-BRC FTP Site: Transition from Unencrypted FTP to Encrypted FTP (FTPS)<a class="headerlink" href="#bv-brc-ftp-site-transition-from-unencrypted-ftp-to-encrypted-ftp-ftps" title="Permalink to this headline">¶</a></h2>
+<p>The BV-BRC FTP site has long been a primary mechanism for distributing large-scale genomic and related datasets. To strengthen security and align with modern best practices, BV-BRC has transitioned from unencrypted FTP (<a class="reference external" href="ftp://ftp.bv-brc.org">ftp://ftp.bv-brc.org</a>) to encrypted FTPS (ftps://ftp.bv-brc.org). This change ensures that data transfers between BV-BRC and its users are protected from interception or tampering.</p>
+<p><strong>Why the Change Was Necessary</strong></p>
+<ul class="simple">
+<li><p><strong>Security:</strong> Traditional FTP transmits usernames, passwords, and data in plain text, making it vulnerable to eavesdropping and unauthorized access.</p></li>
+<li><p><strong>Compliance:</strong> Many institutions (including the one hosting BV-BRC) and funding agencies now require encrypted transfer protocols for research data to meet cybersecurity and data protection standards.</p></li>
+<li><p><strong>Reliability:</strong> Modern clients and firewalls are increasingly dropping support for plain FTP, while encrypted FTPS remains widely supported and more robust.</p></li>
+</ul>
+<p><strong>What This Means for BV-BRC Users</strong></p>
+<ul class="simple">
+<li><p>The BV-BRC FTP server is still available at the same host: ftp.bv-brc.org, but connections must now use explicit FTPS (FTP over TLS/SSL).</p></li>
+<li><p>Plain FTP connections (e.g., <a class="reference external" href="ftp://ftp.bv-brc.org">ftp://ftp.bv-brc.org</a>) are no longer supported.</p></li>
+</ul>
+<p><strong>How to Access the BV-BRC FTP Site</strong>
+You can connect using most modern FTP clients with FTPS support. Here are few examples.</p>
+<p><strong>Command-Line Access using lftp</strong>
+lftp -u anonymous,guest ftp.bv-brc.org</p>
+<p>Within lftp, ensure that FTPS is enabled:</p>
+<ul class="simple">
+<li><p>set <a class="reference external" href="ftp:ssl-force">ftp:ssl-force</a> true</p></li>
+<li><p>set <a class="reference external" href="ftp:ssl-protect-data">ftp:ssl-protect-data</a> true</p></li>
+<li><p>set ssl:verify-certificate no</p></li>
+</ul>
+<p><strong>Graphical FTP Clients</strong></p>
+<ul class="simple">
+<li><p><strong>FileZilla:</strong> Set protocol to FTP – File Transfer Protocol, and encryption to Require explicit FTP over TLS.</p></li>
+<li><p><strong>WinSCP / Cyberduck / Transmit:</strong> Choose FTP with explicit TLS/SSL (FTPS).</p></li>
+</ul>
+<section id="programmatic-access">
+<h3>Programmatic Access<a class="headerlink" href="#programmatic-access" title="Permalink to this headline">¶</a></h3>
+<p>If you are using scripts or pipelines (e.g., wget or curl), you may need to switch to a client that supports FTPS or use lftp/curl –ftp-ssl options. Example:</p>
+<ul class="simple">
+<li><p>curl –ssl-reqd –user anonymous:guest ftp://ftp.bv-brc.org/&lt;path-to-file&gt;</p></li>
+<li><p>wget ftps://ftp.bv-brc.org/&lt;path-to-file&gt; or</p></li>
+<li><p>wget –ftp-user=anonymous –ftp-password=guest –secure-protocol=auto ftps://ftp.bv-brc.org/&lt;path-to-file&gt; [Recommended]</p></li>
+</ul>
+<p><strong>Impact on Existing Workflows</strong></p>
+<ul class="simple">
+<li><p>Old scripts using <a class="reference external" href="ftp://">ftp://</a> without encryption will fail and must be updated to use ftps://.</p></li>
+<li><p>Users behind institutional firewalls may need to ensure that outbound FTPS traffic is allowed.</p></li>
+<li><p>The directory structure, file organization, and content remain unchanged – only the connection method is different.</p></li>
+</ul>
+</section>
+</section>
+<section id="organization-of-data-on-the-bv-brc-ftp-site">
+<h2>Organization of Data on the BV-BRC FTP Site<a class="headerlink" href="#organization-of-data-on-the-bv-brc-ftp-site" title="Permalink to this headline">¶</a></h2>
+<section id="release-notes">
+<h3>RELEASE_NOTES/<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h3>
+<p>Provides list of all public genomes, related metadata, and AMR phenotype data in tab-delimited formats.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="ftps://ftp.bvbrc.org/RELEASE_NOTES/genome_summary">genome_summary</a>: Basic summary of genomes and their annotation in tab-delimited format</p></li>
+<li><p><a class="reference external" href="ftps://ftp.bvbrc.org/RELEASE_NOTES/genome_metadata">genome_metadata</a>: All genome metadata in tab-delimited format</p></li>
+<li><p><a class="reference external" href="ftps://ftp.bvbrc.org/RELEASE_NOTES/genome_lineage">genome_lineage</a>: taxonomy lineage for all public genomes, presented as taxon ids and taxon names) for all</p></li>
+<li><p><a class="reference external" href="ftps://ftp.bvbrc.org/RELEASE_NOTES/PATRIC_genomes_AMR.txt">PATRIC_genome_AMR.txt</a>: AMR phenotype data generated by laboratory methods in tab-delimited format (</p></li>
+</ul>
+</section>
+<section id="genomes">
+<h3>genomes/<a class="headerlink" href="#genomes" title="Permalink to this headline">¶</a></h3>
+<p>Genomes directory procvides access to data for <strong>all public bacterial and archaeal genomes</strong> in various standard file formats.
+The data is organized by genomes. There is a separate directory for each genome, with genome_id as the directory name.</p>
+<p>For example, below is the genome directory for Escherichia coli MG1655 genome.</p>
+<p>ftps://ftp.bvbrc.org/genomes/511145.12</p>
+<p>Each genome directory provides the following data files for PATRIC and RefSeq annotations (when available).</p>
+<ul class="simple">
+<li><p>.fna: FASTA contig sequences</p></li>
+<li><p>.faa: FASTA protein sequence file</p></li>
+<li><p>.features.tab: All genomic features and related information in tab-delimited format</p></li>
+<li><p>.ffn: FASTA nucleotide sequences for genomic features, i.e. genes, RNAs, and other misc features</p></li>
+<li><p>.frn: FASTA nucleotide sequences for RNAs</p></li>
+<li><p>.gff: Genome annotations in GFF file format</p></li>
+<li><p>.pathway.tab: Metabolic pathway assignments in tab-delimited format</p></li>
+<li><p>.spgene.tab: Specialty gene assignements (i.e. AMR genes, virulance factors, essential genes, etc) in tab-delimited format</p></li>
+<li><p>.subsystem.tab: Subsystem assignments in tab-delimited format</p></li>
+</ul>
+</section>
+<section id="viruses">
+<h3>viruses/<a class="headerlink" href="#viruses" title="Permalink to this headline">¶</a></h3>
+<p>This directory contains data for <strong>all public viral genomes</strong> in standard file formats.
+The data is organized by families. For each family, the following data files are available, all using family name as prefix.</p>
+<ul class="simple">
+<li><p>.fna: FASTA contig sequences</p></li>
+<li><p>.faa: FASTA protein sequence file</p></li>
+<li><p>.features.tab: All genomic features and related information in tab-delimited format</p></li>
+<li><p>.ffn: FASTA nucleotide sequences for genomic features, i.e. genes, RNAs, and other misc features</p></li>
+</ul>
+</section>
+</section>
+<section id="downloading-data-for-large-number-of-genomes">
+<h2>Downloading Data for Large Number of Genomes<a class="headerlink" href="#downloading-data-for-large-number-of-genomes" title="Permalink to this headline">¶</a></h2>
+<p>Because of the large number of genomes currently available on the FTP site, it is not very
+efficient to download them using FileZilla/lftp clients or the website. However, it is very easy
+to do it using a simple shell script as follows.</p>
+<p>You can download list of all genomes you are interested in from the website and then copy
+list of genome ids into one text file, called “genome_list”. Alternatively, you can get a list
+of all public genomes from the FTP (link below) and filter it for the genomes / species you
+are interested in.</p>
+<p>ftps://ftp.bvbrc.org/RELEASE_NOTES/genome_summary</p>
+<p>Once you have copied list of genome ids you are interested in a separate file “genome_list”,
+you can use the following one line shell script to read the list of genome ids from your file
+and download corresponding .fna files from the PATRIC FTP site. If you are interested in other
+file type, say .PATRIC.faa or .PATRIC.features.tab, simply replace .fna with that extension.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for i in `cat genome_list`; do wget -qN &quot;ftps://ftp.bv-brc.org/genomes/$i/$i.fna&quot;; done
+</pre></div>
+</div>
+</div></blockquote>
+<section id="uploading-downloading-data-from-your-private-workspace-using-ftp-client">
+<h3>Uploading/Downloading Data From Your Private Workspace using FTP Client<a class="headerlink" href="#uploading-downloading-data-from-your-private-workspace-using-ftp-client" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">You can use a FTP client to batch upload/download data to your private workspace.</div>
+</div>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span><span class="p">:</span> <span class="n">workspace</span><span class="o">.</span><span class="n">bv</span><span class="o">-</span><span class="n">brc</span><span class="o">.</span><span class="n">org</span>
+<span class="n">User</span> <span class="n">name</span><span class="p">:</span> <span class="n">your</span> <span class="n">BV</span><span class="o">-</span><span class="n">BRC</span> <span class="n">user</span> <span class="n">name</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">your</span> <span class="n">BV</span><span class="o">-</span><span class="n">BRC</span> <span class="n">password</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>If you experience issues updating your workflows or clients to support FTPS, please consult the BV-BRC help documentation or contact <a class="reference external" href="mailto:help&#37;&#52;&#48;bv-brc&#46;org">help<span>&#64;</span>bv-brc<span>&#46;</span>org</a> for assistance.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="copilot.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="system_requirements.html" class="btn btn-neutral float-left" title="System Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

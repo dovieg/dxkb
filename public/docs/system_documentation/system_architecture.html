@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>System Architecture | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Software Tools And Code" href="software_tools_and_code.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>System Architecture | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">System Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-architecture">Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bv-brc-website">BV-BRC Website</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-browser-application">The Browser Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-application-server">Web Application Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static-content">Static Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-api">Data API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-interface-cli">Command-line Interface (CLI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#databases">Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-service">User Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-proxy-server">Web/Proxy Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-service">App Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-deployment">Hardware Deployment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>System Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/system_documentation/system_architecture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="system-architecture">
+<h1>System Architecture<a class="headerlink" href="#system-architecture" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>From the user’s perspective, the BV-BRC systems are primarily interfaced through the BV-BRC website using a standard modern web browser. The BV-BRC website server software is designed to be hosted by industry standard application containers and is deployable in several different configurations. The server software, as well as the client interface (browser application), rely upon several additional systems to successfully build, deploy, and provide querying and analysis services to these applications.</p>
+<p>Direct support for the website application is provided by several different databases and services. These services typically support the interactive capabilities of the website and its users. For example, Solr database instances provide all the scientific querying capabilities against the BV-BRC data. The BV-BRC website and application aggregates the data and capabilities of BV-BRC services to present them interactively to the user.</p>
+<p>Several other key components are used — and are critical — to the BV-BRC project, but don’t directly support the BV-BRC website itself in production. Examples include data analysis services, software, and databases used to collect, analyze and annotate BV-BRC data prior to release and deployment to the production BV-BRC website. Additionally, software and scripts to manage the data, services, and database loading &amp; extraction are required.</p>
+</section>
+<section id="software-architecture">
+<h2>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The Software Architecture section of this document describes the general use and interaction of the components that make up the BV-BRC website and its direct and indirect components. Some of these components within BV-BRC’s architecture are from third-party sources, so their architecture and deployment process will not be detailed here except where relevant to the understanding of the overall architecture described by the BV-BRC Systems Documentation.</p>
+</section>
+<section id="bv-brc-website">
+<h2>BV-BRC Website<a class="headerlink" href="#bv-brc-website" title="Permalink to this headline">¶</a></h2>
+<section id="the-browser-application">
+<h3>The Browser Application<a class="headerlink" href="#the-browser-application" title="Permalink to this headline">¶</a></h3>
+<p>The user’s web browser is the host of the entire BV-BRC website and is more accurately described as a Web Application. Logically, the set of pages that the BV-BRC Web Server provides make up the entirety of the BV-BRC Web Application. A user’s state is maintained across all pages at any one time, and from the user’s perspective, they are navigating through the interactive space of BV-BRC. It could then be considered that each page is the host for one or more individual applications that communicate with the web server to provide an interactive experience.</p>
+<p>The browser application is written with ECMAScript (Javascript, JS) and utilizes the Dojo Toolkit framework. It communicates with the server via HTTPS Requests (AJAX). The browser application is part of the BV-BRC Server application and intermingled with other content on pages generated by the BV-BRC Server. However, browser application run in the user’s web browser, on a different network endpoint from the server, may be restarted (when a page reloads) at any time, may be composed of “mashup” data from external sites, and so they require independent consideration from the server side of the BV-BRC website.</p>
+<p>The browser application is fully supported by modern, up-to-date web browsers. Support for specific UI functionalities may degrade if the underlying browser does not support it. Instead of requiring all users to conform to a specific set of browsers, we prefer to provide the best support possible for modern browsers, and aim to support older versions via fallback mechanisms or degraded functionality in certain areas of the application. Browsers that are currently known to work are Chrome, Firefox, Safari, and IE7+.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-Web">https://github.com/BV-BRC/BV-BRC-Web</a></p>
+</section>
+<section id="web-application-server">
+<h3>Web Application Server<a class="headerlink" href="#web-application-server" title="Permalink to this headline">¶</a></h3>
+<p>This component serves the web content to client browsers. It is currently comprised of an Express.js application running in a Node.js webserver. It serves HTML, CSS, JavaScript, and images to client browsers. The bulk of the user interface is implemented in the Browser Application, which itself is built upon the Dojo Toolkit framework, as well as many other libraries used to implement features and functionality. The files are stored in the BV-BRC GitHub repository linked below.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-Web">https://github.com/BV-BRC/BV-BRC-Web</a></p>
+</section>
+<section id="static-content">
+<h3>Static Content<a class="headerlink" href="#static-content" title="Permalink to this headline">¶</a></h3>
+<p>Static content refers to electronic documents that contain the web application’s main Use Case / Tutorial, command line interface Use Case / Tutorial, Quick Reference Guides, and BV-BRC news. The contents of these documents are served independently of the main web server software and are publicly accessible. This site provides an RSS feed, which the main website application consumes and displays on its front page. Files are converted to HTML using the Python-based <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> documentation generator. The files are stored in the BV-BRC GitHub repository linked below.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-Docs">https://github.com/BV-BRC/BV-BRC-Docs</a></p>
+</section>
+<section id="workspace">
+<h3>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h3>
+<p>The Workspace is an online document-based data store where data is organized into user-owned directories, analogous to Dropbox or Google Drive. Any top-level directory may be shared with multiple users to enable collaborative work on uploaded data (another feature similar to Dropbox or Google Drive).</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/Workspace">https://github.com/BV-BRC/Workspace</a></p>
+<p><strong>Workspace API:</strong></p>
+<p>The Workspace is connected to the rest of the BV-BRC tools and website via a programmatic JSON-RPC API.</p>
+<p>The API has 11 commands:</p>
+<ul class="simple">
+<li><p>create: allows for the creation of a directory or a data object itself</p></li>
+<li><p>get: allows for retrieval of an object from the workspace</p></li>
+<li><p>ls: list the objects present in a particular directory of the workspace</p></li>
+<li><p>copy: copy an object from one location to another</p></li>
+<li><p>delete: delete an object</p></li>
+<li><p>set_permissions: set permissions on a top-level directory to share with another user</p></li>
+<li><p>list_permissions: list permissions currently set for a top-level directory</p></li>
+<li><p>get_download_url: allows for retrieval of a RESTful URL to download an object</p></li>
+<li><p>get_archive_url: allows for retrieval of a RESTful URL to download an archive of multiple objects</p></li>
+<li><p>update_metadata: allows for the manipulation of metadata associated with an object or directory in the Workspace</p></li>
+<li><p>update_auto_meta: an internal function enabling the update of automated-metadata for an object</p></li>
+</ul>
+<p>The associated resource is located here: <a class="reference external" href="https://www.bv-brc.org/services/Workspace">https://www.bv-brc.org/services/Workspace</a></p>
+<p><strong>Data formats:</strong></p>
+<p>Objects of any type may be stored in the workspace, but most typically objects are simple text files, often stored in JSON format. Additionally, all objects are assigned a type (e.g., Genome, Model, FeatureSet), and this type indicates how the object is treated when viewed on the BV-BRC website, as well as the handling of the object by automated processing scripts built into the workspace. The types accepted by the workspace are configurable and completely extensible.</p>
+<p><strong>Database structure:</strong></p>
+<p>The workspace uses MongoDB to store the directory structure, directory permissions, object lists, and object metadata. The objects themselves are stored either in <a class="reference external" href="https://github.com/mg-rast/shock">Shock</a> (typically for very large objects) or in a simple file-system. Because of its connection to Shock, the workspace supports federated data storage, which enables the handling of big data.</p>
+<p><strong>Object processing:</strong></p>
+<p>When an object is saved to the workspace, it always undergoes a processing step, the specific actions of which depend on the type on the object. This step computes automated metadata for the object to facilitate object query and summary, but it can also handle other tasks as needed (e.g., indexing in Solr).</p>
+<p><strong>Download service:</strong></p>
+<p>In order to support transparent and efficient downloading of data files from the workspace, the Download Service allows the BV-BRC website to provide URL-based access to private files in the workspace. Access to these URLs do not require a password; to ensure privacy, they are un-guessable hashes and are only valid for a short time.</p>
+</section>
+<section id="data-api">
+<h3>Data API<a class="headerlink" href="#data-api" title="Permalink to this headline">¶</a></h3>
+<p>The data API provides access to querying, retrieval, and indexing of public BV-BRC data and for private annotated data. The API provides a REST interface to the rich data BV-BRC provides. The data can be retrieved directly by ID or it can be queried using the Request Query Language (RQL) syntax or using Solr syntax. As queries are submitted to the API they are modified and submitted to the backend data sources (Solr) to retrieve the data that is visible to the user. Users are able to view public data, any data they own, or any data that another user has shared with them.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-API">https://github.com/BV-BRC/BV-BRC-API</a></p>
+<p><strong>Data API:</strong></p>
+<p>The data API has two functions for each data type:</p>
+<ul class="simple">
+<li><p>get()</p></li>
+<li><p>query()</p></li>
+</ul>
+<p>The associated resources are, respectively:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bv-brc.org/api">https://www.bv-brc.org/api</a>/{{data type}}/{{ id }}</p></li>
+<li><p><a class="reference external" href="https://www.bv-brc.org/api">https://www.bv-brc.org/api</a>/{{ data type }}/?{{ query }}</p></li>
+</ul>
+<p>In addition to the API for querying and retrieving data, there is also an API endpoint for submitting new data to the system to be indexed in the database.</p>
+</section>
+<section id="command-line-interface-cli">
+<h3>Command-line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h3>
+<p>BV-BRC is an integration of different types of data and software tools that support research on bacterial pathogens. The typical biologist seeking access to the BV-BRC data and tools will usually explore the web-based user interface. However, there are many instances in which programatic or command-line interfaces are more suitable, specially for querying data or submitting jobs in batch mode. For users that wish command-line access to BV-BRC, we provide the tools described in this document. We call these tools the P3-scripts. They are intended to run on your machine, going over the network to access the services provided by BV-BRC.</p>
+<p>Source Code and Client Application: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-CLI">https://github.com/BV-BRC/BV-BRC-CLI</a></p>
+</section>
+<section id="databases">
+<h3>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h3>
+<p>BV-BRC data is stored using <a class="reference external" href="http://lucene.apache.org/solr/">Solr</a> and indexed in its entirety (all fields) as BV-BRC releases data. Solr then provides read-only searching services to both the server and browser side of the BV-BRC via HTTP requests. A standard Solr 8 installation can host the BV-BRC data, but the deployment of Solr can be accomplished in a number of different ways that can have a dramatic impact on performance for many of the BV-BRC activities.
+The performance of the Solr service is heavily memory dependent. It is important, at a minimum, to be able to fit the entire set of data indexes into memory. Additionally, cache and other such tunable parameters can require additional memory. In any deployment, this physical limitation of the available resources is likely to be one of the key defining factors for Solr configuration and performance.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/PATRIC3/patric_solr_cloud">https://github.com/PATRIC3/patric_solr_cloud</a></p>
+</section>
+<section id="user-service">
+<h3>User Service<a class="headerlink" href="#user-service" title="Permalink to this headline">¶</a></h3>
+<p>The user service provides user profile management and authentication for the BV-BRC system. The user system provides a REST interface to read and modify a user’s profile. It also provides authentication services for the BV-BRC web application and related components. The backend services consume authentication tokens that are generated by the user service.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-Solr">https://github.com/BV-BRC/BV-BRC-Solr</a></p>
+</section>
+<section id="web-proxy-server">
+<h3>Web/Proxy Server<a class="headerlink" href="#web-proxy-server" title="Permalink to this headline">¶</a></h3>
+<p>All BV-BRC websites and web applications run behind a web server that hosts static files, proxy requests to underlying application servers, and in some cases, load balancing amongst the web server instances. This component is not a strict requirement for deployment of the BV-BRC infrastructure in its basic form, but it simplifies the deployment process and is the current method used for load balancing. <a class="reference external" href="http://nginx.org/">NGINX</a> is deployed on hosts that contain the websites on the standard HTTP and HTTPS ports (80,443), while the underlying applications deploy on unused ports. NGINX is configured to proxy requests to these localhosts using its Named Virtual Hosting system. NGINX is also used to terminate the HTTPS endpoints used for external access to the BV-BRC resource.</p>
+</section>
+<section id="app-service">
+<h3>App Service<a class="headerlink" href="#app-service" title="Permalink to this headline">¶</a></h3>
+<p>The BV-BRC resource supports a number of computational services (e.g., genome assembly and annotation, model production, etc.). These services are hosted on an extensible set of computational resources at Argonne. The interface between the user’s interaction with the BV-BRC website and the computational resources is called the App Service. The App Service presents a unified view of all supported services, allowing the user to submit requests, monitor progress, and view results within a common framework on the BV-BRC website. For the developers, the App Service enables the development of new applications without the need to handle the details of process execution and management.</p>
+<p>Source Code: <a class="reference external" href="https://github.com/BV-BRC/app_service">https://github.com/BV-BRC/app_service</a></p>
+<p><strong>App Service API:</strong></p>
+<p>The App Service is connected to the rest of the BV-BRC tools and website via a programmatic JSON-RPC API.
+The API has 6 commands:</p>
+<ul class="simple">
+<li><p>enumerate_apps</p></li>
+<li><p>start_app</p></li>
+<li><p>query_tasks</p></li>
+<li><p>query_task_summary</p></li>
+<li><p>query_task_details</p></li>
+<li><p>enumerate_tasks</p></li>
+</ul>
+<p>The associated resource is: <a class="reference external" href="https://www.bv-brc.org/services/app_service">https://www.bv-brc.org/services/app_service</a></p>
+</section>
+<section id="hardware-deployment">
+<h3>Hardware Deployment<a class="headerlink" href="#hardware-deployment" title="Permalink to this headline">¶</a></h3>
+<p>The hardware hosted at Argonne National Laboratory on behalf of the University of Chicago’s bioinformatics computing core supporting the BV-BRC services are as follows:</p>
+<ul class="simple">
+<li><p>Production support services</p>
+<ul>
+<li><p>24 x E5-2620 CPUs</p></li>
+<li><p>256 GB RAM</p></li>
+</ul>
+</li>
+<li><p>Production support services</p>
+<ul>
+<li><p>40 x E5-2640 CPUs</p></li>
+<li><p>768 GB RAM</p></li>
+</ul>
+</li>
+<li><p>User Data Management and Compute Scheduling</p>
+<ul>
+<li><p>12 x E5-2620 CPUs</p></li>
+<li><p>256 GB RAM</p></li>
+</ul>
+</li>
+<li><p>Solr Cloud servers (x3)</p>
+<ul>
+<li><p>32 Xeon Gold 6134 CPUs</p></li>
+<li><p>760 GB RAM</p></li>
+<li><p>5.3 TB SSD storage</p></li>
+</ul>
+</li>
+<li><p>ARAST Server and Primary Compute</p>
+<ul>
+<li><p>12 x E5-2620 CPUs</p></li>
+<li><p>256 GB RAM</p></li>
+</ul>
+</li>
+<li><p>Compute server</p>
+<ul>
+<li><p>12 x E5-2620 CPUs</p></li>
+<li><p>256 GB RAM</p></li>
+</ul>
+</li>
+<li><p>Compute server (3)</p>
+<ul>
+<li><p>32 x Xeon Gold 6134 CPUs</p></li>
+<li><p>786 GB RAM</p></li>
+</ul>
+</li>
+<li><p>Loadbalanced / Failover Proxy Server</p>
+<ul>
+<li><p>2 systems, each 4 CPUs, 64GB RAM, 10Gb network</p></li>
+</ul>
+</li>
+</ul>
+<p>Storage is provided to the above systems using 10G ethernet attached NetApp filers. The Solr portion of BV-BRC and the FTP site are currently consuming approximately 10 TB of storage.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="software_tools_and_code.html" class="btn btn-neutral float-left" title="Software Tools And Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

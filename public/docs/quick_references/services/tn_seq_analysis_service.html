@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Tn-Seq Analysis Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Phylogenetic Tree Service" href="phylogenetic_tree_building_service.html" />
+    <link rel="prev" title="Variation Analysis Service" href="variation_analysis_service.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Tn-Seq Analysis Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="genome_assembly_service.html">Genome Assembly Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_assembly_service.html#advanced-parameters">Advanced Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_annotation_service.html">Genome Annotation Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comprehensive_genome_analysis_service.html">Comprehensive Genome Analysis Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blast.html">BLAST Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="primer_design_service.html">Primer Design Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="similar_genome_finder_service.html">Similar Genome Finder Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="genome_alignment_service.html">Genome Alignment Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variation_analysis_service.html">Variation Analysis Service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Tn-Seq Analysis Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>Tn-Seq Analysis Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/tn_seq_analysis_service.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tn-seq-analysis-service">
+<h1>Tn-Seq Analysis Service<a class="headerlink" href="#tn-seq-analysis-service" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Tn-Seq Analysis Service facilitates determination of essential and conditionally essential regions in bacterial genomes from data generated from transposon insertion sequencing (Tn-Seq) experiments. Tn-Seq (in the broad sense used here) refers to a family of related methods that use deep sequencing to survey a transposon insertion library and quantify the abundance of insertions at different sites in the genome.</p>
+<p><em>Note: The BV-BRC Tn-Seq Analysis Service wraps the <a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004401">TRANSIT</a> software.  Please cite this reference when publishing results from this service:</em></p>
+<ul class="simple">
+<li><p>DeJesus, M. A., Ambadipudi, C., Baker, R., Sassetti, C., &amp; Ioerger, T. R. (2015). TRANSIT-a software tool for Himar1 TnSeq analysis. <em>PLoS computational biology</em>, <em>11</em>(10), e1004401.</p></li>
+</ul>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bv-brc.org/app/Tnseq">Tn-Seq Analysis Service</a></p></li>
+<li><p><a class="reference internal" href="../../tutorial/tn-seq/tn-seq.html"><span class="doc std std-doc">Tn-Seq Analysis Service Tutorial</span></a></p></li>
+</ul>
+</section>
+<section id="using-the-tn-seq-service">
+<h2>Using the Tn-Seq Service<a class="headerlink" href="#using-the-tn-seq-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Tn-Seq Analysis</strong> submenu option under the <strong>Services</strong> main menu (Genomics category) opens the Tn-Seq Analysis input form (<em>shown below</em>). <em>Note: You must be logged into BV-BRC to use this service.</em></p>
+<p><img alt="Tn-Seq Analysis Menu" src="../../_images/bv_services_menu.png" /></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Tn-Seq Analysis Input Form" src="../../_images/tn-seq_analysis_input_form.png" /></p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<section id="strategy">
+<h3>Strategy<a class="headerlink" href="#strategy" title="Permalink to this headline">¶</a></h3>
+<p>This parameter determines whether the genes are determined to be essential in a single condition or by comparison to a control.</p>
+<p><strong>Essential:</strong> Runs the
+<a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004401">TRANSIT</a>
+software. With this strategy selected TRANSIT will calculate the probability of being essential using the Gumbel or Extreme Value distribution.</p>
+<p><strong>Conditionally Essential:</strong> Runs the
+<a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004401">TRANSIT</a>
+software. With this strategy selected TRANSIT will operate in “resampling” mode and use the difference between the sum of read-counts in each condition to calculate the probability of being essential.</p>
+</section>
+<section id="target-genome">
+<h3>Target Genome<a class="headerlink" href="#target-genome" title="Permalink to this headline">¶</a></h3>
+<p>A target genome to align the reads against. If this genome is a private genome, the search can be narrowed by clicking on the filter icon under the words Target Genome.</p>
+</section>
+<section id="output-folder">
+<h3>Output Folder<a class="headerlink" href="#output-folder" title="Permalink to this headline">¶</a></h3>
+<p>The workspace folder where results will be placed.</p>
+</section>
+<section id="output-name">
+<h3>Output Name<a class="headerlink" href="#output-name" title="Permalink to this headline">¶</a></h3>
+<p>Name used to uniquely identify results.</p>
+</section>
+</section>
+<section id="primer-sequence">
+<h2>Primer Sequence<a class="headerlink" href="#primer-sequence" title="Permalink to this headline">¶</a></h2>
+<p>This must be a DNA string. It is used for trimming reads.</p>
+</section>
+<section id="paired-read-library">
+<h2>Paired read library<a class="headerlink" href="#paired-read-library" title="Permalink to this headline">¶</a></h2>
+<section id="read-file-1-2">
+<h3>Read File 1 &amp; 2<a class="headerlink" href="#read-file-1-2" title="Permalink to this headline">¶</a></h3>
+<p>Many paired read libraries are given as file pairs, with each file containing half of each read pair. Paired read files are expected to be sorted such that each read in a pair occurs in the same Nth position as its mate in their respective files. These files are
+specified as READ FILE 1 and READ FILE 2. For a given file pair, the selection of which file is READ 1 and which is READ 2 does not matter.</p>
+</section>
+<section id="condition">
+<h3>Condition<a class="headerlink" href="#condition" title="Permalink to this headline">¶</a></h3>
+<p>The group/condition specified will be used to determine contrasts in the conditionally essential mode. Reads assigned to the same group will be used as replicates. Choose whether the sample is a treatment or control.</p>
+</section>
+</section>
+<section id="selected-libraries">
+<h2>Selected Libraries<a class="headerlink" href="#selected-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Read files placed here will contribute to a single Tn-Seq analysis. Read files placed into this table under the same condition will be considered replicates.</p>
+</section>
+<section id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Tn-Seq Analysis Service Output Files" src="../../_images/tn-seq_output_files.png" /></p>
+<p>The Tn-Seq Analysis Service generates several files that are deposited in the Private Workspace in the designated Output Folder. These include</p>
+<ul class="simple">
+<li><p><strong>.bam</strong> - A binary version of a SAM file that describes the alignment and alignment quality of each read in a sample file.</p></li>
+<li><p><strong>.bai</strong> - A binary index alignment file gives the byte range offset of particular sequence regions in the BAM file. This can be used to selectively load information for a particular region out of a BAM file.</p></li>
+<li><p><strong>.counts</strong> - The counts associated with each of the read files.</p></li>
+<li><p><strong>.tn_stats</strong> - The statistics associated with each of the read files.</p></li>
+<li><p><strong>.wig</strong> - wiggle file that defines the feature/data track.</p></li>
+<li><p><strong>output_keys.txt</strong> - A summary of the reads and the metadata assigned to them.</p></li>
+<li><p><strong>resampling_control_treatment_transit.txt</strong> - A summary of the statistical data produced by the TRANSIT software.</p></li>
+</ul>
+<p><img alt="Tn-Seq Analysis Service Browser Icon" src="../../_images/tn-seq_analysis_browser_icon.png" /></p>
+<p>Clicking the Browser icon at the top left displays the Genome Browser with the reference genome loaded.</p>
+<p><img alt="Tn-Seq Data in Genome Browser" src="../../_images/tn-seq_genome_browser.png" /></p>
+<p>Tn-seq analysis result tracks are available to add to the browser by clicking the associated track options in the upper left corner, displaying individual reads with the colors indicative of the orientation of the reads (blue is forward, red is reverse).</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Adey A, Morrison HG, Asan, Xun X, Kitzman JO, Turner EH, Stackhouse B, MacKenzie AP, Caruccio NC, Zhang X, et al. 2010. Rapid, low-input, low-bias construction of shotgun fragment libraries by high-density in vitro transposition. Genome Biol 11: R119.</p></li>
+<li><p>DeJesus MA, Ambadipudi C, Baker R, Sassetti C, Ioerger TR. TRANSIT - a software tool for Himar1 Tnseq analysis. PLoS Comput Biol. 2015;11: 1004401.</p></li>
+<li><p>Lampe DJ, Churchill ME, Robertson HM. A purified mariner transposase is sufficient to mediate transposition in vitro. The European Molecular Biology Organization Journal. 1996;15(19):5470–5479.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="phylogenetic_tree_building_service.html" class="btn btn-neutral float-right" title="Phylogenetic Tree Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="variation_analysis_service.html" class="btn btn-neutral float-left" title="Variation Analysis Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

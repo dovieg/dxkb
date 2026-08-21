@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Installing the Command Line Interface with Homebrew | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Installing the Command Line Interface with Homebrew | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Installing the Command Line Interface with Homebrew</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cli_tutorial/homebrew.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="installing-the-command-line-interface-with-homebrew">
+<h1>Installing the Command Line Interface with Homebrew<a class="headerlink" href="#installing-the-command-line-interface-with-homebrew" title="Permalink to this headline">¶</a></h1>
+<p>We support the installation of the BV-BRC CLI using <a class="reference external" href="https://brew.sh">homebrew</a>, a package manager for macOS and Linux. Homebrew allows you to install software on your system that the native package manager may not support. It’s quite useful in patricular for MacOS since many of the common Linux packages and bioinformatics tools are not readily available for the Mac.</p>
+<section id="installing-homebrew">
+<h2>Installing Homebrew<a class="headerlink" href="#installing-homebrew" title="Permalink to this headline">¶</a></h2>
+<p>The installation of Homebrew is straightforward. The main caveat for installation on Linux is that without some extra work (that I have not yet tested myself) you need to have administrator (superuser) access to perform the initial installation. The MacOS build also requires administrator access but it is much more common for owners of laptops to have that access for their own systems.</p>
+</section>
+<section id="installing-homebrew-on-macos">
+<h2>Installing Homebrew on macOS<a class="headerlink" href="#installing-homebrew-on-macos" title="Permalink to this headline">¶</a></h2>
+<p>The macOS installation instructions are available on the <a class="reference external" href="https://brew.sh">Homebrew home page</a>.</p>
+<p>The macOS requirements for homebrew are as follows:</p>
+<ul class="simple">
+<li><p>An Apple Silicon CPU or 64-bit Intel CPU</p></li>
+<li><p>macOS Ventura (13) (or higher) installed on officially supported hardware</p>
+<ul>
+<li><p>Note: Devices using OpenCore Legacy Patcher are not supported</p></li>
+</ul>
+</li>
+<li><p>Command Line Tools (CLT) for Xcode (from xcode-select –install or https://developer.apple.com/download/all/) or Xcode</p></li>
+<li><p>The Bourne-again shell for installation (i.e. bash)</p></li>
+</ul>
+<p>The actual installation of Homebrew is a oneliner:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/bin/bash</span> <span class="pre">-c</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></code></p>
+<p>To run that you would start a Terminal session and copy and paste the line into the shell prompt.</p>
+<p>Alternatively, you may download a package installer from <a class="reference external" href="ttps://github.com/Homebrew/brew/releases/latest">Homebrew’s latest GitHub release.</a>.</p>
+</section>
+<section id="installing-homebrew-on-linux">
+<h2>Installing Homebrew on Linux<a class="headerlink" href="#installing-homebrew-on-linux" title="Permalink to this headline">¶</a></h2>
+<p>The Linux installation instructions are available on the <a class="reference external" href="https://docs.brew.sh/Homebrew-on-Linux">Homebrew docs site</a>.</p>
+<p>The Linux requirements are as follows:</p>
+<ul class="simple">
+<li><p>Linux 3.2 or newer</p></li>
+<li><p>Glibc 2.13 or newer</p></li>
+<li><p>64-bit x86_64 CPU</p></li>
+</ul>
+<p>On suitable hardware, the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Susbystem for Linux (WSL) 2</a> is also supported.</p>
+<p>The <a class="reference external" href="https://docs.brew.sh/Homebrew-on-Linux#requirements">docs site</a>  details the installation of the prerequisite tools.</p>
+<p>The actual installation of Homebrew is a oneliner:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/bin/bash</span> <span class="pre">-c</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></code></p>
+</section>
+<section id="installing-the-bv-brc-cli-in-homebrew">
+<h2>Installing the BV-BRC CLI in Homebrew<a class="headerlink" href="#installing-the-bv-brc-cli-in-homebrew" title="Permalink to this headline">¶</a></h2>
+<p>Once Homebrew is installed, the installation of the CLI should be as simple as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">tap</span> <span class="n">BV</span><span class="o">-</span><span class="n">BRC</span><span class="o">/</span><span class="n">BV</span><span class="o">-</span><span class="n">BRC</span><span class="o">-</span><span class="n">CLI</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">BV</span><span class="o">-</span><span class="n">BRC</span><span class="o">-</span><span class="n">CLI</span>
+</pre></div>
+</div>
+<p>If you have made the changes the initial Homebrew install recommends to add to your shell profile scripts, you should now have the BV-BRC CLI tools in your default path.</p>
+</section>
+<section id="homebrew-and-bottles">
+<h2>Homebrew and Bottles<a class="headerlink" href="#homebrew-and-bottles" title="Permalink to this headline">¶</a></h2>
+<p>The BV-BRC Homebrew configuration has precompiled builds (bottles) for macOS Sequoia on both Apple Silicon and Intel, and x86_64 Linux. If you install onto a different system, Homebrew will need to do a full install from source. This can take a fair amount of time (it’s 20 minutes on my Intel Mac). If you run into this, contact me at olson&#64;mcs.anl.gov and we can arrange to build bottles for your platform.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

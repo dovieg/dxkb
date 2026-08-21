@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>PredictStructure API Reference | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Taxonomic Classification Service" href="taxonomic_classification_service.html" />
+    <link rel="prev" title="PredictStructure CLI Reference" href="predict_structure_cli.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>PredictStructure API Reference | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Reference Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../organisms_menu.html">Organisms and Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searches_menu.html">Advanced Searches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services_menu.html">Tools &amp; Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#genomics-services">Genomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../services_menu.html#protein-tools-services">Protein Tools Services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="msa_snp_variation_service.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metacats.html">Metadata-driven Comparative Analysis Tool (meta-CATS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proteome_comparison_service.html">Proteome Comparison Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comparative_systems.html">Comparative Systems Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict_structure_service.html">Protein Structure Prediction Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict_structure_cli.html">PredictStructure CLI Reference</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">PredictStructure API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#metagenomics-services">Metagenomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#transcriptomics-services">Transcriptomics Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#utilities-services">Utilities Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#viral-services">Viral Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services_menu.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workspace_groups_upload.html">Workspaces and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_search.html">Global Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration.html">Registration and Sign In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_tables_action-bar.html">Website Views, Tables, Filters, Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ftp.html">FTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Quick Reference Guides</a> &raquo;</li>
+        
+          <li><a href="../services_menu.html">Tools &amp; Services</a> &raquo;</li>
+        
+      <li>PredictStructure API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/quick_references/services/predict_structure_api.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="predictstructure-api-reference">
+<h1>PredictStructure API Reference<a class="headerlink" href="#predictstructure-api-reference" title="Permalink to this headline">¶</a></h1>
+<p>This document describes the network API that the BV-BRC web UI uses to submit and monitor PredictStructure jobs. Other BV-BRC services use the same envelope, so most of this generalizes — only the parameter object on the wire (the <code class="docutils literal notranslate"><span class="pre">values</span></code> payload) is service-specific.</p>
+<blockquote>
+<div><p><strong>Scope.</strong> This is the <em>AppService</em> JSON-RPC interface — the one the web form talks to when you click <strong>Submit Job</strong>. The public REST data API at <code class="docutils literal notranslate"><span class="pre">https://www.bv-brc.org/api/</span></code> (documented at <a class="reference external" href="https://www.bv-brc.org/api/doc/">https://www.bv-brc.org/api/doc/</a>) is a different endpoint and is not covered here.</p>
+</div></blockquote>
+<section id="endpoints">
+<h2>Endpoints<a class="headerlink" href="#endpoints" title="Permalink to this headline">¶</a></h2>
+<p>The Web UI initializes three RPC endpoints (<code class="docutils literal notranslate"><span class="pre">public/js/p3/app/p3app.js</span></code>); for job submission only the first one matters.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Configured in</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">serviceAPI</span></code></p></td>
+<td><p><strong>AppService</strong> — submit / query jobs (this doc)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BV-BRC-Web</span></code> config</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workspaceAPI</span></code></p></td>
+<td><p>Workspace file CRUD (the <code class="docutils literal notranslate"><span class="pre">ws://</span></code> URIs you’ll see in payloads)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BV-BRC-Web</span></code> config</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dataAPI</span></code></p></td>
+<td><p>Public RDF / Solr data API</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BV-BRC-Web</span></code> config</p></td>
+</tr>
+</tbody>
+</table>
+<p>The current production AppService endpoint is <code class="docutils literal notranslate"><span class="pre">https://www.bv-brc.org/services/AppService</span></code> (subject to change; the value used by the live UI is whatever <code class="docutils literal notranslate"><span class="pre">serviceAPI</span></code> was set to in the deployed <code class="docutils literal notranslate"><span class="pre">config.js</span></code>).</p>
+</section>
+<section id="transport">
+<h2>Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h2>
+<p>JSON-RPC 2.0 over HTTPS POST with one custom detail: the content type is the BV-BRC-specific MIME type <code class="docutils literal notranslate"><span class="pre">application/jsonrpc+json</span></code> (not plain <code class="docutils literal notranslate"><span class="pre">application/json</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">&lt;</span><span class="n">serviceAPI</span><span class="o">&gt;</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">jsonrpc</span><span class="o">+</span><span class="n">json</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BV</span><span class="o">-</span><span class="n">BRC</span> <span class="n">auth</span> <span class="n">token</span><span class="o">&gt;</span>
+<span class="n">X</span><span class="o">-</span><span class="n">Requested</span><span class="o">-</span><span class="n">With</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>Request body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;AppService.start_app2&quot;,
+  &quot;params&quot;: [&quot;PredictStructure&quot;, { ...values... }, { ...start_params... }]
+}
+</pre></div>
+</div>
+<p>Response on success:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;result&quot;: [ { &quot;id&quot;: &quot;&lt;task-id&gt;&quot;, &quot;app&quot;: { &quot;id&quot;: &quot;PredictStructure&quot; }, ... } ]
+}
+</pre></div>
+</div>
+<p>Response on failure:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-32000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>Every call requires a BV-BRC auth token in the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header. Tokens are issued by the BV-BRC account service; the UI obtains one through the login flow and stores it in <code class="docutils literal notranslate"><span class="pre">window.App.authorizationToken</span></code>. For programmatic use, see the BV-BRC SDK or the <code class="docutils literal notranslate"><span class="pre">p3-login</span></code> / <code class="docutils literal notranslate"><span class="pre">p3-token</span></code> tools shipped with the BV-BRC CLI.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<section id="appservice-start-app2">
+<h3><code class="docutils literal notranslate"><span class="pre">AppService.start_app2</span></code><a class="headerlink" href="#appservice-start-app2" title="Permalink to this headline">¶</a></h3>
+<p>Submit a new PredictStructure job.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AppService.start_app2(app_id, values, start_params) → [task]
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">app_id</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Always <code class="docutils literal notranslate"><span class="pre">&quot;PredictStructure&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">values</span></code></p></td>
+<td><p>object</p></td>
+<td><p>Job parameters (see <a class="reference internal" href="#parameters"><span class="std std-doc">Parameters</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">start_params</span></code></p></td>
+<td><p>object</p></td>
+<td><p>Submission metadata (see <a class="reference internal" href="#start-parameters"><span class="std std-doc">Start parameters</span></a>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a single-element array containing the task descriptor:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>[
+  {
+    &quot;id&quot;: &quot;a3f8c9d2-...&quot;,
+    &quot;parent_id&quot;: null,
+    &quot;app&quot;: { &quot;id&quot;: &quot;PredictStructure&quot;, &quot;label&quot;: &quot;Protein Structure Prediction&quot; },
+    &quot;workspace&quot;: &quot;/&lt;user&gt;/.&lt;output_name&gt;&quot;,
+    &quot;parameters&quot;: { ...echoed values... },
+    &quot;user_id&quot;: &quot;&lt;user&gt;@BVBRC&quot;,
+    &quot;submit_time&quot;: &quot;2026-05-21T19:30:00Z&quot;,
+    &quot;start_time&quot;: null,
+    &quot;completed_time&quot;: null,
+    &quot;status&quot;: &quot;queued&quot;
+  }
+]
+</pre></div>
+</div>
+</section>
+<section id="appservice-query-tasks-appservice-query-task-summary">
+<h3><code class="docutils literal notranslate"><span class="pre">AppService.query_tasks</span></code> / <code class="docutils literal notranslate"><span class="pre">AppService.query_task_summary</span></code><a class="headerlink" href="#appservice-query-tasks-appservice-query-task-summary" title="Permalink to this headline">¶</a></h3>
+<p>Inspect job status. The Web UI calls <code class="docutils literal notranslate"><span class="pre">query_task_summary</span></code> on each page load for the <strong>Completed Jobs</strong> badge; the Jobs list view paginates via <code class="docutils literal notranslate"><span class="pre">query_tasks</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AppService.query_task_summary([]) → [{ submitted, queued, in_progress, completed, failed, ... }]
+AppService.query_tasks([ids?]) → [tasks...]
+</pre></div>
+</div>
+</section>
+<section id="appservice-enumerate-apps">
+<h3><code class="docutils literal notranslate"><span class="pre">AppService.enumerate_apps</span></code><a class="headerlink" href="#appservice-enumerate-apps" title="Permalink to this headline">¶</a></h3>
+<p>Lists all registered app specs the AppService knows about. Useful to confirm the deployed <code class="docutils literal notranslate"><span class="pre">PredictStructure.json</span></code> parameter set matches what your client expects.</p>
+</section>
+<section id="appservice-kill-task-appservice-delete-task">
+<h3><code class="docutils literal notranslate"><span class="pre">AppService.kill_task</span></code> / <code class="docutils literal notranslate"><span class="pre">AppService.delete_task</span></code><a class="headerlink" href="#appservice-kill-task-appservice-delete-task" title="Permalink to this headline">¶</a></h3>
+<p>Standard administrative endpoints; require ownership of the task.</p>
+</section>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">values</span></code> object mirrors the basic app spec in <a class="reference external" href="https://github.com/CEPI-dxkb/PredictStructureApp/blob/main/app_specs/PredictStructure.json"><code class="docutils literal notranslate"><span class="pre">app_specs/PredictStructure.json</span></code></a>. Only <code class="docutils literal notranslate"><span class="pre">tool</span></code>, <code class="docutils literal notranslate"><span class="pre">output_path</span></code>, and <code class="docutils literal notranslate"><span class="pre">output_file</span></code> are required by the schema; the rest depend on what you’re predicting.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tool</span></code></p></td>
+<td><p>enum</p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code> | <code class="docutils literal notranslate"><span class="pre">boltz</span></code> | <code class="docutils literal notranslate"><span class="pre">openfold</span></code> | <code class="docutils literal notranslate"><span class="pre">chai</span></code> | <code class="docutils literal notranslate"><span class="pre">alphafold</span></code> | <code class="docutils literal notranslate"><span class="pre">esmfold</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">input_file</span></code></p></td>
+<td><p>wsfile (<code class="docutils literal notranslate"><span class="pre">ws://...</span></code>)</p></td>
+<td><p>conditional</p></td>
+<td><p>Protein FASTA. Required unless DNA / RNA / ligand / SMILES / <code class="docutils literal notranslate"><span class="pre">text_input</span></code> is given</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dna_file</span></code></p></td>
+<td><p>wsfile</p></td>
+<td><p>no</p></td>
+<td><p>DNA FASTA (Boltz / OpenFold / Chai only)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rna_file</span></code></p></td>
+<td><p>wsfile</p></td>
+<td><p>no</p></td>
+<td><p>RNA FASTA (Boltz / OpenFold / Chai only)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ligand</span></code></p></td>
+<td><p>array of string</p></td>
+<td><p>no</p></td>
+<td><p>CCD codes, each 1–3 alphanumeric chars (e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;ATP&quot;,</span> <span class="pre">&quot;NAG&quot;]</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">smiles</span></code></p></td>
+<td><p>array of string</p></td>
+<td><p>no</p></td>
+<td><p>SMILES strings</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">text_input</span></code></p></td>
+<td><p>array of object</p></td>
+<td><p>no</p></td>
+<td><p>Inline sequences: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;sequence&quot;:</span> <span class="pre">&quot;...&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;auto|protein|dna|rna&quot;</span> <span class="pre">}</span></code>. Lets clients submit without a workspace file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">msa_file</span></code></p></td>
+<td><p>wsfile</p></td>
+<td><p>conditional</p></td>
+<td><p>Pre-computed MSA (<code class="docutils literal notranslate"><span class="pre">.a3m</span></code>, <code class="docutils literal notranslate"><span class="pre">.sto</span></code>, <code class="docutils literal notranslate"><span class="pre">.pqt</span></code>). Required for Boltz / OpenFold / Chai unless <code class="docutils literal notranslate"><span class="pre">use_msa_server</span></code> is set; in that case BV-BRC computes the MSA with ColabFold</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">debug</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>no</p></td>
+<td><p>Verbose service-side logging (sets <code class="docutils literal notranslate"><span class="pre">P3_DEBUG=1</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">output_path</span></code></p></td>
+<td><p>folder (<code class="docutils literal notranslate"><span class="pre">ws://...</span></code>)</p></td>
+<td><p>yes</p></td>
+<td><p>Workspace folder where the job result directory will be created</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">output_file</span></code></p></td>
+<td><p>string</p></td>
+<td><p>yes</p></td>
+<td><p>Job result name; results land at <code class="docutils literal notranslate"><span class="pre">${output_path}/.${output_file}/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Workspace files use the <code class="docutils literal notranslate"><span class="pre">ws://&lt;user&gt;&#64;BVBRC/&lt;path&gt;</span></code> URI scheme. The service script resolves them via <code class="docutils literal notranslate"><span class="pre">p3-cp</span></code> before launching the underlying engine.</p>
+<section id="validation-rules-enforced-by-the-service">
+<h3>Validation rules enforced by the service<a class="headerlink" href="#validation-rules-enforced-by-the-service" title="Permalink to this headline">¶</a></h3>
+<p>The Perl <code class="docutils literal notranslate"><span class="pre">App-PredictStructure.pl</span></code> rejects the submission <em>before</em> it reaches the queue if any of the following are violated:</p>
+<ol class="simple">
+<li><p>At least one of <code class="docutils literal notranslate"><span class="pre">input_file</span></code>, <code class="docutils literal notranslate"><span class="pre">dna_file</span></code>, <code class="docutils literal notranslate"><span class="pre">rna_file</span></code>, <code class="docutils literal notranslate"><span class="pre">text_input</span></code>, <code class="docutils literal notranslate"><span class="pre">ligand</span></code>, or <code class="docutils literal notranslate"><span class="pre">smiles</span></code> is present.</p></li>
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">output_path</span></code> and <code class="docutils literal notranslate"><span class="pre">output_file</span></code> are present.</p></li>
+<li><p>CCD ligand codes match <code class="docutils literal notranslate"><span class="pre">/^[A-Za-z0-9]{1,3}$/</span></code>.</p></li>
+<li><p>SMILES strings are non-empty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_input[i].type</span> <span class="pre">∈</span> <span class="pre">{</span> <span class="pre">auto,</span> <span class="pre">protein,</span> <span class="pre">dna,</span> <span class="pre">rna</span> <span class="pre">}</span></code>.</p></li>
+<li><p>FASTA inputs start with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> on the first non-blank line (peek of first 5 lines via <code class="docutils literal notranslate"><span class="pre">p3-cat</span> <span class="pre">|</span> <span class="pre">head</span></code>).</p></li>
+<li><p>MSA inputs start with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (A3M) or <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">STOCKHOLM</span></code> (Stockholm) on the first non-blank line.</p></li>
+<li><p>Boltz YAML manifests (passed as <code class="docutils literal notranslate"><span class="pre">input_file</span></code> with <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>/<code class="docutils literal notranslate"><span class="pre">.yml</span></code>) contain both <code class="docutils literal notranslate"><span class="pre">version:</span></code> and <code class="docutils literal notranslate"><span class="pre">sequences:</span></code> keys.</p></li>
+</ol>
+<p>A validation failure returns a JSON-RPC error with the human-readable reason in <code class="docutils literal notranslate"><span class="pre">error.message</span></code>.</p>
+</section>
+<section id="tool-specific-parameter-compatibility">
+<h3>Tool-specific parameter compatibility<a class="headerlink" href="#tool-specific-parameter-compatibility" title="Permalink to this headline">¶</a></h3>
+<p>Even though the schema accepts any combination, the Perl preflight will reject combinations that no engine can run:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="text-align:center head"><p>DNA</p></th>
+<th class="text-align:center head"><p>RNA</p></th>
+<th class="text-align:center head"><p>Ligand</p></th>
+<th class="text-align:center head"><p>SMILES</p></th>
+<th class="text-align:center head"><p>MSA required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">boltz</span></code></p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">openfold</span></code></p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chai</span></code></p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>✓</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">alphafold</span></code></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>(built locally)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">esmfold</span></code></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td class="text-align:center"><p>(forwarded; selector decides)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>conditional</p></td>
+</tr>
+</tbody>
+</table>
+<p>Submitting <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;tool&quot;:</span> <span class="pre">&quot;alphafold&quot;,</span> <span class="pre">&quot;dna_file&quot;:</span> <span class="pre">&quot;ws://...&quot;</span> <span class="pre">}</span></code> returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">AlphaFold</span> <span class="mi">2</span> <span class="n">supports</span> <span class="n">protein</span> <span class="n">only</span><span class="p">;</span> <span class="n">remove</span> <span class="n">dna_file</span> <span class="ow">or</span> <span class="n">change</span> <span class="n">tool</span> <span class="n">to</span> <span class="n">boltz</span><span class="o">/</span><span class="n">openfold</span><span class="o">/</span><span class="n">chai</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="start-parameters">
+<h2>Start parameters<a class="headerlink" href="#start-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_params</span></code> (3rd argument) is a small bag of UI/UX hints attached by the Web form. The schema is not formally specified; the keys you’ll see in practice are:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">parent_id</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Parent task ID when this submission is a “rerun”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workflow_id</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Identifier when launched as part of a multi-app workflow</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">comment</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Free-text job label shown in the Jobs list</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">{}</span></code> if you don’t have anything to set.</p>
+</section>
+<section id="job-lifecycle">
+<h2>Job lifecycle<a class="headerlink" href="#job-lifecycle" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[client]                              [AppService]                   [worker]
+  │ start_app2 PredictStructure ───▶ │                                │
+  │                                   │── persist task, status=queued│
+  │ ◀──── task descriptor ───────────│                                │
+  │                                   │                                │
+  │ query_task_summary  ◀── poll ───│                                │
+  │                                   │   pick from queue ───────────▶│
+  │                                   │                       run     │
+  │                                   │     status=in_progress ◀──────│
+  │                                   │                                │
+  │                                   │           preflight (resource estimate)
+  │                                   │           validate inputs
+  │                                   │           p3-cp ws:// → /tmp
+  │                                   │           predict-structure &lt;tool&gt; ...
+  │                                   │           protein_compare (report)
+  │                                   │           p3-cp results → ws://output_path
+  │                                   │                                │
+  │                                   │     status=completed   ◀──────│
+  │ query_tasks([id])  ────▶          │                                │
+  │ ◀──── final task w/ paths ────────│                                │
+</pre></div>
+</div>
+<p>Failures are surfaced as <code class="docutils literal notranslate"><span class="pre">status:</span> <span class="pre">failed</span></code> with <code class="docutils literal notranslate"><span class="pre">stderr</span></code> accessible via the workspace job directory.</p>
+</section>
+<section id="preflight">
+<h2>Preflight<a class="headerlink" href="#preflight" title="Permalink to this headline">¶</a></h2>
+<p>The Web UI does <strong>not</strong> call preflight directly — the AppService calls it internally before scheduling. Programmatic clients can invoke it via the same JSON-RPC method that the AppService uses, but the practical equivalent is the Python CLI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>predict-structure<span class="w"> </span>preflight<span class="w"> </span>--tool<span class="w"> </span>boltz<span class="w"> </span>--msa<span class="w"> </span>/dev/null
+<span class="c1"># → { &quot;cpu&quot;: 8, &quot;memory_gb&quot;: 64, &quot;runtime_hours&quot;: 4, &quot;gpu&quot;: true, &quot;partition&quot;: &quot;gpu2&quot; }</span>
+</pre></div>
+</div>
+<p>The preflight result is what determines which node the job runs on. The defaults from <code class="docutils literal notranslate"><span class="pre">PredictStructure.json</span></code> are:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;default_memory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;64G&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;default_cpu&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;default_runtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14400</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-boltz-with-msa-single-chain">
+<h2>Example request — Boltz with MSA, single chain<a class="headerlink" href="#example-request-boltz-with-msa-single-chain" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppService.start_app2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boltz&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;input_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/inputs/crambin.fasta&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;msa_file&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ws://awilke@BVBRC/home/inputs/crambin.a3m&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;output_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;output_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;crambin-boltz-2026-05-21&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-proteindna-complex-auto-select">
+<h2>Example request — protein–DNA complex (auto-select)<a class="headerlink" href="#example-request-proteindna-complex-auto-select" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppService.start_app2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;input_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/tf.fasta&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dna_file&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ws://awilke@BVBRC/home/operator.fasta&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;msa_file&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ws://awilke@BVBRC/home/tf.a3m&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ligand&quot;</span><span class="p">:</span><span class="w">     </span><span class="p">[</span><span class="s2">&quot;MG&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;output_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;output_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tf-dna-complex&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DNA-binding TF + Mg2+&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-proteinligand-with-smiles-boltz-only">
+<h2>Example request — protein–ligand with SMILES (Boltz only)<a class="headerlink" href="#example-request-proteinligand-with-smiles-boltz-only" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppService.start_app2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boltz&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;input_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/kinase.fasta&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;msa_file&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ws://awilke@BVBRC/home/kinase.a3m&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;smiles&quot;</span><span class="p">:</span><span class="w">     </span><span class="p">[</span><span class="s2">&quot;CC(=O)Oc1ccccc1C(=O)O&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;output_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;output_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kinase-aspirin&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-inline-sequences-with-text-input">
+<h2>Example request — inline sequences with <code class="docutils literal notranslate"><span class="pre">text_input</span></code><a class="headerlink" href="#example-request-inline-sequences-with-text-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppService.start_app2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esmfold&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;text_input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;sequence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MEEPQSDPSVEPPLSQETFSDLWKLLPENN...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;protein&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;output_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;output_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p53-esmfold&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>On success, the workspace folder contains a job directory <code class="docutils literal notranslate"><span class="pre">${output_path}/.${output_file}/</span></code> with the canonical layout documented in the <span class="xref myst">Quick Reference</span>. The task descriptor returned by <code class="docutils literal notranslate"><span class="pre">query_tasks</span></code> includes the absolute workspace path; the UI uses this to render the result page.</p>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<p>The server returns standard JSON-RPC 2.0 error objects:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">error.code</span></code></p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-32600</span></code></p></td>
+<td><p>Invalid request envelope</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-32601</span></code></p></td>
+<td><p>Method not found (typo in <code class="docutils literal notranslate"><span class="pre">method</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-32602</span></code></p></td>
+<td><p>Invalid params (schema mismatch, e.g. ligand longer than 3 chars)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-32603</span></code></p></td>
+<td><p>Internal error</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-32000</span></code></p></td>
+<td><p>Application error from <code class="docutils literal notranslate"><span class="pre">App-PredictStructure.pl</span></code> (validation, preflight, runtime); message contains the reason</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-32001</span></code></p></td>
+<td><p>Not authorized (token invalid / expired)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rate-limiting-and-quotas">
+<h2>Rate limiting and quotas<a class="headerlink" href="#rate-limiting-and-quotas" title="Permalink to this headline">¶</a></h2>
+<p>AppService enforces per-user concurrency limits on running jobs and aggregate runtime quotas, configured per BV-BRC deployment. The current production caps are not exposed via the API; queued jobs in excess of the cap remain in <code class="docutils literal notranslate"><span class="pre">status:</span> <span class="pre">queued</span></code> until earlier ones finish.</p>
+</section>
+<section id="client-examples">
+<h2>Client examples<a class="headerlink" href="#client-examples" title="Permalink to this headline">¶</a></h2>
+<section id="curl">
+<h3><code class="docutils literal notranslate"><span class="pre">curl</span></code><a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>p3-token<span class="k">)</span><span class="s2">&quot;</span><span class="w">   </span><span class="c1"># or read from ~/.patric_token</span>
+curl<span class="w"> </span>-sS<span class="w"> </span>https://www.bv-brc.org/services/AppService<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/jsonrpc+json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;id&quot;: 1,</span>
+<span class="s1">    &quot;method&quot;: &quot;AppService.start_app2&quot;,</span>
+<span class="s1">    &quot;params&quot;: [&quot;PredictStructure&quot;, {</span>
+<span class="s1">      &quot;tool&quot;: &quot;esmfold&quot;,</span>
+<span class="s1">      &quot;input_file&quot;: &quot;ws://awilke@BVBRC/home/crambin.fasta&quot;,</span>
+<span class="s1">      &quot;output_path&quot;: &quot;ws://awilke@BVBRC/home/jobs/&quot;,</span>
+<span class="s1">      &quot;output_file&quot;: &quot;crambin-esm&quot;</span>
+<span class="s1">    }, {}]</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="python-requests">
+<h3>Python (<code class="docutils literal notranslate"><span class="pre">requests</span></code>)<a class="headerlink" href="#python-requests" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">TOKEN</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.patric_token&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;AppService.start_app2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s2">&quot;tool&quot;</span><span class="p">:</span> <span class="s2">&quot;boltz&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;input_file&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://awilke@BVBRC/home/crambin.fasta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;msa_file&quot;</span><span class="p">:</span>   <span class="s2">&quot;ws://awilke@BVBRC/home/crambin.a3m&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;output_path&quot;</span><span class="p">:</span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;output_file&quot;</span><span class="p">:</span><span class="s2">&quot;crambin-boltz&quot;</span><span class="p">,</span>
+    <span class="p">},</span> <span class="p">{}],</span>
+<span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://www.bv-brc.org/services/AppService&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/jsonrpc+json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">TOKEN</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="python-bv-brc-sdk">
+<h3>Python (BV-BRC SDK)<a class="headerlink" href="#python-bv-brc-sdk" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">Bio.KBase.AppService</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>          <span class="c1"># if installed</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;https://www.bv-brc.org/services/AppService&quot;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">TOKEN</span><span class="p">)</span>
+<span class="n">task</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">start_app2</span><span class="p">(</span><span class="s2">&quot;PredictStructure&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">&quot;tool&quot;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;input_file&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://awilke@BVBRC/home/crambin.fasta&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;msa_file&quot;</span><span class="p">:</span>   <span class="s2">&quot;ws://awilke@BVBRC/home/crambin.a3m&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;output_path&quot;</span><span class="p">:</span><span class="s2">&quot;ws://awilke@BVBRC/home/jobs/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;output_file&quot;</span><span class="p">:</span><span class="s2">&quot;crambin-auto&quot;</span><span class="p">,</span>
+<span class="p">},</span> <span class="p">{})</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>BV-BRC Data API (public REST, <em>not</em> this endpoint): <a class="reference external" href="https://www.bv-brc.org/api/doc/">https://www.bv-brc.org/api/doc/</a></p></li>
+<li><p><a class="reference internal" href="predict_structure_service.html"><span class="doc std std-doc">Quick Reference</span></a></p></li>
+<li><p><a class="reference internal" href="predict_structure_cli.html"><span class="doc std std-doc">CLI Reference</span></a></p></li>
+<li><p>Source: <a class="reference external" href="https://github.com/CEPI-dxkb/PredictStructureApp">CEPI-dxkb/PredictStructureApp</a> (<code class="docutils literal notranslate"><span class="pre">service-scripts/App-PredictStructure.pl</span></code>, <code class="docutils literal notranslate"><span class="pre">app_specs/PredictStructure.json</span></code>)</p></li>
+<li><p>UI widget: <a class="reference external" href="https://github.com/BV-BRC/BV-BRC-Web/blob/master/public/js/p3/widget/app/PredictStructure.js">BV-BRC/BV-BRC-Web</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="taxonomic_classification_service.html" class="btn btn-neutral float-right" title="Taxonomic Classification Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="predict_structure_cli.html" class="btn btn-neutral float-left" title="PredictStructure CLI Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

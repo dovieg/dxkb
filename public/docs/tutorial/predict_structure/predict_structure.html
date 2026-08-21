@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Protein Structure Prediction Tutorial | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Protein Structure Prediction — Recipes" href="predict_structure_recipes.html" />
+    <link rel="prev" title="Small Molecule Ligand Docking Service" href="../docking/docking.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>Protein Structure Prediction Tutorial | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../msa_snp_variation/msa_snp_variation.html">MSA and SNP/Variation Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metacats/metacats.html">Metadata-driven Comparative Analysis Tool (Meta-CATS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../proteome_comparison/proteome_comparison.html">Proteome Comparison Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparative_systems/comparative_systems.html">Comparative Systems Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docking/docking.html">Small Molecule Ligand Docking Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Protein Structure Prediction Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-you-ll-do">What you’ll do</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#background-what-we-re-predicting">Background — what we’re predicting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-sign-in">Step 1 — Sign in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-upload-the-crambin-fasta">Step 2 — Upload the crambin FASTA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-open-the-protein-structure-prediction-service">Step 3 — Open the Protein Structure Prediction service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-fill-in-the-form">Step 4 — Fill in the form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-submit">Step 5 — Submit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-6-wait">Step 6 — Wait</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7-open-the-result">Step 7 — Open the result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-to-try-next">What to try next</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="predict_structure_recipes.html">Protein Structure Prediction — Recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#viral-services">Viral Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Protein Structure Prediction Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/predict_structure/predict_structure.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="protein-structure-prediction-tutorial">
+<h1>Protein Structure Prediction Tutorial<a class="headerlink" href="#protein-structure-prediction-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial walks you through predicting the 3D structure of a small protein from scratch using the BV-BRC Protein Structure Prediction Service. We’ll use <strong>crambin</strong> — a 46-amino-acid plant seed protein and one of the classic “hello-world” structures in computational biology. Its small size means every tool you choose returns a result in minutes, which makes it ideal for learning.</p>
+<section id="what-you-ll-do">
+<h2>What you’ll do<a class="headerlink" href="#what-you-ll-do" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Sign in to BV-BRC.</p></li>
+<li><p>Upload a FASTA file with the crambin sequence to your workspace.</p></li>
+<li><p>Submit a prediction job using the <strong>Auto</strong> tool selector.</p></li>
+<li><p>Wait for the job to complete.</p></li>
+<li><p>Open the result, interpret the confidence metrics, and download the structure.</p></li>
+</ol>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A free BV-BRC account (<a class="reference external" href="https://www.bv-brc.org/register/">register here</a>)</p></li>
+<li><p>A web browser</p></li>
+</ul>
+<p>You do <strong>not</strong> need a GPU, an MSA, or any local software. Everything happens on the BV-BRC servers.</p>
+</section>
+<section id="background-what-we-re-predicting">
+<h2>Background — what we’re predicting<a class="headerlink" href="#background-what-we-re-predicting" title="Permalink to this headline">¶</a></h2>
+<p>Crambin is a hydrophobic 46-residue protein from the <em>Crambe abyssinica</em> seed. Its experimental structure (PDB ID <code class="docutils literal notranslate"><span class="pre">1CRN</span></code>) has been solved at near-atomic resolution, which means we have ground truth to compare against. The sequence:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TTCCPSIVARSNFNVCRLPGTPEALCATYTGCIIIPGATCPGDYAN</span>
+</pre></div>
+</div>
+<p>It contains three disulfide bonds (Cys3–Cys40, Cys4–Cys32, Cys16–Cys26) and forms a compact α-helix / β-sheet fold. If a tool gets crambin wrong, something is seriously broken; if it gets it right, that tells you very little — crambin is in every training set. We use it here because it’s small and fast, not because it’s a hard test.</p>
+<p>For a deeper introduction to what the prediction is actually doing, see the Protein Folding Primer (companion doc).</p>
+</section>
+<section id="step-1-sign-in">
+<h2>Step 1 — Sign in<a class="headerlink" href="#step-1-sign-in" title="Permalink to this headline">¶</a></h2>
+<p>Open <a class="reference external" href="https://www.bv-brc.org">https://www.bv-brc.org</a> in your browser. Click <strong>Sign In</strong> in the top-right corner.</p>
+<p><img alt="BV-BRC landing page with Sign In highlighted" src="../../_images/01_signin.png" /></p>
+<p>Sign in with your BV-BRC credentials.</p>
+</section>
+<section id="step-2-upload-the-crambin-fasta">
+<h2>Step 2 — Upload the crambin FASTA<a class="headerlink" href="#step-2-upload-the-crambin-fasta" title="Permalink to this headline">¶</a></h2>
+<p>Save the following as <code class="docutils literal notranslate"><span class="pre">crambin.fasta</span></code> on your computer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="mi">1</span><span class="n">CRN</span><span class="o">|</span><span class="n">Crambin</span><span class="o">|</span><span class="mi">46</span><span class="n">aa</span>
+<span class="n">TTCCPSIVARSNFNVCRLPGTPEALCATYTGCIIIPGATCPGDYAN</span>
+</pre></div>
+</div>
+<p>In BV-BRC:</p>
+<ol class="simple">
+<li><p>Click <strong>Workspaces</strong> → <strong>My Workspace</strong> in the top nav.</p></li>
+<li><p>Navigate into the folder you want to use (or create a new one called <code class="docutils literal notranslate"><span class="pre">tutorial-crambin</span></code>).</p></li>
+<li><p>Click <strong>Upload</strong> in the green Action Bar on the right.</p></li>
+<li><p>Choose <strong>FASTA Sequence File</strong>, select <code class="docutils literal notranslate"><span class="pre">crambin.fasta</span></code>, and click <strong>Start Upload</strong>.</p></li>
+</ol>
+<p>The file appears in the folder once upload completes.</p>
+<p><img alt="Workspace folder showing crambin.fasta uploaded" src="../../_images/02_workspace_upload.png" /></p>
+</section>
+<section id="step-3-open-the-protein-structure-prediction-service">
+<h2>Step 3 — Open the Protein Structure Prediction service<a class="headerlink" href="#step-3-open-the-protein-structure-prediction-service" title="Permalink to this headline">¶</a></h2>
+<p>From the main menu, choose <strong>Services</strong> → <strong>Protein Tools</strong> → <strong>Protein Structure Prediction</strong>.</p>
+<p>Or go directly to: <a class="reference external" href="https://www.bv-brc.org/app/PredictStructure">https://www.bv-brc.org/app/PredictStructure</a></p>
+<p>You should see the input form:</p>
+<p><img alt="Empty Protein Structure Prediction form" src="../../_images/03_form_empty.png" /></p>
+<p>The fields are documented in detail in the <a class="reference internal" href="../../quick_references/services/predict_structure_service.html"><span class="doc std std-doc">Quick Reference</span></a>. For this tutorial we’ll fill in only the basics.</p>
+</section>
+<section id="step-4-fill-in-the-form">
+<h2>Step 4 — Fill in the form<a class="headerlink" href="#step-4-fill-in-the-form" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Prediction Tool</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Auto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Protein</strong></p></td>
+<td><p>click the workspace selector, choose <code class="docutils literal notranslate"><span class="pre">crambin.fasta</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DNA / RNA</strong></p></td>
+<td><p>leave empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ligands</strong></p></td>
+<td><p>leave empty</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SMILES</strong></p></td>
+<td><p>leave empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MSA File</strong></p></td>
+<td><p>leave empty</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Output Folder</strong></p></td>
+<td><p>click the folder selector, choose <code class="docutils literal notranslate"><span class="pre">tutorial-crambin</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Job Name</strong></p></td>
+<td><p>type <code class="docutils literal notranslate"><span class="pre">crambin-auto</span></code> (the field is pre-filled with <code class="docutils literal notranslate"><span class="pre">PredictStructure-&lt;timestamp&gt;</span></code> — overwrite it)</p></td>
+</tr>
+</tbody>
+</table>
+<p>A submission creates a <strong>job</strong> with the name you enter. The job appears in your workspace as an object at <code class="docutils literal notranslate"><span class="pre">&lt;Output</span> <span class="pre">Folder&gt;/&lt;Job</span> <span class="pre">Name&gt;</span></code> — for this tutorial, <code class="docutils literal notranslate"><span class="pre">tutorial-crambin/crambin-auto</span></code>. That object holds all job-related info: parameters, status, logs, and the prediction results.</p>
+<p>The <em>Result location</em> bar directly below the Job Name field previews this path as you type. The form runs live validation; the <strong>Submit</strong> button enables once you have an Output Folder, a Job Name, at least one biomolecular input, and — for Boltz / OpenFold / Chai — an MSA file.</p>
+<p><img alt="Form filled with example values showing the Result location preview" src="../../_images/03b_form_filled.png" /></p>
+<blockquote>
+<div><p><strong>Why <code class="docutils literal notranslate"><span class="pre">Auto</span></code>?</strong> With only a protein and no MSA, the auto-selector picks <strong>ESMFold</strong> — it’s the only engine that runs without an MSA on a single sequence (see the <span class="xref myst">tool selector decision tree</span>). If you pick <code class="docutils literal notranslate"><span class="pre">boltz</span></code> or <code class="docutils literal notranslate"><span class="pre">chai</span></code> without uploading an MSA, the submission will fail with a policy error.</p>
+</div></blockquote>
+</section>
+<section id="step-5-submit">
+<h2>Step 5 — Submit<a class="headerlink" href="#step-5-submit" title="Permalink to this headline">¶</a></h2>
+<p>Click <strong>Submit</strong> at the bottom of the form. A confirmation toast appears in the lower-left and the new job shows up in <strong>My Jobs</strong> (top-right user menu).</p>
+<p><img alt="Job submission confirmation toast" src="../../_images/04_submit_toast.png" /></p>
+</section>
+<section id="step-6-wait">
+<h2>Step 6 — Wait<a class="headerlink" href="#step-6-wait" title="Permalink to this headline">¶</a></h2>
+<p>Crambin via ESMFold on a GPU runs in roughly 15–60 seconds plus queue time. Refresh the Jobs list, or open the job to see its live status:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">queued</span></code></p></td>
+<td><p>Waiting for a worker</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in_progress</span></code></p></td>
+<td><p>Running</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">completed</span></code></p></td>
+<td><p>Output is in your workspace</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">failed</span></code></p></td>
+<td><p>Something went wrong; click into the job to see stderr</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-7-open-the-result">
+<h2>Step 7 — Open the result<a class="headerlink" href="#step-7-open-the-result" title="Permalink to this headline">¶</a></h2>
+<p>Click the completed job. The workspace object (<code class="docutils literal notranslate"><span class="pre">tutorial-crambin/crambin-auto</span></code>) opens with this layout (full reference: <span class="xref myst">Quick Reference → Output Results</span>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>crambin-auto/
+├── results.json
+├── report.html             ← interactive 3D viewer
+├── inputs/
+│   └── query.fasta
+├── predictions/
+│   ├── rank_1.pdb          ← the predicted structure
+│   └── rank_1.cif
+├── reports/
+│   ├── confidence.json
+│   ├── plddt.csv
+│   └── pae.png
+└── metadata/
+    ├── tool.json
+    └── runtime.json
+</pre></div>
+</div>
+<section id="view-the-structure">
+<h3>View the structure<a class="headerlink" href="#view-the-structure" title="Permalink to this headline">¶</a></h3>
+<p>Click <code class="docutils literal notranslate"><span class="pre">report.html</span></code> and choose <strong>View</strong> from the Action Bar. A 3D viewer opens (3Dmol.js) showing crambin folded into its characteristic small α/β fold, with three disulfide bridges visible if you toggle the <strong>sticks</strong> representation for cysteines.</p>
+<p><img alt="3Dmol.js view of crambin from report.html with three disulfides visible" src="../../_images/05_crambin_3d.png" /></p>
+</section>
+<section id="read-the-confidence">
+<h3>Read the confidence<a class="headerlink" href="#read-the-confidence" title="Permalink to this headline">¶</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">reports/confidence.json</span></code> (or look at the panel beneath the 3D viewer in <code class="docutils literal notranslate"><span class="pre">report.html</span></code>):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esmfold&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plddt_mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87.4</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plddt_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">71.2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ptm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model_confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Interpreting these:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plddt_mean</span> <span class="pre">=</span> <span class="pre">87.4</span></code> — high confidence. A value above 80 on a 46-residue monomer says ESMFold is confident across the whole chain.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plddt_min</span> <span class="pre">=</span> <span class="pre">71.2</span></code> — even the worst residue is in the “confident” band (&gt;70). No disordered tails.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptm</span> <span class="pre">=</span> <span class="pre">0.81</span></code> — the overall fold is almost certainly right.</p></li>
+</ul>
+<p>If you compare the rank-1 PDB to the experimental <code class="docutils literal notranslate"><span class="pre">1CRN</span></code> structure (e.g. via TM-align), you should see a TM-score above 0.9 — ESMFold reproduces crambin essentially perfectly. As noted above, this isn’t a stress test; it confirms the pipeline works end-to-end.</p>
+</section>
+<section id="download-the-structure">
+<h3>Download the structure<a class="headerlink" href="#download-the-structure" title="Permalink to this headline">¶</a></h3>
+<p>From the Action Bar, choose <strong>Download</strong> on <code class="docutils literal notranslate"><span class="pre">predictions/rank_1.pdb</span></code> to save it locally. Open it in <a class="reference external" href="https://pymol.org/">PyMOL</a>, <a class="reference external" href="https://www.cgl.ucsf.edu/chimerax/">ChimeraX</a>, <a class="reference external" href="https://molstar.org/viewer/">Mol*</a>, or any PDB viewer.</p>
+</section>
+</section>
+<section id="what-to-try-next">
+<h2>What to try next<a class="headerlink" href="#what-to-try-next" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variation</p></th>
+<th class="head"><p>What to change</p></th>
+<th class="head"><p>What you’ll learn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Same protein, different tool</strong></p></td>
+<td><p>Pick <code class="docutils literal notranslate"><span class="pre">boltz</span></code> and upload <code class="docutils literal notranslate"><span class="pre">crambin.a3m</span></code> (a pre-computed MSA — examples ship with the test data)</p></td>
+<td><p>How a richer MSA affects diffusion-tool confidence</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Multi-chain complex</strong></p></td>
+<td><p>Submit a multi-record FASTA (chains A and B in one file). Crambin doesn’t naturally dimerize — try a known dimer like the Cro repressor instead</p></td>
+<td><p>Multimer prediction and <code class="docutils literal notranslate"><span class="pre">ipTM</span></code> interpretation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Protein + ligand</strong></p></td>
+<td><p>Add <code class="docutils literal notranslate"><span class="pre">ligand:</span> <span class="pre">ATP</span></code> and pick <code class="docutils literal notranslate"><span class="pre">boltz</span></code> (with an MSA)</p></td>
+<td><p>Co-folding with a small molecule, PoseBusters-style</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Compare engines side-by-side</strong></p></td>
+<td><p>Run the CWL workflow <code class="docutils literal notranslate"><span class="pre">multi-tool-comparison.cwl</span></code> from the <a class="reference external" href="https://github.com/CEPI-dxkb/PredictStructureApp">PredictStructureApp repo</a></p></td>
+<td><p>Quantitative head-to-head on your own targets</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<section id="no-inputs-supplied">
+<h3><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">inputs</span> <span class="pre">supplied</span></code><a class="headerlink" href="#no-inputs-supplied" title="Permalink to this headline">¶</a></h3>
+<p>You hit Submit with the Protein, DNA, RNA, ligand, and SMILES fields all empty. Provide at least one.</p>
+</section>
+<section id="invalid-ligand-ccd-code-abcd">
+<h3><code class="docutils literal notranslate"><span class="pre">Invalid</span> <span class="pre">ligand</span> <span class="pre">CCD</span> <span class="pre">code</span> <span class="pre">'ABCD'</span></code><a class="headerlink" href="#invalid-ligand-ccd-code-abcd" title="Permalink to this headline">¶</a></h3>
+<p>CCD codes are 1–3 alphanumeric characters. Use <code class="docutils literal notranslate"><span class="pre">ATP</span></code>, not <code class="docutils literal notranslate"><span class="pre">ATPase</span></code>.</p>
+</section>
+<section id="boltz-openfold-chai-require-an-msa">
+<h3><code class="docutils literal notranslate"><span class="pre">Boltz</span> <span class="pre">/</span> <span class="pre">OpenFold</span> <span class="pre">/</span> <span class="pre">Chai</span> <span class="pre">require</span> <span class="pre">an</span> <span class="pre">MSA</span></code><a class="headerlink" href="#boltz-openfold-chai-require-an-msa" title="Permalink to this headline">¶</a></h3>
+<p>Set <strong>MSA Source</strong> to <em>Precomputed MSA from Workspace</em> and upload an <code class="docutils literal notranslate"><span class="pre">.a3m</span></code>, <code class="docutils literal notranslate"><span class="pre">.sto</span></code>, or <code class="docutils literal notranslate"><span class="pre">.pqt</span></code> file, or set it to <em>Use MSA Server or Service</em> to have BV-BRC compute the MSA with ColabFold. <strong>Auto</strong> and <strong>ESMFold</strong> don’t need an MSA at all.</p>
+</section>
+<section id="job-is-queued-for-a-long-time">
+<h3>Job is queued for a long time<a class="headerlink" href="#job-is-queued-for-a-long-time" title="Permalink to this headline">¶</a></h3>
+<p>GPU partitions are shared. ESMFold jobs have low resource requests and usually start within minutes; Boltz / OpenFold / Chai may wait longer. AlphaFold 2 jobs can wait significantly longer because they hold a GPU for an hour or more.</p>
+</section>
+<section id="result-viewer-doesn-t-render">
+<h3>Result viewer doesn’t render<a class="headerlink" href="#result-viewer-doesn-t-render" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">report.html</span></code> loads 3Dmol.js from <code class="docutils literal notranslate"><span class="pre">https://3dmol.org/build/3Dmol-min.js</span></code> (a CDN, not an embedded script). If the viewer appears blank:</p>
+<ul class="simple">
+<li><p><strong>Network can’t reach 3dmol.org</strong> — check connectivity, corporate proxy / firewall rules, or a captive portal.</p></li>
+<li><p><strong>Ad-blocker or content-script extension</strong> is blocking the CDN — try a private/incognito window or disable extensions for the workspace domain.</p></li>
+<li><p><strong>Strict Content-Security-Policy</strong> in the browser is rejecting the script — open the developer console (Cmd-Opt-J / Ctrl-Shift-J) and look for <code class="docutils literal notranslate"><span class="pre">Refused</span> <span class="pre">to</span> <span class="pre">load</span> <span class="pre">the</span> <span class="pre">script</span></code> or <code class="docutils literal notranslate"><span class="pre">Blocked</span> <span class="pre">by</span> <span class="pre">CSP</span></code> errors.</p></li>
+</ul>
+<p>The underlying structure file (<code class="docutils literal notranslate"><span class="pre">predictions/rank_1.pdb</span></code>) still downloads and opens in PyMOL, ChimeraX, or any local viewer if you’d rather skip the embedded viewer entirely.</p>
+</section>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../quick_references/services/predict_structure_service.html"><span class="doc std std-doc">Quick Reference</span></a> — every form field documented</p></li>
+<li><p><a class="reference internal" href="predict_structure_recipes.html"><span class="doc std std-doc">Recipes</span></a> — patterns for multi-chain complexes, ligands, MSAs, reruns</p></li>
+<li><p><a class="reference external" href="https://bv-brc.org/app/PredictStructure">Protein Structure Prediction Service</a> — open the form</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="predict_structure_recipes.html" class="btn btn-neutral float-right" title="Protein Structure Prediction — Recipes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../docking/docking.html" class="btn btn-neutral float-left" title="Small Molecule Ligand Docking Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>SARS-CoV-2 Genome Assembly and Annotation Service | BV-BRC</title>
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SARS-Cov-2 Wastewater Analysis Service" href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html" />
+    <link rel="prev" title="ID Mapper Tool" href="../id_mapper/id_mapper.html" />
+<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
+<link rel="icon" sizes="16x16 32x32" href="/_static/favicon.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto:400,700&display=swap">
+<title>SARS-CoV-2 Genome Assembly and Annotation Service | BV-BRC</title>
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e3e3" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BV-BRC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.google.com/search" method="get" target="bvbrc_docs_search">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="sitesearch" value="bv-brc.org" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Updates and Reports</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">News and Announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reports_and_analysis/index.html">Reports and Analysis</a></li>
+</ul>
+<p><span class="caption-text">Help Resources:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_protocols/index.html">BV-BRC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_references/index.html">Quick Reference Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#genomics">Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#phylogenomics-services">Phylogenomics Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#protein-tools">Protein Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#metagenomics">Metagenomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#transcriptomics">Transcriptomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#viral-services">Viral Services</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SARS-CoV-2 Genome Assembly and Annotation Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-the-sars-cov-2-genome-assembly-and-annotation-service">Accessing the SARS-CoV-2 genome assembly and annotation service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-reads-to-the-service">Submitting Reads to the Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-parameters">Selecting Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-contigs-to-the-service">Submitting contigs to the service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-the-sars-cov2-job-submitted-to-bv-brc">Finding the SARS-CoV2 job submitted to BV-BRC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-the-full-genome-html-report">Viewing the Full Genome.html report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-other-files-generated-by-the-sars-cov2-assembly-and-annotation-job">Viewing other files generated by the SARS-CoV2 assembly and annotation job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#downloadable-files-available-with-annotation-and-assembly-jobs">Downloadable files available with annotation and assembly jobs.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#downloadable-files-available-with-assembly-jobs">Downloadable files available with assembly jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html">SARS-Cov-2 Wastewater Analysis Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequence_submission/sequence_submission.html">Sequence Submission Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ha_numbering/ha_numbering.html">HA Subtype Numbering Conversion Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subspecies_classification/subspecies_classification.html">Subspecies Classification Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viral_assembly/assembly.html">Analyzing Viral Genome Assembly Using BV-BRC Tools Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#data-visualizations">Data Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli_tutorial/index.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/index.html">Instructional Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webinar/index.html">Webinars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workshops/index.html">Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../education/index.html">Education</a></li>
+</ul>
+<p><span class="caption-text">System Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data_management_sharing.html">Data Management and Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/capabilities_and_functionality.html">Capabilities And Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/software_tools_and_code.html">Software Tools And Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/system_architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system_documentation/accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_procedures/index.html">Test Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_metrics.html">Usage Metrics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BV-BRC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+        
+      <li>SARS-CoV-2 Genome Assembly and Annotation Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/sars_cov_2_assembly_annotation/sars_cov_2_assembly_annotation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="sars-cov-2-genome-assembly-and-annotation-service">
+<h1>SARS-CoV-2 Genome Assembly and Annotation Service<a class="headerlink" href="#sars-cov-2-genome-assembly-and-annotation-service" title="Permalink to this headline">¶</a></h1>
+<p><em>Revised: 8/25/2021</em></p>
+<p>The SARS-CoV-2 Genome Assembly and Annotation Service provides a streamlined “meta- service” that accepts raw reads and performs genome assembly, annotation, and variation analysis.</p>
+<p>A genome assembly is the sequence produced after chromosomes from the organism have been fragmented, those fragments have been sequenced, and the resulting sequences have been put back together. This is currently needed as DNA sequencing technology cannot read whole genomes in one go, but rather can read small pieces of between 20 and 30,000 bases, depending on the technology used. Typically, the short fragments, called reads, result from shotgun (random) sequencing of genomic DNA. In some cases, microbes such as certain virus species with RNA genomes may first have to be reverse transcribed into DNA before they can be sequenced.</p>
+<p>The protocol used for assembly and the downstream quality measures is provided by the Centers for Disease Control (CDC). This protocol was developed, tuned and validated by the Viral Discovery laboratory at CDC/NCIRD, where it was used to generate the first 16 SARS- CoV-2 genome sequences from the United States. In practice, it has been used for situations with a relatively low or predictable volume of samples and is often used in conjunction with Sanger-based tiling to resolve any potential sequencing or assembly issues. This is a reference-based assembly, which uses the genome Severe acute respiratory syndrome coronavirus 2 (Taxonomy ID: 2697049, refseq ID: NC_045512.2, Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1). Additional information and the code can be found here: https://github.com/CDCgov/SARS-CoV-2_Sequencing.</p>
+<p>A summary diagram of the workflow based on the sequencing platform can be found below.</p>
+<p><img alt="Figure 1" src="../../_images/Picture160.png" /></p>
+<p>Genome annotation uses the Viral Genome ORF Reader pipeline (VIGOR4), which was developed at the J. Craig Venter Institute. VIGOR 4 predicts protein sequences encoded in a viral genome by sequence similarity searching against curated viral protein databases. The code for VIGOR4 can be found at https://github.com/VirusBRC/VIGOR4. A schematic of the VIGOR4 program workflow can be found below.
+<img alt="Figure 2" src="../../_images/Picture239.png" /></p>
+<section id="accessing-the-sars-cov-2-genome-assembly-and-annotation-service">
+<h2>Accessing the SARS-CoV-2 genome assembly and annotation service<a class="headerlink" href="#accessing-the-sars-cov-2-genome-assembly-and-annotation-service" title="Permalink to this headline">¶</a></h2>
+<p>You can find the genome assembly and annotation service under the Services menu at the top of the any BV-BRC page.
+<img alt="Figure 3" src="../../_images/Picture329.png" /></p>
+<p>Click the link to launch the service.
+<img alt="Figure 4" src="../../_images/Picture429.png" /></p>
+<p>The landing page for the SARS-CoV-2 genome assembly and annotation service has three parts. You can start with reads or contigs, select the files that you would like to analyze, and then select the parameters.
+<img alt="Figure 5" src="../../_images/Picture528.png" /></p>
+</section>
+<section id="submitting-reads-to-the-service">
+<h2>Submitting Reads to the Service<a class="headerlink" href="#submitting-reads-to-the-service" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Submitting paired read libraries. To assemble paired or single read libraries, or a read file from the Sequence Read Archive (SRA), click on Read File.
+<img alt="Figure 6" src="../../_images/Picture625.png" /></p></li>
+<li><p>Read files must be uploaded into the workspace. To upload paired read files, click on the folder icon at the end of the text box underneath the words Paired Read Library.
+<img alt="Figure 8" src="../../_images/Picture823.png" /></p></li>
+<li><p>This will open a pop-up window where you can select files. Whatever is uploaded in this process will be tagged as read files. To select the first file, click on the blue “Select File” bar in the center of the window.
+<img alt="Figure 9" src="../../_images/Picture921.png" /></p></li>
+<li><p>This will open a window that allows you to choose files that are stored on your computer. Select the file where you stored the fastq file on your computer and click “Open”.
+<img alt="Figure 10" src="../../_images/Picture1018.png" /></p></li>
+<li><p>Once selected, it will autofill the name of the file. Click on the Start Upload button.
+<img alt="Figure 11" src="../../_images/Picture1117.png" /></p></li>
+<li><p>This will auto-fill the name of the document into the text box.
+<img alt="Figure 12" src="../../_images/Picture1215.png" /></p></li>
+<li><p>Pay attention to the upload monitor in the lower right corner of the PATRIC page. It will show the progress of the upload.
+<img alt="Figure 13" src="../../_images/Picture1312.png" /></p></li>
+<li><p>Repeat to upload the second pair of reads.
+<img alt="Figure 14" src="../../_images/Picture1412.png" /></p></li>
+<li><p>Do not submit the job until the upload is 100% complete.
+<img alt="Figure 15" src="../../_images/Picture1512.png" /></p></li>
+<li><p>Click on the arrow that follows the “Select a platform” box below the paired reads.
+<img alt="Figure 16" src="../../_images/Picture1612.png" /></p></li>
+<li><p>The Assembly service will assemble Illumina or Ion Torrent reads. Click on the platform used to sequence the genome or click on Infer Platform to allow the service to determine the reads.
+<img alt="Figure 17" src="../../_images/Picture1711.png" /></p></li>
+<li><p>The reads must be moved to the Selected libraries box. Click on the arrow right above the text box.
+<img alt="Figure 18" src="../../_images/Picture1811.png" /></p></li>
+<li><p>This moves the paired reads to the Selected libraries box. Clicking on the “x” will remove the reads from this box and clicking on the “I” will show the reads that were submitted in each individual row.
+<img alt="Figure 19" src="../../_images/Picture1912.png" /></p></li>
+<li><p><strong>Submitting single read libraries</strong>. To submit single read libraries, you can upload files as described above. However, if you have previously uploaded the data to your workspace, you can access your workspace by clicking on the folder icon at the end of the text box underneath the words Single Read Library.
+<img alt="Figure 20" src="../../_images/Picture2011.png" /></p></li>
+<li><p>This will open a pop-up window where you can see the files in your workspace. Scroll to the files of interest. If your data is in a particular folder, find the folder and double click on it.
+<img alt="Figure 21" src="../../_images/Picture2115.png" /></p></li>
+<li><p>This will open that folder. Clicking on the row that has the read files will highlight the row blue. Once that row is selected, click on the OK button at the bottom right corner.
+<img alt="Figure 22" src="../../_images/Picture2211.png" /></p></li>
+<li><p>The name of the file will appear in the text box. To select the sequencing platform associated with the file, click on the down arrow in the text box underneath the name.
+<img alt="Figure 23" src="../../_images/Picture2310.png" /></p></li>
+<li><p>If the sequencing platform is known, click on the appropriate row. If the sequencing platform is unknown, or not shown in the drop-down, click on Infer Platform.
+<img alt="Figure 24" src="../../_images/Picture248.png" /></p></li>
+<li><p>The read files must be moved into the Selected libraries box to the right. Click on the arrow to the right of the words SINGLE READ LIBRARY to transfer them.
+<img alt="Figure 25" src="../../_images/Picture258.png" /></p></li>
+<li><p>This moves the paired reads to the Selected libraries box. Clicking on the “x” will remove the reads from this box, and clicking on the “I” will show the reads that were submitted in each individual row.
+<img alt="Figure 26" src="../../_images/Picture268.png" /></p></li>
+<li><p><strong>Submitting reads from the Sequence Read Archive (SRA)</strong>. BV-BRC also allows researchers to submit reads that are available in the SRA. Enter the SRA run accession number in the text box.
+<img alt="Figure 27" src="../../_images/Picture277.png" /></p></li>
+<li><p>After the accession number is entered, the reads must be moved into the Selected libraries box to the right. Click on the arrow to the right of the words SRA RUN ACCESSION LIBRARY to transfer them.
+<img alt="Figure 28" src="../../_images/Picture289.png" /></p></li>
+</ol>
+</section>
+<section id="selecting-parameters">
+<h2>Selecting Parameters<a class="headerlink" href="#selecting-parameters" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><strong>Assembly strategy</strong>. BV-BRC provides several assembly strategies. Click on the down arrow in the text box under STRATEGY to see the possibilities.</p></li>
+</ol>
+<p><img alt="Figure 29" src="../../_images/Picture299.png" /></p>
+<ol class="simple">
+<li><p>This opens a drop-down box that shows the three assembly strategies that are offered.
+<img alt="Figure 30" src="../../_images/Picture308.png" /></p></li>
+<li><p>The three strategies can be seen in the diagram below. The CDC-Illumina assembly strategy uses Cutadapt[1] for trimming, Bowtie2[2] for read mapping, and SAMtools- mpileup[3] for variant calling and generating a consensus sequence. The CDC Nanopore strategy uses Cutadapt for trimming, Minimap2[4] for read mapping, and Medaka (https://nanoporetech.github.io/medaka/) for variant calling and generating a consensus sequence. More information about the CDC strategies can be found here: https://github.com/CDCgov/SARS-CoV-2_Sequencing/blob/master/protocols/CDC-Comprehensive/CDC_SARS-CoV-2_Sequencing_200325-2.pdf</p></li>
+</ol>
+<p>The Artic-Nanopore strategy uses Align_trim for trimming, Minimap2 for read mapping, and Medaka for variant calling and generating a consensus sequence. More information on the Artic-Nanopore strategy can be found here: https://artic.network/ncov-2019/ncov2019- bioinformatics-sop.html</p>
+<p>Clicking on Auto will allow the service to select the appropriate strategy.
+<img alt="Figure 31" src="../../_images/Picture3113.png" /></p>
+<ol class="simple">
+<li><p><strong>Job name</strong>. Once the appropriate strategy is selected, a unique identifier must be entered for this job. Enter the name in the text box under the words MY LABEL. Note that as you enter the text, you will see it appended to the name for the reference genome in the OUTPUT NAME box.
+<img alt="Figure 32" src="../../_images/Picture3210.png" /></p></li>
+<li><p><strong>Creating new folder</strong>. The job will be placed in your private workspace. It is best to have a folder to hold the relevant information. To create a new folder, click on the folder icon at the end of the text box underneath the words OUTPUT FOLDER.
+<img alt="Figure 33" src="../../_images/Picture337.png" /></p></li>
+<li><p>This will open a pop-up window to your workspace. To create a new folder, click on the Folder icon at the upper right (you could also scroll through your workspace to find an appropriate folder).
+<img alt="Figure 34" src="../../_images/Picture347.png" /></p></li>
+<li><p>Clicking on the folder icon will open a pop-up window where you can name the new folder. Enter the new name in the text box.
+<img alt="Figure 35" src="../../_images/Picture357.png" /></p></li>
+<li><p>Click the Create Folder button to create the new folder.
+<img alt="Figure 36" src="../../_images/Picture367.png" /></p></li>
+<li><p>In the workspace window, scroll until you find the newly named folder and select the row. It will turn the row blue. When that row is highlighted, click on the OK button at the lower right of the window.
+<img alt="Figure 37" src="../../_images/Picture376.png" /></p></li>
+<li><p><strong>Using an existing folder</strong>. Additionally, if a folder of interest has been recently created, you can click on the down arrow at the end of the text box.
+<img alt="Figure 38" src="../../_images/Picture388.png" /></p></li>
+<li><p>This will open a drop-down box that shows the folders you have created, with the most recently named one at the top of the list. Click on the row that contains the folder you want to use.
+<img alt="Figure 39" src="../../_images/Picture398.png" /></p></li>
+<li><p>The name of the folder will appear in the text box.
+<img alt="Figure 40" src="../../_images/Picture407.png" /></p></li>
+<li><p><strong>Submitting the job</strong>. The job is now ready to be submitted. Click on the Submit button at the bottom right.
+<img alt="Figure 41" src="../../_images/Picture4113.png" /></p></li>
+<li><p>A message will appear telling you that the job was successfully submitted.
+<img alt="Figure 42" src="../../_images/Picture4210.png" /></p></li>
+<li><p>Note that assembly jobs also include genome annotation using VIGOR4.
+<img alt="Figure 43" src="../../_images/Picture436.png" /></p></li>
+</ol>
+</section>
+<section id="submitting-contigs-to-the-service">
+<h2>Submitting contigs to the service<a class="headerlink" href="#submitting-contigs-to-the-service" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>To submit a contig file, click on Assembled Contigs in the upper box.
+<img alt="Figure 44" src="../../_images/Picture445.png" /></p></li>
+<li><p>To upload a contig file, or to access a file that is already in your workspace, click on the folder icon at the end of the text box underneath CONTIGS. You can also enter the name of the contig file in the text box if this is known.
+<img alt="Figure 45" src="../../_images/Picture456.png" /></p></li>
+<li><p>This will open a pop-up window that shows you your workspace and the data that is present in it. If the file is in the workspace, you can scroll until you find it, select it, and then click on the OK button at the bottom right of the pop-up window. To upload new data, click on the upload icon that you can see at the upper right of the window.
+<img alt="Figure 46" src="../../_images/Picture465.png" /></p></li>
+<li><p>This will open a pop-up window that will link to your computer. Notice that it is pre-selected for contig files. Click on the blue Select File bar in the center of the window.
+<img alt="Figure 47" src="../../_images/Picture475.png" /></p></li>
+<li><p>This will open a dialog box with your computer. Navigate to the file of interest, select the row, and then click on the Open button at the bottom right of the window.
+<img alt="Figure 48" src="../../_images/Picture485.png" /></p></li>
+<li><p>The name of the file will appear below the words File Selected. Click on the Start Upload button at the lower right of the page.
+<img alt="Figure 49" src="../../_images/Picture495.png" /></p></li>
+<li><p>The name of the selected contig file will appear in the text box below the word CONTIGS.
+<img alt="Figure 50" src="../../_images/Picture505.png" /></p></li>
+<li><p>Assign the genome a name. As you type the name in the text box under MY LABEL you will see it appended to the taxonomy name in the box below OUTPUT NAME.
+<img alt="Figure 51" src="../../_images/Picture5111.png" /></p></li>
+<li><p>The job must be placed in a folder. If you have a folder within your workspace that you would like to use, you can begin entering the name in the text box underneath the words OUTPUT FOLDER. This will open a drop-down box that shows available folders that have a name matching the text that you have entered. Click on the folder of interest.
+<img alt="Figure 52" src="../../_images/Picture529.png" /></p></li>
+<li><p>To submit the job, click on the Submit button below the Parameters box. The button will be colored blue.
+<img alt="Figure 53" src="../../_images/Picture535.png" /></p></li>
+<li><p>A message will appear below the Parameters box, indicating that your job has been successfully submitted and is now queued.
+<img alt="Figure 54" src="../../_images/Picture546.png" /></p></li>
+</ol>
+</section>
+<section id="finding-the-sars-cov2-job-submitted-to-bv-brc">
+<h2>Finding the SARS-CoV2 job submitted to BV-BRC<a class="headerlink" href="#finding-the-sars-cov2-job-submitted-to-bv-brc" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The SARS-CoV2 job can be located from three places on any BV-BRC page. Clicking on the Workspace tab will reveal two of the places where the workspace or jobs folder can be located, and also from the Jobs monitor located at the lower right of any BV-BRC page.
+<img alt="Figure 56" src="../../_images/Picture566.png" /></p></li>
+<li><p><strong>Access the job though the workspace</strong>. Click on the Workspace tab, and then on the “home” in the drop-down box.
+<img alt="Figure 57" src="../../_images/Picture575.png" /></p></li>
+<li><p>This will rewrite the page to show the home workspace. Scroll down until you find the folder where you stored the job, and then click on that.
+<img alt="Figure 58" src="../../_images/Picture584.png" /></p></li>
+<li><p>This will rewrite the page to show the contents of that folder. Completed jobs are indicated by a checkered flag in the first column. Clicking on the row, or the flag, that contains the job, will rewrite the page.
+<img alt="Figure 59" src="../../_images/Picture593.png" /></p></li>
+<li><p>The new page will show all the files produced by the job that was submitted.
+<img alt="Figure 60" src="../../_images/Picture603.png" /></p></li>
+<li><p><strong>Accessing the job though My Jobs, or Jobs monitor</strong>. Click on the Workspaces tab and then on My Jobs or click on the Jobs monitor at the lower right of the page.
+<img alt="Figure 61" src="../../_images/Picture6110.png" /></p></li>
+<li><p>This will rewrite the page to show all jobs that have been submitted by the researcher. Locate the job of interest and click on that row.
+<img alt="Figure 62" src="../../_images/Picture626.png" /></p></li>
+<li><p>This will highlight the row and populate the vertical green bar to the right with possible downstream functions. To see the completed job, click on the View icon in that bar.
+<img alt="Figure 63" src="../../_images/Picture633.png" /></p></li>
+<li><p>This will rewrite the page to show all the files produced by the job that was submitted.
+<img alt="Figure 64" src="../../_images/Picture643.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-the-full-genome-html-report">
+<h2>Viewing the Full Genome.html report<a class="headerlink" href="#viewing-the-full-genome-html-report" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Each job submitted to the SARS-CoV2 assembly and annotation service will return a report that summarizes the results. To view this report, click on the row that contains the words “FullGenomeReport.html”.
+<img alt="Figure 65" src="../../_images/Picture653.png" /></p></li>
+<li><p>This will highlight the row and populate the vertical green bar with possible downstream actions. At this point, you could click on the Download icon to download the job. To view the job within the BV-BRC page, click on the View icon.
+<img alt="Figure 66" src="../../_images/Picture663.png" /></p></li>
+<li><p>This will rewrite the page to show the report.
+<img alt="Figure 67" src="../../_images/Picture673.png" /></p></li>
+<li><p>The report begins with a table showing the assembly statistics (if an assembly was part of the submission) that include the time that the assembly took, the recipe used, the platform and laboratory type, the assembly strategy, the number of N’s found in the assembly, and the number of N blocks in the assembly.
+<img alt="Figure 68" src="../../_images/Picture683.png" /></p></li>
+<li><p>The report also includes a graph that shows the coverage depth for the assembly at the specific positions in the genome.
+<img alt="Figure 69" src="../../_images/Picture693.png" /></p></li>
+<li><p>The report next shows the variation data according to the Variant Call Format specification (https://samtools.github.io/hts-specs/VCFv4.2.pdf). It includes the contig, the position of the snp, the nucleotide called in the reference genome, and the nucleotide called in the submitted genome.
+<img alt="Figure 70" src="../../_images/Picture703.png" /></p></li>
+<li><p>This is followed by the annotation report, with a box showing the time that the annotation took.
+<img alt="Figure 71" src="../../_images/Picture7110.png" /></p></li>
+<li><p>This is followed by a table showing the features called on the genome. This table includes the feature id, the start position of that feature on that assembly, the strand, the length, and the function of that feature.
+<img alt="Figure 72" src="../../_images/Picture724.png" /></p></li>
+</ol>
+</section>
+<section id="viewing-other-files-generated-by-the-sars-cov2-assembly-and-annotation-job">
+<h2>Viewing other files generated by the SARS-CoV2 assembly and annotation job<a class="headerlink" href="#viewing-other-files-generated-by-the-sars-cov2-assembly-and-annotation-job" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Submitting a job to the assembly or annotation services generate a number of files that are available for download. These files can be seen when the job is selected either via the workspace, or through the Jobs monitor.
+<img alt="Figure 73" src="../../_images/Picture732.png" /></p></li>
+</ol>
+</section>
+<section id="downloadable-files-available-with-annotation-and-assembly-jobs">
+<h2>Downloadable files available with annotation and assembly jobs.<a class="headerlink" href="#downloadable-files-available-with-annotation-and-assembly-jobs" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Both assembly and annotation jobs share downloadable files. The annotated.genome file contains a special “Genome Typed Object (GTO)” JSON-format file that encapsulates all the data from the annotated genome. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 74" src="../../_images/Picture742.png" /></p></li>
+<li><p>Both annotation and assembly jobs have a separate page with downloadable files associated with the annotation portion of the service. This page can be accessed by double clicking on the row that has the word “annotation” and the checkered flag, which indicates a completed job.
+<img alt="Figure 75" src="../../_images/Picture752.png" /></p></li>
+<li><p>This will rewrite the page to all the files generated by the annotation service.
+<img alt="Figure 76" src="../../_images/Picture762.png" /></p></li>
+<li><p>The <em>annotation.feature_dna.fasta</em> file contains the DNA sequence for each feature called by the annotation pipeline. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 77" src="../../_images/Picture772.png" /></p></li>
+<li><p>The <em>annotation.feature_protein.fasta</em> file contains the amino sequence for each gene called by the annotation pipeline. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 78" src="../../_images/Picture782.png" /></p></li>
+<li><p>The <em>annotation.features</em> file contains a list of the features, where they are located on the contig, their type, their function, any known alias, and (for protein-coding genes) the protein MD5 checksum. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 79" src="../../_images/Picture792.png" /></p></li>
+<li><p>The <em>annotation.gb</em> file contains the annotation in GenBank format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 80" src="../../_images/Picture802.png" /></p></li>
+<li><p>The <em>annotation.gff</em> lists all the features of the genome in a General Feature Format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 81" src="../../_images/Picture8110.png" /></p></li>
+<li><p>The <em>merged.gb</em> has all of the contigs merged into a single locus instead of being separate locus objects. The <em>merged.gb</em> can be used in artemis. The <em>annotation.gff</em> lists all the features of the genome in a General Feature Format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 82" src="../../_images/Picture824.png" /></p></li>
+<li><p>The <em>annotation.tar.gz</em> is a tar ball file where all of files are wrapped up in one single file for easy storage. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 83" src="../../_images/Picture832.png" /></p></li>
+<li><p>The <em>annotation.txt</em> file contains all the information on the called features, including the nucleotide and amino acid sequences. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 84" src="../../_images/Picture841.png" /></p></li>
+<li><p>Like <em>annotation.txt</em>, the <em>annotation.xls</em> file contains all the information on the called features, including the nucleotide and amino acid sequences, but in excel format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 85" src="../../_images/Picture851.png" /></p></li>
+<li><p>The <em>vigor4.stderr.txt</em> file shows any standard errors that result from the VIGOR4 annotation pipeline. To see the contents of this file, highlight the row that contains the file and then click on the View icon in the vertical green bar.
+<img alt="Figure 86" src="../../_images/Picture861.png" /></p></li>
+<li><p>The <em>vigor4.stdout.txt</em> file shows the output of the VIGOR4 annotation pipeline at each step in the process. To see the contents of this file, highlight the row that contains the file and then click on the View icon in the vertical green bar.
+<img alt="Figure 87" src="../../_images/Picture871.png" /></p></li>
+<li><p>The <em>vigor_out-20200729-135437.ini</em> file contains the set of VIGOR4 settings that were used to compute that annotation. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 88" src="../../_images/Picture881.png" /></p></li>
+<li><p>The <em>vigor.out.aln</em> file contains alignment of predicted protein to reference, and from the reference protein to genome. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 89" src="../../_images/Picture891.png" /></p></li>
+<li><p>The <em>vigor_out.cds</em> file is a fasta file of predicted CDSs. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 90" src="../../_images/Picture901.png" /></p></li>
+<li><p>The <em>vigor_out.gff3</em> file shows the predicted features in GFF3 format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 91" src="../../_images/Picture9110.png" /></p></li>
+<li><p>The <em>vigor_out.rpt</em> file shows the summary results from the annotation program. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 92" src="../../_images/Picture922.png" /></p></li>
+<li><p>The <em>vigor_out.pep</em> file shows the fata file of the predicted proteins. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 93" src="../../_images/Picture931.png" /></p></li>
+<li><p>The <em>vigor_out.tbl</em> file shows the predicted features in GenBank table format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 94" src="../../_images/Picture941.png" /></p></li>
+<li><p>The <em>vigor_out.warnings</em> file shows any warning produced by the VIGOR4 pipeline when it generated the annotation. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 95" src="../../_images/Picture951.png" /></p></li>
+</ol>
+</section>
+<section id="downloadable-files-available-with-assembly-jobs">
+<h2>Downloadable files available with assembly jobs<a class="headerlink" href="#downloadable-files-available-with-assembly-jobs" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A number of downloadable files are generated with the assembly job. To find those files, double click on the row that has the word “assembly” and the checkered flag, indicating a completed job.
+<img alt="Figure 96" src="../../_images/Picture961.png" /></p></li>
+<li><p>This will re-write the page to show the files generated by the assembly job.
+<img alt="Figure 97" src="../../_images/Picture971.png" /></p></li>
+<li><p>The <em>assembly-details.json</em> file is a JSON file. This type of file that stores simple data structures and objects in JavaScript Object Notation (JSON) format, which is a standard data interchange format. It is primarily used for transmitting data between a web application and a server. While it is not recommended for viewing (it is a computer-readable file), the file is both downloadable and viewable. To see the contents of this file, highlight the row that contains the file and then click on the View icon in the vertical green bar
+<img alt="Figure 98" src="../../_images/Picture981.png" /></p></li>
+<li><p>This will open the details file.
+<img alt="Figure 99" src="../../_images/Picture991.png" /></p></li>
+<li><p>The <em>assembly.bam</em> file is a Binary Alignment Map (BAM), which is the comprehensive raw data of genome sequencing. It consists of the lossless (class of data compression algorithms that allows the original data to be perfectly reconstructed from the compressed data), compressed binary representation of the Sequence Alignment Map-files. BAM is the compressed binary representation of SAM (Sequence Alignment Map). BAM is in compressed BGZF format. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 100" src="../../_images/Picture1001.png" /></p></li>
+<li><p>The <em>assembly.bam.bai</em> is a bam index file. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 101" src="../../_images/Picture1019.png" /></p></li>
+<li><p>The <em>assembly.depth</em> file shows the depth of support based on the reads at each position in the assembly. To view this file, click on the row that has the file name and click on the View icon in the vertical green bar.
+<img alt="Figure 102" src="../../_images/Picture1021.png" /></p></li>
+<li><p>This will open the file, showing the position and the coverage depth.
+<img alt="Figure 103" src="../../_images/Picture1031.png" /></p></li>
+<li><p>The <em>assembly.fasta</em> file shows the nucleotide sequence of contig. This file must be downloaded to view. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 104" src="../../_images/Picture1041.png" /></p></li>
+<li><p>The <em>assembly.png</em> is a graph that shows the coverage depth for the assembly at the specific positions in the genome, which can also be seen in the Full Genome Report. To view this file, click on the row that has the file name and click on the View icon in the vertical green bar.
+<img alt="Figure 105" src="../../_images/Picture1051.png" /></p></li>
+<li><p>The <em>vc.gz</em> and <em>vcfgz.tbi</em> files. The assembly service offers three types of VCF files. The Variant Call Format specification (VCF, https://samtools.github.io/hts-specs/VCFv4.2.pdf) is a text file format (usually stored in a compressed manner). It contains meta-information lines, a header line, and then data lines each containing information about a position in the genome. The format also has the ability to contain genotype information on samples for each position. When a VCF file is compressed and indexed using tabix, and made web- accessible, the Genome Browser is able to fetch only the portions of the file necessary to display items in the viewed region. These files are all available for download.
+<img alt="Figure 106" src="../../_images/Picture1061.png" /></p></li>
+<li><p>The <em>contig</em> file is also available at the higher level in the assembly page. It is identifiable by the icon indicating contigs in the first column. To download this file, highlight the row that contains it and click on the Download icon in the vertical green bar.
+<img alt="Figure 100" src="../../_images/Picture1001.png" /></p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Martin, M., Cutadapt removes adapter sequences from high-throughput sequencing reads. EMBnet. journal, 2011. 17(1): p. 10-12.</p></li>
+<li><p>Langmead, B. and S. Salzberg, Langmead. 2013. Bowtie2. Nature Methods, 2013. 9: p. 357-359.</p></li>
+<li><p>Etherington, G.J., R.H. Ramirez-Gonzalez, and D. MacLean, bio-samtools 2: a package for analysis and visualization of sequence and alignment data with SAMtools in Ruby. Bioinformatics, 2015. 31(15): p. 2565-2567.</p></li>
+<li><p>Li, H., Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics, 2018.
+34(18): p. 3094-3100.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sars_cov_2_wastewater/sars_cov_2_wastewater.html" class="btn btn-neutral float-right" title="SARS-Cov-2 Wastewater Analysis Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../id_mapper/id_mapper.html" class="btn btn-neutral float-left" title="ID Mapper Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023 | The BV-BRC Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  var logo = '<img src="https://www.bv-brc.org/docs/_static/bvbrc-logo-blue.png" class="logo" alt="BV-BRC Logo">';
+  var home = '<div class="branding"><a href="https://bv-brc.org" title="BV-BRC Homepage">BV-BRC Home</a> &rsaquo; <a href="/docs/" title="BV-BRC Documentation">Docs</a></div>';
+  $(".wy-side-nav-search").prepend(home).prepend(logo);
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS8F60MG56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GS8F60MG56');
+</script>
+
+<!-- Universal Analytics - EOL -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165638318-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165638318-1');
+</script>
+
+
+
+</body>
+</html>
