@@ -56,9 +56,9 @@ source_suffix = {
 master_doc = 'index'
 
 # General information about the project.
-project = 'BV-BRC'
-copyright = '2023 | The BV-BRC Team'
-author = 'The BV-BRC Team'
+project = 'DXKB'
+copyright = '2023 | The DXKB Team'
+author = 'The DXKB Team'
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -112,7 +112,7 @@ html_theme_options = {
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_logo = ""
 html_favicon = "_static/favicon.ico"
-html_title = "BV-BRC"
+html_title = "DXKB"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -161,8 +161,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'BV-BRC.tex', 'BV-BRC Documentation',
-     'BV-BRC team', 'manual'),
+    (master_doc, 'BV-BRC.tex', 'DXKB Documentation',
+     'DXKB team', 'manual'),
 ]
 
 
@@ -171,7 +171,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'bvbrc', 'BV-BRC Documentation',
+    (master_doc, 'bvbrc', 'DXKB Documentation',
      [author], 1)
 ]
 
@@ -182,8 +182,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'BV-BRC', 'BV-BRC Documentation',
-     author, 'BV-BRC', 'One line description of project.',
+    (master_doc, 'DXKB', 'DXKB Documentation',
+     author, 'DXKB', 'One line description of project.',
      'Miscellaneous'),
 ]
 
